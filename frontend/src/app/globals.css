@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Light mode colors */
+  --expo-black: #000000;
+  --expo-near: #1c2024;
+  --expo-white: #ffffff;
+  --expo-cloud: #f0f0f3;
+  --expo-slate: #60646c;
+  --expo-silver: #b0b4ba;
+  --expo-border: #e0e1e6;
+  --expo-input: #d9d9e0;
+  --expo-cobalt: #0d74ce;
+
+  /* Semantic colors */
+  --bg-primary: var(--expo-cloud);
+  --bg-secondary: var(--expo-white);
+  --bg-tertiary: #fafafa;
+  --bg-elevated: #ffffff;
+  --bg-inverse: var(--expo-black);
+
+  --text-primary: var(--expo-near);
+  --text-secondary: var(--expo-slate);
+  --text-tertiary: var(--expo-silver);
+  --text-inverse: var(--expo-white);
+
+  --border-primary: var(--expo-border);
+  --border-secondary: #f0f0f0;
+
+  --surface-hover: rgba(0, 0, 0, 0.04);
+  --surface-active: rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  /* Dark mode colors */
+  --expo-black: #000000;
+  --expo-near: #ffffff;
+  --expo-white: #1a1a1a;
+  --expo-cloud: #111111;
+  --expo-slate: #9ca3af;
+  --expo-silver: #6b7280;
+  --expo-border: #2a2a2a;
+  --expo-input: #2d2d2d;
+  --expo-cobalt: #3b82f6;
+
+  /* Semantic colors - Dark */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #111111;
+  --bg-elevated: #1f1f1f;
+  --bg-inverse: #f3f4f6;
+
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --text-tertiary: #6b7280;
+  --text-inverse: #111827;
+
+  --border-primary: #2a2a2a;
+  --border-secondary: #1f1f1f;
+
+  --surface-hover: rgba(255, 255, 255, 0.06);
+  --surface-active: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Scrollbar - Light */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--expo-silver);
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Smooth transitions for theme change */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Disable transition on specific elements */
+.no-transition,
+.no-transition *,
+.no-transition *::before,
+.no-transition *::after {
+  transition: none !important;
+}
+
+/* Selection colors */
+::selection {
+  background-color: var(--expo-cobalt);
+  color: white;
+}
+
+.dark ::selection {
+  background-color: #3b82f6;
+  color: white;
+}

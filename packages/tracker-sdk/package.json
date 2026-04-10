@@ -1,0 +1,34 @@
+{
+  "name": "@silxar/tracker",
+  "version": "1.0.0",
+  "description": "SDK de tracking de eventos para CRM Maestro - Envía eventos desde tu CRM al sistema central",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest"
+  },
+  "keywords": [
+    "tracking",
+    "analytics",
+    "crm",
+    "events",
+    "silxar"
+  ],
+  "author": "Silxar",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/silxar/crm-maestro.git",
+    "directory": "packages/tracker-sdk"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

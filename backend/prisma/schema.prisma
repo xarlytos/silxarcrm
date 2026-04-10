@@ -1,0 +1,297 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ClienteGlobal {
+  id                  Int       @id @default(autoincrement())
+  email               String    @unique
+  nombre              String
+  telefono            String?
+  pais                String?
+  empresa             String?
+  origenSaas          String    @map("origen_saas")
+  clienteSaasId       String?   @map("cliente_saas_id")
+  estado              String    @default("activo")
+  fechaRegistro       DateTime  @default(now()) @map("fecha_registro")
+  ultimaActualizacion DateTime  @updatedAt @map("ultima_actualizacion")
+  fechaUltimoLogin    DateTime? @map("fecha_ultimo_login")
+  metadata            Json?
+  notasInternas       String?   @map("notas_internas")
+
+  suscripciones Suscripcion[]
+  pagos         Pago[]
+  eventos       Evento[]
+
+  @@index([origenSaas])
+  @@index([estado])
+  @@index([fechaRegistro])
+  @@map("clientes_global")
+}
+
+model Suscripcion {
+  id                  Int       @id @default(autoincrement())
+  clienteId           Int       @map("cliente_id")
+  saas                String
+  planTipo            String    @map("plan_tipo")
+  estado              String
+  monto               Decimal   @db.Decimal(10, 2)
+  moneda              String    @default("EUR")
+  montoProporcional   Decimal?  @map("monto_proporcional") @db.Decimal(10, 2)
+  fechaInicio         DateTime  @map("fecha_inicio")
+  fechaFin            DateTime? @map("fecha_fin")
+  fechaProximoPago    DateTime? @map("fecha_proximo_pago")
+  fechaUltimoPago     DateTime? @map("fecha_ultimo_pago")
+  fechaCancelacion    DateTime? @map("fecha_cancelacion")
+  diasTrialTotal      Int?      @map("dias_trial_total")
+  diasTrialRestantes  Int?      @map("dias_trial_restantes")
+  metodoPago          String?   @map("metodo_pago")
+  paymentProviderId   String?   @map("payment_provider_id")
+  facturaUrl          String?   @map("factura_url")
+  motivoCancelacion   String?   @map("motivo_cancelacion")
+  cancelacionInitBy   String?   @map("cancelacion_initiated_by")
+  createdAt           DateTime  @default(now()) @map("created_at")
+  updatedAt           DateTime  @updatedAt @map("updated_at")
+
+  cliente ClienteGlobal @relation(fields: [clienteId], references: [id])
+  pagos   Pago[]
+  eventos Evento[]
+
+  @@index([clienteId])
+  @@index([saas])
+  @@index([estado])
+  @@index([fechaProximoPago])
+  @@index([planTipo, estado])
+  @@map("suscripciones")
+}
+
+model Pago {
+  id                Int       @id @default(autoincrement())
+  suscripcionId     Int       @map("suscripcion_id")
+  clienteId         Int       @map("cliente_id")
+  monto             Decimal   @db.Decimal(10, 2)
+  moneda            String    @default("EUR")
+  estado            String
+  metodoPago        String?   @map("metodo_pago")
+  paymentProviderId String?   @map("payment_provider_id")
+  descripcion       String?
+  fechaPago         DateTime  @map("fecha_pago")
+  fechaReembolso    DateTime? @map("fecha_reembolso")
+  numeroFactura     String?   @map("numero_factura")
+  facturaUrl        String?   @map("factura_url")
+  rawResponse       Json?     @map("raw_response")
+  createdAt         DateTime  @default(now()) @map("created_at")
+
+  suscripcion Suscripcion   @relation(fields: [suscripcionId], references: [id])
+  cliente     ClienteGlobal @relation(fields: [clienteId], references: [id])
+
+  @@index([suscripcionId])
+  @@index([fechaPago])
+  @@index([estado])
+  @@map("pagos")
+}
+
+model Evento {
+  id                  Int       @id @default(autoincrement())
+  tipo                String
+  severidad           String    @default("info")
+  clienteId           Int?      @map("cliente_id")
+  suscripcionId       Int?      @map("suscripcion_id")
+  saas                String?
+  datos               Json?
+  procesado           Boolean   @default(false)
+  notificadoPush      Boolean   @default(false) @map("notificado_push")
+  notificadoDashboard Boolean   @default(false) @map("notificado_dashboard")
+  ipOrigen            String?   @map("ip_origen")
+  userAgent           String?   @map("user_agent")
+  fecha               DateTime  @default(now())
+
+  cliente     ClienteGlobal? @relation(fields: [clienteId], references: [id])
+  suscripcion Suscripcion?   @relation(fields: [suscripcionId], references: [id])
+
+  @@index([tipo])
+  @@index([saas])
+  @@index([fecha])
+  @@index([procesado])
+  @@index([notificadoPush])
+  @@index([clienteId, fecha])
+  @@map("eventos")
+}
+
+model MetricaDiaria {
+  id                Int      @id @default(autoincrement())
+  fecha             DateTime @db.Date
+  saas              String
+  nuevosRegistros   Int      @default(0) @map("nuevos_registros")
+  nuevosPagos       Int      @default(0) @map("nuevos_pagos")
+  cancelaciones     Int      @default(0)
+  upgrades          Int      @default(0)
+  downgrades        Int      @default(0)
+  clientesActivos   Int      @default(0) @map("clientes_activos")
+  trialsActivos     Int      @default(0) @map("trials_activos")
+  trialsConvertidos Int      @default(0) @map("trials_convertidos")
+  trialsExpirados   Int      @default(0) @map("trials_expirados")
+  mrr               Decimal  @default(0) @db.Decimal(12, 2)
+  arr               Decimal  @default(0) @db.Decimal(12, 2)
+  ingresosNuevos    Decimal  @default(0) @map("ingresos_nuevos") @db.Decimal(12, 2)
+  ingresosPerdidos  Decimal  @default(0) @map("ingresos_perdidos") @db.Decimal(12, 2)
+  loginsTotales     Int      @default(0) @map("logins_totales")
+  featureMasUsada   String?  @map("feature_mas_usada")
+  churnRate         Decimal? @map("churn_rate") @db.Decimal(5, 2)
+  conversionRate    Decimal? @map("conversion_rate") @db.Decimal(5, 2)
+  trialToPaidRate   Decimal? @map("trial_to_paid_rate") @db.Decimal(5, 2)
+  createdAt         DateTime @default(now()) @map("created_at")
+
+  @@unique([fecha, saas])
+  @@index([fecha])
+  @@index([saas])
+  @@map("metricas_diarias")
+}
+
+model WebhookConfig {
+  id               Int       @id @default(autoincrement())
+  saas             String    @unique
+  webhookSecret    String    @map("webhook_secret")
+  endpointUrl      String    @map("endpoint_url")
+  activo           Boolean   @default(true)
+  reintentosMax    Int       @default(3) @map("reintentos_maximos")
+  timeoutMs        Int       @default(5000) @map("timeout_ms")
+  ultimoError      String?   @map("ultimo_error")
+  ultimoErrorAt    DateTime? @map("ultimo_error_at")
+  descripcion      String?
+  createdAt        DateTime  @default(now()) @map("created_at")
+  updatedAt        DateTime  @updatedAt @map("updated_at")
+
+  @@map("webhooks_config")
+}
+
+// Sistema de Tracking de Eventos (tipo Segment/Mixpanel)
+model CrmClient {
+  id          String   @id @default(cuid())
+  name        String
+  saas        String   // Identificador del SaaS (ej: "entrenadores", "nutricion")
+  descripcion String?
+  activo      Boolean  @default(true)
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  apiKeys ApiKey[]
+  trackedEvents TrackedEvent[]
+
+  @@index([saas])
+  @@index([activo])
+  @@map("crm_clients")
+}
+
+model ApiKey {
+  id          String    @id @default(cuid())
+  crmId       String    @map("crm_id")
+  keyHash     String    @map("key_hash") // Hash de la key, nunca guardamos la key en plain text
+  keyPrefix   String    @map("key_prefix") // Primeros 8 caracteres para identificación
+  nombre      String?   // Ej: "Producción", "Desarrollo"
+  activo      Boolean   @default(true)
+  ultimoUso   DateTime? @map("ultimo_uso")
+  createdAt   DateTime  @default(now()) @map("created_at")
+  expiresAt   DateTime? @map("expires_at")
+
+  crmClient CrmClient @relation(fields: [crmId], references: [id], onDelete: Cascade)
+
+  @@index([crmId])
+  @@index([keyPrefix])
+  @@map("api_keys")
+}
+
+model TrackedEvent {
+  id          String   @id @default(cuid())
+  crmId       String   @map("crm_id")
+  eventName   String   @map("event_name")
+  eventId     String?  @map("event_id") // ID único para deduplicación
+  userId      String?  @map("user_id")
+  email       String?
+  sessionId   String?  @map("session_id")
+  datos       Json     // Payload completo del evento
+  timestamp   DateTime
+  recibidoAt  DateTime @default(now()) @map("recibido_at")
+  ipOrigen    String?  @map("ip_origen")
+  userAgent   String?  @map("user_agent")
+  procesado   Boolean  @default(false)
+
+  crmClient CrmClient @relation(fields: [crmId], references: [id], onDelete: Cascade)
+
+  @@index([crmId])
+  @@index([eventName])
+  @@index([timestamp])
+  @@index([eventId])
+  @@index([userId])
+  @@index([procesado])
+  @@map("tracked_events")
+}
+
+model UsuarioCrm {
+  id                    Int       @id @default(autoincrement())
+  email                 String    @unique
+  nombre                String
+  passwordHash          String    @map("password_hash")
+  rol                   String    @default("admin")
+  fcmToken              String?   @map("fcm_token")
+  notificacionesActivas Boolean   @default(true) @map("notificaciones_activas")
+  ultimoLogin           DateTime? @map("ultimo_login")
+  ultimoLoginIp         String?   @map("ultimo_login_ip")
+  activo                Boolean   @default(true)
+  createdAt             DateTime  @default(now()) @map("created_at")
+  updatedAt             DateTime  @updatedAt @map("updated_at")
+
+  conversaciones ConversacionIa[]
+
+  @@map("usuarios_crm")
+}
+
+model ConversacionIa {
+  id              Int      @id @default(autoincrement())
+  usuarioId       Int      @map("usuario_id")
+  mensajeUsuario  String   @map("mensaje_usuario")
+  respuestaIa     String   @map("respuesta_ia")
+  sqlGenerado     String?  @map("sql_generado")
+  datosConsulta   Json?    @map("datos_consulta")
+  tiempoRespuesta Int?     @map("tiempo_respuesta_ms")
+  fecha           DateTime @default(now())
+
+  usuario UsuarioCrm @relation(fields: [usuarioId], references: [id])
+
+  @@index([usuarioId])
+  @@index([fecha])
+  @@map("conversaciones_ia")
+}
+
+// Sistema de Calendario para socios
+model CalendarioEvento {
+  id          String   @id @default(cuid())
+  titulo      String
+  descripcion String?
+  fechaInicio DateTime @map("fecha_inicio")
+  fechaFin    DateTime @map("fecha_fin")
+  todoElDia   Boolean  @default(false) @map("todo_el_dia")
+
+  // Asignación: "carlos", "silviu", "ambos"
+  asignadoA   String   @map("asignado_a")
+
+  // Color del evento (para categorías visuales)
+  color       String   @default("blue") // blue, green, purple, orange, red, pink
+
+  // Estado
+  completado  Boolean  @default(false)
+
+  // Metadatos
+  creadoPor   String   @map("creado_por") // Quién creó el evento
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@index([fechaInicio])
+  @@index([asignadoA])
+  @@index([completado])
+  @@map("calendario_eventos")
+}

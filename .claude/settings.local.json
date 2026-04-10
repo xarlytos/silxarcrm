@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init:*)",
+      "Bash(mkdir -p backend frontend mobile)",
+      "Bash(npx create-next-app@14 . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git)",
+      "Bash(npx getdesign@latest add clay)",
+      "Bash(npm install:*)",
+      "Bash(docker:*)",
+      "Bash(npx getdesign@latest:*)",
+      "Bash(npx next:*)",
+      "Bash(npm run:*)",
+      "Bash(npx prisma:*)",
+      "Bash(curl:*)",
+      "Bash(npx tsc:*)",
+      "Bash(netstat -ano)",
+      "Bash(findstr :5000)",
+      "Bash(taskkill:*)",
+      "Bash(cmd:*)",
+      "Bash(pkill -f node)"
+    ]
+  }
+}
