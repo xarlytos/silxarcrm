@@ -19,18 +19,51 @@ import iaRoutes from './routes/ia';
 import eventsRoutes from './routes/events';
 import adminRoutes from './routes/admin';
 import calendarioRoutes from './routes/calendario';
+import leadsRoutes from './routes/leads';
+import spechsRoutes from './routes/spechs';
+import simulacionRoutes from './routes/simulacion';
+import llamadasRoutes from './routes/llamadas';
+import emailRoutes from './routes/email';
+import whatsappRoutes from './routes/whatsapp';
+import landingsRoutes from './routes/landings';
+import freeValuesRoutes from './routes/freeValues';
+import propuestasRoutes from './routes/propuestas';
+import tareasRoutes from './routes/tareas';
+
+console.log('[BOOT] CRM Maestro API process started');
 
 const app = express();
 const httpServer = createServer(app);
 
 // Middleware
 app.use(helmet());
+const allowedOrigins = [
+  ...env.FRONTEND_URL.split(',').map((o) => o.trim()).filter(Boolean),
+  'https://crmpropio.vercel.app',
+  'http://localhost:3000',
+  'http://localhost:3001',
+];
 app.use(cors({
-  origin: [env.FRONTEND_URL, 'http://localhost:3000', 'http://localhost:3001'],
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin) || /\.vercel\.app$/.test(new URL(origin).hostname)) {
+      return callback(null, true);
+    }
+    return callback(new Error(`CORS: origen no permitido (${origin})`));
+  },
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+app.options('*', cors());
 app.use(morgan('combined', { stream: { write: (msg) => logger.info(msg.trim()) } }));
-app.use(express.json({ limit: '1mb' }));
+// Capturamos el raw body para verificación de firmas en webhooks (Resend/Svix)
+app.use(express.json({
+  limit: '1mb',
+  verify: (req: any, _res, buf) => {
+    req.rawBody = buf.toString('utf8');
+  },
+}));
 app.use('/api', apiLimiter);
 
 // Health check
@@ -45,6 +78,16 @@ app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/ia', iaRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/calendario', calendarioRoutes);
+app.use('/api/leads', leadsRoutes);
+app.use('/api/spechs', spechsRoutes);
+app.use('/api/simulacion', simulacionRoutes);
+app.use('/api/llamadas', llamadasRoutes);
+app.use('/api/email', emailRoutes);
+app.use('/api/whatsapp', whatsappRoutes);
+app.use('/api/landings', landingsRoutes);
+app.use('/api/free-values', freeValuesRoutes);
+app.use('/api/propuestas', propuestasRoutes);
+app.use('/api/tareas', tareasRoutes);
 app.use('/events', eventsRoutes);
 
 // Error handler
@@ -56,6 +99,7 @@ app.use((err: Error, _req: express.Request, res: express.Response, _next: expres
 // Start server
 async function start() {
   try {
+    logger.info(`Starting CRM Maestro API on port ${env.PORT}...`);
     await prisma.$connect();
     logger.info('Database connected');
 
@@ -63,7 +107,7 @@ async function start() {
     initSocket(httpServer);
     initCronJobs();
 
-    httpServer.listen(env.PORT, () => {
+    httpServer.listen(env.PORT, '0.0.0.0', () => {
       logger.info(`CRM Maestro API running on port ${env.PORT}`);
       logger.info(`Environment: ${env.NODE_ENV}`);
     });
