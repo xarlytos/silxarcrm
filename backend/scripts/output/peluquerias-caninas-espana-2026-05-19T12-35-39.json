@@ -1,0 +1,5370 @@
+{
+  "query": "peluquería canina",
+  "scannedCities": 5,
+  "totalPlaces": 169,
+  "apiCalls": 11,
+  "estimatedCost": "$0.35",
+  "timestamp": "2026-05-19T12:35:39.617Z",
+  "places": [
+    {
+      "id": "ChIJg6rwzJGdeg0RJuXXMjHwmpA",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "950 67 17 86",
+      "internationalPhoneNumber": "+34 950 67 17 86",
+      "formattedAddress": "C. Canónigo Molina Alonso, 34, 04004 Almería",
+      "location": {
+        "latitude": 36.8351768,
+        "longitude": -2.4592503
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=10419904781972137254&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.facebook.com/share/18yVQ4hQHU/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 212,
+      "displayName": {
+        "text": "Lola & Cia Peluqueria Canina y Felina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJxxURqe6deg0RBWKSZRAHpRc",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "722 10 62 72",
+      "internationalPhoneNumber": "+34 722 10 62 72",
+      "formattedAddress": "Calle Jaúl, 92, 04007 Almería",
+      "location": {
+        "latitude": 36.8271023,
+        "longitude": -2.4459931
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=1703775801034564101&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 170,
+      "displayName": {
+        "text": "LULA Peluquería Canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJ3UMndgKeeg0Ry9mw8JEHLwo",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "634 56 11 10",
+      "internationalPhoneNumber": "+34 634 56 11 10",
+      "formattedAddress": "C. Inglés, 68, 04008 Almería",
+      "location": {
+        "latitude": 36.849905,
+        "longitude": -2.4602986
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=733813587674454475&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://fashiondogsalmeria.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 291,
+      "displayName": {
+        "text": "Fashion Dogs (Peluquería y estética canina)",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJVd5Rb1qfeg0R4-lSFQk0CnY",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "611 47 27 84",
+      "internationalPhoneNumber": "+34 611 47 27 84",
+      "formattedAddress": "Calle Padre Joaquin Reina, 56, 04009 Almería",
+      "location": {
+        "latitude": 36.8551065,
+        "longitude": -2.4427176
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=8505668059859708387&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 170,
+      "displayName": {
+        "text": "La Perruqueria de Dama",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJTSODAiCdeg0RPihv09EXncM",
+      "types": [
+        "pet_care",
+        "grocery_store",
+        "food_store",
+        "food",
+        "point_of_interest",
+        "store",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "640 50 13 08",
+      "internationalPhoneNumber": "+34 640 50 13 08",
+      "formattedAddress": "Av. de Cabo de Gata, 88, Local 2º Derecha, 04007 Almería",
+      "location": {
+        "latitude": 36.8304708,
+        "longitude": -2.4543683
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=14095448598702401598&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.mundomayzo.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 104,
+      "displayName": {
+        "text": "Mayzo - Peluquería Canina en Almería",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJqSS8i1ideg0RB5uAbvAH7Ek",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "604 97 30 43",
+      "internationalPhoneNumber": "+34 604 97 30 43",
+      "formattedAddress": "Av. de la Vega de Aca, 9, 04007 Almería",
+      "location": {
+        "latitude": 36.8242153,
+        "longitude": -2.4399531999999997
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=5326641188499921671&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://buscapeluqueria.com/almeria/almeria/pepita-dog-hair-salon-peluqueria-canina-en-almeria/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 34,
+      "displayName": {
+        "text": "Pepita Dog Hair Salon",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJxTkbIDx3cA0RldKLQ9HY_vc",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "store",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "950 11 80 55",
+      "internationalPhoneNumber": "+34 950 11 80 55",
+      "formattedAddress": "C. Antonio Ledesma, 7, 04001 Almería",
+      "location": {
+        "latitude": 36.837873699999996,
+        "longitude": -2.4643859
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=17869958764745708181&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.facebook.com/Animal-Love-Peluqueria-y-tienda-330090874150357/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 60,
+      "displayName": {
+        "text": "Animal Love",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJN9lzIM2deg0RcoQwrlZFT98",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "614 47 85 00",
+      "internationalPhoneNumber": "+34 614 47 85 00",
+      "formattedAddress": "C. Soldado Español, 15, 04004 Almería",
+      "location": {
+        "latitude": 36.8366102,
+        "longitude": -2.4580129
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=16091156232209990770&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 58,
+      "displayName": {
+        "text": "VEKAPETS peluquería canina y felina Almería",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJp4wOjgGeeg0RZPPq2LjWWrc",
+      "types": [
+        "pet_store",
+        "pet_care",
+        "point_of_interest",
+        "store",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "950 26 50 97",
+      "internationalPhoneNumber": "+34 950 26 50 97",
+      "formattedAddress": "C. Guadiana, 16, 04008 Almería",
+      "location": {
+        "latitude": 36.847319399999996,
+        "longitude": -2.4588947
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=13212108546246374244&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.facebook.com/pages/Amazonia/107734202675265?ref=ts&fref=ts",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 58,
+      "displayName": {
+        "text": "Peluquería canina Amazonia",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJgVhVWUSdeg0RxyN37CKTG_U",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "634 10 60 27",
+      "internationalPhoneNumber": "+34 634 10 60 27",
+      "formattedAddress": "Pl. Coscoja, 2, 04007 Almería",
+      "location": {
+        "latitude": 36.8344514,
+        "longitude": -2.4433523
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=17661872141868934087&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.instagram.com/somosderazaa/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 28,
+      "displayName": {
+        "text": "SOMOSDERAZA Peluquería Canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJXZBm_QKeeg0RE-96QTVfenk",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "619 00 67 00",
+      "internationalPhoneNumber": "+34 619 00 67 00",
+      "formattedAddress": "C. Esmeralda, 22, 04008 Almería",
+      "location": {
+        "latitude": 36.8515283,
+        "longitude": -2.4580257999999997
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=8753413508084461331&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 35,
+      "displayName": {
+        "text": "The Happy Pet",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJXRtkZ-Sfeg0RI5yeT0m5RvU",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "641 00 45 71",
+      "internationalPhoneNumber": "+34 641 00 45 71",
+      "formattedAddress": "Av. de los Ángeles, 7, 04008 Almería",
+      "location": {
+        "latitude": 36.8487192,
+        "longitude": -2.4568681
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=17674017512181636131&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.facebook.com/aullidogs",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 28,
+      "displayName": {
+        "text": "Aullidog's",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJK86BlFSfeg0RgHT-3O6IpPk",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "store",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "614 18 03 67",
+      "internationalPhoneNumber": "+34 614 18 03 67",
+      "formattedAddress": "C. Instinción, 9, 04006 Almería",
+      "location": {
+        "latitude": 36.8454014,
+        "longitude": -2.4411746
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=17988653371115861120&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.instagram.com/lacasadimiko/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 11,
+      "displayName": {
+        "text": "La Casa di Miko / Peluquería para mascotas en Almería",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJlVhd0Qmeeg0RbW75tMkh2A4",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "680 15 26 95",
+      "internationalPhoneNumber": "+34 680 15 26 95",
+      "formattedAddress": "Carrera del Perú, 101, 04006 Almería",
+      "location": {
+        "latitude": 36.843505199999996,
+        "longitude": -2.4476573
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=1069642061708881517&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 77,
+      "displayName": {
+        "text": "LA PELUCAN (Peluquería Canina)",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJc6iFp8Kdeg0Rj3zOeiE8SjY",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "647 31 32 44",
+      "internationalPhoneNumber": "+34 647 31 32 44",
+      "formattedAddress": "C. Antonio Muñoz Zamora, 22, 04007 Almería",
+      "location": {
+        "latitude": 36.8320495,
+        "longitude": -2.4407066
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=3912005340816637071&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.mimacan.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 130,
+      "displayName": {
+        "text": "Mimacan",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJxRvAfUGfeg0ReHW3C1DibYw",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "652 16 75 27",
+      "internationalPhoneNumber": "+34 652 16 75 27",
+      "formattedAddress": "C. Felipe II, 48, 04009 Almería",
+      "location": {
+        "latitude": 36.8542391,
+        "longitude": -2.4449614
+      },
+      "rating": 4.7,
+      "googleMapsUri": "https://maps.google.com/?cid=10118992771193206136&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 45,
+      "displayName": {
+        "text": "Peluquería canina WaWaSplash",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJR2iHUgJ2cA0R-8BcB5qaCI8",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "store",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "665 46 50 80",
+      "internationalPhoneNumber": "+34 665 46 50 80",
+      "formattedAddress": "Av. Federico García Lorca, 1, 04004 Almería",
+      "location": {
+        "latitude": 36.8357301,
+        "longitude": -2.4624354
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=10306657733576540411&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.mascotaslospinos.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 67,
+      "displayName": {
+        "text": "Mascotas Los Pinos",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJN3-z--l1cA0RD6WexAYseis",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "615 30 08 15",
+      "internationalPhoneNumber": "+34 615 30 08 15",
+      "formattedAddress": "C. Hortensia, 1, 04410 Benahadux, Almería",
+      "location": {
+        "latitude": 36.922279499999995,
+        "longitude": -2.4611737
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=3132864898369758479&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://peluditostienda.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 52,
+      "displayName": {
+        "text": "PELUDITOS DOG HAIR SALON",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJxW4QiWKdeg0RU3jhjgAUrlY",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "950 22 21 84",
+      "internationalPhoneNumber": "+34 950 22 21 84",
+      "formattedAddress": "Gasolinera Repsol, Av. Padre Méndez, s/n, 04006 Almería",
+      "location": {
+        "latitude": 36.8395417,
+        "longitude": -2.4463691
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=6245951725839153235&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.hidrocanin.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 9,
+      "displayName": {
+        "text": "Lavamascotas Almería",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJcVSjbwCdeg0Rr_kbKjXRb1s",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "642 57 41 77",
+      "internationalPhoneNumber": "+34 642 57 41 77",
+      "formattedAddress": "C. Soldado Español, 15, 04004 Almería",
+      "location": {
+        "latitude": 36.8364903,
+        "longitude": -2.4582484
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=6588714806136273327&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.instagram.com/dandydogpeluqueriacanina?igsh=d2w2ZmM0eXVndnlx",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 3,
+      "displayName": {
+        "text": "DandyDog Peluquería canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJn8wkcwCeeg0RFE9_SNmIFnA",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "655 06 88 72",
+      "internationalPhoneNumber": "+34 655 06 88 72",
+      "formattedAddress": "C. Joaquín Peralta, 11, 04004 Almería",
+      "location": {
+        "latitude": 36.8432019,
+        "longitude": -2.4591217000000003
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=8076793448541146900&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 14,
+      "displayName": {
+        "text": "Peluqueria canina yayku",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJ79L7rg6eeg0RyFlWVuDwRk8",
+      "types": [
+        "pharmacy",
+        "health",
+        "veterinary_care",
+        "pet_care",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "950 17 44 66",
+      "internationalPhoneNumber": "+34 950 17 44 66",
+      "formattedAddress": "C. Perdiz, 11, BAJO, 04009 Almería",
+      "location": {
+        "latitude": 36.84881,
+        "longitude": -2.4461399999999998
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=5712518023677893064&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.mimacan.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 176,
+      "displayName": {
+        "text": "Mimacan",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJhf7JCwANcA0RrsbMUTCkbQc",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "607 18 00 97",
+      "internationalPhoneNumber": "+34 607 18 00 97",
+      "formattedAddress": "C. Lopez Leiva, 3, 04400 Alhama de Almería, Almería",
+      "location": {
+        "latitude": 36.95637,
+        "longitude": -2.5701
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=535264458164717230&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.peluqueriayesteticacaninalolita.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 9,
+      "displayName": {
+        "text": "Lolita Peluquería y Estética Canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJw5tAvb53cA0ReAl1WiafZ6c",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "614 13 67 23",
+      "internationalPhoneNumber": "+34 614 13 67 23",
+      "formattedAddress": "C. Pedro Jover, 23, 04002 Almería",
+      "location": {
+        "latitude": 36.8378126,
+        "longitude": -2.4704731
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=12062785114010356088&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 7,
+      "displayName": {
+        "text": "Rubican peluquería canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJXxX7icePZA0RxnDdstGA9wE",
+      "types": [
+        "pet_store",
+        "pet_care",
+        "supplier",
+        "store",
+        "food",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "950 03 12 60",
+      "internationalPhoneNumber": "+34 950 03 12 60",
+      "formattedAddress": "Parque Comercial CEMAR N340a (ctra.de Almería) Local, Tiendanimal, 04230 Huércal de Almería, Almería",
+      "location": {
+        "latitude": 36.8674794,
+        "longitude": -2.4455235
+      },
+      "rating": 4.3,
+      "googleMapsUri": "https://maps.google.com/?cid=141723551422836934&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://tiendas.tiendanimal.es/andalucia/almeria/la-gangosa/tiendanimal-cervantes-almeria-15?utm_medium=maps&utm_source=google",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 650,
+      "displayName": {
+        "text": "Tiendanimal",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJ9XpSNlRZYA0RP3XyRwEI6MU",
+      "types": [
+        "pet_store",
+        "pet_care",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "962 74 01 88",
+      "internationalPhoneNumber": "+34 962 74 01 88",
+      "formattedAddress": "C. Marines, 10, 46183 L'Eliana, Valencia",
+      "location": {
+        "latitude": 39.5637987,
+        "longitude": -0.5288661
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=14260657021663737151&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.mascotaselcarmen.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 79,
+      "displayName": {
+        "text": "Peluquería y Estética Canina El Carmen",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJ21gHp02deg0Ra-1PM9y5dwY",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "695 03 80 98",
+      "internationalPhoneNumber": "+34 695 03 80 98",
+      "formattedAddress": "C. Juan Valverde Domínguez, 10, 04006 Almería",
+      "location": {
+        "latitude": 36.838488999999996,
+        "longitude": -2.4507124
+      },
+      "rating": 4.3,
+      "googleMapsUri": "https://maps.google.com/?cid=466045441860955499&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://peluqueriacaninakaramiel.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 28,
+      "displayName": {
+        "text": "KARAMIEL Peluquería Canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJWz5LwDpBYA0RgbFE_GE5vIo",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "624 27 30 38",
+      "internationalPhoneNumber": "+34 624 27 30 38",
+      "formattedAddress": "C. Sanchis Guarner, 1, Local 5, 46530 Puçol, Valencia",
+      "location": {
+        "latitude": 39.6167142,
+        "longitude": -0.3126094
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=9996928365862629761&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.estilismocaninomartavela.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 87,
+      "displayName": {
+        "text": "Estilismo Canino Puçol Marta Vela",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJ8blc1AZ2cA0R9pJmqheQBLY",
+      "types": [
+        "pharmacy",
+        "health",
+        "veterinary_care",
+        "pet_care",
+        "supplier",
+        "store",
+        "food",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "950 25 91 11",
+      "internationalPhoneNumber": "+34 950 25 91 11",
+      "formattedAddress": "C. Floridablanca, 3, Bajo, 04001 Almería",
+      "location": {
+        "latitude": 36.8396471,
+        "longitude": -2.4655119000000005
+      },
+      "rating": 4.3,
+      "googleMapsUri": "https://maps.google.com/?cid=13115766446127223542&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 180,
+      "displayName": {
+        "text": "Mascotas Almería",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJw8_jewB1cA0R2eOvBfgX8OY",
+      "types": [
+        "pet_store",
+        "hair_salon",
+        "hair_care",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "642 42 70 42",
+      "internationalPhoneNumber": "+34 642 42 70 42",
+      "formattedAddress": "Av. de Pablo Iglesias, 150, 04003 Almería",
+      "location": {
+        "latitude": 36.8475466,
+        "longitude": -2.4647764999999997
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=16640826977148724185&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.instagram.com/rincondelpeludo?igsh=MW9uYTZ1MmphdTFvZQ==",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 24,
+      "displayName": {
+        "text": "El Rincón del Peludo",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Tienda de animales",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_store",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJlf9eo7-Zeg0RQqDO1PhBbrM",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "613 15 36 13",
+      "internationalPhoneNumber": "+34 613 15 36 13",
+      "formattedAddress": "Camino del sol, 42, 04131 Retamar, Almería",
+      "location": {
+        "latitude": 36.8519559,
+        "longitude": -2.3087256
+      },
+      "rating": 3.9,
+      "googleMapsUri": "https://maps.google.com/?cid=12929344117205278786&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 28,
+      "displayName": {
+        "text": "LAS HUELLAS DE ROSA",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJb9Bi-gmeeg0Rqb4hKFvNHvk",
+      "types": [
+        "hair_salon",
+        "beauty_salon",
+        "hair_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "684 14 54 38",
+      "internationalPhoneNumber": "+34 684 14 54 38",
+      "formattedAddress": "C. Fray Bernardo Martínez Noval, 12, 04006 Almería",
+      "location": {
+        "latitude": 36.843623199999996,
+        "longitude": -2.4461315
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=17951010956144393897&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://peluqueriadoblet.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 119,
+      "displayName": {
+        "text": "Peluquería Doble T",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Peluquería",
+        "languageCode": "es"
+      },
+      "primaryType": "hair_salon",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJycsEZ0Gfeg0Rueolv3zxTOw",
+      "types": [
+        "pet_store",
+        "pet_care",
+        "supplier",
+        "store",
+        "food",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "950 96 16 67",
+      "internationalPhoneNumber": "+34 950 96 16 67",
+      "formattedAddress": "Avenida Médico, C. Médico Francisco Pérez Company, 34, 04009 Almería",
+      "location": {
+        "latitude": 36.8602288,
+        "longitude": -2.4352527000000004
+      },
+      "rating": 4.3,
+      "googleMapsUri": "https://maps.google.com/?cid=17027249809266174649&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://tiendas.kiwoko.com/andalucia/almeria/almeria/kiwoko-almeria-torrecardenas-81?utm_medium=maps&utm_source=google",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 1470,
+      "displayName": {
+        "text": "Kiwoko. Mundo Animal",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJBWLB-xCeeg0RS0EiLdyVu_s",
+      "types": [
+        "hair_salon",
+        "hair_care",
+        "pet_store",
+        "clothing_store",
+        "veterinary_care",
+        "pet_care",
+        "supplier",
+        "store",
+        "food",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "950 10 13 69",
+      "internationalPhoneNumber": "+34 950 10 13 69",
+      "formattedAddress": "segundo tramo, Ctra. Granada, n 68, 04009 Almería",
+      "location": {
+        "latitude": 36.857112199999996,
+        "longitude": -2.4481276999999997
+      },
+      "rating": 4.5,
+      "googleMapsUri": "https://maps.google.com/?cid=18139256697047368011&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.zooexpo.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 76,
+      "displayName": {
+        "text": "ZooExpo",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Almería"
+    },
+    {
+      "id": "ChIJCcSXUBnTDQ0Rsu80K6ugqIM",
+      "types": [
+        "pet_care",
+        "clothing_store",
+        "point_of_interest",
+        "store",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "640 26 58 89",
+      "internationalPhoneNumber": "+34 640 26 58 89",
+      "formattedAddress": "C. Trille, 10, 11009 Cádiz",
+      "location": {
+        "latitude": 36.510766200000006,
+        "longitude": -6.2784512999999995
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=9487009272080691122&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.facebook.com/profile.php?id=100089790079432",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 71,
+      "displayName": {
+        "text": "Oh My Dog! Peluquería, Boutique y Guardería Canina y Felina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJLRIoJRfTDQ0RFzpEOcjqb00",
+      "types": [
+        "hair_salon",
+        "hair_care",
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "655 29 00 15",
+      "internationalPhoneNumber": "+34 655 29 00 15",
+      "formattedAddress": "C. Sta. Teresa de Jesús, N° 6, local 5, 11010 Cádiz",
+      "location": {
+        "latitude": 36.5079278,
+        "longitude": -6.2756447
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=5579936609010465303&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.instagram.com/salonpeluqueria.spacaninorosa1",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 117,
+      "displayName": {
+        "text": "SALÓN DE PELUQUERÍA & BIENESTAR CANINO ROSA A.G",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJ821gleXTDQ0RjRdwQwgodAw",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "683 44 01 62",
+      "internationalPhoneNumber": "+34 683 44 01 62",
+      "formattedAddress": "C. Trille, 4, 11009 Cádiz",
+      "location": {
+        "latitude": 36.5105955,
+        "longitude": -6.278823900000001
+      },
+      "rating": 4.7,
+      "googleMapsUri": "https://maps.google.com/?cid=897386241709840269&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 41,
+      "displayName": {
+        "text": "Styl´Dogs Peluqueria Canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJ723epDLSDQ0RFxPJ2-Swuww",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "956 20 12 43",
+      "internationalPhoneNumber": "+34 956 20 12 43",
+      "formattedAddress": "Av. de la Sanidad Pública, 3, 11007 Cádiz",
+      "location": {
+        "latitude": 36.5193021,
+        "longitude": -6.2792099
+      },
+      "rating": 4.5,
+      "googleMapsUri": "https://maps.google.com/?cid=917521446086447895&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 55,
+      "displayName": {
+        "text": "PELUQUERÍA CANINA MASKOTAS",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJC25o-EvSDQ0RJQXtadmxeHo",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "856 07 84 96",
+      "internationalPhoneNumber": "+34 856 07 84 96",
+      "formattedAddress": "C. Zurbarán, 4, 11010 Cádiz",
+      "location": {
+        "latitude": 36.5040395,
+        "longitude": -6.2750185
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=8824999017175647525&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 82,
+      "displayName": {
+        "text": "Peluqueria canina y Consulta veterinaria Pelos. Acacademia peluquería canina Artero Cadiz.",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJr0WK92DRDQ0R3EZUid9FcLc",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "store",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "856 07 48 37",
+      "internationalPhoneNumber": "+34 856 07 48 37",
+      "formattedAddress": "Calle Sagasta, 36 Esquina, C. Sacramento, 45, 11001 Cádiz",
+      "location": {
+        "latitude": 36.5324239,
+        "longitude": -6.2993144
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=13218141732716431068&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.cadizoomascotas.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 239,
+      "displayName": {
+        "text": "Cadizoo Mascotas",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJ8-AVMjXSDQ0RN_wa8NTrJx4",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "956 28 55 06",
+      "internationalPhoneNumber": "+34 956 28 55 06",
+      "formattedAddress": "Av. Ana de Viya, 30, 11009 Cádiz",
+      "location": {
+        "latitude": 36.51098220000001,
+        "longitude": -6.2798017
+      },
+      "rating": 4.5,
+      "googleMapsUri": "https://maps.google.com/?cid=2172964645023448119&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 87,
+      "displayName": {
+        "text": "La Jungla",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJbyLSkBbTDQ0RFxV8VwKFavg",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "956 29 44 35",
+      "internationalPhoneNumber": "+34 956 29 44 35",
+      "formattedAddress": "Av. de la Ilustración, s/n, 11011 Cádiz",
+      "location": {
+        "latitude": 36.5082346,
+        "longitude": -6.2682668999999995
+      },
+      "rating": 4.1,
+      "googleMapsUri": "https://maps.google.com/?cid=17900265914041636119&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.hidrocanin.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 15,
+      "displayName": {
+        "text": "Lavamascotas Cádiz",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJEbdkJEjQDQ0R69E0neZ-Caw",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "620 88 17 63",
+      "internationalPhoneNumber": "+34 620 88 17 63",
+      "formattedAddress": "C. Ancora, 2, local 18, 11500 El Puerto de Sta María, Cádiz",
+      "location": {
+        "latitude": 36.6050879,
+        "longitude": -6.2731569
+      },
+      "rating": 4.5,
+      "googleMapsUri": "https://maps.google.com/?cid=12396578978259063275&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.aquitepelo.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 92,
+      "displayName": {
+        "text": "Aquí te pelo Peluquería canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJHYwsrFfRDQ0R4DHnbj2oVos",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "956 80 71 74",
+      "internationalPhoneNumber": "+34 956 80 71 74",
+      "formattedAddress": "Pl. de la Libertad, 1, 11005 Cádiz",
+      "location": {
+        "latitude": 36.5310906,
+        "longitude": -6.2983967
+      },
+      "rating": 4.7,
+      "googleMapsUri": "https://maps.google.com/?cid=10040397401076216288&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.mascotasavila.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 123,
+      "displayName": {
+        "text": "Mascotas Ávila Cádiz Centro",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJ_1jA1yrTDQ0Rf14UIYJJ2B4",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "607 95 12 92",
+      "internationalPhoneNumber": "+34 607 95 12 92",
+      "formattedAddress": "C. García Carrera, 41, 11009 Cádiz",
+      "location": {
+        "latitude": 36.5104257,
+        "longitude": -6.2764527999999995
+      },
+      "rating": 3.9,
+      "googleMapsUri": "https://maps.google.com/?cid=2222607239356898943&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 7,
+      "displayName": {
+        "text": "ESTILISMO CANINO",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJ__-vtM3TDQ0R1Q5GFZayU8M",
+      "types": [
+        "veterinary_care",
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "956 06 06 02",
+      "internationalPhoneNumber": "+34 956 06 06 02",
+      "formattedAddress": "Plaza Asdrúbal, 4, Local A, 11008 Cádiz",
+      "location": {
+        "latitude": 36.517123399999996,
+        "longitude": -6.2837556
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=14074789618134683349&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.clinicasavila.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 491,
+      "displayName": {
+        "text": "Clínica Veterinaria Ávila Cádiz",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidados veterinarios",
+        "languageCode": "es"
+      },
+      "primaryType": "veterinary_care",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJ8X1U4GzTDQ0RZVDxdHthqLY",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "614 21 93 01",
+      "internationalPhoneNumber": "+34 614 21 93 01",
+      "formattedAddress": "C. Parlamento, 11008 Cádiz",
+      "location": {
+        "latitude": 36.515901899999996,
+        "longitude": -6.2804926
+      },
+      "rating": 4.7,
+      "googleMapsUri": "https://maps.google.com/?cid=13161877093861118053&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 12,
+      "displayName": {
+        "text": "Mimoclin Dog Care",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJy-Obs0_TDQ0ROQIzVF0wWhk",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "956 26 50 54",
+      "internationalPhoneNumber": "+34 956 26 50 54",
+      "formattedAddress": "Av. Cayetano del Toro, 17, 11010 Cádiz",
+      "location": {
+        "latitude": 36.5066488,
+        "longitude": -6.2769905
+      },
+      "rating": 4.5,
+      "googleMapsUri": "https://maps.google.com/?cid=1826825776254878265&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.mascotasavila.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 85,
+      "displayName": {
+        "text": "Mascotas Ávila Cádiz Avenida",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJs_R9s83TDQ0RKgA8enpGgyM",
+      "types": [
+        "pet_store",
+        "pet_care",
+        "point_of_interest",
+        "store",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "856 07 94 17",
+      "internationalPhoneNumber": "+34 856 07 94 17",
+      "formattedAddress": "Plaza Asdrúbal, 4, 11008 Cádiz",
+      "location": {
+        "latitude": 36.5171095,
+        "longitude": -6.283790300000001
+      },
+      "rating": 4.4,
+      "googleMapsUri": "https://maps.google.com/?cid=2558966505127280682&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.mascotasavila.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 372,
+      "displayName": {
+        "text": "Mascotas Ávila Cadiz Asdrúbal",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Tienda de animales",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_store",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJAaeZYvvTDQ0RHBkPY2U9MWQ",
+      "types": [
+        "hair_salon",
+        "beautician",
+        "hair_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "686 29 64 92",
+      "internationalPhoneNumber": "+34 686 29 64 92",
+      "formattedAddress": "Av. Portugal, 38, 11008 Cádiz",
+      "location": {
+        "latitude": 36.5143175,
+        "longitude": -6.278198499999999
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=7219619183314540828&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://instagram.com/saramartin_peluqueriaunisex?igshid=NGVhN2U2NjQ0Yg==",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 98,
+      "displayName": {
+        "text": "Sara Martin Peluqueria y estetica unisex",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Peluquería",
+        "languageCode": "es"
+      },
+      "primaryType": "hair_salon",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJIzlWVJ3TDQ0Rwn8_ilfMayo",
+      "types": [
+        "pet_store",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "644 44 42 28",
+      "internationalPhoneNumber": "+34 644 44 42 28",
+      "formattedAddress": "C. Cooperativa, 13, 11007 Cádiz",
+      "location": {
+        "latitude": 36.5184566,
+        "longitude": -6.2781997
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=3056761448454651842&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 48,
+      "displayName": {
+        "text": "Animal Premium S. L.",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Tienda de animales",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_store",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJ-Upv39PTDQ0RV_NHzBwdeCE",
+      "types": [
+        "hair_salon",
+        "beautician",
+        "hair_care",
+        "point_of_interest",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "856 17 03 43",
+      "internationalPhoneNumber": "+34 856 17 03 43",
+      "formattedAddress": "C. Acacias, 18, 11007 Cádiz",
+      "location": {
+        "latitude": 36.5233884,
+        "longitude": -6.2853537
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=2411709609980457815&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 17,
+      "displayName": {
+        "text": "Tyche",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Peluquería",
+        "languageCode": "es"
+      },
+      "primaryType": "hair_salon",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJPSkQlzTSDQ0RLd_OOGCMSAM",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "856 07 51 57",
+      "internationalPhoneNumber": "+34 856 07 51 57",
+      "formattedAddress": "C. García Carrera, 2, D, 11009 Cádiz",
+      "location": {
+        "latitude": 36.51374,
+        "longitude": -6.278519999999999
+      },
+      "rating": 4.3,
+      "googleMapsUri": "https://maps.google.com/?cid=236593325334781741&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.cadizoomascotas.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 347,
+      "displayName": {
+        "text": "Cadizoo Mascotas",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJzfW3BdfTDQ0R2K93EboATvk",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "store",
+        "service",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "628 94 22 03",
+      "internationalPhoneNumber": "+34 628 94 22 03",
+      "formattedAddress": "Cl. Antonio Muñoz Quero, 1, 11012 Cádiz",
+      "location": {
+        "latitude": 36.51126,
+        "longitude": -6.274507
+      },
+      "rating": 4.1,
+      "googleMapsUri": "https://maps.google.com/?cid=17964296762784460760&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 28,
+      "displayName": {
+        "text": "Los Amigos de Nora",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJyZviil_fDQ0Rt9gPkQJm-zI",
+      "types": [
+        "pet_care",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "660 06 98 13",
+      "internationalPhoneNumber": "+34 660 06 98 13",
+      "formattedAddress": "C. Hermano Fermín, Residencial Parque, Local 5, 11540 Sanlúcar de Barrameda, Cádiz",
+      "location": {
+        "latitude": 36.7799163,
+        "longitude": -6.3570981
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=3673642082260474039&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.4-patas.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 134,
+      "displayName": {
+        "text": "4 Patas",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Servicios",
+        "languageCode": "es"
+      },
+      "primaryType": "service",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJo4jbdDTTDQ0RKsrjBXSZcqE",
+      "types": [
+        "pet_store",
+        "pet_care",
+        "supplier",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "650 94 08 85",
+      "internationalPhoneNumber": "+34 650 94 08 85",
+      "formattedAddress": "Av. las Cortes de Cádiz, 16, 11012 Cádiz",
+      "location": {
+        "latitude": 36.5221952,
+        "longitude": -6.2772288
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=11633529511045483050&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 44,
+      "displayName": {
+        "text": "Las +Kotas de Moray",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Tienda de animales",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_store",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJBWlsIqbTDQ0RVMsEKd5Vl-A",
+      "types": [
+        "pet_care",
+        "veterinary_care",
+        "supplier",
+        "store",
+        "service",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "856 06 74 87",
+      "internationalPhoneNumber": "+34 856 06 74 87",
+      "formattedAddress": "Gta. Helios, 4, 11011 Cádiz",
+      "location": {
+        "latitude": 36.501256999999995,
+        "longitude": -6.2744193
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=16183498198638447444&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 56,
+      "displayName": {
+        "text": "Helios Centro veterinario y Estética",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidados veterinarios",
+        "languageCode": "es"
+      },
+      "primaryType": "veterinary_care",
+      "ciudadBusqueda": "Cádiz"
+    },
+    {
+      "id": "ChIJmXQGaZffbA0R3eXMyNScSok",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "634 82 27 94",
+      "internationalPhoneNumber": "+34 634 82 27 94",
+      "formattedAddress": "Dr. Marañón, 3 14004, Centro, 14011 Córdoba",
+      "location": {
+        "latitude": 37.8777636,
+        "longitude": -4.7841179
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=9892891969188586973&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://unaiguijogroomer.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 358,
+      "displayName": {
+        "text": "💈🐶 Alberto Pérez Groomer || Peluquería Canina en Córdoba",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJZaiPnpffbA0R52MT0Gt71nM",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "678 11 86 44",
+      "internationalPhoneNumber": "+34 678 11 86 44",
+      "formattedAddress": "C. Prof. Tierno Galván, 6, Levante, 14014 Córdoba",
+      "location": {
+        "latitude": 37.900953799999996,
+        "longitude": -4.7582553999999995
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=8346994662360441831&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.instagram.com/newhappydog/profilecard/?igsh=Y3h0NnBocDFlcGN3",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 171,
+      "displayName": {
+        "text": "New Happy Dog",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJAy8hDnLfbA0R_3UYVzPdwjw",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "674 69 55 59",
+      "internationalPhoneNumber": "+34 674 69 55 59",
+      "formattedAddress": "C. Comandante Velázquez, 6, Nte. Sierra, 14006 Córdoba",
+      "location": {
+        "latitude": 37.8974573,
+        "longitude": -4.779616
+      },
+      "rating": 4.7,
+      "googleMapsUri": "https://maps.google.com/?cid=4378305000331834879&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 139,
+      "displayName": {
+        "text": "Enredadog Peluquería Canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJJxO73p8gbQ0RWpUvFsVBfbw",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "666 41 15 61",
+      "internationalPhoneNumber": "+34 666 41 15 61",
+      "formattedAddress": "C. del Alcalde Velasco Navarro, 3, Poniente Sur, 14004 Córdoba",
+      "location": {
+        "latitude": 37.8810353,
+        "longitude": -4.7882744
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=13582084365955863898&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://instagram.com/hocicoscordoba?utm_medium=copy_link",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 249,
+      "displayName": {
+        "text": "Hocicos -Peluquería Canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJlUw9CunfbA0RMEv-KpH-8FM",
+      "types": [
+        "pet_care",
+        "pet_store",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "722 59 38 88",
+      "internationalPhoneNumber": "+34 722 59 38 88",
+      "formattedAddress": "Fernando Amor y Mayor, 1, Noroeste, 14011 Córdoba",
+      "location": {
+        "latitude": 37.8878858,
+        "longitude": -4.796073799999999
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=6048614199003597616&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.instagram.com/mkgroomers",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 35,
+      "displayName": {
+        "text": "PELUQUERÍA CANINA MK GROOMERS",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJnSsImUXfbA0RW9YlCRNvOME",
+      "types": [
+        "pet_care",
+        "pet_store",
+        "supplier",
+        "store",
+        "service",
+        "food",
+        "point_of_interest",
+        "educational_institution",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "957 41 89 46",
+      "internationalPhoneNumber": "+34 957 41 89 46",
+      "formattedAddress": "Avenida Cañito Bazán, N2 Bis, Noroeste, 14011 Córdoba",
+      "location": {
+        "latitude": 37.8946945,
+        "longitude": -4.799122
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=13923000375564424795&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.tiendanaturzoo.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 486,
+      "displayName": {
+        "text": "NaturZoo |1| 🐶 ||💈Peluquería Canina || Tienda mascotas y Alimentación Natural-Barf||🛍🥩",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJEWO_JBnfbA0R5fWAfLxEsUI",
+      "types": [
+        "hair_salon",
+        "hair_care",
+        "spa",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "637 39 93 48",
+      "internationalPhoneNumber": "+34 637 39 93 48",
+      "formattedAddress": "C. Pintor Matisse, 6, Levante, 14007 Córdoba",
+      "location": {
+        "latitude": 37.8924962,
+        "longitude": -4.7569137
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=4805697853714396645&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 59,
+      "displayName": {
+        "text": "Peluquería canina la tribu",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Peluquería",
+        "languageCode": "es"
+      },
+      "primaryType": "hair_salon",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJoXLNpY8gbQ0RSUnYrtRi2yU",
+      "types": [
+        "pet_care",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "679 76 41 34",
+      "internationalPhoneNumber": "+34 679 76 41 34",
+      "formattedAddress": "Av. Granada, 5, Sur, 14009 Córdoba",
+      "location": {
+        "latitude": 37.869369999999996,
+        "longitude": -4.777295
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=2727882664908966217&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.peluqueriacaninapeludos.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 235,
+      "displayName": {
+        "text": "Peluquería Canina Peludos Córdoba",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJ1SooXdbfbA0R7OcjfBPINU4",
+      "types": [
+        "hair_salon",
+        "hair_care",
+        "pet_care",
+        "supplier",
+        "store",
+        "service",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "629 58 09 91",
+      "internationalPhoneNumber": "+34 629 58 09 91",
+      "formattedAddress": "Pl. Toñi Sánchez, N°2, Local 1, Noroeste, 14011 Córdoba",
+      "location": {
+        "latitude": 37.89016,
+        "longitude": -4.793544499999999
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=5635630494736705516&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 127,
+      "displayName": {
+        "text": "Turko's peluqueria canina/ especializada en perro de agua español",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJaYk-02rfbA0R9KMPaYklW4Q",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "633 52 07 12",
+      "internationalPhoneNumber": "+34 633 52 07 12",
+      "formattedAddress": "Pje. Poeta Baena Yuste, 3, Local, Levante, 14014 Córdoba",
+      "location": {
+        "latitude": 37.8991566,
+        "longitude": -4.755080899999999
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=9537257907990537204&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.cuatropatasweb.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 288,
+      "displayName": {
+        "text": "Perruquería Cuatro Patas",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJReW6elchbQ0Ruz2F875pKfQ",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "662 27 96 89",
+      "internationalPhoneNumber": "+34 662 27 96 89",
+      "formattedAddress": "C. Virgen de la Salud, 1, Poniente Sur, 14004 Córdoba",
+      "location": {
+        "latitude": 37.8779723,
+        "longitude": -4.7893381
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=17593709688149851579&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 190,
+      "displayName": {
+        "text": "Peluquería canina y spa Pluto",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJ6TuXq0TfbA0Rt5eO86KgvSE",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "622 12 28 28",
+      "internationalPhoneNumber": "+34 622 12 28 28",
+      "formattedAddress": "Centro de Peluquería y Estética Canina Macarena Montero, Jose Maria Martorell, 4, Poniente Sur, 14005 Córdoba",
+      "location": {
+        "latitude": 37.880153,
+        "longitude": -4.7987747999999995
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=2431275995581290423&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://macarenaestilismocanino.online/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 106,
+      "displayName": {
+        "text": "Macarena Montero | Estilismo Canino y academia de peluquería canina.",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJPY4kVq2pLqYRotyvvf5mmQ0",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "629 09 65 93",
+      "internationalPhoneNumber": "+34 629 09 65 93",
+      "formattedAddress": "Sur, 14013 Córdoba",
+      "location": {
+        "latitude": 37.8616168,
+        "longitude": -4.783397
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=979927638219938978&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.facebook.com/profile.php?id=100063592327904",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 91,
+      "displayName": {
+        "text": "Estética canina Oh My Dog",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJgzAef_vfbA0Rxyvrnetq1Bc",
+      "types": [
+        "hair_salon",
+        "hair_care",
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "687 01 29 49",
+      "internationalPhoneNumber": "+34 687 01 29 49",
+      "formattedAddress": "Pje. San Sebastián, 2, Local RASTAdog, Noroeste, 14006 Córdoba",
+      "location": {
+        "latitude": 37.8914085,
+        "longitude": -4.7874397
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=1717114918134295495&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.perroaguaespañol.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 71,
+      "displayName": {
+        "text": "Peluquería Canina RASTAdog Córdoba. Especializada en Perro de Agua Español. Estética canina. (Cita Previa)",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJuR3tTEEhbQ0RzTvQza0Ka7c",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "634 82 27 94",
+      "internationalPhoneNumber": "+34 634 82 27 94",
+      "formattedAddress": "Calle Dr. Gregorio Marañón, 3, Centro, 14004 Córdoba",
+      "location": {
+        "latitude": 37.8777423,
+        "longitude": -4.7840409
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=13216669273047448525&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://unaiguijogroomer.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 54,
+      "displayName": {
+        "text": "💈🐶 Unai Guijo Groomer || Peluquería Canina en Córdoba",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJpaqESSohbQ0RE1qq9o_xDC0",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "671 47 33 32",
+      "internationalPhoneNumber": "+34 671 47 33 32",
+      "formattedAddress": "Calle Dr. José Altolaguirre, N1, LOCALES 5-7, Poniente Sur, 14004 Córdoba",
+      "location": {
+        "latitude": 37.8720432,
+        "longitude": -4.7930401
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=3246235032048261651&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://dogavari.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 30,
+      "displayName": {
+        "text": "Dogavari peluquería canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJ-3uakonZbA0R9vueJw3bwSQ",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "681 98 29 93",
+      "internationalPhoneNumber": "+34 681 98 29 93",
+      "formattedAddress": "frente farmacia, C. María la Talegona, 1, local 16, Poniente Nte., 14005 Córdoba",
+      "location": {
+        "latitude": 37.8847524,
+        "longitude": -4.8146015
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=2648638905416350710&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 140,
+      "displayName": {
+        "text": "Peluquería Canina Mis Consentidos",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJUUpKpZDfbA0RDH-5fS5hd2M",
+      "types": [
+        "hair_salon",
+        "hair_care",
+        "pet_care",
+        "store",
+        "service",
+        "point_of_interest",
+        "educational_institution",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "696 71 10 90",
+      "internationalPhoneNumber": "+34 696 71 10 90",
+      "formattedAddress": "C. Ángela Romero de Torres, 5, Levante, 14010 Córdoba",
+      "location": {
+        "latitude": 37.8911047,
+        "longitude": -4.763001700000001
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=7167304184289132300&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.instagram.com/huesitos_centro_canino/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 156,
+      "displayName": {
+        "text": "HUESITOS, Centro Canino de Estética",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJpdvValNZYA0RlqxA4Xud5lA",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "616 84 52 34",
+      "internationalPhoneNumber": "+34 616 84 52 34",
+      "formattedAddress": "Carrer Sant Josep, 2, 46183 L'Eliana, Valencia",
+      "location": {
+        "latitude": 39.5666432,
+        "longitude": -0.5318822
+      },
+      "rating": 4.7,
+      "googleMapsUri": "https://maps.google.com/?cid=5829519923063336086&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 87,
+      "displayName": {
+        "text": "Peluquería Canina y Felina Nieves Manzano Sendra",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJ41rknQPfbA0RnUFJ8GrFMl0",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "633 51 35 25",
+      "internationalPhoneNumber": "+34 633 51 35 25",
+      "formattedAddress": "C. Escañuela, s/n, Centro, 14002 Córdoba",
+      "location": {
+        "latitude": 37.8866861,
+        "longitude": -4.7679225999999995
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=6715647057451368861&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.facebook.com/Es-uno-m%C3%A1s-108074757246405/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 70,
+      "displayName": {
+        "text": "Peluquería Canina Es Uno +",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJcW7kEGQpbQ0RsjB2TZrwp4Y",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "670 20 64 21",
+      "internationalPhoneNumber": "+34 670 20 64 21",
+      "formattedAddress": "C. Veredon de los Frailes, 254, 14710 Córdoba",
+      "location": {
+        "latitude": 37.840179899999995,
+        "longitude": -4.9343699999999995
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=9702988467708244146&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 10,
+      "displayName": {
+        "text": "PELUQUERIA CANINA ALICIA RUIZ (PELUDOG)",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJQTC9fX4gbQ0RUQyi8yQQoVo",
+      "types": [
+        "pet_care",
+        "pet_store",
+        "supplier",
+        "service",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "857 80 12 73",
+      "internationalPhoneNumber": "+34 857 80 12 73",
+      "formattedAddress": "Av. del Arcángel, s/n, Sureste, 14010 Córdoba",
+      "location": {
+        "latitude": 37.8786759,
+        "longitude": -4.7663668999999995
+      },
+      "rating": 4.3,
+      "googleMapsUri": "https://maps.google.com/?cid=6530518685556280401&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://tiendas.tiendanimal.es/andalucia/cordoba/cordoba/tiendanimal-el-arcangel-cordoba-19?utm_medium=maps&utm_source=google",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 2208,
+      "displayName": {
+        "text": "Tiendanimal",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJbcwsqx7fbA0RbtqOKJ6grlg",
+      "types": [
+        "pet_care",
+        "pet_store",
+        "service",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "605 51 58 23",
+      "internationalPhoneNumber": "+34 605 51 58 23",
+      "formattedAddress": "Av. de Carlos III, 28, Levante, 14014 Córdoba",
+      "location": {
+        "latitude": 37.8964378,
+        "longitude": -4.758950899999999
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=6390221522431040110&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 50,
+      "displayName": {
+        "text": "Elite Animal by alybell",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJxU4EsBvZbA0Rdh3YJ0hR4Tc",
+      "types": [
+        "pet_care",
+        "grocery_store",
+        "pet_store",
+        "supplier",
+        "food_store",
+        "service",
+        "educational_institution",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "670 23 84 30",
+      "internationalPhoneNumber": "+34 670 23 84 30",
+      "formattedAddress": "Calle Huerta de Sta. Isabel, 4, 14005 Córdoba",
+      "location": {
+        "latitude": 37.891063599999995,
+        "longitude": -4.8130333
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=4026588912193903990&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.tiendanaturzoo.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 47,
+      "displayName": {
+        "text": "NaturZoo |2| 🐶 ||💈Peluquería Canina || Tienda mascotas y Alimentación Natural-Barf||🛍🥩",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJ3UqSp2HfbA0R7doZJlDhiaQ",
+      "types": [
+        "pet_care",
+        "veterinary_care",
+        "doctor",
+        "medical_clinic",
+        "health",
+        "service",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "957 45 62 44",
+      "internationalPhoneNumber": "+34 957 45 62 44",
+      "formattedAddress": "Av. de la República Argentina, 32, Poniente Sur, 14004 Córdoba",
+      "location": {
+        "latitude": 37.8833548,
+        "longitude": -4.786577299999999
+      },
+      "rating": 4.4,
+      "googleMapsUri": "https://maps.google.com/?cid=11856255228382403309&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.clinicaveterinariavictoria.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 858,
+      "displayName": {
+        "text": "Hospital Veterinario Victoria",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidados veterinarios",
+        "languageCode": "es"
+      },
+      "primaryType": "veterinary_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJjcpPcY7fbA0RTR2rn59LEP4",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "646 29 81 63",
+      "internationalPhoneNumber": "+34 646 29 81 63",
+      "formattedAddress": "C. Platero Sánchez de la Cruz, 9, Levante, 14007 Córdoba",
+      "location": {
+        "latitude": 37.889699199999995,
+        "longitude": -4.7632049
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=18307215634211741005&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 31,
+      "displayName": {
+        "text": "Almudena Blancart Estilista Canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJm7sVPwAhbQ0R6Hi5F_Uu738",
+      "types": [
+        "pet_care",
+        "supplier",
+        "service",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "630 50 00 46",
+      "internationalPhoneNumber": "+34 630 50 00 46",
+      "formattedAddress": "C. Escritor Conde de Zamora, 10, local 8, 14005 Córdoba",
+      "location": {
+        "latitude": 37.876297699999995,
+        "longitude": -4.8004888
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=9218638592450590952&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://myfamilypets.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 23,
+      "displayName": {
+        "text": "My Family Pets. Peluquería canina. Tienda alimentación mascotas",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJXWYsNZffbA0RDhY5Y77fjAI",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "687 70 48 20",
+      "internationalPhoneNumber": "+34 687 70 48 20",
+      "formattedAddress": "C. Periodista José Luis de Córdoba, 10, Sureste, 14010 Córdoba",
+      "location": {
+        "latitude": 37.876583,
+        "longitude": -4.763584799999999
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=183767693616813582&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://petitboutique.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 76,
+      "displayName": {
+        "text": "Petit Boutique",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJwVI0807fbA0RoazTYOacVZM",
+      "types": [
+        "pet_care",
+        "service",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "676 15 87 52",
+      "internationalPhoneNumber": "+34 676 15 87 52",
+      "formattedAddress": "Carret. de Trassierra, 41, 14011 Córdoba",
+      "location": {
+        "latitude": 37.8942944,
+        "longitude": -4.8038270999999995
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=10616564209876708513&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.mascotatrassierra.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 182,
+      "displayName": {
+        "text": "Mascota Trassierra. Peluquería canina, piensos y complementos",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJ32Z9qhzfbA0R04yUTy3L5CI",
+      "types": [
+        "hair_salon",
+        "hair_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "633 13 23 37",
+      "internationalPhoneNumber": "+34 633 13 23 37",
+      "formattedAddress": "Calle Dr. Gómez Aguado, 6, Levante, 14014 Córdoba",
+      "location": {
+        "latitude": 37.8934533,
+        "longitude": -4.7546333
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=2514357887448681683&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 9,
+      "displayName": {
+        "text": "Peluquería canina Dog Limpio",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Peluquería",
+        "languageCode": "es"
+      },
+      "primaryType": "hair_salon",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJmUu0023fbA0RS02K9GDyryQ",
+      "types": [
+        "pet_care",
+        "service",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "658 61 67 33",
+      "internationalPhoneNumber": "+34 658 61 67 33",
+      "formattedAddress": "C. los Chopos, 11, Nte. Sierra, 14006 Córdoba",
+      "location": {
+        "latitude": 37.8979152,
+        "longitude": -4.7818885
+      },
+      "rating": 4.7,
+      "googleMapsUri": "https://maps.google.com/?cid=2643598004523257163&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 88,
+      "displayName": {
+        "text": "The Barber Dog",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJ99fhB6HfbA0RseqhrcrpiuI",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "664 14 53 71",
+      "internationalPhoneNumber": "+34 664 14 53 71",
+      "formattedAddress": "C. Álvaro Paulo, 13, local 3, Levante, 14010 Córdoba",
+      "location": {
+        "latitude": 37.8907514,
+        "longitude": -4.7643327
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=16324116856063519409&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 18,
+      "displayName": {
+        "text": "Peluquería Canina Renovecan",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJh9rjGXLfbA0R-KxQZ2CzijQ",
+      "types": [
+        "pet_care",
+        "pet_store",
+        "service",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "957 04 40 98",
+      "internationalPhoneNumber": "+34 957 04 40 98",
+      "formattedAddress": "C. López Amo, 10, Nte. Sierra, 14006 Córdoba",
+      "location": {
+        "latitude": 37.8994885,
+        "longitude": -4.7784653
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=3786035663389895928&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://nutrimascotacordoba.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 50,
+      "displayName": {
+        "text": "Nutrimascota | Peluquería Canina Y Tienda De Mascotas Cordoba",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJZavP2hTfbA0RIgwXNgkvtRE",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "611 77 84 40",
+      "internationalPhoneNumber": "+34 611 77 84 40",
+      "formattedAddress": "Av. de Jesús Rescatado, 21, Levante, 14007 Córdoba",
+      "location": {
+        "latitude": 37.890726199999996,
+        "longitude": -4.760478
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=1275977786038094882&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://instagram.com/lanudogs_cordoba?igshid=ZGUzMzM3NWJiOQ==",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 42,
+      "displayName": {
+        "text": "Lanudogs",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJhbf7YacgbQ0R6P9IV2ibcqA",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "667 02 95 10",
+      "internationalPhoneNumber": "+34 667 02 95 10",
+      "formattedAddress": "Av. Lagartijo, 2, Poniente Sur, 14005 Córdoba",
+      "location": {
+        "latitude": 37.880967399999996,
+        "longitude": -4.796646
+      },
+      "rating": 4.7,
+      "googleMapsUri": "https://maps.google.com/?cid=11561474065856790504&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.facebook.com/Animalook-Peluquer%C3%ADa-canina-102001558704483",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 23,
+      "displayName": {
+        "text": "Peluqueria canina Animalook",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJiZu1ULXQIq8Rfayd4Nl-Pj0",
+      "types": [
+        "pet_care",
+        "supplier",
+        "school",
+        "service",
+        "educational_institution",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "670 23 84 30",
+      "internationalPhoneNumber": "+34 670 23 84 30",
+      "formattedAddress": "Av. Cañito Bazán, 2, Noroeste, 14011 Córdoba",
+      "location": {
+        "latitude": 37.8945848,
+        "longitude": -4.7991351
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=4413104159111097469&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.tiendanaturzoo.com/escuela-de-peluqueria-canina/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 17,
+      "displayName": {
+        "text": "📚✂️🐩 Academia NaturZoo|| Escuela de Peluquería Canina",
+        "languageCode": "en"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJjfd-Tm7fbA0R0uCNGpCoi-E",
+      "types": [
+        "pet_care",
+        "veterinary_care",
+        "health",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "957 27 17 67",
+      "internationalPhoneNumber": "+34 957 27 17 67",
+      "formattedAddress": "Av. Cruz de Juárez, 16, Nte. Sierra, 14006 Córdoba",
+      "location": {
+        "latitude": 37.897325099999996,
+        "longitude": -4.7803875
+      },
+      "rating": 4.4,
+      "googleMapsUri": "https://maps.google.com/?cid=16252269017170829522&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://veterinariasantarosa.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 144,
+      "displayName": {
+        "text": "Clínica Veterinaria Santa Rosa",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidados veterinarios",
+        "languageCode": "es"
+      },
+      "primaryType": "veterinary_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJDbMN538gbQ0RvI83Zug4UjU",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "687 97 58 85",
+      "internationalPhoneNumber": "+34 687 97 58 85",
+      "formattedAddress": "Pl. de San Pedro, 17, Centro, 14002 Córdoba",
+      "location": {
+        "latitude": 37.882311,
+        "longitude": -4.771616
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=3842196002898939836&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 27,
+      "displayName": {
+        "text": "La Trastienda animal",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJQT0SGITfbA0R4KPzJnFO_5A",
+      "types": [
+        "pet_care",
+        "veterinary_care",
+        "service",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "957 43 33 12",
+      "internationalPhoneNumber": "+34 957 43 33 12",
+      "formattedAddress": "Av. de la Viñuela, 24, bajo, Levante, 14010 Córdoba",
+      "location": {
+        "latitude": 37.8881784,
+        "longitude": -4.7627114
+      },
+      "rating": 4.5,
+      "googleMapsUri": "https://maps.google.com/?cid=10448155908414612448&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://centroveterinariolavinuela.es/?utm_source=My%20Business&utm_medium=URL&utm_campaign=Web&utm_term=Business&utm_content=Business",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 275,
+      "displayName": {
+        "text": "Mascotas La Viñuela",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidados veterinarios",
+        "languageCode": "es"
+      },
+      "primaryType": "veterinary_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJ7Q4j_pLfbA0RxE64yc7tN4c",
+      "types": [
+        "pet_care",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "614 27 34 27",
+      "internationalPhoneNumber": "+34 614 27 34 27",
+      "formattedAddress": "C. Valdés Leal, 2, Centro, 14003 Córdoba",
+      "location": {
+        "latitude": 37.8834581,
+        "longitude": -4.781769499999999
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=9743517791242702532&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 36,
+      "displayName": {
+        "text": "Hammam Dog's",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJDRl7GWnfbA0RDergICN8wzs",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "C. Joaquín Sama Naharro, 24, Noroeste, 14006 Córdoba",
+      "location": {
+        "latitude": 37.894639399999996,
+        "longitude": -4.785864999999999
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=4306422159013636621&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.cronoshare.com/servicios/peluqueria-canina/cordoba/cordoba",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "peluqueria canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJRZ97JvkhbQ0RgSfFVgt4_VA",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "677 13 19 04",
+      "internationalPhoneNumber": "+34 677 13 19 04",
+      "formattedAddress": "C. Infanta Doña María, 68, Poniente Sur, 14004 Córdoba",
+      "location": {
+        "latitude": 37.8798396,
+        "longitude": -4.7914173
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=5835952682237765505&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.facebook.com/KINGOPELUQUERIACANINA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 3,
+      "displayName": {
+        "text": "Peluquería Canina Kingo",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJN-Y66JHfbA0RRtsQsbHu-DU",
+      "types": [
+        "veterinary_care",
+        "pet_store",
+        "pharmacy",
+        "pet_care",
+        "store",
+        "service",
+        "supplier",
+        "health",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "957 43 46 51",
+      "internationalPhoneNumber": "+34 957 43 46 51",
+      "formattedAddress": "frente al 27, C. Hermano Juan Fernández, s/n, Levante, 14014 Córdoba",
+      "location": {
+        "latitude": 37.894158999999995,
+        "longitude": -4.754689000000001
+      },
+      "rating": 4.7,
+      "googleMapsUri": "https://maps.google.com/?cid=3889120725181717318&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://animal24vet.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 234,
+      "displayName": {
+        "text": "Animal24 Clínica veterinaria Córdoba - Urgencias 24h - Domicilios -Vacunas",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidados veterinarios",
+        "languageCode": "es"
+      },
+      "primaryType": "veterinary_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJe2ASL3GjMpQROMkKy7Gq6RE",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "0351 873-6942",
+      "internationalPhoneNumber": "+54 351 873-6942",
+      "formattedAddress": "Sol de Mayo 1432, X5010 Córdoba, Argentina",
+      "location": {
+        "latitude": -31.427578599999993,
+        "longitude": -64.2134377
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=1290750448810772792&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://instagram.com/hund_pelucanina?igshid=YmMyMTA2M2Y=",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 36,
+      "displayName": {
+        "text": "HUND - Pelu Canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJ47o1JPwhbQ0RDUD0dKR9Oo0",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "957 75 10 37",
+      "internationalPhoneNumber": "+34 957 75 10 37",
+      "formattedAddress": "Gasolinera Repsol, Av. del Arcángel, 6, Sureste, 14010 Córdoba",
+      "location": {
+        "latitude": 37.8772708,
+        "longitude": -4.765969
+      },
+      "rating": 4.2,
+      "googleMapsUri": "https://maps.google.com/?cid=10176584453287329805&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.hidrocanin.es/mapa-lavamascotas",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 9,
+      "displayName": {
+        "text": "Lavamascotas 24h Córdoba",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJf3WJxVPfbA0RiGdBBdl6MHw",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "605 91 72 67",
+      "internationalPhoneNumber": "+34 605 91 72 67",
+      "formattedAddress": "C. Guaraní, local 2, Levante, 14014 Córdoba",
+      "location": {
+        "latitude": 37.898658399999995,
+        "longitude": -4.7627517
+      },
+      "rating": 4.7,
+      "googleMapsUri": "https://maps.google.com/?cid=8948787532099839880&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 29,
+      "displayName": {
+        "text": "Peluquería de Mascotas Camelia",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJLzCpwG7fbA0Rvl290QnNqzs",
+      "types": [
+        "pet_care",
+        "store",
+        "service",
+        "supplier",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "957 27 85 02",
+      "internationalPhoneNumber": "+34 957 27 85 02",
+      "formattedAddress": "C. el Almendro, 3, Nte. Sierra, 14006 Córdoba",
+      "location": {
+        "latitude": 37.8960947,
+        "longitude": -4.783827
+      },
+      "rating": 4.7,
+      "googleMapsUri": "https://maps.google.com/?cid=4299755711312518590&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.facebook.com/Mascotas-Mowgli-1498704143745553/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 76,
+      "displayName": {
+        "text": "Mowgli",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJU7ZPMRokcKkREJ-FKlJFdWI",
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "C. Ángela Romero de Torres, 7, Levante, 14010 Córdoba",
+      "location": {
+        "latitude": 37.8913584,
+        "longitude": -4.7627697
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=7094653007195119376&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 1,
+      "displayName": {
+        "text": "Escuela de Peluquería Canina Huesitos",
+        "languageCode": "es"
+      },
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJaVb1MIKiMpQR4XXbd_xBpqM",
+      "types": [
+        "hair_salon",
+        "hair_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "0351 613-4030",
+      "internationalPhoneNumber": "+54 351 613-4030",
+      "formattedAddress": "Quilloamira 7792, B° villa Allende, parque, X5018 Córdoba, Argentina",
+      "location": {
+        "latitude": -31.316949199999996,
+        "longitude": -64.2756534
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=11792185226914657761&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 40,
+      "displayName": {
+        "text": "M & M escuela de peluquería canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Peluquería",
+        "languageCode": "es"
+      },
+      "primaryType": "hair_salon",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJh5oH15PfbA0RPTAXwXJYVdo",
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "C. Arcos de la Frontera, Levante, 14014 Córdoba",
+      "location": {
+        "latitude": 37.896501799999996,
+        "longitude": -4.7534629
+      },
+      "rating": 4.5,
+      "googleMapsUri": "https://maps.google.com/?cid=15732578123177734205&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 2,
+      "displayName": {
+        "text": "PELUQUERÍA CANINA",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Lugar de interés de establecimiento",
+        "languageCode": "es"
+      },
+      "primaryType": "point_of_interest",
+      "ciudadBusqueda": "Córdoba"
+    },
+    {
+      "id": "ChIJCy73X6b8cQ0RH1TGpONGPcQ",
+      "types": [
+        "pet_care",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "671 50 73 04",
+      "internationalPhoneNumber": "+34 671 50 73 04",
+      "formattedAddress": "Blas Infante, 3, Local 4, Zaidín, 18008 Granada",
+      "location": {
+        "latitude": 37.1609987,
+        "longitude": -3.5942412
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=14140536348549207071&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.instagram.com/misiguaupets/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 313,
+      "displayName": {
+        "text": "MISIGUAU PETS | Peluquería canina y felina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJt8OBgb38cQ0Rl35xdkDYLcE",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "958 52 10 11",
+      "internationalPhoneNumber": "+34 958 52 10 11",
+      "formattedAddress": "C. San José Baja, 37, Centro, 18005 Granada",
+      "location": {
+        "latitude": 37.1704925,
+        "longitude": -3.6012473999999997
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=13920019794648727191&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.peluqueriacaninayfelinaenrique.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 173,
+      "displayName": {
+        "text": "Peluquería Canina Enrique",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJF29eaKj8cQ0RClnchTNXfWY",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "858 94 04 14",
+      "internationalPhoneNumber": "+34 858 94 04 14",
+      "formattedAddress": "C. Juan de Echevarría, 8, Genil, 18008 Granada",
+      "location": {
+        "latitude": 37.1590596,
+        "longitude": -3.5904598
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=7385154842758240522&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 188,
+      "displayName": {
+        "text": "Dog Star Granada",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJOZ7E25j8cQ0R97zqy-e3yOw",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "653 94 74 13",
+      "internationalPhoneNumber": "+34 653 94 74 13",
+      "formattedAddress": "Calle Adelfa, P.º Jardín de la Reina, 5 Esquina, Ronda, 18006 Granada",
+      "location": {
+        "latitude": 37.1634914,
+        "longitude": -3.6030252999999997
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=17062089394479611127&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 191,
+      "displayName": {
+        "text": "Arte Dog Peluqueria Canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJm8prX0_9cQ0RA9cerd_toAI",
+      "types": [
+        "pet_care",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "641 50 24 76",
+      "internationalPhoneNumber": "+34 641 50 24 76",
+      "formattedAddress": "C. el Calar, 3, local 10 A, Genil, 18008 Granada",
+      "location": {
+        "latitude": 37.164828,
+        "longitude": -3.581566
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=189412729287530243&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://bambupelucanina.com/?utm_source=gmb&utm_medium=referral",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 79,
+      "displayName": {
+        "text": "BAMBÚ | Peluquería Canina Granada",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJ7YxYW5P8cQ0R_m37g2sitkk",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "858 12 53 28",
+      "internationalPhoneNumber": "+34 858 12 53 28",
+      "formattedAddress": "C. Martínez de la Rosa, 4, Ronda, 18002 Granada",
+      "location": {
+        "latitude": 37.1772159,
+        "longitude": -3.6070321
+      },
+      "rating": 4.5,
+      "googleMapsUri": "https://maps.google.com/?cid=5311470655701216766&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://m.facebook.com/pages/category/Pet-Groomer/Babycan-Peluqueria-Estilismo-Canino-508862702647713/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 130,
+      "displayName": {
+        "text": "BABYCAN PELUQUERIA CANINA GRANADA",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJ958GiUH9cQ0Rk9UtN-xqJm4",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "680 60 93 91",
+      "internationalPhoneNumber": "+34 680 60 93 91",
+      "formattedAddress": "Av. de Pulianas, 11, Beiro, 18012 Granada",
+      "location": {
+        "latitude": 37.1897958,
+        "longitude": -3.6038687
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=7937148956057654675&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.instagram.com/pompidu_peluqueriacaninamovil?igsh=MTNtN3p1dHV4Y2RybA==&utm_source=qr",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 28,
+      "displayName": {
+        "text": "Peluquería Canina Móvil Pompidú",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJQ39KOIX9cQ0RWQgaUyFudYE",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "604 97 37 81",
+      "internationalPhoneNumber": "+34 604 97 37 81",
+      "formattedAddress": "C. Molinos, 47, Local, Centro, 18009 Granada",
+      "location": {
+        "latitude": 37.1719499,
+        "longitude": -3.5916877999999994
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=9328483292575041625&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://instagram.com/perruqueriacaninarealejo?igshid=YmMyMTA2M2Y=",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 77,
+      "displayName": {
+        "text": "Perruquería Canina Realejo",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJQaYUuiz9cQ0R02okte2ZqrU",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "604 98 55 09",
+      "internationalPhoneNumber": "+34 604 98 55 09",
+      "formattedAddress": "C. Ancha de Capuchinos, 12, Albaicín, 18012 Granada",
+      "location": {
+        "latitude": 37.1855931,
+        "longitude": -3.6022524999999996
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=13090444513131129555&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://estilismocaninomagua.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 155,
+      "displayName": {
+        "text": "MAGUA Estilismo Canino",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJ03IXZmz9cQ0RBChS0n3j2L0",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "679 44 70 64",
+      "internationalPhoneNumber": "+34 679 44 70 64",
+      "formattedAddress": "P.º de los Basilios, Centro, 18008 Granada",
+      "location": {
+        "latitude": 37.16881,
+        "longitude": -3.5924981999999996
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=13679933997676898308&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://perroeducadoperrofeliz.com/peluqueria-canina/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 28,
+      "displayName": {
+        "text": "Peluquería canina a domicilio - Educación canina en familia",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJN7w7Wlf8cQ0RiDP5jsTAjkI",
+      "types": [
+        "pet_care",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "648 93 07 50",
+      "internationalPhoneNumber": "+34 648 93 07 50",
+      "formattedAddress": "C. Washington Irving, 3, Local 15, Chana, 18015 Granada",
+      "location": {
+        "latitude": 37.1886462,
+        "longitude": -3.6261275
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=4795982603640976264&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.instagram.com/laperroqueria_granada/?hl=es",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 153,
+      "displayName": {
+        "text": "La Perroqueria",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJM-Op41r9cQ0RJ3ZBRn3Akeg",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "614 59 03 95",
+      "internationalPhoneNumber": "+34 614 59 03 95",
+      "formattedAddress": "C. Jimena, 29, Norte, 18014 Granada",
+      "location": {
+        "latitude": 37.2035171,
+        "longitude": -3.6186923999999996
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=16758387332704466471&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 9,
+      "displayName": {
+        "text": "Spa y Peluquería canina Elsa Torrez",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJ15PoDW39cQ0R78od0Fe6gGs",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "722 87 78 48",
+      "internationalPhoneNumber": "+34 722 87 78 48",
+      "formattedAddress": "Av. de Francisco Ayala, 85, Local 1, Chana, 18014 Granada",
+      "location": {
+        "latitude": 37.1951446,
+        "longitude": -3.6196753999999998
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=7746396245393787631&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 118,
+      "displayName": {
+        "text": "Carol&Vanessa Estilismo Canino y Felino",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJmw_wP_L8cQ0R0gfoHCLwfpo",
+      "types": [
+        "hair_salon",
+        "pet_boarding_service",
+        "pet_care",
+        "veterinary_care",
+        "hair_care",
+        "grocery_store",
+        "food_store",
+        "store",
+        "service",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "958 80 45 32",
+      "internationalPhoneNumber": "+34 958 80 45 32",
+      "formattedAddress": "Cam. de Ronda, 182, Ronda, 18003 Granada",
+      "location": {
+        "latitude": 37.1822959,
+        "longitude": -3.6130287
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=11132599358210967506&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 353,
+      "displayName": {
+        "text": "MARINADOG GRANADA",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidados veterinarios",
+        "languageCode": "es"
+      },
+      "primaryType": "veterinary_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJx6XXk2_9cQ0RqZe-H6mtHfw",
+      "types": [
+        "pet_store",
+        "pet_care",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "624 86 60 30",
+      "internationalPhoneNumber": "+34 624 86 60 30",
+      "formattedAddress": "C. Darrillo Magdalena, 10, Centro, 18002 Granada",
+      "location": {
+        "latitude": 37.1738618,
+        "longitude": -3.6015362999999994
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=18166867413776111529&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.lieupet.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 92,
+      "displayName": {
+        "text": "LieuPet | Peluquería canina y Alimetación Natural",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJgU8IJJH8cQ0RgiGZTT9Vdzk",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "958 26 60 99",
+      "internationalPhoneNumber": "+34 958 26 60 99",
+      "formattedAddress": "Arabial, 36, Ronda, 18004 Granada",
+      "location": {
+        "latitude": 37.170619699999996,
+        "longitude": -3.6074907999999994
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=4140872112763642242&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://peluqueriacaninazoe.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 49,
+      "displayName": {
+        "text": "Peluqueria Canina y Felina ZOE",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJTZ7Ssxj9cQ0Rd4Cyo3eTRAE",
+      "types": [
+        "pet_store",
+        "pet_care",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "645 95 30 35",
+      "internationalPhoneNumber": "+34 645 95 30 35",
+      "formattedAddress": "C. Azorín, N6, Ronda, 18004 Granada",
+      "location": {
+        "latitude": 37.1721996,
+        "longitude": -3.6073535000000003
+      },
+      "rating": 4.3,
+      "googleMapsUri": "https://maps.google.com/?cid=91360034511028343&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 61,
+      "displayName": {
+        "text": "Bicheros Mascotas y Peluqueria Canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJ5_sKQHv7cQ0RGYIrscDHjvE",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "664 59 23 03",
+      "internationalPhoneNumber": "+34 664 59 23 03",
+      "formattedAddress": "Av. de Cadiz, 42, Zaidín, 18007 Granada",
+      "location": {
+        "latitude": 37.1546113,
+        "longitude": -3.6041678999999993
+      },
+      "rating": 4.5,
+      "googleMapsUri": "https://maps.google.com/?cid=17406069240253612569&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 147,
+      "displayName": {
+        "text": "Perretes Peluqueria Canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJk9QH65v7cQ0Rt7AtlCPITuY",
+      "types": [
+        "hair_salon",
+        "pet_care",
+        "hair_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "958 55 09 30",
+      "internationalPhoneNumber": "+34 958 55 09 30",
+      "formattedAddress": "Pl. Tres Cruces, 3, local 10, 18100 Armilla, Granada",
+      "location": {
+        "latitude": 37.1414419,
+        "longitude": -3.6278272
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=16595421732042289335&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.valodu.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 375,
+      "displayName": {
+        "text": "VALODU ARMILLA",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJeREH1wj9cQ0R0LdC2shEyEU",
+      "types": [
+        "pet_store",
+        "pet_care",
+        "supplier",
+        "store",
+        "service",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "858 88 08 80",
+      "internationalPhoneNumber": "+34 858 88 08 80",
+      "formattedAddress": "C. Luis Buñuel, 6, 18197 Pulianas, Granada",
+      "location": {
+        "latitude": 37.2121832,
+        "longitude": -3.621215
+      },
+      "rating": 4.4,
+      "googleMapsUri": "https://maps.google.com/?cid=5028344613405112272&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://tiendas.tiendanimal.es/andalucia/granada/pulianas/tiendanimal-alameda-granada-37?utm_medium=maps&utm_source=google",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 1551,
+      "displayName": {
+        "text": "Tiendanimal",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJC5k6dr79cQ0RSIT2p7R8x1Y",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "616 25 54 67",
+      "internationalPhoneNumber": "+34 616 25 54 67",
+      "formattedAddress": "Av. de los Pechuelos, 6, local, 18210 Peligros, Granada",
+      "location": {
+        "latitude": 37.234499299999996,
+        "longitude": -3.6303446000000004
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=6253103722981131336&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 55,
+      "displayName": {
+        "text": "Snoopy Groomer - Peluqueria canina y felina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJh0Sev6r9cQ0R1nqyRm0xBig",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "958 26 47 03",
+      "internationalPhoneNumber": "+34 958 26 47 03",
+      "formattedAddress": "Gasolinera Repsol, Calle Neptuno, Ronda, 18004 Granada",
+      "location": {
+        "latitude": 37.168158999999996,
+        "longitude": -3.6093221000000004
+      },
+      "rating": 4.2,
+      "googleMapsUri": "https://maps.google.com/?cid=2884046956784679638&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.hidrocanin.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 26,
+      "displayName": {
+        "text": "Lavamascotas Granada",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJ6SPDGfL8cQ0RkDyb3tGI4hw",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "958 27 31 43",
+      "internationalPhoneNumber": "+34 958 27 31 43",
+      "formattedAddress": "P.º del Salón, 11, Centro, 18009 Granada",
+      "location": {
+        "latitude": 37.1700225,
+        "longitude": -3.5939624999999995
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=2081376412762848400&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 23,
+      "displayName": {
+        "text": "Don Perro",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJ4X42esD9cQ0R-ezfAoyKb64",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "603 18 46 26",
+      "internationalPhoneNumber": "+34 603 18 46 26",
+      "formattedAddress": "C. Pedro Arroyo, 3, 18200 Maracena, Granada",
+      "location": {
+        "latitude": 37.2083431,
+        "longitude": -3.6318536999999997
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=12569417418962627833&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 20,
+      "displayName": {
+        "text": "Peludos con flow",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJmzuUlVD7cQ0RGh8Nlvl9WuM",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "958 18 38 64",
+      "internationalPhoneNumber": "+34 958 18 38 64",
+      "formattedAddress": "ctra.ronda sur, salida 2,km.1,7 serrallo garden, Genil, 18008 Granada",
+      "location": {
+        "latitude": 37.1504105,
+        "longitude": -3.5904278
+      },
+      "rating": 4.5,
+      "googleMapsUri": "https://maps.google.com/?cid=16382545105431371546&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 80,
+      "displayName": {
+        "text": "El Perro Loco",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJF3kS5Q79cQ0RpDjqHlRnOhI",
+      "types": [
+        "pet_store",
+        "pet_care",
+        "supplier",
+        "service",
+        "point_of_interest",
+        "store",
+        "food",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "958 16 38 84",
+      "internationalPhoneNumber": "+34 958 16 38 84",
+      "formattedAddress": "Calle Blvd. Billy Wilder, s/n, 18197 Pulianas, Granada",
+      "location": {
+        "latitude": 37.214234,
+        "longitude": -3.6170139999999993
+      },
+      "rating": 4.1,
+      "googleMapsUri": "https://maps.google.com/?cid=1313475852325501092&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://tiendas.kiwoko.com/andalucia/granada/pulianas/kiwoko-granada-kinepolis-22?utm_medium=maps&utm_source=google",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 1900,
+      "displayName": {
+        "text": "Kiwoko. Mundo Animal",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJM_YlAxjlcQ0R2JmOMa7D9Fg",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "663 17 25 73",
+      "internationalPhoneNumber": "+34 663 17 25 73",
+      "formattedAddress": "C. Madrid, 61, Local, 18193 Monachil, Granada",
+      "location": {
+        "latitude": 37.1331749,
+        "longitude": -3.5609001
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=6409963322578213336&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 59,
+      "displayName": {
+        "text": "Peluquería canina | Vanessa Tiberio",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJPQT0j137cQ0ReLSEjXAHzz0",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "671 68 55 92",
+      "internationalPhoneNumber": "+34 671 68 55 92",
+      "formattedAddress": "C. Santiago de Compostela, 2, 18194 Churriana de la Vega, Granada",
+      "location": {
+        "latitude": 37.145899299999996,
+        "longitude": -3.6375466999999992
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=4453786736484725880&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 85,
+      "displayName": {
+        "text": "16 Patitas Perrunas",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJtXOif5H9cQ0R0msdCVabSOs",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "958 40 22 27",
+      "internationalPhoneNumber": "+34 958 40 22 27",
+      "formattedAddress": "Carr. Bailén-Motril, 0, Km 119, 18210 Peligros, Granada",
+      "location": {
+        "latitude": 37.2280935,
+        "longitude": -3.6368476
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=16953971591058648018&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 2,
+      "displayName": {
+        "text": "Peluquería Canina De Ciara",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJzWujTgH9cQ0Rl-5aAwlE2lY",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "655 69 33 64",
+      "internationalPhoneNumber": "+34 655 69 33 64",
+      "formattedAddress": "Carretera Madrid, 44, A, Norte, 18210 Peligros, Granada",
+      "location": {
+        "latitude": 37.2043342,
+        "longitude": -3.6176010999999995
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=6258389437686410903&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.teckeldecheara.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 11,
+      "displayName": {
+        "text": "Cheara",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJzdsBtcT7cQ0R6QGQNaxjEvk",
+      "types": [
+        "pet_store",
+        "pet_care",
+        "supplier",
+        "service",
+        "point_of_interest",
+        "store",
+        "food",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "858 88 08 49",
+      "internationalPhoneNumber": "+34 858 88 08 49",
+      "formattedAddress": "C. Hipócrates, s/n, 18100 Armilla, Granada",
+      "location": {
+        "latitude": 37.1471628,
+        "longitude": -3.6118123999999994
+      },
+      "rating": 4.1,
+      "googleMapsUri": "https://maps.google.com/?cid=17947517056309002729&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://tiendas.tiendanimal.es/andalucia/granada/armilla/tiendanimal-nevada-granada-49?utm_medium=maps&utm_source=google",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 231,
+      "displayName": {
+        "text": "Tiendanimal",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJZchks5L8cQ0RmPX_C1JNvqo",
+      "types": [
+        "pharmacy",
+        "veterinary_care",
+        "pet_care",
+        "medical_clinic",
+        "service",
+        "point_of_interest",
+        "health",
+        "store",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "958 29 65 29",
+      "internationalPhoneNumber": "+34 958 29 65 29",
+      "formattedAddress": "Cam. de Ronda, 148, Ronda, 18003 Granada",
+      "location": {
+        "latitude": 37.1783864,
+        "longitude": -3.6106377000000003
+      },
+      "rating": 3.9,
+      "googleMapsUri": "https://maps.google.com/?cid=12303356246806754712&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://evidensia.es/clinicas/evidensia-granada-centro-hospital-veterinario/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 1077,
+      "displayName": {
+        "text": "Evidensia Granada Centro Hospital Veterinario",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidados veterinarios",
+        "languageCode": "es"
+      },
+      "primaryType": "veterinary_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJhRx0tK_9cQ0RIludul3U2OU",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "627 84 07 75",
+      "internationalPhoneNumber": "+34 627 84 07 75",
+      "formattedAddress": "Calle Cañaveral, 26, Bajo A, Ronda, 18004 Granada",
+      "location": {
+        "latitude": 37.1792233,
+        "longitude": -3.613975
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=16562221128682920738&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 13,
+      "displayName": {
+        "text": "HUELLA&TIJERA",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJYddRJxzlcQ0RKJwKzWfgzug",
+      "types": [
+        "veterinary_care",
+        "pet_care",
+        "supplier",
+        "service",
+        "point_of_interest",
+        "store",
+        "food",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "660 92 84 71",
+      "internationalPhoneNumber": "+34 660 92 84 71",
+      "formattedAddress": "Av. Andalucía, 158, 18198 Huétor Vega, Granada",
+      "location": {
+        "latitude": 37.1514612,
+        "longitude": -3.5802483
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=16775592398427954216&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.facebook.com/Bobbykhanmacotas",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 111,
+      "displayName": {
+        "text": "Bobbykhan mascotas Centro veterinario, peluqueria, alimentacion y accesorios",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJX3tIAuX9cQ0ROmzgk00Lil4",
+      "types": [
+        "hair_salon",
+        "hair_care",
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "645 90 49 18",
+      "internationalPhoneNumber": "+34 645 90 49 18",
+      "formattedAddress": "Av. Reyes Católicos, 9, 18220 Albolote, Granada",
+      "location": {
+        "latitude": 37.2280361,
+        "longitude": -3.6546996999999997
+      },
+      "rating": 4.2,
+      "googleMapsUri": "https://maps.google.com/?cid=6812269814172642362&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 140,
+      "displayName": {
+        "text": "Peluquería Canina Guau Guau Guau",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJFe3Ig5v7cQ0RCVR1XXEv6w4",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "622 06 36 78",
+      "internationalPhoneNumber": "+34 622 06 36 78",
+      "formattedAddress": "Calle Álava, 1, 18100 Armilla, Granada",
+      "location": {
+        "latitude": 37.1426782,
+        "longitude": -3.6272295
+      },
+      "rating": 4.5,
+      "googleMapsUri": "https://maps.google.com/?cid=1075005100003775497&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://dogwell.es/la-pecera-de-pato-y-sara/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 59,
+      "displayName": {
+        "text": "La Pecera De Pato Y Sara",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJwQMy4hf9cQ0Rij7tTe3-ZBU",
+      "types": [
+        "pet_store",
+        "pet_care",
+        "point_of_interest",
+        "store",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "695 09 63 20",
+      "internationalPhoneNumber": "+34 695 09 63 20",
+      "formattedAddress": "C. Sta. Elena, 1, Local 3, 18200 Maracena, Granada",
+      "location": {
+        "latitude": 37.205527599999996,
+        "longitude": -3.6322946000000003
+      },
+      "rating": 4.7,
+      "googleMapsUri": "https://maps.google.com/?cid=1541637267635650186&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://g.co/kgs/QQhGmz",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 36,
+      "displayName": {
+        "text": "WOLF Peluquería canina y felina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Tienda de animales",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_store",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJo07vg-L8cQ0R6hW4svIMvGo",
+      "types": [
+        "pet_store",
+        "pet_care",
+        "supplier",
+        "point_of_interest",
+        "store",
+        "food",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "958 15 45 85",
+      "internationalPhoneNumber": "+34 958 15 45 85",
+      "formattedAddress": "Calle Prof. Francisco Dalmau, N°13, Local 41, Beiro, 18013 Granada",
+      "location": {
+        "latitude": 37.199388299999995,
+        "longitude": -3.6093480999999996
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=7691036500161992170&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://vitaminanimal.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 496,
+      "displayName": {
+        "text": "Vitamin Animal, S.L",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJ9XPLLAb9cQ0Rh6eIn8XvOxc",
+      "types": [
+        "pet_care",
+        "supplier",
+        "service",
+        "point_of_interest",
+        "store",
+        "food",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "657 59 58 87",
+      "internationalPhoneNumber": "+34 657 59 58 87",
+      "formattedAddress": "Calle ceuta esquina, P.º de Colón, L1, 18220 Albolote, Granada",
+      "location": {
+        "latitude": 37.232304,
+        "longitude": -3.6506977
+      },
+      "rating": 4.7,
+      "googleMapsUri": "https://maps.google.com/?cid=1674195318562400135&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.facebook.com/Albolote.Granada",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 55,
+      "displayName": {
+        "text": "ZARPITAS ALBOLOTE Tienda&Peluquería Canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJSegaTQgCbg0R5vJ8Dr2DdXg",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "958 49 38 56",
+      "internationalPhoneNumber": "+34 958 49 38 56",
+      "formattedAddress": "Avda. de la Yedra Nº5, Loma Verde, 18220 Albolote, Granada",
+      "location": {
+        "latitude": 37.2106887,
+        "longitude": -3.6337279999999996
+      },
+      "rating": 3,
+      "googleMapsUri": "https://maps.google.com/?cid=8679988704841626342&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 2,
+      "displayName": {
+        "text": "PELUQUERIA BOUTIQUE CANINA PyM FASHION PETS",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Granada"
+    },
+    {
+      "id": "ChIJJzj5m6zPEQ0Rf6V_QBfnCpw",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "614 70 13 68",
+      "internationalPhoneNumber": "+34 614 70 13 68",
+      "formattedAddress": "Av. Santa Marta, 41, 21005 Huelva",
+      "location": {
+        "latitude": 37.2779516,
+        "longitude": -6.936821800000001
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=11244053506736235903&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.instagram.com/puppylove.dg?igsh=MTRpdGhkMXhrbnkwNg==",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 82,
+      "displayName": {
+        "text": "Peluquería canina Puppy Love",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJ_bGYu0DREQ0R_8JSRa5TF8k",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "655 88 39 71",
+      "internationalPhoneNumber": "+34 655 88 39 71",
+      "formattedAddress": "Av. Adoratrices, 3, 21004 Huelva",
+      "location": {
+        "latitude": 37.2637095,
+        "longitude": -6.9433814
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=14490142334040326911&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 182,
+      "displayName": {
+        "text": "Ali Pintiado Estilista Canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJxT98PCbQEQ0Ra-Euu9D4Dgg",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "627 68 36 73",
+      "internationalPhoneNumber": "+34 627 68 36 73",
+      "formattedAddress": "C. Ginés Martín, 16, 18, 21002 Huelva",
+      "location": {
+        "latitude": 37.260509299999995,
+        "longitude": -6.9522223
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=580674977354670443&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://dogbarberhuelva.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 133,
+      "displayName": {
+        "text": "Peluquería canina en Huelva Dog Barber",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJGYPeuM7PEQ0RWhRhhv2NpEo",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "660 05 23 22",
+      "internationalPhoneNumber": "+34 660 05 23 22",
+      "formattedAddress": "C. Artesanos, 7, 21005 Huelva",
+      "location": {
+        "latitude": 37.2773058,
+        "longitude": -6.9377872
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=5378579975007966298&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://peloslocoshuelva.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 99,
+      "displayName": {
+        "text": "Pelos Locos Peluquería canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJ8xeKyTHREQ0RlKB-2Z771fg",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "653 27 77 21",
+      "internationalPhoneNumber": "+34 653 27 77 21",
+      "formattedAddress": "C. Cabezas Rubias, 3, 21007 Huelva",
+      "location": {
+        "latitude": 37.2643323,
+        "longitude": -6.9269884
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=17930514151117856916&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 42,
+      "displayName": {
+        "text": "Valira, peluquería y estética canina y felina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJgVYpAO7REQ0RM4jjDjqwGog",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "611 00 48 40",
+      "internationalPhoneNumber": "+34 611 00 48 40",
+      "formattedAddress": "C. Manuel Sánchez, 13, 21006 Huelva",
+      "location": {
+        "latitude": 37.2619853,
+        "longitude": -6.9366835
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=9807344901957060659&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://ivantomasgonzalez.wixsite.com/peluquer-a-canina-wa",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 73,
+      "displayName": {
+        "text": "Peluquería canina Huelva wauu",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJH2d3zb7REQ0RSgdXUmyZSWQ",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "640 77 84 07",
+      "internationalPhoneNumber": "+34 640 77 84 07",
+      "formattedAddress": "C. San Ramón, 1, 21006 Huelva",
+      "location": {
+        "latitude": 37.2608551,
+        "longitude": -6.9359626
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=7226475767609624394&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.facebook.com/Rose-style-peluquer%C3%ADa-y-est%C3%A9tica-canina-109816228251045/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 27,
+      "displayName": {
+        "text": "Rose Style Peluquería y estética canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJRwu-6R3REQ0RAKQI8PxJEFQ",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "660 60 05 67",
+      "internationalPhoneNumber": "+34 660 60 05 67",
+      "formattedAddress": "C. Conde López Muñoz, 6, 21006 Huelva",
+      "location": {
+        "latitude": 37.2589263,
+        "longitude": -6.9344788
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=6057422849521001472&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://www.facebook.com/DogLimpioHuelva/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 15,
+      "displayName": {
+        "text": "Peluquería canina Doglimpio",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJT_uo5V7PEQ0R_dVAIwPnIoY",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "630 32 19 88",
+      "internationalPhoneNumber": "+34 630 32 19 88",
+      "formattedAddress": "Urbanización nuevo parque, 21007 Huelva",
+      "location": {
+        "latitude": 37.2622612,
+        "longitude": -6.9228086
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=9665541750952875517&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 56,
+      "displayName": {
+        "text": "Kiandu y Uma la pelu canina del nuevo parque",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJiV7kwRzQEQ0Rg3TmxiDfenM",
+      "types": [
+        "hair_salon",
+        "hair_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "645 94 68 19",
+      "internationalPhoneNumber": "+34 645 94 68 19",
+      "formattedAddress": "C. Jesús de la Pasión, 3, 21004 Huelva",
+      "location": {
+        "latitude": 37.2601357,
+        "longitude": -6.949203499999999
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=8321208593389352067&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 128,
+      "displayName": {
+        "text": "Yolanda Algarra Peluquería en Huelva",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Peluquería",
+        "languageCode": "es"
+      },
+      "primaryType": "hair_salon",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJdxTkEdbNEQ0RNoj--v4HOQo",
+      "types": [
+        "pet_care",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "676 10 56 48",
+      "internationalPhoneNumber": "+34 676 10 56 48",
+      "formattedAddress": "Autovía 492 kilómetro 4,9, 21110 Aljaraque, Huelva",
+      "location": {
+        "latitude": 37.2816602,
+        "longitude": -7.030437999999999
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=736628805765859382&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://thorcanes.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 720,
+      "displayName": {
+        "text": "Thorcanes",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJiwJPa1bFEQ0RTU8-GUNfzzE",
+      "types": [
+        "pet_store",
+        "pet_care",
+        "supplier",
+        "food",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "959 89 95 59",
+      "internationalPhoneNumber": "+34 959 89 95 59",
+      "formattedAddress": "Ronda Exterior Zona Sur, s/n, 21007 Huelva",
+      "location": {
+        "latitude": 37.271180799999996,
+        "longitude": -6.918704399999999
+      },
+      "rating": 4.1,
+      "googleMapsUri": "https://maps.google.com/?cid=3589192169828536141&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://tiendas.tiendanimal.es/andalucia/huelva/huelva/tiendanimal-holea-huelva-34?utm_medium=maps&utm_source=google",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 1379,
+      "displayName": {
+        "text": "Tiendanimal",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJWbdbkijQEQ0RUx5202rxSrc",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "620 47 44 04",
+      "internationalPhoneNumber": "+34 620 47 44 04",
+      "formattedAddress": "Av. Alemania, 17, 21002 Huelva",
+      "location": {
+        "latitude": 37.2606276,
+        "longitude": -6.9542698
+      },
+      "rating": 4.4,
+      "googleMapsUri": "https://maps.google.com/?cid=13207634298333961811&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 33,
+      "displayName": {
+        "text": "Peluquería Canina Mister Can",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJRZjcxQbQEQ0Ro3PyRR6cZM4",
+      "types": [
+        "pet_store",
+        "pet_care",
+        "supplier",
+        "food",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "959 89 95 03",
+      "internationalPhoneNumber": "+34 959 89 95 03",
+      "formattedAddress": "P.C. Marismas del Polvorín, Av. del Nuevo Colombino, S/N, 21007 Huelva",
+      "location": {
+        "latitude": 37.2595167,
+        "longitude": -6.9246127
+      },
+      "rating": 4.2,
+      "googleMapsUri": "https://maps.google.com/?cid=14872183523320689571&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://tiendas.kiwoko.com/andalucia/huelva/huelva/kiwoko-huelva-marismas-del-polvorin-48?utm_medium=maps&utm_source=google",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 1949,
+      "displayName": {
+        "text": "Kiwoko. Mundo Animal",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Comercio",
+        "languageCode": "es"
+      },
+      "primaryType": "store",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJqTDBpOLREQ0ReIJcakiG1v0",
+      "types": [
+        "hair_salon",
+        "hair_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "659 26 90 74",
+      "internationalPhoneNumber": "+34 659 26 90 74",
+      "formattedAddress": "Av. de las Fuerzas Armadas, 10, 21007 Huelva",
+      "location": {
+        "latitude": 37.263573799999996,
+        "longitude": -6.925611099999999
+      },
+      "rating": 4.3,
+      "googleMapsUri": "https://maps.google.com/?cid=18290954582192063096&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 6,
+      "displayName": {
+        "text": "Peluqueria canina isi",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Peluquería",
+        "languageCode": "es"
+      },
+      "primaryType": "hair_salon",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJ2wME4S7QEQ0R2B4M2XEsrxM",
+      "types": [
+        "veterinary_care",
+        "hair_salon",
+        "grocery_store",
+        "pet_care",
+        "hair_care",
+        "food_store",
+        "food",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "959 24 95 80",
+      "internationalPhoneNumber": "+34 959 24 95 80",
+      "formattedAddress": "Av. Portugal, 6, 21001 Huelva",
+      "location": {
+        "latitude": 37.2571978,
+        "longitude": -6.9559961
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=1418401275129372376&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://www.cvfauna.es/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 618,
+      "displayName": {
+        "text": "CENTRO VETERINARIO FAUNA",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidados veterinarios",
+        "languageCode": "es"
+      },
+      "primaryType": "veterinary_care",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJwemroALQEQ0RHuWA8-9pAqo",
+      "types": [
+        "veterinary_care",
+        "pharmacy",
+        "pet_care",
+        "store",
+        "service",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "959 73 09 29",
+      "internationalPhoneNumber": "+34 959 73 09 29",
+      "formattedAddress": "Cam. del Saladillo, 3, 21007 Huelva",
+      "location": {
+        "latitude": 37.2649052,
+        "longitude": -6.9302775
+      },
+      "rating": 4.4,
+      "googleMapsUri": "https://maps.google.com/?cid=12250470415704581406&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://mtr.bio/animalvetx",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 1010,
+      "displayName": {
+        "text": "Veterinario 24 horas Animal-Vetx El Saladillo",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidados veterinarios",
+        "languageCode": "es"
+      },
+      "primaryType": "veterinary_care",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJ0cPHNiX-nRIRbiFC8CS5qrU",
+      "types": [
+        "pet_care",
+        "supplier",
+        "food",
+        "store",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "670 30 21 96",
+      "internationalPhoneNumber": "+34 670 30 21 96",
+      "formattedAddress": "C. Huelva, 6, 03710 Calpe, Alicante",
+      "location": {
+        "latitude": 38.6429908,
+        "longitude": 0.0480766
+      },
+      "rating": 4.6,
+      "googleMapsUri": "https://maps.google.com/?cid=13090478835206594926&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://misterdogcalpe.com/?utm_source=GMB&utm_medium=google-my-business&utm_campaign=Google+My+Business",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 236,
+      "displayName": {
+        "text": "Mr. Dog | Peluquería canina y tienda de animales",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJobUxdkLPEQ0Rt0fwJ3AEQ7E",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "638 40 82 40",
+      "internationalPhoneNumber": "+34 638 40 82 40",
+      "formattedAddress": "Urbanización Verdeluz, Plaza Sta. Raquel, 14, 21005 Huelva",
+      "location": {
+        "latitude": 37.271084099999996,
+        "longitude": -6.9335562
+      },
+      "rating": 5,
+      "googleMapsUri": "https://maps.google.com/?cid=12773057847905765303&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "http://del-cortijo.ueniweb.com/",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 38,
+      "displayName": {
+        "text": "Adiestramiento, psicología canina, peluquería, consulta veterinaria, alimentación.",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Servicios",
+        "languageCode": "es"
+      },
+      "primaryType": "service",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJqZ_sjj7REQ0RBLVsNvqisGM",
+      "types": [
+        "hair_salon",
+        "hair_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "633 18 78 08",
+      "internationalPhoneNumber": "+34 633 18 78 08",
+      "formattedAddress": "Pje. la Botica, 13, 21001 Huelva",
+      "location": {
+        "latitude": 37.2585454,
+        "longitude": -6.9540201999999995
+      },
+      "rating": 4.8,
+      "googleMapsUri": "https://maps.google.com/?cid=7183420601194558724&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://instagram.com/salonmarianak?igshid=YmMyMTA2M2Y=",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 179,
+      "displayName": {
+        "text": "Salón MARIANA .K",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Peluquería",
+        "languageCode": "es"
+      },
+      "primaryType": "hair_salon",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJdUPIIkJ9Ng0RzUwr_Kr9U6E",
+      "types": [
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "nationalPhoneNumber": "609 73 59 75",
+      "internationalPhoneNumber": "+34 609 73 59 75",
+      "formattedAddress": "C. Baleares, 7, Gijon-Sur, 33208 Gijón, Asturias",
+      "location": {
+        "latitude": 43.5293591,
+        "longitude": -5.672363799999999
+      },
+      "rating": 4.9,
+      "googleMapsUri": "https://maps.google.com/?cid=11624913973990345933&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://instagram.com/inmaallende?utm_medium=copy_link",
+      "businessStatus": "OPERATIONAL",
+      "userRatingCount": 119,
+      "displayName": {
+        "text": "Inma Allende Peluquería Canina",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidado de mascotas",
+        "languageCode": "es"
+      },
+      "primaryType": "pet_care",
+      "ciudadBusqueda": "Huelva"
+    },
+    {
+      "id": "ChIJX9RAC2jREQ0Rm176uzeqEpY",
+      "types": [
+        "veterinary_care",
+        "pet_boarding_service",
+        "pet_care",
+        "service",
+        "point_of_interest",
+        "establishment"
+      ],
+      "formattedAddress": "C. Jesús Nazareno, 19, 21001 Huelva",
+      "location": {
+        "latitude": 37.2567109,
+        "longitude": -6.954925599999999
+      },
+      "googleMapsUri": "https://maps.google.com/?cid=10813892811623653019&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+      "websiteUri": "https://petworld.webnode.es/",
+      "businessStatus": "OPERATIONAL",
+      "displayName": {
+        "text": "Pet World",
+        "languageCode": "es"
+      },
+      "primaryTypeDisplayName": {
+        "text": "Cuidados veterinarios",
+        "languageCode": "es"
+      },
+      "primaryType": "veterinary_care",
+      "ciudadBusqueda": "Huelva"
+    }
+  ]
+}

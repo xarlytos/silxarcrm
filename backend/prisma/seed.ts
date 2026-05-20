@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 
@@ -32,8 +33,15 @@ async function main() {
 
   // Create webhook configs for SaaS
   const saasConfigs = [
-    { saas: 'entrenadores', webhookSecret: 'whsec_test_entrenadores_secret_key_12345', endpointUrl: '/webhooks/entrenadores', descripcion: 'SaaS de Entrenadores Personales' },
-    { saas: 'nutricion', webhookSecret: 'whsec_test_nutricion_secret_key_12345', endpointUrl: '/webhooks/nutricion', descripcion: 'SaaS de Nutrición' },
+    { saas: 'atleevo', webhookSecret: 'whsec_atleevo_secret_key_2024', endpointUrl: '/webhooks/atleevo', descripcion: 'Atleevo - Software para Entrenadores Personales' },
+    { saas: 'atleevogym', webhookSecret: 'whsec_atleevogym_secret_key_2024', endpointUrl: '/webhooks/atleevogym', descripcion: 'Atleevo Gym - Software para Gimnasios' },
+    { saas: 'atleevoyoga', webhookSecret: 'whsec_atleevoyoga_secret_key_2024', endpointUrl: '/webhooks/atleevoyoga', descripcion: 'Atleevo Yoga - Software para Estudios de Yoga' },
+    { saas: 'atleevobox', webhookSecret: 'whsec_atleevobox_secret_key_2024', endpointUrl: '/webhooks/atleevobox', descripcion: 'Atleevo Box - Software para Gimnasios de Boxeo' },
+    { saas: 'agrogest', webhookSecret: 'whsec_agrogest_secret_key_2024', endpointUrl: '/webhooks/agrogest', descripcion: 'AgroGest - Software Agricola' },
+    { saas: 'prismadental', webhookSecret: 'whsec_prismadental_secret_key_2024', endpointUrl: '/webhooks/prismadental', descripcion: 'Prisma Dental - Software Dental' },
+    { saas: 'heliowatt', webhookSecret: 'whsec_heliowatt_secret_key_2024', endpointUrl: '/webhooks/heliowatt', descripcion: 'HelioWatt - Instaladoras Electricas de Placas Solares' },
+    { saas: 'comantek', webhookSecret: 'whsec_comantek_secret_key_2024', endpointUrl: '/webhooks/comantek', descripcion: 'CoMantek - Empresas de Mantenimiento' },
+    { saas: 'peluguau', webhookSecret: 'whsec_peluguau_secret_key_2024', endpointUrl: '/webhooks/peluguau', descripcion: 'PeluGuau - Software para Peluquerías Caninas' },
   ];
 
   for (const config of saasConfigs) {

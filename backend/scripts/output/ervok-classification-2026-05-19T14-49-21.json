@@ -1,0 +1,1082 @@
+{
+  "total": 50,
+  "ok": 48,
+  "fail": 2,
+  "results": [
+    {
+      "leadId": "cmpcqruw70000mgyn9jazl17e",
+      "nombre": "Clínica Dental Navarro Madrid - Dentistas - Implantes dentales",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de agenda con frecuentes ausencias de pacientes que generan huecos vacíos no recuperables",
+          "Administración fragmentada de historiales clínicos, presupuestos y consentimientos informados en papel o sistemas no integrados",
+          "Control deficiente de cobros a través de mutuas y aseguradoras con procesos de facturación repetitivos y errores frecuentes"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita por SMS/WhatsApp 48h antes con opción de reprogramar online",
+          "Gestión automatizada de presupuestos y seguimiento de acepta/no acepta con campañas de remarketing",
+          "Encuestas de satisfacción post-tratamiento automáticas y recordatorios de revisión anual programados"
+        ],
+        "personalizedPitch": "Con 897 reseñas y un 4.9 de rating vuestra clínica genera mucha demanda que se escapa por ausencias y mala gestión de agenda. Un software específico para clínicas dentales centralizaría citas, historiales y facturación en una sola plataforma con app de reserva online para pacientes, reduciendo ausencias un 40% y liberando tiempo administrativo. Además integraríamos cobros con mutuas y automatizaríamos marketing de revisión anual para fidelizar pacientes.",
+        "softwareType": "ERP sanitario + app móvil de paciente (gestión de citas, historia clínica digital, facturación mutuas, portal del paciente)",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqruys0001mgynpkf917tv",
+      "nombre": "CITADENTAL Orense",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión de agenda con múltiples doctores y especialidades sin solapamientos",
+          "Seguimiento de rappels de revisiones y tratamientos periódicos para fidelizar pacientes",
+          "Facturación compleja con múltiples seguros y mutuas sanitarias"
+        ],
+        "automationOpportunities": [
+          "Rappels automáticos de citas (SMS/WhatsApp/email) para reducir ausentismos",
+          "Encuestas de satisfacción post-tratamiento con captura automática de reseñas positivas",
+          "Seguimiento post-tratamiento automatizado con sequences de comunicación"
+        ],
+        "personalizedPitch": "Un software de gestión específico para clínicas dentales centraliza agenda, historiales clínicos y facturación en una sola plataforma. Automatiza rappels de citas y reduce ausentismos hasta un 30%. Integra facturación con seguros y mutuas para agilizar cobros. Genera reportes de ocupación por doctor y campaña de reseñas para mejorar tu visibilidad online.",
+        "softwareType": "PMS clínico dental (Patient Management System) con agenda inteligente, módulo de facturación seguros, automatización de rappels y CRM de paciente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqruzu0002mgynl8177s03",
+      "nombre": "Clínica ASISA Dental",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión de citas con alta tasa de cancelación y ausencias sin notificaciones previas",
+          "Seguimiento fragmentado del historial clínico y tratamientos entre profesionales",
+          "Saturación en agenda por falta de confirmación automática de citas",
+          "Dificultad para gestionar seguros y facturación con múltiples aseguradoras como ASISA",
+          "Falta de reclamexprácticas para fidelizar pacientes y recuperar abandonos"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita por SMS o WhatsApp con confirmación",
+          "Gestión integral de historias clínicas digitales con acceso compartido entre dentistas",
+          "Confirmación automática de citas y actualización de agenda en tiempo real",
+          "Generación automática de presupuestos y seguimiento de propuestas de tratamiento pendientes",
+          "Sistemas de satisfacción post-tratamiento y gestión de reseñas en Google"
+        ],
+        "personalizedPitch": "Con 1703 reseñas y alta demanda, tu clínica necesita reducir ausencias y optimizar la agenda. Un software a medida centralizará citas, automatizará recordatorios, gestionará todos los seguros (ASISA incluido) y permitirá seguimiento digital de tratamientos por paciente. Además, integrar un módulo de satisfacción post-consulta te ayudará a mantener tu rating de 4.7 y captar más pacientes nuevos sin coste adicional en marketing.",
+        "softwareType": "ERP clínico con módulo de agenda inteligente + app móvil de paciente + gestión de seguros médicos",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv0u0003mgyngus0uysn",
+      "nombre": "Clínica Dental Ruiz de Gopegui",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión de agenda con dobletes de citas y huecos no cubiertos",
+          "Seguimiento de pacientes con tratamientos incompletos o abandonos",
+          "Facturación compleja con múltiples mutuas y presupuestos",
+          "Falta de recordatorios automáticos que generan ausencias",
+          "Dificultad para medir rentabilidad por tratamiento y odontólogo"
+        ],
+        "automationOpportunities": [
+          "Recordatorios automáticos de citas por SMS y WhatsApp",
+          "Agenda inteligente con disponibilidad online 24h",
+          "Portal del paciente para consentimiento informado y presupuestos",
+          "Gestión automatizada de cobros con mutuas",
+          "Marketing de fidelización: cumpleaños, recordatorios de revisión semestral"
+        ],
+        "personalizedPitch": "Una clínica con 631 reseñas y 4.9 estrellas ya atrae pacientes, pero pierde oportunidades por la gestión manual de agenda y el seguimiento deficiente. Un software a medida unificará tu agenda, historial clínico, facturación de mutuas y comunicación con pacientes en una sola plataforma accesible desde cualquier dispositivo. Podrás reducir ausencias con recordatorios automatizados, aumentar ingresos con presupuestos digitales aceptados online y fidelizar pacientes con campañas personalizadas. Tu equipo dejará de trabajar con papeles y sistemas desconectados.",
+        "softwareType": "ERP médico especializado en clínica dental + app móvil para pacientes (agenda online, consentimiento informado, recordatorios)",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv1s0004mgyn2xysh336",
+      "nombre": "Clínica FL Dental | Madrid",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión de agenda con cancelaciones y huecos vacíos no optimizados",
+          "Seguimiento de presupuestos y tratamientos pendientes sin automatización",
+          "Comunicación manual con pacientes (recordatorios de citas, post-tratamiento)",
+          "Gestión de cobros, facturación y seguros con procesos administrativos lentos"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita y confirmación 24-48h antes",
+          "Generación y seguimiento automatizado de presupuestos por tratamiento",
+          "Campañas de fidelización para pacientes que necesitan revisiones periódicas",
+          "Notificaciones post-tratamiento y encuestas de satisfacción automáticas"
+        ],
+        "personalizedPitch": "Un sistema de gestión integral para clínica dental que centralice agenda, historial clínico, presupuestos y facturación en una sola plataforma. Automatiza recordatorios de citas para reducir no-shows, envía presupuestos con seguimiento automático para cerrar tratamientos pendientes, y activa campañas de revisión periódica que aumenten la recurrencia de pacientes. Con una valoración de 4.9⭐ y 80 reseñas, tu clínica ya demuestra calidad: el software a medida se encarga de que cada paciente perdido por desorganización se convierta en una oportunidad recuperada.",
+        "softwareType": "ERP clínico + portal paciente + automatización de comunicación",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv2p0005mgynhxu2lju0",
+      "nombre": "Clínica Dental González y Casado -Ortodoncia Invisible -Implantes Dentales -Blanqueamiento Dental -Carillas Dentales Madrid",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión fragmentada de citas con alta demanda que genera huecos vacíos y errores en la agenda",
+          "Seguimiento manual de tratamientos multietapa (ortodoncia, implantes, carillas) sin visibilidad clara del estado de cada paciente",
+          "Pérdida de pacientes entre visitas por falta de comunicación proactiva y ausencia de recordatorios automatizados",
+          "Facturación irregular con presupuestos orales, pagos fraccionados y gestión ineficiente de seguros",
+          "Reputación online difficile de gestionar con 314 reseñas sin estrategia de respuesta automatizada"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita por SMS/WhatsApp con confirmación online para reducir ausencias",
+          "Secuencia de nurturing post-tratamiento con citas de seguimiento programadas automáticamente (revisión trimestral, blanqueamiento anual)",
+          "Gestión automatizada de presupuestos con plazos de validez y recordatorios de decisión",
+          "Autoevaluación del tratamiento mediante portal paciente para seguimiento en casos de ortodoncia invisible"
+        ],
+        "personalizedPitch": "Una clínica con 314 reseñas y 4.9 estrellas tiene un activo de reputación que necesita protección y crecimiento. Proponemos un sistema de gestión clínica integral con agenda inteligente que reduzca huecos vacíos, automatice recordatorios y confirme citas online. Incorpora módulos de historial digital con consentimiento informado, gestión de presupuestos y pagos fraccionados, más un sistema de marketing post-visita que programa automáticamente revisiones y campañas de fidelización para tratamientos recurrentes como blanqueamiento y ortodoncia. Todo conectado a tu web para capturar y convertir nuevos pacientes.",
+        "softwareType": "Sistema de gestión clínica (SIS) + CRM de paciente + módulo de agenda inteligente + marketing automation",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv2r0006mgyn458pobs3",
+      "nombre": "Clínica dental Puerta de Toledo",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión de agenda y citas con alta tasa de ausencias sin recordatorios automatizados",
+          "Seguimiento y recuerda de tratamientos pendientes (revisiones, limpiezas, ortodoncia)",
+          "Gestión de historiales clínicos, presupuestos y consentimientos digitales",
+          "Control de inventario de material dental y gestión de proveedores",
+          "Fidelización de pacientes y gestión de reseñas online"
+        ],
+        "automationOpportunities": [
+          "Recordatorios automáticos por SMS o WhatsApp 24h antes de cada cita",
+          "Sistema de recall automático para revisiones periódicas y tratamientos en curso",
+          "Portal del paciente para solicitud de citas online, consulta de presupuestos y firmada digital de consentimientos",
+          "Gestión automatizada de inventario con alertas de stock mínimo",
+          "Envío automático de solicitud de reseñas Google post-tratamiento para aprovechar su rating de 5⭐"
+        ],
+        "personalizedPitch": "Con 611 reseñas de 5⭐, Clínica dental Puerta de Toledo tiene una reputación excelente que merece protección y crecimiento. Un software a medida centralizaría agenda, historial clínico, facturación y comunicación con el paciente en una sola plataforma, eliminando duplicidades y errores. Automatizar recordatorios de citas reduciría drásticamente ausencias, mientras que un sistema de recall inteligente reactivaría pacientes olvidados antes de que se pierda el tratamiento. Además, integrar la gestión de reseñas post-visita aprovecharía su mejor activo de marketing sin esfuerzo adicional.",
+        "softwareType": "ERP sanitario + app paciente + módulo de automatización de comunicación (SMS/WhatsApp) + sistema de recall",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv2r0007mgyn46gi28h3",
+      "nombre": "Clínica Dental Chamberí SDS | Dentista en Chamberí",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión de citas y recordatorios sin sistema automatizado (pacientes olvidan o no avisan con antelación, generando huecos vacíos en agenda)",
+          "Seguimiento del paciente y recuerdan de tratamientos pendientes (revascularizaciones, limpiezas, revisiones periódicas que se olvidan sin contacto proactivo)",
+          "Control de inventario y pedidos de material dental (stock disperso entre proveedores, desabastecimientos o excesos)",
+          "Gestión de campañas de marketing y retención de pacientes (clínica con 379 reseñas pero sin estrategia de fidelización post-tratamiento)"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios por SMS/email 48h antes de cada cita con opción de confirmar o reprogramar online",
+          "Sistema de recalls personalizados para tratamientos recurrentes (limpieza semestral, revisiones ortodóncicas, blanqueamientos)",
+          "Gestión inteligente de inventario dental con alertas de reposición y pedido automático a proveedores",
+          "CRM de pacientes con historial completo y segmentación para campañas de fidelización y nuevas unidades de negocio"
+        ],
+        "personalizedPitch": "Para una clínica con 379 reseñas y 4.9⭐, la prioridad es fidelizar y no perder pacientes por fallos en el seguimiento. Un software dental a medida centralizaría agenda, historial clínico, facturación e inventario en una plataforma con app de paciente para reservas online y recordatorios automáticos. Esto reduce cancelaciones de último minuto, mejora la experiencia del paciente y permite enviar recalls proactivos que incrementen la facturación recurrente por tratamientos periódicos.",
+        "softwareType": "ERP sanitario dental + app de paciente (agenda, CRM, historial, facturación, inventario)",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrv2r0008mgyn85xtogut",
+      "nombre": "I+Dent Clínica dental Madrid centro imasdent",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión de agenda y citas con múltiples profesionales sin solapamientos",
+          "Control de historial clínico, tratamientos y presupuestos por paciente",
+          "Gestión de cobros, seguros y facturación con múltiples mutuas",
+          "Comunicación y recordatorios de citas para reducir ausencias"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita por SMS/email",
+          "Gestión inteligente de agenda con disponibilidad en tiempo real",
+          "Generación automática de presupuestos, facturas y reclamaciones de seguros",
+          "Control de stock de materiales dentales con alertas de reposición"
+        ],
+        "personalizedPitch": "Un software a medida para tu clínica dental en Madrid que centralice agenda, historial clínico y facturación en una sola plataforma. Automatiza los recordatorios de citas para reducir ausencias y conecta con las mutuas para reclamar pagos automáticamente. Gestiona inventario de materiales y obtén informes de rentabilidad por tratamiento. Con una app móvil, tus dentistas acceden a la agenda y datos del paciente desde cualquier lugar.",
+        "softwareType": "ERP clínico + app móvil para gestión de clínica dental",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv2t0009mgynx2vt0eux",
+      "nombre": "Clínica Santamaría",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión de citas con huecos sin optimizar y pacientes que no acuden sin previo aviso",
+          "Seguimiento post-tratamiento y recordatorios de revisiones periódicas dependientes del personal administrativo",
+          "Control de facturación con mutuas y cobros a particulares, especialmente vencimientos y impagos"
+        ],
+        "automationOpportunities": [
+          "Recordatorios automáticos de citas por SMS/WhatsApp para reducir ausencias y optimizar agenda",
+          "Envío de presupuestos y seguimiento de acepta/rechaza tratamientos con gestión de pagos fraccionados"
+        ],
+        "personalizedPitch": "Clínica Santamaría necesita un software de gestión dental que centralice citas, historiales y facturación en una sola plataforma. Implementaríamos una agenda inteligente con alertas automáticas de citas perdidas y recordatorios de revisiones periódicas para fidelizar pacientes. La solución incluiría gestión de presupuestos digitales con seguimiento de aceptación y cobros, integrándose con su web para que los pacientes puedan reservar online y reducir carga administrativa.",
+        "softwareType": "software de gestión clínica dental + portal paciente con reservas online y automatización de comunicación",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv2t000amgync6hfn0gs",
+      "nombre": "Clínica dental medics Dr. Ferrer",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de agendas con conflictos de horarios y llamadas perdidas",
+          "Seguimiento fragmentado de tratamientos y historique de pacientes entre profesionales",
+          "Gestión de facturación con seguros, cobros y presupuestos sin trazabilidad centralizada",
+          "Recordatorios de citas y revisiones realizados por personal administrativo con baja tasa de confirmación"
+        ],
+        "automationOpportunities": [
+          "Agenda digital con recordatorios automáticos por SMS o WhatsApp y confirmación online",
+          "Historia clínica digitalizada con签署 de consentimiento y evolución de tratamientos por paciente",
+          "Sistema de presupuestos, facturación y gestión de cobros con control de estado de pago por tratamiento",
+          "Dashboard con métricas de ingresos, occupancy de agenda y pacientes activos por profesional"
+        ],
+        "personalizedPitch": "Con más de 1500 reseñas positivas, Clinicadental Dr. Ferrer necesita un software que gestione su agenda sin conflictos, digitalice las historias clínicas y permita facturar tratamientos con seguros de forma automatizada. Un sistema CRM sanitario con app de paciente reduciría las llamadas perdidas, enviaría recordatorios automáticos de citas y revisiones, y centralizaría todo en un solo panel para que el equipo dedique más tiempo a tratar pacientes y menos a tareas administrativas.",
+        "softwareType": "ERP sanitario con módulo de agenda, historia clínica digital, facturación y CRM de paciente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv2u000bmgynf148ww60",
+      "nombre": "Clínica Dental Madrid Sur | Vallecas",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con alta tasa de ausentismo y huecos en la agenda",
+          "Proceso lento de creación y seguimiento de presupuestos y planes de tratamiento",
+          "Dificultad para gestionar facturación con múltiples compañías de seguros"
+        ],
+        "automationOpportunities": [
+          "Sistema de citas online con recordatorios automáticos por SMS/email para reducir ausentismo",
+          "Portal del paciente para consulta de tratamientos, presupuestos y citas desde casa"
+        ],
+        "personalizedPitch": "Clínica Dental Madrid Sur necesita digitalizar su gestión de citas y reducir las ausencias de pacientes. Un software a medida con agenda online, recordatorios automáticos y portal del paciente les permitirá optimizar su agenda un 30% y mejorar la experiencia del paciente. La integración con seguros y la gestión digital de presupuestos reducirá el tiempo administrativo y mejorará el seguimiento de tratamientos.",
+        "softwareType": "ERP específico para clínica dental con módulo de citas online, historial clínico digital, gestión de seguros y portal del paciente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv2u000cmgynt2xbufkh",
+      "nombre": "CLÍNICA DENTAL MADRID",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas y citas perdidas sin recordatorios automáticos",
+          "Historial clínico disperso sin digitalización centralizada",
+          "Gestión de cobros y presupuestos sin seguimiento de acepta/rechaza",
+          "Falta de sistema de fidelización y comunicación con pacientes"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita por SMS/email",
+          "Digitalización de historial clínico con acceso rápido por paciente",
+          "Sistema de presupuestos y seguimiento de aceptación de tratamientos",
+          "Campañas de fidelización automáticas (promociones, recordatorios de revisión)"
+        ],
+        "personalizedPitch": "Software de gestión dental a medida para CLÍNICA DENTAL MADRID. Centraliza citas, historial clínico y facturación en una única plataforma. Automatiza recordatorios para reducir ausencias, digitaliza presupuestos para conocer aceptación y lanza campañas de fidelización para mantener a tus pacientes activos. Todo adaptado a tu clínica, sin complicaciones.",
+        "softwareType": "ERP sanitario + app de paciente + sistema de reservas",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv2y000dmgynxd7ge3b4",
+      "nombre": "Clínica Q-Dental",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con elevado absentismo de pacientes",
+          "Falta de sistema de recordando automático para revisiones y tratamientos pendientes",
+          "Gestión ineficiente de documentación clínica y paperwork de seguros"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita vía SMS/WhatsApp para reducir ausencias",
+          "Portal de paciente online para reserva y gestión de citas sin intervención del mostrador",
+          "Sistema de recalled automático para revisiones periódicas y tratamientos en curso",
+          "Digitalización completa de historiales clínicos con acceso seguro desde cualquier dispositivo"
+        ],
+        "personalizedPitch": "En Q-Dental, un software a medida centralizaría todas las citas, historiales y facturación en una única plataforma accesible desde consulta y sala de espera. Implementaríamos recordatorios automáticos y un portal de paciente para que reserven revisiones sin llamar, recortando ausencias y liberando recepción. El sistema generaría presupuestos detallados por tratamiento y gestionarían documentación de mutuas digitalmente. Todo eso se traduce en menos tiempo administrativo, más pacientes atendidos y una experiencia moderna que complementa vuestras 333 reseñas de 4.9 estrellas.",
+        "softwareType": "ERP + app móvil (gestión clínica + portal paciente)",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv2y000emgynqttk45id",
+      "nombre": "Clínica Dental Chamberí",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con sobrecitaciones y huecos sin optimizar",
+          "Seguimiento fragmentado de tratamientos y historial clínico en papel",
+          "Facturación compleja con múltiples mutuas y aseguradoras sin통합"
+        ],
+        "automationOpportunities": [
+          "Agenda inteligente con recordatorios automáticos SMS/WhatsApp",
+          "Recordatorios de revisión periódica y campañas de prevención",
+          "Facturación automatizada a mutuas y generación de presupuestos"
+        ],
+        "personalizedPitch": "Te proponemos un software de gestión dental a medida que centralice tu agenda, historial clínico y facturación en una sola plataforma. Automatiza recordatorios de citas para reducir ausencias, agiliza los cobros a mutuas y envía mensajes de seguimiento a tus pacientes. Mejora la ocupación de tus gabinetes y fideliza con una app de paciente para que reserve online y acceda a sus tratamientos.",
+        "softwareType": "software de gestión clínica dental + app de paciente + portal de reservas",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv2y000fmgyn5sheauze",
+      "nombre": "Clínica Dental David Madrid",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con cancelaciones y huecos vacíos no optimizados",
+          "Seguimiento fragmentado de historiales de pacientes y tratamientos",
+          "Procesos de facturación con seguros médicos lentos y propensos a errores",
+          "Comunicación ineficiente con pacientes para recordatorios y confirmaciones"
+        ],
+        "automationOpportunities": [
+          "Sistema de cita online con recordatorios automáticos por SMS/WhatsApp",
+          "Gestión integral de historiales clínicos digitales y presupuestos",
+          "Automatización de cobros y liquidación con aseguradoras",
+          "Control de inventario de materiales y reposición automática"
+        ],
+        "personalizedPitch": "Con tu clínica al 100% de ocupación y 5 estrellas, necesitas un software que maneje el volumen sin perder calidad. Un sistema de gestión dental a medida centralizará citas, historiales y facturación de seguros en una sola plataforma, eliminando errores y liberando tiempo para lo que importa: tratar pacientes. Incluye agenda online para reducir ausencias y dashboard con métricas reales de rentabilidad por tratamiento.",
+        "softwareType": "ERP dental + portal paciente (app/módulo web)",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrv2y000gmgynjlmo0wtx",
+      "nombre": "Madrid Dental Clinic",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con huecos sin optimizar y sobrecupos que generan ineficiencias",
+          "Seguimiento fragmentado de tratamientos y olvido de recordatorios post-visita",
+          "Facturación compleja con múltiples aseguradoras sin integración automatizada"
+        ],
+        "automationOpportunities": [
+          "Sistema de reservas online con confirmación y recordatorios SMS/email automáticos",
+          "Facturación inteligente con integración directa de aseguradoras médicas y generación automática de presupuestos"
+        ],
+        "personalizedPitch": "Madrid Dental Clinic necesita un software de gestión integral que centralice citas, historiales de pacientes y facturación con aseguradoras en una sola plataforma. Implementaríamos agenda inteligente con disponibilidad en tiempo real, recordatorios automáticos y portal del paciente para reducir ausencias y mejorar la experiencia. Esto liberará tiempo administrativo para que el equipo se enfoque en lo que importa: atender pacientes y mantener ese 4.9⭐.",
+        "softwareType": "ERP sanitario + app paciente + portal de citas online",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv2y000hmgynx9awg3h3",
+      "nombre": "Clinica Ciro",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con fallos de coordinación entre doctores y pacientes",
+          "Seguimiento fragmentado del historial clínico y tratamientos por paciente",
+          "Proceso de cobro y facturación poco eficiente, especialmente con múltiples aseguradoras"
+        ],
+        "automationOpportunities": [
+          "Sistema de citas online con recordatorios automáticos por SMS/WhatsApp para reducir ausencias",
+          "Gestión digital del historial clínico y consentimiento informado con acceso en tiempo real para el equipo",
+          "Facturación automatizada integrada con aseguradoras médicas y kontrol de cobros pendientes"
+        ],
+        "personalizedPitch": "Con 556 reseñas y un 4.8 de rating, Clinica Ciro tiene una base de pacientes sólida que necesita procesos a la altura. Un software a medida de gestión clínica centralizaría citas, historiales y facturación en una sola plataforma, eliminando duplicidades y errores. La automatización de recordatorios y confirmaciones reducirá ausencias y liberará tiempo del personal para dedicación al paciente. Además, el portal de paciente online permitirá solicitar citas, consultar tratamientos y recibir promociones, aumentando la fidelización y valor lifetime del cliente.",
+        "softwareType": "ERP clínico dental con app de paciente y módulo de facturación para aseguradoras",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv2y000imgynar4qwceg",
+      "nombre": "Clínica Dental Puerta de Alcalá Madrid",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión ineficiente de citas con altos índices de ausentismo y cancelaciones de última hora",
+          "Falta de recordatorios automáticos que provocaría olvidos de citas y revisiones periódicas",
+          "Dificultad para hacer seguimiento del historial de tratamientos y presupuestos pendientes de los pacientes",
+          "Procesos manuales de comunicación (llamadas, SMS) que consumen tiempo del personal administrativo"
+        ],
+        "automationOpportunities": [
+          "Sistema de cita online con confirmación y recordatorios automáticos por SMS/WhatsApp",
+          "Agenda digital inteligente con gestión de esperas y reprogramaciones automáticas",
+          "Recordatorios de revisiones periódicas y tratamientos pendientes según historial del paciente",
+          "Digitalización del historial clínico con acceso rápido desde cualquier dispositivo"
+        ],
+        "personalizedPitch": "Con una valoración de 4.9★ y 406 reseñas positivas, vuestra clínica ya demuestra excelencia en atención al paciente. Sin embargo, gestionar esa reputación con procesos manuales genera ineficiencias y pérdida de pacientes por citas olvidadas. Os proponemos un sistema de gestión dental integral con agenda digital, recordatorios automáticos y historial clínico digitalizado que reducirá significativamente los ausentismos y liberará tiempo de vuestro equipo para专注 en lo que mejor hacéis: cuidar la salud bucodental de vuestros pacientes.",
+        "softwareType": "ERP médico-dental con agenda online + app de gestión para clínica + portal de paciente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv3c000jmgyndoxhixi9",
+      "nombre": "CITADENTAL Bravo Murillo",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de agenda con alto volumen de citas (2460 reseñas implica alta demanda)",
+          "Pérdida de pacientes por falta de recordatorios y re-reservas de citas",
+          "Seguimiento fragmentado del historial clínico y tratamientos por paciente"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita 48h y 24h antes (SMS/WhatsApp)",
+          "Sistema de confirmación y reprogramación online para reducir ausentismos"
+        ],
+        "personalizedPitch": "Con 4.9⭐ y más de 2400 reseñas, Citadental Bravo Murillo ya tiene una base de pacientes sólida. Un sistema de gestión clínica con CRM integrado permitiría automatizar recordatorios de citas, gestionar el historial de tratamientos por paciente y enviar encuestas post-visita para mantener esa valoración. El portal de paciente reduciría llamadas al mostrador y mejoraría la experiencia de reserva. Te propongo un software a medida que centralice agenda, clínica y facturación en una única plataforma.",
+        "softwareType": "CRM sanitario + agenda digital + portal de paciente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv3c000kmgyn86xp9lwq",
+      "nombre": "Clínica Dental Madrid Río",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión de agenda con huecos vacíos por ausencias de pacientes y sobreasignación en horas punta",
+          "Seguimiento manual de historiales clínicos y tratamientos con historial fragmentado entre odontólogos",
+          "Facturación a seguros y terceros pagadores con errores frecuentes y retrasos en cobros",
+          "Fidelización post-tratamiento inexistente, perdiendo pacientes que no regresan a revisiones",
+          "Control de inventario de material sanitario con roturas de stock o exceso de compras"
+        ],
+        "automationOpportunities": [
+          "Recordatorios automáticos de cita por SMS y WhatsApp 48h y 24h antes para reducir ausencias",
+          "Gestión integral de agenda online con disponibilidad en tiempo real para el paciente",
+          "Facturación y presupuestos automatizados con integración a seguros dentales",
+          "Campañas de fidelización: recordatorios de revisión anual y promotions estacionales",
+          "Notificaciones de stock bajo para reposición automática de material"
+        ],
+        "personalizedPitch": "Clínica Dental Madrid Río necesita un sistema de gestión clínica centralizado que unifique agenda, historial de pacientes y facturación en una sola plataforma accesible desde cualquier dispositivo. Implementaríamos un portal de paciente con reservas online y recordatorios automáticos que reduzcan las ausencias y maximicen la ocupación de cada sillón. La plataforma integraría la facturación con seguros más común y permitiría enviar comunicaciones personalizadas post-tratamiento para fidelizar y aumentar el retorno de los 309 pacientes que ya confían en vosotros. Todo adaptado a flujos clínicos específicos como ortodoncia, implantología o periodoncia.",
+        "softwareType": "ERP clínico con app de paciente y módulo de agenda inteligente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv3c000lmgynalbcz360",
+      "nombre": "Clínica Dental Velazquez",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión de citas con alta tasa de huecos por no-shows y cancelaciones de última hora",
+          "Falta de sistematización en el seguimiento post-tratamiento y recordatorios de revisiones periódicas",
+          "Control manual de facturación, cobros pendientes y gestión de seguros médicos"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita por WhatsApp/SMS y confirmación con enlace de cancelación anticipada",
+          "Gestión integral de agenda con overlappings, bloqueo de citas y categorización por tipo de tratamiento y duración",
+          "Programa de fidelización automatizado: campañas de revisión semestral/anual y avisos de seguimiento post-tratamiento",
+          "Automatización de presupuestos y presupuestos"
+        ],
+        "personalizedPitch": "Un software a medida para Clínica Dental Velázquez centralizaría agenda, historiales clínicos, facturación y comunicación con pacientes en una sola plataforma. Incluye recordatorios automáticos por WhatsApp para reducir no-shows, gestión de seguros médicos para cobranzas ágiles y campañas de rappelle para revisiones periódicas que aumenten la retención. Todo accesible desde cualquier dispositivo, adaptado a tu flujo de trabajo y sin高昂 costes de licencias genéricas.",
+        "softwareType": "ERP sanitario especializado + módulo de agenda inteligente + comunicación automatizada",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv3p000mmgyn1tpdz2pm",
+      "nombre": "Clínica ASISA Dental",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de agendas con alta demanda de citas y recordatorios fallidos",
+          "Confusión entre pacientes de aseguradora (ASISA) y privados en facturación y cobros",
+          "Seguimiento deficiente de tratamientos y presupuestos por paciente",
+          "Falta de comunicación automatizada para confirmaciones y recordatorios"
+        ],
+        "automationOpportunities": [
+          "Agenda online 24/7 con recordatorios automáticos por SMS y email",
+          "Sistema de gestión clínica integral: historial digital, presupuestos y tratamientos",
+          "Módulo específico de gestión de aseguradoras y facturación diferenciada",
+          "Automatización de comunicados post-tratamiento y campañas de fidelización"
+        ],
+        "personalizedPitch": "Con más de 5000 reseñas positivas, gestionáis un volumen de pacientes considerable que requiere una solución profesional de agenda y gestión clínica. Nuestro software a medida para clínicas dentales integra agenda online, historial digital de pacientes, gestión de tratamientos y presupuestos, y un módulo específico para pacientes asegurados (ASISA) y privados. Además, automatiza recordatorios de citas y campañas de fidelización, reduciendo ausencias y aumentando la facturación recurrente.",
+        "softwareType": "Software de gestión clínica dental con agenda online, módulo aseguradoras y CRM de pacientes",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv4j000nmgyndt505hiw",
+      "nombre": "Clínica ASISA Dental",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con alta demanda de pacientes (4952 reseñas)",
+          "Coordinación de agendas de varios dentistas y especialidades",
+          "Seguimiento de tratamientos pendientes y revisiones periódicas",
+          "Recall de pacientes para revisiones y mantenimiento"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita por SMS o WhatsApp",
+          "Agenda online con confirmación automática de pacientes",
+          "Sistema de presupuestos digital y seguimiento de cobros",
+          "Campañas de reactivación de pacientes inactivos"
+        ],
+        "personalizedPitch": "Con 4952 reseñas positivas, ASISA Dental Madrid necesita un software que gestione su alto volumen de pacientes sin fricciones. Proponemos un sistema integral con agenda digital, historial clínico digitalizado y recordatorios automáticos que reducirá ausencias y mejorará la experiencia del paciente. Además, automatizaremos el recall de revisiones para fidelizar pacientes y aumentar ingresos recurrentes.",
+        "softwareType": "ERP clínico dental con módulo de agenda online, CRM de pacientes y automatización de comunicación",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv4k000omgync7jy3fy0",
+      "nombre": "CENTRO DENTAL LAVAPIÉS",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con alto volumen de pacientes导致 falta de citas perdidas o cancelaciones de última hora",
+          "Coordinación compleja con múltiples compañías de seguros (mutuas) y procesos de facturación manualmente exhaustivos",
+          "Seguimiento disperso del historial clínico y recordatorios de tratamientos pendientes sin sistema centralizado"
+        ],
+        "automationOpportunities": [
+          "Sistema de cita online con recordatorios automáticos SMS/email para reducir no-shows y optimizar ocupación de agenda",
+          "Gestión integrada de pacientes con mutuas:自 动化 de cobros, presupuestos y coberturas según seguro de cada paciente"
+        ],
+        "personalizedPitch": "Para una clínica con 500 reseñas y 4.8 estrellas como Centro Dental Lavapiés, un software a medida centralizaría todas las citas, histories clínicas y facturación con mutuas en una sola plataforma. Implementaríamos un portal de paciente para reservas online y recordatorios automáticos, reduciendo cancelaciones y optimizando tu agenda. Además, el sistema gérer automatiquement los presupuestos y cobros según cada compañía de seguro, elimin格式do errores manuales y acelerando el cobro.",
+        "softwareType": "ERP sanitario + app de paciente + portal de citas online",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv4m000pmgyn5lanofvn",
+      "nombre": "Clínica Sanzmar | Clínica Dental en Madrid",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clinica dental",
+        "painPoints": [
+          "Gestión manual de agendas con frecuentes cancelaciones y huecos vacíos por falta de confirmación de citas",
+          "Seguimiento fragmentado del historial clínico y presupuestos por paciente, dificultando el control de tratamientos pendientes",
+          "Comunicación ineficiente con pacientes para recordatorios, promociones y campañas de captación en Madrid"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de citas por SMS y WhatsApp con confirmación de asistencia",
+          "Sistema de confirmación y reprogramación online de citas 24h",
+          "Campañas automatizadas de recall para revisiones periódicas y tratamientos pendientes"
+        ],
+        "personalizedPitch": "En Clínica Sanzmar, cada cita perdida es un hueco en la agenda y cada paciente sin seguimiento es un tratamiento que no se completa. Proponemos un software de gestión dental integral que automatiza recordatorios, centraliza historiales clínicos digitales y facilita la confirmación de citas online. Esto reduce ausencias, mejora la ocupación de agenda y fortalece la relación con tus pacientes en Madrid.",
+        "softwareType": "Sistema de gestión para clínica dental con módulo de citas online, historial clínico digital, gestión de presupuestos y facturación, comunicación automatizada con pacientes",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv4m000qmgyn1zs8du6q",
+      "nombre": "Clínica ASISA Dental HLA Moncloa",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión de agenda y citas con alto volumen de pacientes (1036+ reseñas)",
+          "Coordinación con seguros médicos (ASISA/HLA) y facturación complex",
+          "Recall y seguimiento de pacientes para revisiones y tratamientos pendientes"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita (SMS/email) 24-48h antes",
+          "Sistema de recall automático para revisiones periódicas y tratamientos en curso",
+          "Confirmación y reagendado online de citas sin intervención telefónica"
+        ],
+        "personalizedPitch": "Con más de 1000 pacientes satisfechos y un rating de 4.8 estrellas, vuestra clínica necesita un sistema que gestione el alto volumen de citas sin perder calidad en el servicio. Un software a medida para clínicas dentales integraría agenda inteligente, historial clínico digitalizado y conexión directa con los sistemas de ASISA para automatizar presupuestos y facturación. Además, los recordatorios automáticos reducirán las ausencias y el recall de pacientes garantizará que nadie se quede sin su revisión periódica.",
+        "softwareType": "Sistema de gestión clínica (SaaS a medida) con módulo de agenda, historial electrónico, facturación seguros y automatizaciones de comunicación",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv4m000rmgynwphtvm1n",
+      "nombre": "Clínica Dental We",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con huecos libres por ausencias y cancelaciones no cubiertas",
+          "Administración pesada de historiales clínicos en papel o sistemas fragmentados sin integración",
+          "Proceso de facturación y gestión de mutuas/seguros dentales lento y propenso a errores",
+          "Comunicación reactiva con pacientes (recordatorios manuales, sin canales digitales)",
+          "Control de inventario de materiales dentales sin visibilidad en tiempo real"
+        ],
+        "automationOpportunities": [
+          "Agenda inteligente con disponibilidad online 24/7 y recordatorios automáticos por SMS/WhatsApp para reducir ausencias",
+          "Portal del paciente para consulta de tratamientos, presupuestos y documentación clínica",
+          "Gestión automatizada de facturación de mutuas con reclamaciones digitalizadas",
+          "Sistema de alerta de stock de materiales con pedidos automáticos a proveedores"
+        ],
+        "personalizedPitch": "Clínica Dental We, con una reputación excelente de 4.8⭐ en Madrid centro, necesita dejar atrás los procesos manuales quelimit su crecimiento. Proponemos un software a medida que integre agenda online, historiales clínicos digitales y gestión de mutuas en una sola plataforma. Automatizarás recordatorios de cita, reducirás ausencias y ganarás visibilidad sobre tu facturación y stock. Tu equipo se centrará en tratar pacientes, no en paperwork.",
+        "softwareType": "ERP sanitario + app de gestión de citas + portal del paciente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv4q000smgynkuk0c05p",
+      "nombre": "Clínica Dental SCH Madrid",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con elevado absentismo de pacientes",
+          "Historia clínica y documentación de tratamientos dispersa o en papel",
+          "Control de cobros, facturación y gestión de seguros/mutuas poco eficiente"
+        ],
+        "automationOpportunities": [
+          "Agenda digital con recordatorios automáticos por SMS o WhatsApp para reducir no-shows",
+          "Flujo de facturación y presupuestos automatizado con integración de seguros médicos"
+        ],
+        "personalizedPitch": "Para una clínica con 4.9⭐ como SCH Madrid, cada cita perdida es oportunidad desperdiciada. Un software de gestión dental a medida centralizaría agenda, historia clínica digital y facturación en una sola plataforma, con recordatorios automáticos que mantienen tu agenda llena y tu rating intacto. Olvídate del papeleo y enfócate en lo que importa: cuidar a tus pacientes.",
+        "softwareType": "ERP sanitario + app de paciente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv4q000tmgynbvhy3qzz",
+      "nombre": "Clínica Dental Arce - Dentista en Madrid - Distrito Latina",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de agendas con ausencias y cancelaciones que generan huecos vacíos en la agenda",
+          "Seguimiento fragmentado del historial de tratamientos y presupuestos por paciente",
+          "Coordinación ineficaz con compañías de seguros dentales (DEAKO, Adeslas, Sanitas) que retrasa facturación"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita por SMS y WhatsApp 48h antes",
+          "Confirmación y reagendado digital de citas con integración a agenda médica"
+        ],
+        "personalizedPitch": "Con 435 reseñas y 4.9⭐, Clínica Dental Arce tiene una reputación excelente que debe convertirse en fidelización. Un software a medida de gestión clínica con agenda digital, historial digitalizado y comunicación automatizada por WhatsApp reduciría ausencias, aceleraría la facturación con seguros y liberaría tiempo del equipo para dedicación al paciente. El objetivo: mantener la calidad de atención mientras se escala la agenda sin perder control.",
+        "softwareType": "ERP sanitario + app de paciente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv4q000umgynsgkrenn4",
+      "nombre": "Clínica Dental Centro Premoden",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas y agenda que genera huecos vacíos y overlappings",
+          "Seguimiento disperso de historiales de pacientes y tratamientos entre dentistas",
+          "Control deficiente de cobros, presupuestos y facturación con aseguradoras"
+        ],
+        "automationOpportunities": [
+          "Sistema de recordatorios automáticos de citas por SMS/WhatsApp para reducir ausencias",
+          "Agenda digital compartida con disponibilidad en tiempo real y gestión de colas"
+        ],
+        "personalizedPitch": "Un software a medida para tu clínica central en Salamanca integraría agenda inteligente, historial digital unificado y gestión de cobros en una sola plataforma. Podrías automatizar recordatorios de citas para reducir ausencias y ofrecer a tus pacientes reservas online 24h. El sistema conectaría con tu web actual y se adaptaría a tu flujo de trabajo específico como clínica dental.",
+        "softwareType": "ERP clínico + plataforma de citas online + CRM de pacientes",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrv50000vmgynyo3lj7ap",
+      "nombre": "Clinica Dental Vallecas SL",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de agenda y citas con ausencias frecuentes de pacientes",
+          "Historias clínicas y consentimientos informados en papel o sistemas inconexos",
+          "Facturación y cobros poco sistematizados (seguro médico + particulares)",
+          "Pérdida de pacientes por falta de seguimiento post-tratamiento y comunicación proactiva"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita por SMS/WhatsApp para reducir no-shows",
+          "Gestión digital de agenda con disponibilidad online 24/7 para reservas de pacientes",
+          "Flujo automatizado de presupuestos y consentimientos informados por vía digital",
+          "Campañas de recuerdo de revisiones periódicas y tratamiento pendientes"
+        ],
+        "personalizedPitch": "Un sistema de gestión clínica a medida centralizaría agenda, historia clínica y facturación en una sola plataforma accesible desde cualquier dispositivo. Automatizarías recordatorios de cita para reducir ausencias y enviarías presupuestos digitales firmables online. El paciente moderno espera gestionar su cita desde el móvil y recibir recordatorios automáticos; sin esa herramienta estás perdiendo ingresos por citas perdidas y pacientes que no vuelven. El software se integra con tu sistema de gestión actual y se personaliza con los flujos específicos de tu clínica.",
+        "softwareType": "ERP clínico + app de paciente (portal reservas online, agenda inteligente, historial digital, facturación, recordatorios automatizados y marketing de reconexión)",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv50000wmgynl2h4zgli",
+      "nombre": "Clínica dental Bernabéu",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con frecuentes cancelaciones y huecos vacíos en agenda",
+          "Seguimiento deficiente de tratamientos pendientes y recalls de pacientes",
+          "Complejidad en la gestión de facturación con mutuas y pagos particulares",
+          "Falta de comunicación proactiva con pacientes (recordatorios, confirmaciones)"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita por SMS/WhatsApp 24h antes",
+          "Sistema de recalls automáticos para revisiones y tratamientos pendientes",
+          "Gestión integral de facturación de mutuas con importación de presupuestos y cobros",
+          "Portal del paciente para autogestión de citas online"
+        ],
+        "personalizedPitch": "Con 435 reseñas y una valoración de 4.6 estrellas, ClinicadentalBernabéu tiene una base de pacientes sólida que necesita una gestión más eficiente. Un software a medida para clínicas dentales permitiría centralizar citas, historiales clínicos y facturación en una sola plataforma, reduciendo abandonado de agenda y mejorando la comunicación con pacientes. Implementaríamos un sistema de rappels automáticos para tratamientos pendientes y un portal de reservas online que libere a tu equipo administrativo de llamadas repetitivas, permitiéndoles enfocarse en la experiencia del paciente.",
+        "softwareType": "ERP clínico + app móvil + portal del paciente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv50000xmgynuh0msawj",
+      "nombre": "Clínica Dental Madrid 23 - Dr. Buceta García",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con llamadas telefonicas que consumen tiempo del personal",
+          "Control deficiente de cobros a pacientes y seguros médicos",
+          "Falta de recordatorios automáticos provocando ausencias y huecos en la agenda"
+        ],
+        "automationOpportunities": [
+          "Agenda digital con reserva online y recordatorios automáticos por SMS",
+          "Sistema de facturación integrado para gestionar seguros y cobros parciales",
+          "Portal de paciente para acceder a historial y pagar tratamientos desde el móvil"
+        ],
+        "personalizedPitch": "Con una agenda digital conectada al móvil de tu clínica, los pacientes reservan y pagan sus citas mientras tú te olvidas de llamadas y ausencias. Un programa de gestión dental a medida permite llevar historiales clínicos digitalizados, gestionar cobros de seguros automáticamente y enviar recordatorios de revisión que fidelizan pacientes. Todo en una única plataforma que sustituye los Excel y papeles que te roban tiempo cada día.",
+        "softwareType": "ERP sector salud + app móvil de paciente",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrv50000ymgyneu89cshb",
+      "nombre": "Institutos Odontológicos - Clínica Dental Madrid Atocha",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión de citas con alta tasa de abandono (no-shows) por falta de recordatorios automatizados",
+          "Seguimiento post-tratamiento y control de recalls para tratamientos periódicos (ortodoncia, implantología, revisiones)",
+          "Gestión de cobros con seguros dentales y facturación diferenciada por tratamiento",
+          "Control de inventario de materiales clínicos y gestión de pedidos a proveedores"
+        ],
+        "automationOpportunities": [
+          "Sistema automático de recordatorios de cita por SMS/WhatsApp con confirmación y reasignación",
+          "CRM de paciente con historial clínico digital, plan de tratamiento y recalls automatizados por especialidad",
+          "Gestión de cobros y facturación con integración de seguros dentales y pagos fraccionados",
+          "Portal del paciente con acceso a presupuestos, facturas y agenda online"
+        ],
+        "personalizedPitch": "Con 388 reseñas y una calificación de 4.5⭐, Institutos Odontológicos Atocha necesita un sistema que reduzca los huecos en agenda y fidelice pacientes. Proponemos un software a medida que centralice citas, recalls automáticos por tipo de tratamiento y facturación con seguros, tutto en una plataforma única accesible desde clínica y para el paciente online. Esto reduce ausencias, mejora el control económico y aumenta la fidelidad del paciente sin depender de soluciones genéricas que no se adaptan a la casuística dental.",
+        "softwareType": "ERP sanitario + portal paciente + módulo de cobros con seguros",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrv50000zmgynqt1h1g7j",
+      "nombre": "Clinica Delidental Madrid",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de agendas con solapamientos y citas perdidas que generan huecos vacíos en la facturación",
+          "Historiales de pacientes dispersos entre papel y archivos digitales sin unificados, dificultando el seguimiento de tratamientos",
+          "Comunicación reactiva con pacientes: sin recordatorios automáticos de citas ni seguimiento post-tratamiento",
+          "Presupuestos y consentimientos informados en papel, lentos de gestionar y difíciles de archivar"
+        ],
+        "automationOpportunities": [
+          "Agenda digital con recordatorios automáticos por SMS/WhatsApp que reducen un 30-40% las ausencias",
+          "Portal del paciente para aceptación online de presupuestos y consentimiento informado digital",
+          "Sistema de recall automático para revisiones periódicas y tratamientos pendientes",
+          "Facturación automatizada con integración de seguros médicos y gestión de pagos fraccionados"
+        ],
+        "personalizedPitch": "En Clinica Delidental necesitáis un software de gestión dental que centralice agenda, historiales clínicos y facturación en una sola plataforma. Implementaríamos una agenda inteligente con recordatorios automáticos que minimicen ausencias y un portal paciente para que acepten presupuestos y consentimientos desde el móvil. Todo integrado para que cada equipo acceda al historial completo del paciente en consulta y podáis aumentar ingresos mientras reducís tiempo administrativo.",
+        "softwareType": "ERP clínico-dental con módulos de agenda digital, historial clínico digital, portal paciente y facturación integrada con seguros médicos",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv520010mgynbyuxye8g",
+      "nombre": "Clínica Dental en Madrid | Dentistas | BordonClinic",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con llamadas telefónicas que generan ausencias y errores en la agenda",
+          "Facturación compleja con múltiples aseguradoras médicas y procesos manuales de cobro",
+          "Dificultad para fidelizar pacientes y gestionar campañas de recall para revisiones periódicas",
+          "Cumplimiento normativo en el almacenamiento de historiales clínicos y protección de datos de salud"
+        ],
+        "automationOpportunities": [
+          "Sistema de citas online con recordatorios automáticos por SMS y WhatsApp para reducir ausencias",
+          "Gestión digital de historiales clínicos con acceso rápido desde cualquier punto de la clínica",
+          "Facturación automática con aseguradoras y generación de presupuestos detallados para pacientes",
+          "Portal del paciente para solicitar citas, consultar historial y recibir recordatorios personalizados"
+        ],
+        "personalizedPitch": "En BordonClinic, con 263 reseñas y una excelente valoración de 4.8⭐, vuestros pacientes esperan una experiencia moderna. Un software a medida para clínicas dentales automatizaría la agenda, enviaría recordatorios automáticos para reducir ausencias, gestionaría la facturación con aseguradoras médicas y ofrecería un portal donde los pacientes reserven citas online. Así liberáis tiempo administrativo y mejoráis la fidelización con campañas de recall para revisiones periódicas.",
+        "softwareType": "ERP específico para clínicas dentales + app móvil para pacientes + agenda digital con automatización de recordatorios",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv5f0011mgynnxpkiwkq",
+      "nombre": "Delicias Clínica Dental",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con huecos y sobrecitaciones que generan ineficiencias",
+          "Seguimiento fragmentado de tratamientos y recordatorios a pacientes por métodos manuales",
+          "Control de facturación, seguros de salud y cobros sin sistema integrado",
+          "Gestión de inventario de materiales y medicamentos sin visibilidad en tiempo real"
+        ],
+        "automationOpportunities": [
+          "Sistema de recordatorios automáticos de citas por SMS/WhatsApp para reducir ausencias",
+          "Agenda online 24/7 con preconfirmación y gestión automática de cancelaciones",
+          "Facturación automatizada con generación de presupuestos y seguimiento de cobros",
+          "Comunicación post-tratamiento automatizada para fidelización y derivaciones"
+        ],
+        "personalizedPitch": "Para Delicias Clínica Dental, un software a medida integraría agenda inteligente con recordatorios automáticos que reduzcan las 89 reseñas positivas desperdiciadas por citas perdidas. Un sistema de gestión de pacientes con historial digital, presupuestos automatizados y control de cobros eliminaría la carga administrativa del equipo. La plataforma incluiría módulo de inventario para control de materiales yemail marketing automatizado para aprovechar las derivaciones de pacientes satisfechos. Todo esto en una app móvil para gestionar la clínica desde cualquier lugar.",
+        "softwareType": "ERP + app móvil para gestión integral de clínica dental con CRM, agenda inteligente, facturación y automatización de comunicación",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv5f0012mgynb501nhns",
+      "nombre": "Clínica ArtDental Madrid. Dra. Arancha Broncano",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de agenda con huecos vacíos por cancelaciones de última hora y solapamientos entre doctores",
+          "Proceso tedioso de facturación con múltiples compañías de seguros médicos y gestión de presupuestos",
+          "Falta de sistema centralizado para historias clínicas digitales, presupuestos y seguimiento de tratamientos por paciente",
+          "Comunicación ineficiente con pacientes: recordatorios manuales de citas y ausencia de seguimiento post-tratamiento"
+        ],
+        "automationOpportunities": [
+          "Agenda online con disponibilidad en tiempo real que reduce huecos vacíos y double-bookings mediante automatización",
+          "Recordatorios automáticos de citas por SMS/WhatsApp con link de confirmación/cancelación para reducir ausentismos",
+          "Digitalización de historias clínicas y presupuestos con portal del paciente para acceso 24/7 a su información",
+          "Gestión automatizada de facturación con seguros: integración con principales aseguradoras para validar coberturas y subir documentos"
+        ],
+        "personalizedPitch": "Con 204 reseñas y un 4.9⭐, tu clínica tiene una reputación excelente que merece una gestión interna a la altura. Un software a medida para ArtDental automatizaría tu agenda, enviaría recordatorios inteligentes a pacientes, digitalizaría todas las historias clínicas y simplificaría la facturación con seguros. El resultado: menos hueco vacíos, más pacientes satisfechos y un equipo sin el estrés de tareas administrativas repetitivas.",
+        "softwareType": "ERP específico para clínicas dentales con módulo de agenda inteligente, gestión de pacientes, historia clínica digital, facturación de seguros y portal del paciente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv5g0013mgynd1ydc9e2",
+      "nombre": "CLÍNICA DENTAL DR.OTERO SENÍN",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión de agenda con alta demanda de citas por su excelente reputación (5⭐)",
+          "Administración de seguros dentales y facturación a terceros",
+          "Comunicación y fidelización de base de pacientes en crecimiento",
+          "Control de stock de materiales y gestión de inventario clínico"
+        ],
+        "automationOpportunities": [
+          "Sistema de recordatorios automáticos de citas por SMS/WhatsApp para reducir ausencias",
+          "Agenda inteligente con reserva online que optimice huecos y reduzca tiempos muertos",
+          "Gestión automatizada de presupuestos y consentimientos informados",
+          "Portal del paciente para solicitud de citas, historial y seguimiento post-tratamiento"
+        ],
+        "personalizedPitch": "Con 426 reseñas de 5 estrellas, tu clínica tiene una base de pacientes sólida que merece una gestión a la altura. Proponemos un software a medida que centralice agenda, historia clínica digital y gestión de seguros dentales, con agenda online para que tus pacientes reserven 24/7 y recordatorios automáticos que reduzcan ausencias. Además, podrás fidelizar mejor con campañas automatizadas de revisión y seguimiento post-tratamiento, todo desde un panel único de gestión.",
+        "softwareType": "CRM clínico + agenda inteligente con portal de paciente y gestión de seguros",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv5j0014mgynnt99l5fl",
+      "nombre": "Setenta Clínica Dental",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas y agenda que genera huecos vacíos y sobrelazar",
+          "Seguimiento deficiente del historial clínico y tratamientos pendientes por paciente",
+          "Pérdida de ingresos por ausencias a citas al no tener recordatorios automáticos"
+        ],
+        "automationOpportunities": [
+          "Sistema de cita online con recordatorios automáticos por SMS/email 24h antes",
+          "Software de gestión de clínica que centralice agenda, historias clínicas, facturación de seguros y presupuestos",
+          "Automatización del seguimiento post-tratamiento y campañas de recuerdo para revisiones periódicas"
+        ],
+        "personalizedPitch": "Setenta Clínica Dental necesita un sistema de gestión integral que centralice citas, historiales clínicos y facturación en una sola plataforma. Con nuestro software a medida podrás reducir ausencias mediante recordatorios automáticos, enviar presupuestos digitalizados y gestionar cobros a seguros de forma ágil. Todo esto se traduce en menos tiempo administrative y más pacientes atendidos con rentabilidad.",
+        "softwareType": "ERP para clínica dental + app móvil de gestión de citas",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrv5j0015mgynwgbutqqu",
+      "nombre": "Core Centro Dental",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión ineficiente de citas con elevado absentismo y falta de confirmación automática",
+          "Seguimiento fragmentado del historial clínico y presupuestos por paciente",
+          "Comunicación manual con pacientes para recordatorios, revisiones y promociones"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita por WhatsApp/SMS 24-48h antes",
+          "Confirmación y reprogramación online de citas desde móvil del paciente",
+          "Campañas automatizadas de recuerdo de revisiones dentales periódicas (6-12 meses)"
+        ],
+        "personalizedPitch": "Un software de gestión dental a medida centralizaría tus citas, historial clínico y facturación en una sola plataforma accesible desde cualquier dispositivo. Implementaríamos un sistema de recordatorios automáticos vía WhatsApp que reduciría significativamente tus no-shows. Además, incluiríamos un portal de paciente para confirmar citas y acceder a sus presupuestos, mejorando su experiencia y la ocupación de tu agenda.",
+        "softwareType": "ERP clínico + app móvil para pacientes",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv5o0016mgyncbg8vk2a",
+      "nombre": "Dental del Parque de Atenas",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con solapamientos o huecos en la agenda que reducen la ocupación real de los profesionales",
+          "Falta de sistema de recordatorio automatizado: las ausencias no justificadas generan pérdida de facturación directa",
+          "Control disperso de historiales clínicos, presupuestos y tratamientos pendientes sin centralización digital",
+          "Seguimiento reactivo de revisiones y tratamientos pendientes en lugar de proactivo con los pacientes"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios por SMS o WhatsApp 24h antes de la cita con opción de confirmar, reprogramar o cancelar",
+          "Gestión de campañas de recall periódicas para revisiones semestrales y anuales personalizadas por paciente",
+          "Automatización de presupuestos y consentimientos informados digitales previo a la cita",
+          "Dashboard en tiempo real con ocupación, facturación mensual y tasa de asistencia por profesional"
+        ],
+        "personalizedPitch": "Dental del Parque de Atenas tiene una reputación excelente (4.9⭐ con 128 reseñas), pero ese nivel de servicio se puede ver comprometido si la gestión detrás no escala. Un software a medida para clínica dental centralizaría agenda, historial clínico, facturación y comunicación con el paciente en una sola plataforma, eliminando errores de doble entrada y la dependencia de herramientas genéricas. La clave está en automatizar los recordatorios y el recall proactivo: cada cita perdida sin aviso es facturación que no se recupera. Te propongo una plataforma con agenda inteligente, portal del paciente y panel de control para que el equipo se centre en tratar, no en gestionar.",
+        "softwareType": "ERP sanitario dental con CRM de paciente, agenda inteligente y portal de comunicación integrado",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv5p0017mgyn4vn6grsu",
+      "nombre": "Clínica Odontológica de la Universidad Europea de Madrid",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de agendas y citas con alta tasa de ausencias sin recordatorios automatizados",
+          "Fragmentación entre historial clínico, facturación y gestión de inventario de materiales",
+          "Baja puntuación online (3.7⭐) sugiere problemas de comunicación o experiencia de paciente"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita 24h antes por SMS/WhatsApp con confirmación",
+          "Sistema online de reservas y reprogramación para reducir llamadas telefónicas"
+        ],
+        "personalizedPitch": "Un software de gestión dental que centralice agenda, historial clínico y facturación resolvería su problema de fragmentación. Implementaríamos recordatorios automáticos para reducir ausencias y mejorar su rating online. Al estar ligada a la Universidad Europea, el sistema escalará fácilmente conforme crezca el volumen de pacientes, integrándose con herramientas que ya utilicen.",
+        "softwareType": "ERP médico-dental con módulo de citas online y app de comunicación con pacientes",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrv5p0018mgynaulqcuih",
+      "nombre": "Clínica Dental Castelo",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con frecuentes huecos vacíos y sobresaltos de última hora",
+          "Falta de recordatorios automáticos provocando ausencias de pacientes",
+          "Historiales clínicos en papel o sistemas fragmentados sin visión unificada del paciente",
+          "Comunicación reactiva con pacientes (llamadas, WhatsApp no estructurado)",
+          "Dificultad para fidelizar y activar reappointments post-tratamiento"
+        ],
+        "automationOpportunities": [
+          "Reservas online 24/7 con calendario sincronizado para evitar solapamientos",
+          "SMS/email automáticos de recordatorio de cita 48h y 24h antes",
+          "Portal del paciente para acceder a presupuestos, consents informados y plan de tratamiento",
+          "Sistema de recapacitación automatizada post-tratamiento (check-ups, revisiones periódicas)",
+          "Gestión de agenda inteligente con blockeos automáticos por servicio y doctor"
+        ],
+        "personalizedPitch": "Clínica Dental Castelo necesita un software a medida que centralice agenda, historial clínico y comunicación con el paciente en una sola plataforma accesible desde cualquier dispositivo. Con 186 reseñas positivas, el activo más valioso es su reputación, pero está gestionada de forma reactiva. Nuestra solución incluiría reservas online, recordatorios automáticos que reduzcan ausencias, y campañas de recapacitación programadas que conviertan revisiones en tratamientos recurrentes. Todo ello integrado con su web actual para que la experiencia del paciente sea fluida desde la búsqueda hasta la consulta.",
+        "softwareType": "CRM + sistema de gestión de clínica (agenda, historial, portal paciente y automatización de comunicación)",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrv5s001amgynq89utgwx",
+      "nombre": "DENTAL & DESIGN GROUP - Expertos en Diseños de Sonrisa, Carillas Dentales - Madrid",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con tiempos de espera prolongados que afectan a pacientes de tratamientos estéticos",
+          "Elaboración y seguimiento de presupuestos personalizados para carillas y diseños de sonrisa sin sistema digitalizado",
+          "Falta de recordatorios automáticos，导致 pacientes no asisten a citas de fases intermedias del tratamiento"
+        ],
+        "automationOpportunities": [
+          "Agenda digital con recordatorios automáticos por SMS/WhatsApp para tratamientos de varias fases",
+          "Sistema de generación de presupuestos estéticos profesionales con seguimiento de estado",
+          "Marketing automatizado para captar pacientes interested en diseño de sonrisa"
+        ],
+        "personalizedPitch": "Para una clínica especializada en carillas y diseño de sonrisa como Dental & Design, necesitas un software que gestione los tratamientos estéticos con fases definidas. Nuestra solución incluye un CRM clínico con генерация automática de presupuestos visuales, agenda inteligente que coordina las fases del tratamiento, y recordatorios personalizados. Todo integrado para que cada paciente sienta que su sonrisa está en manos expertas.",
+        "softwareType": "CRM clínico + módulo de presupuestos estéticos + agenda digital con automatización de comunicación",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrv76001gmgynou1tsgoa",
+      "nombre": "Oliver & Alcázar | Clínica dental Madrid | Dentistas | Implante dental",
+      "classification": null
+    },
+    {
+      "leadId": "cmpcqrv76001imgynyggz3jzp",
+      "nombre": "CLINICA DENTAL NEREA FULGUEIRAS",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas y agenda que genera overlaps o huecos vacíos",
+          "Seguimiento deficiente del historial clínico y tratamientos por paciente",
+          "Falta de recordatorios automáticos que provoca ausencias y abandonos",
+          "Gestión compleja de cobros con distintas mutuas y seguros"
+        ],
+        "automationOpportunities": [
+          "Agenda digital con disponibilidad online 24/7 y recordatorios SMS/email automáticos",
+          "Historial clínico digitalizado con acceso rápido y seguro por paciente",
+          "Sistema de facturación automatizado con gestión de mutuas integrada",
+          "Portal de paciente para reserva online de citas y acceso a sus tratamientos"
+        ],
+        "personalizedPitch": "Un software a medida para clínicas dentales que centralice agenda digital, historial clínico y facturación en una sola plataforma. Automatiza recordatorios de citas para reducir ausencias hasta un 40% y permite a tus pacientes reservar online. Integra gestión de mutuas para simplificar cobros y gana tiempo para dedicarlo a lo que importa: cuidar la salud bucodental de tus pacientes.",
+        "softwareType": "ERP sanitario específico para clínicas dentales con app de paciente",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrv76001lmgynrvkzxh3k",
+      "nombre": "Elena Toledano - Clínica Dental (en Arganzuela)",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas y agenda con sobrebooking o huecos vacíos",
+          "Falta de recordatorios automáticos 导致 ausencias de pacientes",
+          "Desorganización en historiales clínicos y documentación de tratamientos"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita 24h antes via SMS/WhatsApp",
+          "Confirmación online de citas y reprogramación autónoma por paciente",
+          "Gestión de campañas de recall para revisiones semestrales y tratamientos pendientes"
+        ],
+        "personalizedPitch": "Con 223 reseñas perfectas, tu reputación te precede pero tu gestión interna debe escalar al mismo nivel. Propongo un sistema de gestión clínica con agenda inteligente que optimice huecos y reduzca ausencias con recordatorios automáticos. Incluye historial digitalizado por paciente, módulo de facturación integrado y app para que tus pacientes confirmen citas desde el móvil. Todo centralizado para que tú dediques más tiempo a tratar y menos a organizar.",
+        "softwareType": "ERP clínico + app móvil de paciente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv76001rmgyn2cp761wj",
+      "nombre": "Clínica dental Marien Morata Roig",
+      "classification": null
+    }
+  ]
+}

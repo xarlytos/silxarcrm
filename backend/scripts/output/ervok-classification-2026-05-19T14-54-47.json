@@ -1,0 +1,1093 @@
+{
+  "total": 50,
+  "ok": 50,
+  "fail": 0,
+  "results": [
+    {
+      "leadId": "cmpcqrv76001gmgynou1tsgoa",
+      "nombre": "Oliver & Alcázar | Clínica dental Madrid | Dentistas | Implante dental",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con elevado absentismo y falta de recordatorios automáticos",
+          "Historiales clínicos dispersos o en papel sin acceso rápido digitalizado",
+          "Problemas con el control de facturación, cobros a seguros y gestión de presupuestos",
+          "Falta de estrategia de fidelización y comunicación proactiva con pacientes entre visitas"
+        ],
+        "automationOpportunities": [
+          "Sistema de cita online con recordatorios SMS/email automáticos para reducir ausencias",
+          "Digitalización completa de historias clínicas con acceso centralizado y normativas GDPR",
+          "Gestión automatizada de presupuestos, facturación y cobros a seguros médicos",
+          "CRM de fidelización con campañas automatizadas de recuerdo de revisiones y tratamientos pendientes"
+        ],
+        "personalizedPitch": "Oliver & Alcázar necesita un software de gestión clínica integral que centralice citas, historiales y facturación en una sola plataforma. Con un sistema de reservas online y recordatorios automáticos, reduciréis drásticamente las citas no cumplidas y optimizaréis la agenda de la clínica. Además, un módulo de gestión de presupuestos y cobros a seguros os permitirá simplificar el proceso administrativo. Por último, un CRM con campañas automatizadas ayudará a fidelizar a vuestros 149 pacientes y activar tratamientos pendientes como implantes. Todo en una solución personalizada para odontología.",
+        "softwareType": "ERP clínico + CRM de pacientes + sistema de reservas online",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrvkh006smgynsxcy5wzc",
+      "nombre": "Fitness Park Madrid - La Gavia",
+      "classification": {
+        "sector": "fitness",
+        "subsector": "gimnasiocadena",
+        "painPoints": [
+          "Gestión fragmentada de membresías y cobros recurrentes entre múltiples clubes",
+          "Falta de comunicación directa y personalizada con los 1965 socios activos",
+          "Control ineficiente de acceso y asistencia que limita datos para fidelización"
+        ],
+        "automationOpportunities": [
+          "Cobros automáticos de cuotas mensuales con recordatorios de pago",
+          "Sistema de check-in automático y reservas de clases grupales"
+        ],
+        "personalizedPitch": "Un sistema de gestión de socios con app móvil permitiría automatizar cobros, gestionar accesos en tiempo real y enviar ofertas personalizadas a tus 1965 reseñadores. Cada cliente tendría su historial, clases reservadas y comunicación directa, reduciendo abandones y aumentando ingresos recurrentes. La integración con tu web mejoraría la conversión de leads.",
+        "softwareType": "ERP fitness + app móvil para socios con CRM y pasarela de pagos integrada",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrwaq00fqmgynlyi4brsv",
+      "nombre": "Asesores Reunidos Arga. Fiscal, laboral, contable. Abogados",
+      "classification": {
+        "sector": "servicios profesionales",
+        "subsector": "asesoría fiscal, laboral y contable",
+        "painPoints": [
+          "Gestión manual de plazos y obligaciones fiscales/laborales con riesgo de errores y sanciones para el cliente",
+          "Fragmentación de información entre los departamentos fiscal, laboral y contable sin herramientas integradas",
+          "Comunicación ineficiente con clientes (envío de documentos por email, falta de visibilidad del estado de cada expediente)",
+          "Control de horas trabajadas y facturación irregular por servicios profesionales"
+        ],
+        "automationOpportunities": [
+          "Recordatorios automáticos de plazos tributarios, laborales y comptable por cliente y obligación",
+          "Portal cliente digital para entrega de documentos, aprobación de trabajos y comunicación централизada",
+          "Gestión centralizada de expedientes con plantillas reutilizables por tipo de servicio (declaraciones, nóminas, bilanсios)",
+          "Facturación automática por servicios recurrentes con generación de facturas y seguimiento de cobros"
+        ],
+        "personalizedPitch": "Asesores Reunidos Arga trabaja con tres áreas críticas (fiscal, laboral y contable) donde la falta de un sistema unificado provoca duplicidades y riesgos de incumplimiento. Un software a medida para asesorías integra todos los expedientes de cliente en una sola plataforma, envía alertas automáticas de plazos legales y permite a tus clientes aprobar documentos y recibir notificaciones sin depender del email. Esto reduce errores, mejora la facturación y os permite escalar sin multiplicar recursos administrativos.",
+        "softwareType": "ERP específico para asesorías con CRM integrado, gestión documental, calendario fiscal/laboral y portal cliente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrwxx00o2mgynt5kpllf5",
+      "nombre": "TALLER RC",
+      "classification": {
+        "sector": "automoción",
+        "subsector": "taller mecánico",
+        "painPoints": [
+          "Gestión manual de citas y agenda que genera confusión y sobrecupos",
+          "Comunicación deficiente con clientes sobre estado y entrega de vehículos",
+          "Sin presencia web, pierden oportunidades de nuevos clientes y reservas online",
+          "Control de inventario de piezas improvisado o mediante papel"
+        ],
+        "automationOpportunities": [
+          "Reservas de cita online 24/7 integrables con agenda del taller",
+          "Notificaciones automáticas al cliente sobre estado de reparación y fecha de entrega",
+          "Gestión digital de inventario con alertas de stock mínimo"
+        ],
+        "personalizedPitch": "Un software a medida para TALLER RC resolvería tus problemas de gestión de citas con un sistema online donde los clientes reservan y tú controlas la agenda. Además, enviaría automáticamente mensajes a los propietarios cuando su coche esté listo, reduciendo llamadas y mejorando satisfacción. Todo sin necesidad de web externa, con panel de control sencillo para gestionar tu taller desde el móvil.",
+        "softwareType": "ERP para taller + app móvil de cliente",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrv76001rmgyn2cp761wj",
+      "nombre": "Clínica dental Marien Morata Roig",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de agendas y citas que genera huecos vacíos y colapsos de agenda",
+          "Falta de recordatorios automáticos a pacientes, provocando ausencias y retrasos",
+          "Dificultad para hacer seguimiento del historial clínico y estado de tratamientos de cada paciente",
+          "Gestión ineficaz de cobros, facturación y comunicación con aseguradoras"
+        ],
+        "automationOpportunities": [
+          "Sistema de citas online con agenda inteligente y recordatorios automáticos por SMS/email",
+          "Digitalización de historias clínicas y presupuestos con firma digital",
+          "Automatización de comunicación post-tratamiento y campañas de recuerdo de revisiones periódicas",
+          "Gestión centralizada de cobros, facturación y液 seguros dentales"
+        ],
+        "personalizedPitch": "Un software de gestión clínica a medida permitiría centralizar citas, historiales y facturación en una única plataforma. Automatizaríamos recordatorios a pacientes para reducir ausencias y optimizar tu agenda. Además, podrías enviar comunicaciones personalizadas tras cada tratamiento, fortaleciendo la relación con tus pacientes y aumentando las revisiones. Todo adaptado a las necesidades específicas de tu clínica en Valencia.",
+        "softwareType": "ERP clínico + CRM de pacientes con módulo de citas online y automatización de comunicación",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrvkh006tmgynflf0cz4y",
+      "nombre": "Fitness Park Madrid - Principe Pio",
+      "classification": {
+        "sector": "fitness",
+        "subsector": "gimnasio de cadena",
+        "painPoints": [
+          "Gestión fragmentada de membresías y pagos recurrentes sin plataforma unificada",
+          "Falta de app móvil propia para reservas de clases y seguimiento de clientes",
+          "Bajo engagement digital:就无法 retener clientes sin herramientas de comunicación automatizada"
+        ],
+        "automationOpportunities": [
+          "Sistema de renovaciones y cobros automáticos con recordatorios personalizados",
+          "Reserva online de clases grupales con gestión inteligente de aforos y lista de espera"
+        ],
+        "personalizedPitch": "Para Fitness Park Príncipe Pío, con más de 4000 reseñas activas, desarrollamos una plataforma de gestión de socios con app móvil propia donde podrán reservar clases, gestionar pagos recurrentes y recibir comunicaciones personalizadas. El sistema incluirá CRM específico para gyms con segmentación automática por asistencia y renovación, reduciendo churn y aumentando ingresos recurrentes. Todo integrado con tu web existente.",
+        "softwareType": "ERP + app móvil para gestión de membresías",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrwbx00fymgyn5txxta5h",
+      "nombre": "Taxa. Asesoría para Empresas y Autónomos",
+      "classification": {
+        "sector": "servicios profesionales",
+        "subsector": "asesoría fiscal",
+        "painPoints": [
+          "Gestión manual de expedientes y documentación de múltiples clientes simultáneamente",
+          "Seguimiento de plazos tributarios y vencimiento de declaraciones sin sistema centralizado",
+          "Comunicación ineficiente con clientes (emails dispersos, falta de trazabilidad de notificaciones)"
+        ],
+        "automationOpportunities": [
+          "Sistema de alertas automáticas para plazos fiscales y obligaciones legales",
+          "Portal de cliente para acceso directo a documentos, firma digital y comunicación segura"
+        ],
+        "personalizedPitch": "Taxa necesita un software de gestión integral que centralice todos los expedientes de clientes y automatice los recordatorios de plazos tributarios. Nuestra solución incluye un CRM específico para asesorías con dashboard de vencimientos, portal de cliente para entrega de documentación y firma digital, y sistema de notificaciones automáticas que reduce errores y libera tiempo para tareas de mayor valor añadido.",
+        "softwareType": "ERP específico para asesorías + portal de cliente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrwyy00o3mgynfem3fh4g",
+      "nombre": "Taller Oficial Zontes Centro Madrid",
+      "classification": {
+        "sector": "automoción",
+        "subsector": "taller mecánico",
+        "painPoints": [
+          "Gestión manual de citas y agenda sin sistema digital, causando solapamientos y pérdida de clientes",
+          "Sin presencia web ni canales digitales, lo que limita la captación de nuevos clientes en Madrid",
+          "Control deficiente del inventario de piezas específicas Zontes y tiempos de reparación",
+          "Falta de seguimiento automatizado de garantías oficiales y historial de servicios por cliente",
+          "Comunicación manual con clientes para recordatorios de mantenimiento y presupuestos"
+        ],
+        "automationOpportunities": [
+          "Sistema de cita online con calendario inteligente para optimizar la carga de trabajo del taller",
+          "Gestión digital de órdenes de trabajo con estados en tiempo real accesibles por el cliente",
+          "Portal web del taller con información de servicios Zontes, cita previa online y contacto",
+          "Módulo de inventario conectado con proveedores de piezas para pedidos automáticos",
+          "Sistema automatizado de recordatorios de ITV, mantenimiento y ofertas estacionales"
+        ],
+        "personalizedPitch": "Para un taller oficial Zontes sin web en Madrid, necesitas una solución que integre agenda digital, gestión de órdenes de trabajo y presencia online. Proponemos un sistema a medida con portal web del taller donde los clientes puedan pedir cita, seguir el estado de su reparación y acceder al historial de su moto. Esto reduce llamadas telefónicas, mejora la percepción de profesionalidad y convierte visitas en clientes recurrentes.",
+        "softwareType": "ERP de taller + portal web + app de cliente",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrv5q0019mgyn40w6np3j",
+      "nombre": "Clínica Ávila Madrid - Odontología Avanzada",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de agenda con huecos vacíos por cancelaciones y sobrecupos en horas pico",
+          "Proceso de facturación con seguros dentales lento y propenso a errores (Adeslas, Mapfre, Sanitas)",
+          "Comunicación inconsistente con pacientes: recordatorios de citas perdidos, seguimiento post-tratamiento inexistente"
+        ],
+        "automationOpportunities": [
+          "Sistema de citas online con confirmación y reagendado automático vía WhatsApp/SMS",
+          "Envío digital de presupuestos, consentimientos informados y recordatorios post-tratamiento"
+        ],
+        "personalizedPitch": "Con 208 reseñas y 4.9⭐, tu clínica ya genera confianza, pero pierdes pacientes por fallos en la gestión de citas y una facturación con seguros poco eficiente. Un software dental a medida centralizaría agenda, historia clínica, facturación y comunicación con pacientes en una sola plataforma, reduciendo cancelaciones un 30% y automatizando el cobro con aseguradoras. Así tu equipo se enfoca en tratamiento, no en paperwork.",
+        "softwareType": "ERP clínico dental con portal paciente (agenda online, historia clínica digital, gestión de seguros, automatización de comunicación)",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrvkk006vmgyngvqk23x8",
+      "nombre": "Fitness Park Madrid - Castellana 85",
+      "classification": {
+        "sector": "fitness",
+        "subsector": "gimnasio multi-servicio",
+        "painPoints": [
+          "Gestión manual de reservas de clases grupales y horarios con sistemas obsoletos o hojas de Excel",
+          "Control de acceso poco eficiente sin integración entre tarjetas de socio, turnos y ocupación en tiempo real",
+          "Facturación recurrente de cuotas con errores en cobros, caducidad de pagos y gestión de impagos",
+          "Comunicación fragmentada con socios (WhatsApp, email, redes sociales) sin canal unificado ni automatización"
+        ],
+        "automationOpportunities": [
+          "Reserva automatizada de clases grupales con notificación instantánea de plazas libres o cancelaciones",
+          "Recordatorios de pago y renovación de cuota vía WhatsApp o SMS, con gestión automática de impagos",
+          "Control de acceso inteligente con读者的 y ocupación limitada por franja horaria",
+          "Envío de promociones personalizadas y campañas de fidelización según frecuencia de uso y antigüedad"
+        ],
+        "personalizedPitch": "Un sistema de gestión integral para Fitness Park Madrid que centralice reservas de clases, control de acceso y facturación en una única plataforma. Tu app personalizada para socios les permitiría reservar plazas, consultar horarios y recibir alertas de pago, mientras tú ganas tiempo al eliminar tareas administrativas repetitivas. Esto reduce abandonos por mala experiencia y aumenta ingresos recurrentes al automatizar cobros y recupero de cuotas impagadas.",
+        "softwareType": "ERP de gestión + app móvil para socios con módulo de reservas, acceso y facturación",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrwd300gemgynaoy6n7f5",
+      "nombre": "Asesor en Madrid",
+      "classification": {
+        "sector": "servicios profesionales",
+        "subsector": "asesoría fiscal",
+        "painPoints": [
+          "Gestión manual de expedientes y documentación de clientes",
+          "Seguimiento de plazos fiscales y obligaciones tributarias sin herramienta centralizada",
+          "Comunicación ineficiente con clientes (email, WhatsApp sin trazabilidad)"
+        ],
+        "automationOpportunities": [
+          "Automatización de alertas y recordatorios de plazos fiscales y presentaciones",
+          "Portal de cliente para intercambio de documentos y firmar obligaciones fiscales"
+        ],
+        "personalizedPitch": "Un software de gestión para asesorías fiscales que centralice expedientes, automatice el control de plazos tributarios y permita a tus clientes entregar documentación online. Reduce la carga administrativa, evita olvidos de declaraciones y mejora la comunicación con cada cliente. Tu asesoría gana tiempo y profesionalidad sin cambiar tu forma de trabajar.",
+        "softwareType": "CRM especializado para asesorías + módulo de gestión de plazos fiscales y portal de cliente",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrx9b00s5mgyndz8h1e6b",
+      "nombre": "Autoelectra Fernández S.L.",
+      "classification": {
+        "sector": "automoción",
+        "subsector": "taller mecánico",
+        "painPoints": [
+          "Gestión manual de citas y planificación de trabajos sin calendario digital",
+          "Sin presencia web para captar nuevos clientes y dar visibilidad al negocio",
+          "Control deficiente del inventario de repuestos y piezas"
+        ],
+        "automationOpportunities": [
+          "Sistema de citas online con recordatorios automáticos por WhatsApp/SMS",
+          "Gestión integral de vehículos con historial por cliente y alertas de mantenimiento"
+        ],
+        "personalizedPitch": "Autoelectra Fernández tiene una reputación excelente (5★) pero pierde oportunidades por no tener presencia web. Proponemos un sistema de gestión de taller con agenda online, donde los clientes puedan pedir cita desde el móvil y reciban confirmaciones automáticas. También incluya gestión de inventario de piezas y seguimiento del estado de cada vehículo, todo integrado con facturación. Así mejoras eficiencia operativa y atraes nuevos clientes sin depender solo del boca a boca.",
+        "softwareType": "ERP + app móvil para taller mecánico con portal de citas para clientes",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrv5z001dmgyn5hlnh29g",
+      "nombre": "Clínica dental Delgado y Delgado",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con errores por colisiones y olvidos que generan huecos en la agenda",
+          "Falta de historiales digitales integrados que ralenticen la consulta y compliquen el seguimiento de tratamientos",
+          "Sistema de cobros y facturación fragmentado, sin control real deImpagos ni gestión de financiación",
+          "Comunicación con pacientes dispersa entre WhatsApp, teléfono y email, sin trazabilidad ni automatización de recordatorios"
+        ],
+        "automationOpportunities": [
+          "Agenda digital inteligente con recordatorios automáticos por SMS/email que reduzca ausencias y optimice ocupación del hueco",
+          "Software de gestión de tratamientos y presupuestos con versioning histórico por paciente y aceptación digital",
+          "Sistema de facturación y cobros con control de Impagos, vencimiento de presupuestos y gestión de financiación",
+          "Módulo de comunicación integrada con mensajería programada: recordatorios, confirmaciones, seguimiento post-tratamiento"
+        ],
+        "personalizedPitch": "Una clínica dental con 215 reseñas y 5 estrellas ha alcanzado su reputación por la calidad clínica, pero necesita sistemas que traduzcan ese nivel al back-office. Un software de gestión a medida centralizaría agenda, historiales y facturación en una única plataforma, eliminando errores de gestión manual y reduciendo ausencias gracias a recordatorios automáticos. La propuesta incluye un dashboard de rendimiento con ocupación real de agenda y ratios de conversión presupuestos-tratamientos. Podríamos partir de tu web actual e integrar la agenda con una app de reservas online para pacientes 24h, aumentando citas sin incrementar carga administrativa.",
+        "softwareType": "ERP sanitario para clínica dental con agenda inteligente, gestión de pacientes (HCE), facturación, comunicación automatizada y portal del paciente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrvlx006zmgynu4kn9191",
+      "nombre": "Gimnasio Infinit Fitness Santa Engracia - Abierto 24 horas",
+      "classification": {
+        "sector": "fitness",
+        "subsector": "gimnasio urbano 24h",
+        "painPoints": [
+          "Control de accesos y verificación de miembros fuera de horario laboral sin depender de personal nocturno",
+          "Gestión de reservas de clases grupales y horarios de instructores con cambios constantes",
+          "Retención de miembros y seguimiento de abandono: altas tasas de bajas en el sector fitness"
+        ],
+        "automationOpportunities": [
+          "Sistema de acceso 24/7 con validación automática de cuotas activas mediante tarjetas o app",
+          "App móvil para reserva de clases grupales con recordatorios automáticos y lista de espera"
+        ],
+        "personalizedPitch": "Un gimnasio abierto 24 horas necesita gestión automática de accesos sin depender de personal nocturno. Te propongo un sistema integral con control biométrico o por tarjeta para acceso ilimitado, app para que tus socios reserven clases y reciban notificaciones de renovación. Además, automatizaré el seguimiento de abandonos para que puedas actuar antes de que se den de baja con ofertas personalizadas.",
+        "softwareType": "ERP fitness + app móvil para socios con sistema de accesos",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrwd900gkmgynn0ksnffy",
+      "nombre": "Asesoría Madrid Edar Consulting",
+      "classification": {
+        "sector": "servicios profesionales",
+        "subsector": "asesoría fiscal",
+        "painPoints": [
+          "Gestión manual y dispersa de expedientes de clientes con documentos en papel o múltiples carpetas",
+          "Seguimiento de plazos fiscales y vencimientos杂乱 sin sistema centralizado de alertas",
+          "Comunicación ineficiente con clientes (emails dispersos, dificultades para compartir documentos de forma segura)",
+          "Control de facturación y cobros improvisado sin visión clara de ingresos pendientes"
+        ],
+        "automationOpportunities": [
+          "Portal de cliente con acceso 24/7 a sus documentos fiscales, contratos y comunicaciones",
+          "Sistema de alertas automáticas para plazos de presentación de impuestos y declaraciones",
+          "CRM específico para asesorías con histórico de intervenciones y próximas acciones",
+          "Facturación integrada con gestión de vencimientos y avisos de cobro automático"
+        ],
+        "personalizedPitch": "Un software a medida para tu asesoría combinaría un CRM que centralice cada cliente con sus compromisos fiscales y documentación, eliminando búsquedas en carpetas dispersas. Tendrás alertas automáticas para cada plazo tributario y un portal de cliente donde cada contribuyente acceda a sus certificados y documentos sin pedirlo por email. La facturación se integra con el control de vencimientos para que nunca se te escape un cobro. Todo desde una plataforma diseñada para asesorías, no software genérico.",
+        "softwareType": "ERP-CRM específico para asesorías fiscales con portal de cliente integrado y módulo de facturación",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrwxx00nymgynxo57tmsy",
+      "nombre": "Taller RS 49",
+      "classification": {
+        "sector": "automoción",
+        "subsector": "taller mecánico",
+        "painPoints": [
+          "Gestión manual de citas y planificación de trabajos (fichas en papel)",
+          "Falta de comunicación proactiva con clientes sobre estado de reparaciones",
+          "Control deficiente de inventario de piezas y repuestos",
+          "Pérdida de oportunidades de negocio por ausencia de sistema de recordatorios de mantenimiento"
+        ],
+        "automationOpportunities": [
+          "Sistema de reserva de citas online 24/7 con calendario inteligente",
+          "Portal de cliente para seguimiento en tiempo real del estado de su vehículo",
+          "Gestión automatizada de inventory con alertas de stock mínimo",
+          "Campañas de mantenimiento preventivo automáticas basadas en histórico de servicios"
+        ],
+        "personalizedPitch": "Con 405 reseñas y un 4.9⭐, Taller RS 49 tiene una reputación excelente que merece un sistema de gestión a la altura. Un software a medida permitiría digitalizar la gestión de citas, inventario de piezas y comunicación con clientes. Tu taller podría ofrecer a cada cliente un portal donde consulten el estado de su reparación en tiempo real, recibir recordatorios de mantenimiento y reservar cita online. Esto reduciría llamadas perdidas, optimizaría tu inventario y aumentaría la fidelidad con mínimo esfuerzo adicional.",
+        "softwareType": "ERP específico para talleres + portal de cliente con app móvil",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv76001kmgynq8qqvnmx",
+      "nombre": "DentalSol",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión de citas y recordatorios manuales que generan olvidos y ausencias de pacientes",
+          "Seguimiento fragmentado del historial clínico y tratamientos pendientes entre visitas",
+          "Control deficiente del inventario de materiales y producto sanitario con roturas de stock",
+          "Coordinación del equipo clínico con recepcionista y administrativos con herramientas descoordinadas",
+          "Gestión de cobros, facturación a aseguradoras y gestión de impagos sin sistematizar"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita por SMS/WhatsApp 48h antes para reducir ausencias",
+          "Portal del paciente para gestión online de citas, historia clínica y pagos",
+          "Sistema de inventario con alertas de stock mínimo y pedidos automáticos a proveedores",
+          "Dashboard unificado para gestión de agenda, pacientes, facturación y reporting del equipo"
+        ],
+        "personalizedPitch": "DentalSol necesita un sistema de gestión integral que centralice agenda, historial clínico y facturación. Proponemos una plataforma con agenda inteligente que envía recordatorios automáticos, portal del paciente para citas online, y módulos de inventario y facturación que conecten con aseguradoras. Esto reducirá ausencias, mejorará la experiencia del paciente y automatizará tareas administrativas del equipo.",
+        "softwareType": "ERP sanitario con portal del paciente y módulo de agenda inteligente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrvkg006rmgyn7rpfdveq",
+      "nombre": "Ruk Gym Madrid",
+      "classification": {
+        "sector": "fitness",
+        "subsector": "gimnasio boutique",
+        "painPoints": [
+          "Gestión manual de membresías y cobros recurrentes",
+          "Control de asistencia y ocupación de clases en tiempo real",
+          "Falta de canal digital para reservas de clases y seguimiento de progreso"
+        ],
+        "automationOpportunities": [
+          "Sistema de reservas online con plazas limitadas por clase",
+          "Gestión automatizada de renovaciones de membresías y recordatorios de pago",
+          "App móvil para que socios reserven clases, vean progreso y reciban ofertas personalizadas"
+        ],
+        "personalizedPitch": "Ruk Gym Madrid necesita una plataforma de gestión que centralice sus 132+ socios, automatice cobros recurrentes y ofrezca reservas online de clases. Recomendamos un sistema de gestión de gimnasio con app móvil para socios que incluya control de acceso, gestión de horarios de clases y un programa de fidelización que maximice la retención. Esto eliminará la gestión manual, reducirá abandonos y mejorará la experiencia premium que merecen tus clientes.",
+        "softwareType": "ERP健身房 con app móvil para socios",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrwap00fomgyni90rohmh",
+      "nombre": "Gestoria y Asesoria Madrid GBM",
+      "classification": {
+        "sector": "servicios profesionales",
+        "subsector": "asesoría fiscal",
+        "painPoints": [
+          "Gestión manual de plazos fiscales y sanciones por retrasos",
+          "Comunicación lenta con clientes (email, WhatsApp) sin trazabilidad",
+          "Almacenamiento desorganizado de documentación fiscal y contable"
+        ],
+        "automationOpportunities": [
+          "Recordatorios automáticos de obligaciones fiscales (IVA, IRPF, Sociedades)",
+          "Portal de cliente para acceso online a documentos y Firma digital",
+          "Generación automática de modelos tributarios conectados con AEAT"
+        ],
+        "personalizedPitch": "GestoríaMadrid GBM necesita un sistema de gestión fiscal automatizado que elimine sanciones por retrasos. Proponemos un software a medida con módulo de obligaciones fiscales, recordatorios inteligentes y portal de cliente para firma digital. Esto reducirá su carga administrativa, mejorará la comunicación con clientes y les permitirá escalar sin perder calidad. La inversión se amortiza con solo evitar 2-3 sanciones anuales.",
+        "softwareType": "ERP + app móvil",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrwxx00o0mgync929jski",
+      "nombre": "Samper Motor Taller Mecánico",
+      "classification": {
+        "sector": "automoción",
+        "subsector": "taller mecánico",
+        "painPoints": [
+          "Gestión manual de citas y organización de trabajos por mecánico",
+          "Falta de visibilidad en tiempo real del estado de cada reparación",
+          "Control deficiente del stock de piezas y recambios",
+          "Dificultad para enviar presupuestos y facturas digitales de forma ágil",
+          "Sin sistema de cita online o recordatorios automáticos a clientes"
+        ],
+        "automationOpportunities": [
+          "Agenda digital con citas online para clientes y gestión de carga de trabajo por mecánico",
+          "Sistema de notificación automática cuando el vehículo está listo (SMS o email)",
+          "Gestión inteligente de inventario de piezas con alertas de stock mínimo",
+          "Generación automática de presupuestos, facturas y órdenes de trabajo",
+          "Portal cliente para seguimiento del estado de la reparación"
+        ],
+        "personalizedPitch": "Samper Motor necesita un ERP específico para talleres que centralice citas, órdenes de trabajo y facturación. Implementaríamos un sistema con app móvil para que los clientes reserven hora, reciban alertas cuando su coche esté listo y firmen digitalmente presupuestos. Además, el inventario de piezas se actualizará en tiempo real con pedidos automáticos a proveedores. Todo conectado para que gestionéis el taller desde el móvil.",
+        "softwareType": "ERP específico para taller mecánico + app móvil cliente + portal de seguimiento",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv76001qmgynbe6nsb0q",
+      "nombre": "Clinica Dental",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas y agenda de doctores",
+          "Sin presencia digital ni web para captar nuevos pacientes",
+          "Historiales de pacientes en papel o sistemas no integrados",
+          "Recordatorios de cita y comunicación con pacientes dependen de llamadas"
+        ],
+        "automationOpportunities": [
+          "Agenda online con disponibilidad 24/7 y recordatorios automáticos por SMS/email",
+          "Portal del paciente para gestión de citas, historial y documentación",
+          "Sistema de facturación y seguros médicos integrado con gestión de caja",
+          "Campañas de fidelización y lembrets automáticos para revisiones periódicas"
+        ],
+        "personalizedPitch": "Un software de gestión dental a medida centralizaría citas, historiales clínicos y facturación en una sola plataforma accesible desde cualquier dispositivo. Implementaríamos una agenda digital con disponibilidad online para que los pacientes reserven fuera de horario y recibirían recordatorios automáticos para reducir ausencias. Además, el sistema permitiría gestionar contratos con aseguradoras y automatizar la facturación, ahorrando horas de trabajo administrativo. Todo esto sin necesidad de tener web, ya que la plataforma incluiría su página de presencia digital.",
+        "softwareType": "ERP dental con portal del paciente y app de gestión de citas",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrvly0074mgynelnucbvk",
+      "nombre": "REBEL GYM",
+      "classification": {
+        "sector": "fitness",
+        "subsector": "gimnasio",
+        "painPoints": [
+          "Gestión manual de reservas de clases y horarios，导致superposición o huecos en la ocupación",
+          "Control de renovaciones de socios y cobros mensuales sin sistematizar",
+          "Comunicación irregular con miembros (recordatorios, promociones, altas/bajas)",
+          "Dificultad para hacer seguimiento del rendimiento comercial y captar nuevos leads"
+        ],
+        "automationOpportunities": [
+          "Reserva online de clases con límite de plazas y recordatorios automáticos",
+          "Sistema de renovaciones y cobros recurrentes con alertas de impago",
+          "CRM de socios con segmentación por frecuencia, tipo de membresía y cumpleaños",
+          "Captación de leads y seguimiento automático desde web y redes sociales"
+        ],
+        "personalizedPitch": "REBEL GYM tiene una valoración excelente de 4.7⭐ con 225 reseñas, lo que demuestra que el servicio funciona pero la gestión interna puede estar sobrecargada. Un software a medida que centralice reservas de clases, control de socios y cobros recurrentes reduciría errores manuales y mejoraría la retención. Además, un CRM adaptado permitiría hacer seguimiento de leads desde tu web y automatizar comunicaciones para reducir bajas. Te entregamos una plataforma de gestión + app para socios con tu marca.",
+        "softwareType": "ERP de gestión de gimnasio + app móvil para socios (reservas, pagos, comunicación)",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrwd400ggmgyn9iwj376n",
+      "nombre": "Tributtae - Madrid",
+      "classification": {
+        "sector": "servicios profesionales",
+        "subsector": "asesoría fiscal",
+        "painPoints": [
+          "Gestión manual y descentralizada de expedientes de múltiples clientes sin sistema unificado",
+          "Control deficiente de plazos tributarios y vencimientos de declaraciones trimestrales y anuales",
+          "Comunicación ineficiente con clientes (emails dispersos, falta de trazabilidad en envío de documentos)",
+          "Duplicación de datos entre herramientas (Excel, email, software de facturación) y falta de integración",
+          "Dificultad para medir rentabilidad por cliente y control de horas dedicadas"
+        ],
+        "automationOpportunities": [
+          "Sistema de alertas automáticas para vencimientos de obligaciones fiscales y plazos con Hacienda",
+          "Portal cliente para recogida de documentación y firmas digitales que elimine el intercambio de emails",
+          "Dashboard unificado con estado de cada expediente, tareas pendientes y próximas declaraciones",
+          "Integración con AEAT y Seguridad Social para importación automática de datos y presentación de modelos",
+          "Workflow de aprobación interna para revisión de declaraciones antes de presentación"
+        ],
+        "personalizedPitch": "Tributtae gestiona múltiples clientes con el riesgo constante de perder plazos fiscales y duplicar trabajo en herramientas dispersas. Un software a medida centralizaría todos los expedientes con plazos automáticos, permitiría a tus clientes entregar documentos vía portal digital con firma electrónica, y te daría visibilidad total sobre el estado de cada expediente. Además, la integración con las APIs de Hacienda eliminaría el registro manual de datos y reduciría errores. Resultado: menos estrés, más clientes gestionados, y cumplimiento garantízado.",
+        "softwareType": "ERP para asesorías fiscales con módulo de gestión de clientes, calendario fiscal inteligente, portal cliente con firma digital e integración AEAT",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrwyz00o7mgynshek12t2",
+      "nombre": "Talleres JCR MOTORSPORT",
+      "classification": {
+        "sector": "automoción",
+        "subsector": "taller mecánico",
+        "painPoints": [
+          "Gestión manual de citas y trabajos en papel, generando confusión y overlaps de agenda",
+          "Control de inventario de repuestos deficiente, con faltantes o excesos que impactan en costes y plazos de entrega",
+          "Seguimiento precario del estado de cada reparación, generando llamadas constantes de clientes para consultar",
+          "Facturación y cierre de trabajos dependen de procesos manuales, ralentizando la productividad"
+        ],
+        "automationOpportunities": [
+          "Sistema de agenda digital con gestión de estados de trabajo (presupuesto, en curso, espera piezas, finalizado)",
+          "Módulo de inventario inteligente con alertas de stock mínimo y reposición automática de piezas frecuentes",
+          "Portal o app para que el cliente vea en tiempo real el estado de su vehículo y reciba notificaciones automáticas",
+          "Integración de facturación y cierre de órdenes de trabajo para reducir tiempos administrativos"
+        ],
+        "personalizedPitch": "Un taller con 278 reseñas y 4.7 estrellas demuestra que la calidad del servicio está consolidada, pero la gestión probablemente sigue anclada en hojas de cálculo y papel. Te proponemos una plataforma a medida que centralice agenda, inventory y comunicación con el cliente en un único sistema. Así tus técnicos se centran en mecánica y el negocio crece sin cuellos de botella administrativos.",
+        "softwareType": "ERP específico para taller mecánico con módulo de agenda, inventario de repuestos, portal de cliente y facturación integrada",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrvgp005dmgynlsino0e6",
+      "nombre": "Clinica Dental",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual y desorganizada de citas sin sistema digital",
+          "Baja visibilidad online y reputación digital débil (3.7⭐ con solo 3 reseñas)",
+          "Control ineficiente de historiales de pacientes, facturación y cobros"
+        ],
+        "automationOpportunities": [
+          "Sistema de citas online con recordatorios automáticos por SMS/WhatsApp",
+          "Gestión integral de pacientes: historiales, tratamientos, presupuestos y cobros"
+        ],
+        "personalizedPitch": "Con una clínica dental sin web y solo 3 reseñas, estás perdiendo pacientes potenciales y visibilidad en Sevilla. Te propongo un software a medida que centralice tu gestión de citas, historiales clínicos digitales y facturación, con integración para que los pacientes puedan pedir cita online. Esto reducirá ausencias, mejorará tu reputación y te dará tiempo para lo que importa: atender a tus pacientes.",
+        "softwareType": "software de gestión clínica dental (gestión de citas, historiales, facturación + portal paciente)",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrvow007ymgyncu889cmo",
+      "nombre": "Enjoy-Gravity",
+      "classification": {
+        "sector": "fitness",
+        "subsector": "gimnasio boutique de salud y bienestar",
+        "painPoints": [
+          "Gestión manual de reservas y horarios de clases que genera confusión y sobrecupo",
+          "Seguimiento deficiente de la asistencia y progreso de los 68 clientes con reseñas positivas",
+          "Gestión de pagos recurrentes y cobros de membresías sin automatizar"
+        ],
+        "automationOpportunities": [
+          "Sistema de reservas online 24/7 con recordatorios automáticos por SMS/email",
+          "Gestión automatizada de membresías con facturación y cobros recurrentes integrados"
+        ],
+        "personalizedPitch": "Con una valoración perfecta de 5 estrellas, Enjoy-Gravity tiene una base de clientes satisfechos que merece una experiencia digital a la altura. Proponemos una plataforma de gestión integral que conecte reservas, pagos y comunicación con clientes en un solo sistema. Automatiza los recordatorios de clases para reducir ausencias y simplifica la gestión de membresías para que puedas dedicar tu energía a lo que importa: entrenar a tus clientes.",
+        "softwareType": "plataforma de gestión de gimnasio con app móvil para clientes",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrw9300eumgynt7mnan2w",
+      "nombre": "Asesoría La Nube Fiscal",
+      "classification": {
+        "sector": "servicios profesionales",
+        "subsector": "asesoría fiscal",
+        "painPoints": [
+          "Gestión manual de calendarios fiscales con múltiples clientes y fechas límite重叠",
+          "Intercambio de documentos con clientes por email o WhatsApp, sin trazabilidad ni versión final clara",
+          "Alta carga administrativa repetitiva: facturación, generación de modelos trimestrales,Declaraciones censales"
+        ],
+        "automationOpportunities": [
+          "Recordatorios automáticos de vencimientos fiscales personalizados por cliente y tipo de impuesto",
+          "Portal de cliente para subida de documentos y firma digital de declaraciones",
+          "Generación automatizada de facturas y modelos tributarios a partir de datos del cliente"
+        ],
+        "personalizedPitch": "En Asesoría La Nube Fiscal manejan más de 150 clientes con un equipo pequeño, y cada semana pierden horas en recordar quién debe qué documento y cuándo vence cada impuesto. Un software a medida con CRM fiscal, calendario inteligente de obligaciones tributarias y portal de cliente les permitiría automatizar los recordatorios, recibir documentación organizada por expediente y reducir el tiempo de preparación de declaraciones en un 40%. Así podrán escalar sin morir de burocracia.",
+        "softwareType": "CRM fiscal + portal de cliente + agenda de obligaciones tributarias",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrx0a00opmgynpw54pvqv",
+      "nombre": "Talleres Huefer",
+      "classification": {
+        "sector": "automoción",
+        "subsector": "taller mecánico",
+        "painPoints": [
+          "Gestión manual de citas y llamadas telefónicas sin posibilidad de reserva online",
+          "Sin historial digital de vehículos y reparaciones por cliente",
+          "Control de inventario de piezas y repuestos deficiente o en papel"
+        ],
+        "automationOpportunities": [
+          "Sistema de cita previa online con recordatorios automáticos por SMS o WhatsApp",
+          "Gestión digital del historial de cada vehículo con histórico de reparaciones y piezas usadas"
+        ],
+        "personalizedPitch": "Talleres Huefer necesita una plataforma web + app móvil que permita a sus clientes pedir cita 24h y lleve el control digital de cada coche. El sistema gestionará el inventario de piezas, generará presupuestos automáticos y enviará recordatorios, reduciendo llamadas y提高了 su eficiencia. Con tu rating de 4.7★ tienes buena reputación pero sin web estás perdiendo clientes que buscan talleres online.",
+        "softwareType": "ERP de taller + app móvil de cita previa + gestión de historique de vehículos",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrv5s001bmgynv35hbii7",
+      "nombre": "Clínica ASISA Dental",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión de citas y recordatorios con alto volumen de pacientes (1377 reseñas implica flujo significativo)",
+          "Procesamiento de reclamaciones y facturación con múltiples aseguradoras (ASISA y otras)",
+          "Gestión de historias clínicas, inventarios de materiales odontológicos y control de stock"
+        ],
+        "automationOpportunities": [
+          "Automatización de recordatorios de citas por SMS/WhatsApp y confirmación online",
+          "Gestión automatizada de presupuestos,同意imientos informados yenvío de documentación pre-consulta",
+          "Sistema automatizado de facturación con compañías de seguros y seguimiento de cobros pendientes"
+        ],
+        "personalizedPitch": "Para una clínica dental con alto volumen de pacientes como ASISA Dental Madrid, un software a medida que centralice agenda,historias clínicas electrónicas y facturación con aseguradoras eliminaría el caos administrativo actual. La integración con sistemas de cita online y recordatorios automáticos reduciría ausencias y mejoraría la ocupación de agenda. Además, podrías digitalizar completamente el flujo de consentimiento informado y envío de presupuestos, ganando tiempo para dedicar a los pacientes. Todo esto con cumplimiento RGPD sanitario integrado.",
+        "softwareType": "ERP sanitario + portal paciente + app móvil de citas",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrvkl006xmgyncdw7skdc",
+      "nombre": "Fitness Park Madrid - Rio 2",
+      "classification": {
+        "sector": "fitness",
+        "subsector": "gimnasio de alto volumen",
+        "painPoints": [
+          "Gestión manual de 3700+ socios con renovaciones, bajas y upgrades propensos a errores",
+          "Control de accesos y ocupación de clases sin sistema integrado en tiempo real",
+          "Comunicación fragmentada con socios (WhatsApp no controlado, emails perdidos, ausencia de canal digital unificado)"
+        ],
+        "automationOpportunities": [
+          "Renovaciones y cobros recurrentes automatizados con recordatorios y política de penalización",
+          "Reservas de clases con límite de plazas, lista de espera y confirmación automática por SMS/email",
+          "Envío automático de solicitudes de reseñas tras cada visita para consolidar su 4.6⭐"
+        ],
+        "personalizedPitch": "Con más de 3700 reseñas, Fitness Park Madrid - Rio 2 necesita un sistema que gestione acceso, reservas y comunicación sin fricción. Un software a medida con app de socio les permitiría reservas online, notificaciones push para clases llenas y un túnel automatizado de reseñas para seguir liderando en Usera. La automatización de renovaciones y cobros reducirá impagos y liberará al equipo de tareas administrativas repetitivas.",
+        "softwareType": "ERP de gestión deportiva + app móvil de socio con reservas, acceso y pagos integrados",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrw9300ewmgynbwgswaps",
+      "nombre": "Talenom Asesoría - Madrid",
+      "classification": {
+        "sector": "servicios profesionales",
+        "subsector": "asesoría fiscal y contable",
+        "painPoints": [
+          "Gestión manual de documentación y archivos de clientes sin sistema centralizado",
+          "Seguimiento de plazos fiscales y obligaciones legales sin alertas automatizadas",
+          "Comunicación ineficiente con clientes mediante email y WhatsApp sin trazabilidad",
+          "Control de trabajo facturable por cliente y proyecto sin herramientas de timesheet",
+          "Reclamación de cobros a clientes con procesos de facturación poco estandarizados"
+        ],
+        "automationOpportunities": [
+          "Portal de clientes para subida/descarga de documentos y seguimiento de expedientes",
+          "Sistema de alertas automáticas de plazos fiscales (modelos trimestrales, IVA, IRPF, societarias)",
+          "Dashboard de profitability por cliente con horas invertidas vs facturación",
+          "Facturación recurren y automática con recordatorios de pago",
+          "Integración con plataformas de la AEAT para importación de datos fiscales"
+        ],
+        "personalizedPitch": "En Talenom, donde gestionáis múltiples clientes con alta calificación (4.9⭐), un CRM especializado para asesorías conectaría todos los expedientes, automatizaría los recordatorios de plazos y centralizaría la comunicación. El portal de clientes reduciría el intercambio de emails, mientras el módulo de timesheet permitiría facturar con precisión las horas dedicadas. Todo integrado con las plataformas de la AEAT para eliminar trabajo manual y garantizar el cumplimiento normativo.",
+        "softwareType": "ERP específico para asesorías + portal de clientes + módulo de gestión documental con integraciones AEAT",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrwxx00nxmgynrqce59s8",
+      "nombre": "Taller Dasercars",
+      "classification": {
+        "sector": "automoción",
+        "subsector": "taller mecánico",
+        "painPoints": [
+          "Gestión manual de citas y planificación de trabajos会导致 sobrecalendarios o tiempos muertos",
+          "Falta de comunicación proactiva con clientes sobre estado de reparaciones y presupuestos pendientes",
+          "Control deficiente del inventario de repuestos y piezas导致了 roturas de stock o exceso de inventario",
+          "Seguimiento irregular del historique de vehículos por cliente导致了 pérdida de oportunidades de venta cruzada"
+        ],
+        "automationOpportunities": [
+          "Sistema automático de citas online con disponibilidad real del taller y recordatorios SMS/email",
+          "Portal de cliente con seguimiento en tiempo real del estado de la reparación",
+          "Alertas automáticas de reposición de inventario basadas en consumo histórico",
+          "Generación automática de presupuestos y órdenes de trabajo digitalizadas"
+        ],
+        "personalizedPitch": "Un taller con 4.9⭐ y 315 reseñas demuestra que Dasercars ya crushes en calidad de servicio, pero está perdiendo ventas por fallos en la gestión: citas que se solapan, clientes que no recogen porque nadie les avisa, y repuestos que faltan cuando más se necesitan. Te propongo un sistema de gestión de taller (DMS) con app móvil para clientes: podrán pedir cita online, ver en qué estado está su coche y recibir alertas automáticas. Tu mecánico gana tiempo, tu cliente se siente informado, y las revisiones se convierten en ventas recurrentes.",
+        "softwareType": "DMS (Dealer Management System) + app móvil de cliente con portal de seguimiento de reparaciones",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv5z001cmgynq2f3sn77",
+      "nombre": "Clínica dental González Baquero",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con alta tasa de ausencias (667 reseñas sugiere alto volumen de pacientes sin sistema automatizado de recordatorios)",
+          "Proceso de facturación y cobros lento, especialmente con múltiples aseguradoras médicas",
+          "Comunicación ineficiente con pacientes para recordatorios de revisiones periódicas y campañas de fidelización"
+        ],
+        "automationOpportunities": [
+          "Sistema de cita online con recordatorios automáticos por SMS/WhatsApp para reducir no-shows",
+          "Plataforma de gestión clínica integrada: agenda digital, historial de paciente, facturación y portal del paciente"
+        ],
+        "personalizedPitch": "Con 667 reseñas positivas, vuestra clínica tiene una reputación sólida que merece un sistema de gestión a la altura. Os propongo un software a medida que centralice citas, historial clínico y facturación en una sola plataforma, con recordatorios automáticos para pacientes y gestión de seguros médicos. Además, incluya un portal donde los pacientes puedan reservar citas online, reduciendo llamadas y sobrecarga en recepción.",
+        "softwareType": "ERP + app móvil (software de gestión clínica con agenda digital, historial médico, facturación y módulo de paciente)",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrvlx0070mgyngp2uonmi",
+      "nombre": "Balance Triangle - Gimnasio Retiro Madrid",
+      "classification": {
+        "sector": "fitness",
+        "subsector": "gimnasio boutique",
+        "painPoints": [
+          "Gestión manual de reservas y horarios de clases que consume tiempo del personal administrativo",
+          "Seguimiento deficiente de asistencia y renovaciones de membresías que dificulta la retención de clientes",
+          "Comunicación fragmentada con usuarios mediante múltiples canales (WhatsApp, email, llamadas)"
+        ],
+        "automationOpportunities": [
+          "Reservas online 24/7 para clases grupales e individuales con confirmación y recordatorios automáticos",
+          "Sistema de renovación de membresías y cobranza automática que reduzca la tasa de abandono"
+        ],
+        "personalizedPitch": "Balance Triangle destaca con 5★ y 274 reseñas, un nivel de calidad que debe protegerse. Un software a medida con app para clientes resolvería la gestión caos de reservas, centralizaría la comunicación y automatizaría renovaciones. Así el equipo se enfocará en dar clases excelentes, no en paperwork. El sistema incluiría también métricas de uso para identificar cuándo un socio está a punto de abandonar.",
+        "softwareType": "ERP de gimnasio con app móvil para clientes, reservas online, control de acceso y módulo de cobros recurrentes",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrw9300f3mgyn4jnrynjf",
+      "nombre": "Asesoría Madrid",
+      "classification": {
+        "sector": "servicios profesionales",
+        "subsector": "asesoría fiscal y contable",
+        "painPoints": [
+          "Gestión manual y dispersa de plazos fiscales y obligaciones tributarias de múltiples clientes",
+          "Comunicación ineficiente con clientes mediante email para envío/recepción de documentación",
+          "Falta de trazabilidad en el estado de cada expediente y documento pendiente"
+        ],
+        "automationOpportunities": [
+          "Sistema de alertas automáticas para vencimientos tributarios por cliente",
+          "Portal de clientes para subida/descarga de documentos con firma digital integrada",
+          "Generación automática de modelos tributarios y plantillas de declaración"
+        ],
+        "personalizedPitch": "Implementamos un software de gestión integral para asesorías que centraliza todos tus clientes, automatiza recordatorios de plazos fiscales y ofrece un portal donde tus clientes suben documentación directamente. Esto reduce un 60% del tiempo en gestión administrativa y elimina riesgos de perder plazos. Todo en la nube, accesible desde cualquier lugar.",
+        "softwareType": "ERP especializado para asesorías + portal de clientes con firma digital",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrwxx00o1mgynbqsw63uo",
+      "nombre": "JFMotor Madrid",
+      "classification": {
+        "sector": "automoción",
+        "subsector": "taller mecánico",
+        "painPoints": [
+          "Gestión manual de citas y horarios de taller",
+          "Falta de comunicación proactiva con el cliente sobre estado de reparación",
+          "Control deficiente de inventario de repuestos y piezas",
+          "Sin sistema digital de historiales por vehículo"
+        ],
+        "automationOpportunities": [
+          "Agenda online con recordatorios automáticos al cliente",
+          "Portal donde el cliente consulta estado de su vehículo en tiempo real",
+          "Alertas de stock bajo para repuestos críticos",
+          "Digitalización de historiales de reparación por matrícula"
+        ],
+        "personalizedPitch": "JFMotor Madrid destaca con 4.9★ en reseñas, lo que demuestra calidad de servicio. Para mantener esa reputación y gestionar más volumen, necesitas un software de taller que centralice citas, seguimiento de vehículos y comunicación con clientes. Con una app móvil donde el cliente vea el estado de su coche y reciba alertas, reducirás llamadas y mejorarás satisfacción. El sistema también controlará inventario para evitar quedarte sin piezas y optimizará facturación. Así puedas escalar sin perder calidad.",
+        "softwareType": "ERP para taller mecánico + app móvil cliente + portal de seguimiento",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv76001hmgynva2m9awp",
+      "nombre": "Clínica Dental Madrid | Klinik Dental®",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas que genera huecos vacíos y solapamientos",
+          "Falta de seguimiento automatizado de pacientes en tratamiento y revisiones periódicas",
+          "Sin sistema integrado para gestión de presupuestos, seguros y cobros"
+        ],
+        "automationOpportunities": [
+          "Agenda digital con disponibilidad online y recordatorios automáticos por SMS/WhatsApp",
+          "Sistema automatizado de fidelización: recordatorios de limpiezas y revisiones cada 6 meses"
+        ],
+        "personalizedPitch": "Un software a medida para Klinik Dental® que centralice agenda, historiales clínicos y gestión de cobros. Incluye agenda online 24/7 con recordatorios automáticos para reducir ausencias y un sistema deSeguimiento de tratamientos con alerts para el equipo. Además, integra gestión de seguros médicos y estadísticas de ocupación para maximizar la productividad de la clínica.",
+        "softwareType": "ERP clínico + app de gestión de citas + módulo de fidelización",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrvnh007rmgynd8xq1sel",
+      "nombre": "Barry's Madrid",
+      "classification": {
+        "sector": "fitness",
+        "subsector": "gimnasio boutique",
+        "painPoints": [
+          "Gestión manual de reservas y disponibilidad de clases grupales",
+          "Baja fidelización y comunicación irregular con clientes entre sesiones",
+          "Control ineficiente de asistencia y tracking de membresías"
+        ],
+        "automationOpportunities": [
+          "Reservas online automatizadas con confirmación instantánea",
+          "Notificaciones automáticas de recordatorios de clase y renovación de membresías",
+          "Email marketing segmentado para reactivación de clientes inactivos"
+        ],
+        "personalizedPitch": "Implementaríamos una plataforma de reservas inteligente que permita a tus clientes reservar clases en tiempo real, con recordatorios automáticos por SMS o email. Incluiría un CRM específico para fitness con追踪 de asistencia y métricas de retención, ayudándote a identificar clientes inactivos y recuperar流失. Todo conectado con tu web existente para una experiencia unificada.",
+        "softwareType": "Plataforma de reservas + CRM específico para fitness + app móvil de cliente",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrwap00fpmgynxs6ki65g",
+      "nombre": "Gestoria Madrid Asesoria de empresas laboral fiscal y contable -Inmobiliaria Seguros, Hipotecas, Herencias",
+      "classification": {
+        "sector": "servicios profesionales",
+        "subsector": "asesoría fiscal laboral y contable",
+        "painPoints": [
+          "Gestión manual de plazos fiscales, laborales y contables sin alertas automáticas",
+          "Dificultad para centralizar documentación de múltiples áreas (laboral, fiscal, contable, inmobiliaria, herencias)",
+          "Comunicación ineficiente con clientes sobre estado de sus expedientes y documentos"
+        ],
+        "automationOpportunities": [
+          "Calendario inteligente de obligaciones fiscales y laborales con notificaciones automáticas",
+          "Portal de cliente para acceso seguro a documentos, facturas y actualizaciones de expediente",
+          "Digitalización y clasificación automática de documentación recibida"
+        ],
+        "personalizedPitch": "Un software a medida para asesorías que centralice laboral, fiscal, contable, inmobiliaria y herencias en una única plataforma eliminaría la fragmentación actual. El sistema incluiría alertas automáticas de plazos para evitar sanciones por retrasos. Un portal de cliente permitiría a sus clientes acceder en tiempo real a sus documentos y recibir actualizaciones, mejorando la percepción de profesionalidad. La digitalización documental aceleraría el flujo de trabajo y reduciría errores.",
+        "softwareType": "ERP especializado para asesorías con CRM, gestión documental y portal de cliente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrwyy00o5mgyneap06ywg",
+      "nombre": "TALLERES M & J",
+      "classification": {
+        "sector": "automocion",
+        "subsector": "taller mecanico",
+        "painPoints": [
+          "Falta de sistema para gestionar citas y planificación de trabajo en tiempo real",
+          "Control deficiente del inventario de piezas y repuestos con roturas de stock frecuentes",
+          "Baja tasa de recuperación de clientes por ausencia de historial digitalizado por vehículo",
+          "Comunicación manual con clientes (llamadas, WhatsApp) que genera confusión en presupuestos y estados",
+          "Problemas de facturación y control de cobros con métodos manuales"
+        ],
+        "automationOpportunities": [
+          "Agenda digital con disponibilidad online y recordatorios automáticos por SMS/email",
+          "Sistema de gestión de inventario con alertas de stock bajo y pedidos automáticos a proveedores",
+          "Portal de cliente para seguimiento en tiempo real del estado de su reparación",
+          "Facturación electrónica integrada con contabilidad y gestión de cobros",
+          "Historial de vehículo por matrícula para ofrecer servicio personalizado y preventiva"
+        ],
+        "personalizedPitch": "Talleres M & J necesita un sistema de gestión integral que centralice agenda, inventario y facturación. El software permitiría a tus clientes pedir cita online y seguir el estado de su reparación desde el móvil, reduciendo llamadas y mejorando satisfacción. Además, automatizaría el control de stock de piezas y enviaría presupuestos firmados digitalmente. Con el historial de cada vehículo podrás ofrecer mantenimiento preventivo y aumentar tickets medios.",
+        "softwareType": "ERP para talleres con portal de cliente y app móvil de seguimiento",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv75001emgynl5fa7auf",
+      "nombre": "Clínica Dental ENIQ | Dentista en Madrid",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con llamadas telefónicas que consumen tiempo del personal de recepción",
+          "Reconfirmaciones de cita fallidas que generan huecos en la agenda y pérdida de ingresos",
+          "Seguimiento post-tratamiento inexistente o improvisado por WhatsApp sin trazabilidad"
+        ],
+        "automationOpportunities": [
+          "Agenda digital con citas online 24/7 y recordatorios automáticos por SMS/email",
+          "Portal del paciente para gestión de citas, historial y presupuestos desde el móvil"
+        ],
+        "personalizedPitch": "Un software a medida para Clínica Dental ENIQ centralizaría agenda, historial clínico y facturación en una sola plataforma. El paciente pediría cita online y recibiría recordatorios automáticos, reduciendo ausencias. El equipo ganaría tiempo y la clínica maximizaría ocupación con una experiencia premium acorde a sus 4.9 estrellas.",
+        "softwareType": "ERP sanitario + app móvil paciente",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrvoz0081mgynr5neli0u",
+      "nombre": "Gimnasio VivaGym Puerta del Sol",
+      "classification": {
+        "sector": "fitness",
+        "subsector": "gimnasio urbano en cadena",
+        "painPoints": [
+          "Gestión manual de reservas de clases grupales, causando overbooking y huecos vacíos sin ocupación",
+          "Seguimiento deficiente de renovaciones y abandonos de socios, perdiendo ingresos recurrentes predecibles",
+          "Comunicación poco personalizada con los más de 745 miembros, sin-segmentación por frecuencia de uso o preferencias"
+        ],
+        "automationOpportunities": [
+          "Sistema automatizado de reservas de clases y citas con教练 con límite de plazas y lista de espera",
+          "Envío automático de recordatorios de renovación, alertas de inactividad y campañas de reenganche segmentadas por uso"
+        ],
+        "personalizedPitch": "Con más de 700 miembros activos y una ubicación céntrica de alto tráfico, VivaGym Puerta del Sol necesita reducir la carga administrativa del personal y aumentar la retención. Proponemos una plataforma de gestión integral con app para socios: reservas de clases en tiempo real, seguimiento de asistencia, renovaciones automáticas y comunicación push segmentada. Esto reducirá abandonos, eliminará fallos de overbooking y convertirá la gestión en un proceso automático que libera tiempo para mejorar la experiencia en sala.",
+        "softwareType": "Plataforma de gestión de gimnasio + app móvil para socios con módulo de reservas, CRM de morosidad y automatización de renovaciones",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrwbx00fwmgynkgxx8jxb",
+      "nombre": "Benayas Asesores",
+      "classification": {
+        "sector": "servicios profesionales",
+        "subsector": "asesoría fiscal",
+        "painPoints": [
+          "Gestión manual y descentralizada de expedientes de clientes con documentos dispersos en papel o carpetas sin estructurar",
+          "Seguimiento fragmentado de plazos fiscales y obligaciones tributarias con riesgo de perder fechas límite",
+          "Comunicación ineficiente con clientes mediante email, WhatsApp o teléfono sin trazabilidad ni histórico accesible"
+        ],
+        "automationOpportunities": [
+          "Sistema de alertas y recordatorios automáticos para vencimientos fiscales adaptado al calendario tributario español",
+          "Portal cliente online donde subir documentación, consultar estado de trámites y recibir notificacionespush"
+        ],
+        "personalizedPitch": "Un software de gestión para asesorías fiscales que centralice todos tus expedientes clientes, automatice los recordatorios de plazos tributarios y ofrezca a tus clientes un portal donde subir documentación y consultar el estado de sus trámites. Así reduces errores, ganas tiempo y mejora la experiencia de tus 293 clientes con una herramienta adaptada a tu tamaño y forma de trabajar.",
+        "softwareType": "CRM especializado para asesorías fiscales con portal cliente integrado y calendario fiscal automático",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrx0a00ormgynm9ghu02h",
+      "nombre": "TALLER MECANICO FREJO",
+      "classification": {
+        "sector": "automoción",
+        "subsector": "taller mecánico",
+        "painPoints": [
+          "Gestión manual de citas y planificación de trabajos con hojas o agenda física",
+          "Falta de comunicación proactiva con clientes sobre estado de reparaciones y presupuestos pendientes",
+          "Sin presencia digital: no pueden gestionar reservas online ni mostrar servicios",
+          "Control deficiente de inventario de piezas y repuestos"
+        ],
+        "automationOpportunities": [
+          "Agenda digital con cita previa online y recordatorios automáticos por SMS",
+          "Portal de cliente para seguimiento en tiempo real del estado de su vehículo",
+          "Sistema de gestión de inventario y alertas de stock mínimo de piezas"
+        ],
+        "personalizedPitch": "Un taller con 4.9 estrellas que no tiene web está perdiendo clientes y generando fricción. Te propongo un sistema de gestión integral que incluya agenda online, notificaciones automáticas a clientes y control de stock. Así reduces llamadas, mejoras la experiencia de usuario y tu buena reputación se reflejará también en internet.",
+        "softwareType": "ERP para taller + portal de cliente web/móvil",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv76001mmgynjmql0bit",
+      "nombre": "Sam Dental Clinics | Clinica Dental en Madrid el Carmen",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Alto absentismo en citas sin recordatorios automáticos, perdiendo revenue y generando huecos vacíos en la agenda",
+          "Gestión manual de historiales clínicos y documentación de pacientes, consume tiempo del personal administrativo",
+          "Seguimiento deficiente de pacientes post-tratamiento, perdiendo oportunidades de-recuperación y derivaciones"
+        ],
+        "automationOpportunities": [
+          "Sistema de citas con recordatorios automáticos por SMS/WhatsApp 48h y 24h antes",
+          "Software de gestión de pacientes con agenda digital, historial clínico unificado y alertas de inventario"
+        ],
+        "personalizedPitch": "Sam Dental Clinics, con 284 reseñas positivas, necesita un sistema que elimine los huecos vacíos en su agenda. Proponemos un software de gestión integral con agenda digital, recordatorios automáticos y seguimiento de tratamientos que reducirá ausentismos un 40% y liberará a tu equipo de tareas administrativas. Incluye módulo de facturación con mutuas, control de inventario de materiales y panel de métricas para tomar decisiones basadas en datos. Todo en una plataforma centralizada que tu personal dominará en horas.",
+        "softwareType": "ERP sanitario + app móvil de gestión de citas y pacientes",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrvlx0072mgyn3uz01pdb",
+      "nombre": "Club Metropolitan Abascal",
+      "classification": {
+        "sector": "fitness",
+        "subsector": "gimnasio/centro deportivo",
+        "painPoints": [
+          "Gestión manual de membresías y cobros recurrentes",
+          "Control de acceso y registro de asistencia de usuarios",
+          "Coordinación de horarios de clases grupales y empleados"
+        ],
+        "automationOpportunities": [
+          "Automatización de cobros recurrentes y recordatorios de pago",
+          "Sistema de reserva de clases con gestión de plazas limitadas",
+          "Control de acceso con tarjetas o registro biométrico"
+        ],
+        "personalizedPitch": "Un software a medida para Club Metropolitan Abascal permitiría centralizar la gestión de socios, automatizar cobros mensuales y enviar recordatorios automáticos. El sistema incluiría un módulo de reservas de clases en tiempo real con control de plazas, mejorando la experiencia del usuario y reduciendo la carga administrativa del personal. Además, dispondrías de un panel de estadísticas para conocer patrones de asistencia y optimizar horarios.",
+        "softwareType": "ERP deportivo con módulo de reservas y gestión de membresías",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrwc600g1mgynksqo35e0",
+      "nombre": "DisyEm",
+      "classification": {
+        "sector": "servicios profesionales",
+        "subsector": "asesoría fiscal",
+        "painPoints": [
+          "Gestión manual y desorganizada de documentación fiscal y contable de clientes",
+          "Control deficiente de plazos, vencimientos y obligaciones tributarias",
+          "Comunicación dispersa con clientes (email, teléfono, WhatsApp sin centralizar)"
+        ],
+        "automationOpportunities": [
+          "Digitalización OCR de facturas y receipts con clasificación automática por cliente y concepto fiscal",
+          "Sistema de alertas y recordatorios automáticos para plazos fiscales y vencimientos de declaraciones"
+        ],
+        "personalizedPitch": "DisyEm necesita centralizar toda la documentación fiscal de sus clientes en un único sistema donde cada factura escaneada se clasifique automáticamente por tipo de impuesto y período. Un software a medida que automatice los recordatorios de plazos evitará penalizaciones y mejorará el cumplimiento normativo. Además, una plataforma CRM integrada permitirá gestionar toda la comunicación con clientes desde un solo canal, reduciendo errores y tiempos de respuesta.",
+        "softwareType": "ERP + CRM con módulo de gestión documental y OCR para asesorías fiscales",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrx0b00otmgyntqr7kxmj",
+      "nombre": "MackAuto Taller Mecánico Vallecas",
+      "classification": {
+        "sector": "automoción",
+        "subsector": "taller mecánico",
+        "painPoints": [
+          "Gestión manual de citas y planificación de trabajos diarios",
+          "Seguimiento deficiente del estado de cada reparación para informar al cliente",
+          "Control de inventario de piezas y repuestos con frecuentes roturas de stock",
+          "Facturación lenta y gestión de cobros poco eficiente",
+          "Pérdida de histórico de servicios por vehículo"
+        ],
+        "automationOpportunities": [
+          "Agenda digital con citas online, recordatorios SMS/WHATSAPP y asignación por mecánico",
+          "Portal de cliente donde pueda ver en tiempo real el estado de su reparación",
+          "Sistema de gestión de inventario de piezas con alertas de stock mínimo y pedidos automáticos a proveedores",
+          "Automática de facturación integrada con contabilidad y gestión de cobros por bizum/tarjeta"
+        ],
+        "personalizedPitch": "En MackAuto necesitáis un sistema que os permita organizar las citas y el trabajo de cada mecánico sin perder horas llamando clientes. Con nuestro software, cada cliente podrá ver desde su móvil cuándo está su coche listo y recibirá avisos automáticos. Además, controláis el stock de piezas en tiempo real para evitar retrasos. Todo integrado en una sola plataforma que os ahorrará tiempo en facturación y os ayudará a fidelizar clientes con un servicio más profesional.",
+        "softwareType": "ERP de taller + app móvil para clientes + portal de seguimiento de reparaciones",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrv75001fmgyngtw7xxyc",
+      "nombre": "Dentologies - Clínica dental Madrid",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con pérdida de hueos por ausencias sin recordatorio automático",
+          "Historias clínicas y documentación de tratamientos dispersa en papel o sistemas no integrados",
+          "Control de inventario de materiales y fungibles sin visibilidad en tiempo real",
+          "Seguimiento de pacientes para reaplicaciones y revisiones (recall) casi inexistente"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita por SMS/WhatsApp 48h antes para reducir ausencias",
+          "Sistema de agenda inteligente con disponibilidad en tiempo real accesible desde web",
+          "Recordatorios automáticos de revisiones y tratamientos pendientes (sistema de recall)",
+          "Gestión de cobros y facturación integrada con historia clínica"
+        ],
+        "personalizedPitch": "Dentologies necesita un software de gestión clínica que centralice agenda, historia clínica y facturación en una única plataforma. Implementaríamos un sistema de recordatorios automáticos por WhatsApp para reducir las citas perdidas, y un módulo de recall que active automáticamente alertas de revisiones periodontales, limpiezas o tratamientos pendientes. Además, integraríamos una agenda online desde su web donde los pacientes puedan reservar directamente, optimizando la ocupación de cada profesional. Todo esto conectado con un CRM de pacientes que permita segmentar por tratamiento y mejorar la comunicación personalizada.",
+        "softwareType": "ERP sanitario + agenda online + módulo de recall + app paciente",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrvng007qmgyn6x1eol0t",
+      "nombre": "Le Max Wellness Club",
+      "classification": {
+        "sector": "fitness",
+        "subsector": "club wellness de lujo integrado en hotel",
+        "painPoints": [
+          "Gestión fragmentada de reservas de clases, zonas wellness (spa, piscina, tratamientos) y acceso al gimnasio sin integración con la operativa del hotel",
+          "Seguimiento limitado del historial de uso y preferencias de cada socio para personalizar servicios y upselling en bienestar",
+          "Falta de conexión entre el sistema de facturación del club y la gestión de cuentas del hotel (huéspedes que usan servicios wellness charged a habitación)"
+        ],
+        "automationOpportunities": [
+          "Reserva inteligente de espacios y clases con disponibilidad en tiempo real y confirmación automática por email/SMS",
+          "Programa de fidelización automatizado que recompense visitas, recomiende servicios complementarios (masajes, tratamientos) y envíe promociones en fechas clave",
+          "Integración de facturación wellness con el PMS del Hotel Wellington para cargar consumo directo a habitación de huéspedes"
+        ],
+        "personalizedPitch": "Le Max Wellness Club puede diferenciarse como referente de bienestar en Madrid integrando toda su operativa en una plataforma única: reservas de spa, clases y gym, historial de cliente y facturación vinculada al hotel. Un software a medida permitiría gestionar los 228 reseñas como embudo de captación, automatizar ofertas personalizadas según hábitos de uso y cargar consumos directamente a la habitación de huéspedes, incrementando ingresos por cliente sin fricción. El resultado: experiencia premium para el socio y control total de ingresos para la dirección.",
+        "softwareType": "ERP wellness + app de reservas + integración PMS hotel",
+        "confidence": "media"
+      }
+    }
+  ]
+}

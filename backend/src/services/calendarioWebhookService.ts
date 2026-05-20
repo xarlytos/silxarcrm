@@ -28,8 +28,15 @@ export async function crearEventoDesdeReserva(
 
     // Determinar el color basado en el SaaS
     const colorPorSaas: Record<string, any> = {
-      'entrenadores': 'blue',
-      'nutricion': 'green',
+      'atleevo': 'blue',
+      'atleevogym': 'blue',
+      'atleevoyoga': 'blue',
+      'atleevobox': 'blue',
+      'agrogest': 'green',
+      'prismadental': 'pink',
+      'heliowatt': 'yellow',
+      'comantek': 'orange',
+      'peluguau': 'red',
       'default': 'purple'
     };
 

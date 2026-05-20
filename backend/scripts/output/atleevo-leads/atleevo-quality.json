@@ -1,0 +1,1498 @@
+{
+  "softwareId": "atleevo",
+  "total": 1469,
+  "byOrigen": {
+    "manual": 1,
+    "google-maps": 1468
+  },
+  "byPrimaryType": {
+    "(none)": 9,
+    "health": 1054,
+    "gym": 232,
+    "wellness_center": 25,
+    "medical_clinic": 21,
+    "fitness_center": 72,
+    "massage": 3,
+    "consultant": 17,
+    "physiotherapist": 3,
+    "educational_institution": 9,
+    "sports_complex": 1,
+    "sports_club": 6,
+    "sports_school": 3,
+    "food_store": 2,
+    "store": 1,
+    "corporate_office": 1,
+    "amusement_center": 3,
+    "school": 2,
+    "university": 1,
+    "government_office": 3,
+    "sporting_goods_store": 1
+  },
+  "byCiudad": {
+    "(none)": 13,
+    "Madrid": 98,
+    "Barcelona": 71,
+    "Valencia": 101,
+    "Sevilla": 86,
+    "Zaragoza": 74,
+    "Málaga": 72,
+    "Bilbao": 61,
+    "Mallorca": 57,
+    "Palma de Mallorca": 11,
+    "Murcia": 77,
+    "Las Palmas de Gran Canaria": 52,
+    "Alicante": 97,
+    "Córdoba": 98,
+    "Valladolid": 62,
+    "Vigo": 62,
+    "Gijón": 58,
+    "A Coruña": 67,
+    "Vitoria-Gasteiz": 56,
+    "Granada": 63,
+    "Elche": 57,
+    "Santa Cruz de Tenerife": 76
+  },
+  "namePattern": {
+    "trainer": 682,
+    "otherBusiness": 79,
+    "neutral": 708
+  },
+  "outliers": [
+    {
+      "id": "cmpcyk709002hih9uvargus7n",
+      "nombre": "GOALS Fisioterapia y Personal Training",
+      "primaryType": "health",
+      "ciudad": "Barcelona",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcyl5tg005tih9uasxymj3x",
+      "nombre": "Gym Boutique Sevilla",
+      "primaryType": "health",
+      "ciudad": "Sevilla",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcym81l009eih9uqxtafx1e",
+      "nombre": "FunesFit Gym Málaga",
+      "primaryType": "gym",
+      "ciudad": "Málaga",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcymcmq009nih9ues1r0gij",
+      "nombre": "Estudio Training Euskalduna - Gimnasio",
+      "primaryType": "gym",
+      "ciudad": "Bilbao",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcymjoy00adih9uuqsdo912",
+      "nombre": "Nutricionista en Bilbao | NutriSarmi - Asier Sarmiento",
+      "primaryType": "consultant",
+      "ciudad": "Bilbao",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcymm2i00amih9ujzr5ssto",
+      "nombre": "FisioFitness Markel Simon",
+      "primaryType": "physiotherapist",
+      "ciudad": "Bilbao",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcympk200azih9u7jbmdyky",
+      "nombre": "Koxka Crossfit",
+      "primaryType": "health",
+      "ciudad": "Bilbao",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcymrlg00b7ih9uodf0j18z",
+      "nombre": "Gimnasio Bilbo Center",
+      "primaryType": "gym",
+      "ciudad": "Bilbao",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcyn60r00chih9ul854747o",
+      "nombre": "FisioWorld Trainer",
+      "primaryType": "physiotherapist",
+      "ciudad": "Mallorca",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcyn71f00clih9u1kjh4rg2",
+      "nombre": "Skuat Gym Boutique",
+      "primaryType": "health",
+      "ciudad": "Mallorca",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcz38c3001yq1seiwsw7wwe",
+      "nombre": "Gimnasio Cor",
+      "primaryType": "gym",
+      "ciudad": "Valencia",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcz3vh2002yq1se1vr82fhd",
+      "nombre": "Academia de porteros Fisionext by Ismael Salti",
+      "primaryType": "sports_school",
+      "ciudad": "Sevilla",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcz4hwr003lq1se44f7iaxc",
+      "nombre": "Nano Sport - Tienda de nutrición",
+      "primaryType": "food_store",
+      "ciudad": "Zaragoza",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcz4jgc003qq1se93obxg7m",
+      "nombre": "Mntoor | Nutricionista deportivo",
+      "primaryType": "consultant",
+      "ciudad": "Zaragoza",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcz50vd004bq1se8b07gk5m",
+      "nombre": "JM NUTRICIÓN",
+      "primaryType": "food_store",
+      "ciudad": "Málaga",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcz6bc60060q1seninax0fe",
+      "nombre": "Gym Sparta",
+      "primaryType": "gym",
+      "ciudad": "Murcia",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcz6dom0069q1sehq1rdgk7",
+      "nombre": "Centro Deportivo y de Fisioterapia en Murcia - Centro Impulso",
+      "primaryType": "medical_clinic",
+      "ciudad": "Murcia",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcz7gdo006gq1segvimocei",
+      "nombre": "180 Training Club - Gimnasio en Murcia",
+      "primaryType": "gym",
+      "ciudad": "Murcia",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcz7o61006oq1sejpfu59nz",
+      "nombre": "ENFAF - Formación Deportiva, Nutrición y Salud",
+      "primaryType": "educational_institution",
+      "ciudad": "Murcia",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczah4f0084q1se1imalp6c",
+      "nombre": "Box Connection San Telmo",
+      "primaryType": "gym",
+      "ciudad": "Las Palmas de Gran Canaria",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczbgcb008mq1sels8nv1pz",
+      "nombre": "FOSTER FITNESS | Gimnasio en Alicante",
+      "primaryType": "health",
+      "ciudad": "Alicante",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczbr57008tq1seuvaqozo2",
+      "nombre": "Y+D Training Gimnasio Boutique en Alicante",
+      "primaryType": "health",
+      "ciudad": "Alicante",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczek0500a4q1sedx5avxev",
+      "nombre": "coworkgym fitness studio 66",
+      "primaryType": "health",
+      "ciudad": "Alicante",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczf2oo00b0q1se87lklq8r",
+      "nombre": "Fisico Marcial GyM",
+      "primaryType": "gym",
+      "ciudad": "Alicante",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczfbwo00bsq1seqr9hvwv5",
+      "nombre": "Core Gym",
+      "primaryType": "wellness_center",
+      "ciudad": "Córdoba",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczffbh00c4q1seb8whkg5s",
+      "nombre": "Gimnasio Fit&Five",
+      "primaryType": "gym",
+      "ciudad": "Córdoba",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczfiv600ciq1se4xz827n4",
+      "nombre": "CrossFit Córdoba",
+      "primaryType": "gym",
+      "ciudad": "Córdoba",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczfjdk00ckq1sedujnr6m8",
+      "nombre": "CLUB GYM SIERRA | Tu gimnasio en Córdoba",
+      "primaryType": "gym",
+      "ciudad": "Córdoba",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczfpu400csq1se6w9eu7a6",
+      "nombre": "G&D Pilates & Fitness Training + F&D Fitness & Wellness Gym",
+      "primaryType": "wellness_center",
+      "ciudad": "Córdoba",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczfqgn00cuq1sejo573r4t",
+      "nombre": "PERSA GYM",
+      "primaryType": "gym",
+      "ciudad": "Córdoba",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczfrrg00czq1sezqi2cm3v",
+      "nombre": "Gym Pulso Club Fitness",
+      "primaryType": "gym",
+      "ciudad": "Córdoba",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczfu3i00d7q1sedy1303od",
+      "nombre": "LIKE GYM – Fitness & Aerobic",
+      "primaryType": "gym",
+      "ciudad": "Córdoba",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczfuln00d9q1sebnwutqfr",
+      "nombre": "Natural Force Gym & Life",
+      "primaryType": "gym",
+      "ciudad": "Córdoba",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczfwv500diq1seyq6q2n4c",
+      "nombre": "Muscle Gym Force",
+      "primaryType": "gym",
+      "ciudad": "Córdoba",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczghdv00f5q1se4tpcldz7",
+      "nombre": "Sara Panizo Estética y Deporte",
+      "primaryType": "health",
+      "ciudad": "Valladolid",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczgimk00faq1sevks0nej8",
+      "nombre": "DS - Arco de Ladrillo - Gimnasio & Fitness Club",
+      "primaryType": "gym",
+      "ciudad": "Valladolid",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczgr0200fdq1sexmn911bj",
+      "nombre": "The Monkey Box",
+      "primaryType": "gym",
+      "ciudad": "Valladolid",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczh94l00glq1se17t6rgyw",
+      "nombre": "FitGal Gimnasio",
+      "primaryType": "gym",
+      "ciudad": "Vigo",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczhku400h2q1sevolg02rv",
+      "nombre": "IKIGAI Training Box Vigo",
+      "primaryType": "gym",
+      "ciudad": "Vigo",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczhm4600h5q1seazrrz2ti",
+      "nombre": "Mar Hermida [Gimnasio Arenal] (Vigo)",
+      "primaryType": "health",
+      "ciudad": "Vigo",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczi0c000hyq1sejyw59jwt",
+      "nombre": "Ítaca - Gym Boutique Gijón",
+      "primaryType": "health",
+      "ciudad": "Gijón",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczi24d00i5q1senewnmumq",
+      "nombre": "TarabikaMoov Salud & Pilates",
+      "primaryType": "health",
+      "ciudad": "Gijón",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczi5ht00iiq1sej1eyj7o9",
+      "nombre": "Global Pilates",
+      "primaryType": "gym",
+      "ciudad": "Gijón",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczi5sn00ijq1sewmapruol",
+      "nombre": "Dreamfit Gimnasio Gijón",
+      "primaryType": "gym",
+      "ciudad": "Gijón",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczirsy00jlq1selldadrdd",
+      "nombre": "Origym",
+      "primaryType": "gym",
+      "ciudad": "A Coruña",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczistf00jpq1sehp8qt1iq",
+      "nombre": "Equilatero Boutique Gym",
+      "primaryType": "fitness_center",
+      "ciudad": "A Coruña",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcziuhw00jvq1selnbj33ja",
+      "nombre": "Fisiotrainner Center",
+      "primaryType": "health",
+      "ciudad": "A Coruña",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpcziuqu00jwq1setd04cqvq",
+      "nombre": "Origym Studio",
+      "primaryType": "gym",
+      "ciudad": "A Coruña",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczizba00keq1sesnatzxdm",
+      "nombre": "HIPOGYM",
+      "primaryType": "health",
+      "ciudad": "A Coruña",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczjpic00lbq1sel0xv8yup",
+      "nombre": "Dreamfit Gimnasio Vitoria",
+      "primaryType": "gym",
+      "ciudad": "Vitoria-Gasteiz",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczjqtz00lgq1sey548blw2",
+      "nombre": "Gimnasio Invictus Submission Jiu Jitsu",
+      "primaryType": "gym",
+      "ciudad": "Vitoria-Gasteiz",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczjrvo00lkq1se03kxkj2m",
+      "nombre": "GIMNASIO GASTEIZ TRAINNING",
+      "primaryType": "gym",
+      "ciudad": "Vitoria-Gasteiz",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczjt5500lpq1se179f9lh8",
+      "nombre": "Gimnasio New Era XXI",
+      "primaryType": "fitness_center",
+      "ciudad": "Vitoria-Gasteiz",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczjte800lqq1sen6sp5xed",
+      "nombre": "Synergym",
+      "primaryType": "gym",
+      "ciudad": "Vitoria-Gasteiz",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczjuwk00lwq1seegh9btyc",
+      "nombre": "FJ GYM",
+      "primaryType": "gym",
+      "ciudad": "Vitoria-Gasteiz",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczjv5p00lxq1serfvne1di",
+      "nombre": "Gimnasio Gasteiz Sport",
+      "primaryType": "gym",
+      "ciudad": "Vitoria-Gasteiz",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczjvny00lzq1sewj4uopsi",
+      "nombre": "GIMNASIO SEI - Actividades deportivas y culturales",
+      "primaryType": "fitness_center",
+      "ciudad": "Vitoria-Gasteiz",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczjvwz00m0q1sevde38mho",
+      "nombre": "New Old School Gym",
+      "primaryType": "gym",
+      "ciudad": "Vitoria-Gasteiz",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczjw6200m1q1sekraq6yat",
+      "nombre": "Synergym Vitoria Borinbizkarra",
+      "primaryType": "gym",
+      "ciudad": "Vitoria-Gasteiz",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczjwo600m3q1seypy7gna7",
+      "nombre": "VinkaWellness Esrududio de Pilates, Yoga e Hipopresivos (L.P.F.)",
+      "primaryType": "gym",
+      "ciudad": "Vitoria-Gasteiz",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczjwxd00m4q1semoh5hp4f",
+      "nombre": "Noelia Instructora Pilates Máquina y Suelo, Coach neurolingüístico y Terapia con Animales",
+      "primaryType": "gym",
+      "ciudad": "Vitoria-Gasteiz",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczjx6j00m5q1sej2awp1c3",
+      "nombre": "Synergym Vitoria Zaramaga",
+      "primaryType": "gym",
+      "ciudad": "Vitoria-Gasteiz",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczjxgq00m6q1se818fe4uq",
+      "nombre": "Gimnasio de crosstraining Vitoria Gasteiz | Deltabox",
+      "primaryType": "gym",
+      "ciudad": "Vitoria-Gasteiz",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczl6lo00opq1se2z3pal27",
+      "nombre": "BE FUNCTIONAL GYM",
+      "primaryType": "health",
+      "ciudad": "Elche",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczl7l700otq1se9v67llu3",
+      "nombre": "Natur Fitness Gym Elche",
+      "primaryType": "gym",
+      "ciudad": "Elche",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczlkb300paq1sefu93ugvd",
+      "nombre": "Pilates Evidence (Elche)",
+      "primaryType": "fitness_center",
+      "ciudad": "Elche",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczllk200pcq1sea19jnop6",
+      "nombre": "Gimnasio CAI",
+      "primaryType": "gym",
+      "ciudad": "Elche",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczlmdo00pfq1sedj67knum",
+      "nombre": "AT Box",
+      "primaryType": "gym",
+      "ciudad": "Elche",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczlrt700phq1se4v6s2fe3",
+      "nombre": "Clínica Fisioterapia Samuel Asensio",
+      "primaryType": "medical_clinic",
+      "ciudad": "Elche",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczm0wq00q4q1secac3czd7",
+      "nombre": "FC Box Tenerife, Funcional y E.personal.",
+      "primaryType": "gym",
+      "ciudad": "Santa Cruz de Tenerife",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczm4u100qiq1seqw8rhgl7",
+      "nombre": "Sbelta Gym",
+      "primaryType": "gym",
+      "ciudad": "Santa Cruz de Tenerife",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczm5zu00qmq1se4jafsnsf",
+      "nombre": "Caf equilibrio gym",
+      "primaryType": "health",
+      "ciudad": "Santa Cruz de Tenerife",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczm8hn00qvq1se59hi6375",
+      "nombre": "Soul Fit Training Box",
+      "primaryType": "gym",
+      "ciudad": "Santa Cruz de Tenerife",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczmfpc00r6q1sexy9ycgy9",
+      "nombre": "Loft Training Gimnasio Tenerife",
+      "primaryType": "gym",
+      "ciudad": "Santa Cruz de Tenerife",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczmjvk00r9q1se408nqstb",
+      "nombre": "Empower Gym Girl Club - Gimnasio Mujeres",
+      "primaryType": "gym",
+      "ciudad": "Santa Cruz de Tenerife",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczmk6j00raq1secpxpv7k0",
+      "nombre": "Manu fit GYM Tenerife",
+      "primaryType": "gym",
+      "ciudad": "Santa Cruz de Tenerife",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczmndy00rgq1sel5xd2jf2",
+      "nombre": "Krom Gym",
+      "primaryType": "gym",
+      "ciudad": "Santa Cruz de Tenerife",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpczmqjo00rhq1senjv21ign",
+      "nombre": "Canary Strength (CS Gym)",
+      "primaryType": "gym",
+      "ciudad": "Santa Cruz de Tenerife",
+      "razon": "nombre indica otro tipo de negocio"
+    },
+    {
+      "id": "cmpd0sv2g000513no206mybf2",
+      "nombre": "Coworkgym",
+      "primaryType": "gym",
+      "ciudad": "(none)",
+      "razon": "nombre indica otro tipo de negocio"
+    }
+  ],
+  "dummy": [
+    {
+      "id": "cmofs2m800000k7kzb1sb97i7",
+      "nombre": "asda"
+    },
+    {
+      "id": "cmpcz4jpj003rq1sekuftm3bw",
+      "nombre": "PTC"
+    },
+    {
+      "id": "cmpczcn6a009cq1se92j3mbyz",
+      "nombre": "ZEO"
+    },
+    {
+      "id": "cmpczitfs00jrq1sevq9o069m",
+      "nombre": "DL"
+    },
+    {
+      "id": "cmpcziysn00kcq1sew3vto4vy",
+      "nombre": "Rnh"
+    },
+    {
+      "id": "cmpczl92a00ozq1sensmk4s14",
+      "nombre": "DSG"
+    }
+  ],
+  "incontactables": [
+    {
+      "id": "cmpcykk9d003pih9u1nuxirhe",
+      "nombre": "Físico Sostenible - Entrenador personal",
+      "ciudad": "Valencia"
+    },
+    {
+      "id": "cmpcylbz4006hih9u8ey69lyc",
+      "nombre": "Entrenador Personal Sevilla",
+      "ciudad": "Sevilla"
+    },
+    {
+      "id": "cmpcymi5700a7ih9ur1dc7mg5",
+      "nombre": "JG fitness Bilbao | Entrenador personal & Electroestimulacion | Bilbao",
+      "ciudad": "Bilbao"
+    },
+    {
+      "id": "cmpcymiee00a8ih9uajx6gwsh",
+      "nombre": "Igor Muñoz Casas. Entrenador Personal",
+      "ciudad": "Bilbao"
+    },
+    {
+      "id": "cmpcymz8100bsih9upatw84vk",
+      "nombre": "Mery Delgado",
+      "ciudad": "Mallorca"
+    },
+    {
+      "id": "cmpcz4aaj003gq1seag1eqvai",
+      "nombre": "A New Day Fitness",
+      "ciudad": "Zaragoza"
+    },
+    {
+      "id": "cmpcz502k0048q1sen607f9x6",
+      "nombre": "Pablo Velasco Preparador Fisico",
+      "ciudad": "Málaga"
+    },
+    {
+      "id": "cmpczfebe00c0q1se0rm0isnr",
+      "nombre": "Natural Sport Córdoba",
+      "ciudad": "Córdoba"
+    },
+    {
+      "id": "cmpczfpc600cqq1se31m5igkk",
+      "nombre": "Agile",
+      "ciudad": "Córdoba"
+    },
+    {
+      "id": "cmpczi0lb00hzq1se4tavkmwj",
+      "nombre": "P3 wellness",
+      "ciudad": "Gijón"
+    },
+    {
+      "id": "cmpczi1ld00i3q1senj8wxs16",
+      "nombre": "FeelForma Los Fresnos",
+      "ciudad": "Gijón"
+    },
+    {
+      "id": "cmpczifp400iqq1sede4g3jet",
+      "nombre": "Feelforma Avenida Jose Manuel Palacios",
+      "ciudad": "Gijón"
+    },
+    {
+      "id": "cmpczitfs00jrq1sevq9o069m",
+      "nombre": "DL",
+      "ciudad": "A Coruña"
+    },
+    {
+      "id": "cmpczizba00keq1sesnatzxdm",
+      "nombre": "HIPOGYM",
+      "ciudad": "A Coruña"
+    },
+    {
+      "id": "cmpczj8bu00khq1sedgpoziz6",
+      "nombre": "JR fitness",
+      "ciudad": "A Coruña"
+    },
+    {
+      "id": "cmpczjrvo00lkq1se03kxkj2m",
+      "nombre": "GIMNASIO GASTEIZ TRAINNING",
+      "ciudad": "Vitoria-Gasteiz"
+    },
+    {
+      "id": "cmpczlsi000pjq1se9evbmm5i",
+      "nombre": "Aprende a Entrenar",
+      "ciudad": "Elche"
+    },
+    {
+      "id": "cmpczm69p00qnq1se5m1d680k",
+      "nombre": "El Método, Centro de entrenamiento Funcional",
+      "ciudad": "Santa Cruz de Tenerife"
+    },
+    {
+      "id": "cmpczmndy00rgq1sel5xd2jf2",
+      "nombre": "Krom Gym",
+      "ciudad": "Santa Cruz de Tenerife"
+    },
+    {
+      "id": "cmpd0stes000213noy3da0snz",
+      "nombre": "Juanma izquierdo fitclub",
+      "ciudad": "(none)"
+    }
+  ],
+  "dupTelefono": [
+    {
+      "telefono": "602626473",
+      "leads": [
+        "Factor Fuerza  [cmpczf9pc00blq1sexdpnjamp]",
+        "Factor Fuerza Almogávares  [cmpczfj4g00cjq1se7ugo7v6t]"
+      ]
+    },
+    {
+      "telefono": "605800518",
+      "leads": [
+        "Jesus Tena PT Entrenador Personal Sevilla  [cmpcyky6m0050ih9ug8k3ecrf]",
+        "Jesus Tena PT Entrenador Personal Zaragoza  [cmpcylifb006xih9u4lcbf13t]",
+        "Jesús Tena PT Entrenador Personal Málaga  [cmpcylwf50086ih9uhpveos4t]",
+        "Jesus Tena PT Entrenador Personal La Malagueta  [cmpcyly7i008dih9um4lukdeq]",
+        "Jesus Tena PT Entrenador Personal Los Guindos  [cmpcylyq7008fih9uot3hdqia]",
+        "Jesus Tena PT Entrenador Personal Vialia  [cmpcym02u008kih9uf9j67lf0]",
+        "Jesus Tena PT Entrenador Personal Pacifico  [cmpcym0m8008mih9uart4dbjc]",
+        "Jesus Tena PT Entrenador Personal Teatinos  [cmpcym145008oih9uxrz442oe]",
+        "Jesús Tena Enterprise ▷ Entrenador Personal Basicfit  [cmpcym2wr008vih9ubvywn2yt]",
+        "Jesus Tena PT Entrenador Personal Bilbao Deusto  [cmpcymef3009uih9urqbase2g]",
+        "Jesus Tena PT Entrenador Personal Bilbao  [cmpcymepd009vih9uxpce3cop]",
+        "JTPT & FITNESS MAFIA | Entrenador personal Mallorca  [cmpcymu2u00b8ih9uurylyq66]",
+        "Jesús Tena PT Entrenador Personal Murcia  [cmpcz64ka005aq1seo8e167bw]",
+        "Jesús Tena PT Entrenador Personal Murcia Centro  [cmpcz7hfk006jq1see8jvj1jf]",
+        "Jesus Tena PT Entrenador Personal Córdoba  [cmpczf8fv00bgq1se0lnul85j]",
+        "Jesus Tena PT Entrenador Personal Valladolid  [cmpczg87100e6q1se7cw1mfea]",
+        "Jesus Tena PT Entrenador Personal en A Coruña  [cmpczinys00j6q1sexw394pwu]",
+        "Jesus Tena PT Entrenador Personal Granada  [cmpczk70l00mrq1se4tfvs0gf]"
+      ]
+    },
+    {
+      "telefono": "610820712",
+      "leads": [
+        "Master Trainers Málaga | Entrenamiento Personal  [cmpcylyz9008gih9u3sy0wfl4]",
+        "Master Trainers Málaga Juan XXIII | Entrenamiento personal  [cmpcym8jp009gih9uc7m9a6h0]"
+      ]
+    },
+    {
+      "telefono": "611495078",
+      "leads": [
+        "Fufutrainer  [cmpcylaya006dih9u4fcpk59k]",
+        "Fufutrainer Montequinto  [cmpcz3z9r003aq1seje4k4w9y]"
+      ]
+    },
+    {
+      "telefono": "611567592",
+      "leads": [
+        "Reset Train - Entrenamiento Personal  [cmpcylepx006jih9udsb74b1k]",
+        "Reset Train - Almozara  [cmpcz46m9003eq1seebphufba]"
+      ]
+    },
+    {
+      "telefono": "611675947",
+      "leads": [
+        "Fitactiva Fleta | Entrenador Personal En Zaragoza  [cmpcylf8m006lih9uwwjev1xs]",
+        "FITACTIVA Servet | Entrenador personal en Zaragoza  [cmpcylgc2006pih9ufahosmkk]",
+        "FITACTIVA Bretón | Entrenador personal y Fisioterapia en Zaragoza  [cmpcylhmt006uih9u10l6cw0f]",
+        "FITACTIVA Actur I Entrenador personal y Fisioterapia en Zaragoza  [cmpcyllji0079ih9u0fbpvcdp]"
+      ]
+    },
+    {
+      "telefono": "613032393",
+      "leads": [
+        "Entrenador Personal en Granada | David Rodríguez | Oficina  [cmpczk8j300mxq1se1mnamipc]",
+        "David Rodríguez | Entrenador Personal en Granada Centro|  [cmpczkf4a00nmq1se75qtgtae]"
+      ]
+    },
+    {
+      "telefono": "613094090",
+      "leads": [
+        "Origym  [cmpczirsy00jlq1selldadrdd]",
+        "Origym Studio  [cmpcziuqu00jwq1setd04cqvq]"
+      ]
+    },
+    {
+      "telefono": "613894102",
+      "leads": [
+        "JW Entrenamiento - Camino de Ronda  [cmpczk2h300maq1sextkef4eq]",
+        "JW Entrenamiento - Melchor Almagro  [cmpczk40k00mgq1ser3195mhg]",
+        "JW Entrenamiento - Albayda  [cmpczkeuz00nlq1se6fps15nt]"
+      ]
+    },
+    {
+      "telefono": "613914090",
+      "leads": [
+        "MÉTODO ZENON - Tenerias  [cmpczg7oq00e4q1se1whyu3o1]",
+        "MÉTODO ZENON - Parquesol  [cmpczg8oz00e8q1sekiqvqcns]",
+        "MÉTODO ZENON - Vallsur  [cmpczgg4200f0q1se51j5n2yx]"
+      ]
+    },
+    {
+      "telefono": "615532102",
+      "leads": [
+        "Entrenadora Personal Sevilla  [cmpcykx59004wih9u3zm0v52t]",
+        "Hipopresivos Sevilla  [cmpcylbgr006fih9uh3heni9j]"
+      ]
+    },
+    {
+      "telefono": "616828042",
+      "leads": [
+        "Javier García entrenador personal  [cmpczg4df00drq1sekv119xy4]",
+        "VIBRA Entrenamiento Personal  [cmpczg54y00duq1sezxn5rop4]",
+        "Vibra Entrenamiento Personal Golf Entrepinos  [cmpczgdf300eqq1sesk0i0rzx]"
+      ]
+    },
+    {
+      "telefono": "617829904",
+      "leads": [
+        "Entrenador personal en Barcelona - Martí Baró Personal Trainer  [cmpcyjz95001nih9uqewpmyzo]",
+        "Entrenador Personal Barcelona - Martí Baró  [cmpcyk7tb002kih9ue7lm1puh]"
+      ]
+    },
+    {
+      "telefono": "622700600",
+      "leads": [
+        "Juan Peris: Entrenador Personal y Fisioterapeuta. Experto en optimización de la salud y longevidad.  [cmpczexhe00agq1setv0zklvh]",
+        "MYOX: entrenamiento personal, fisioterapia, formación y tienda online  [cmpczezee00anq1semjz2629j]"
+      ]
+    },
+    {
+      "telefono": "623233367",
+      "leads": [
+        "Balance Venture  [cmpczhwsg00hkq1se3e8lqiik]",
+        "Centro de entrenamiento La Cueva  [cmpczhx1b00hlq1se0r5t81ta]"
+      ]
+    },
+    {
+      "telefono": "623553077",
+      "leads": [
+        "Método 42 Teatinos  [cmpcym58v0094ih9uio4ujikk]",
+        "Método 42 Herrera Oria  [cmpcz4rix003vq1seral9tq0s]"
+      ]
+    },
+    {
+      "telefono": "627836859",
+      "leads": [
+        "Fitness Lab | Entrenador personal en Barcelona  [cmpcyjyqh001lih9u2ttvpg4k]",
+        "Entrenadores personales en Barcelona - FitnessLab  [cmpcyk32g0022ih9uh6sb4h2t]",
+        "FitnessLab - Entrenamiento personal en Barcelona  [cmpcyk4uk0029ih9ukcuz9p9w]"
+      ]
+    },
+    {
+      "telefono": "635444442",
+      "leads": [
+        "ErTrainer - entrenamiento en grupos reducidos - entrenador personal las palmas - entrenamiento patologias  [cmpcz8mlo0071q1se7hd9pj59]",
+        "Health21 - entrenador personal las palmas- nutricionista - salud- entrenamiento en grupo las palmas- quiromasaje  [cmpcz91ul0078q1se0zq13mni]"
+      ]
+    },
+    {
+      "telefono": "635997145",
+      "leads": [
+        "Entrenamiento Personal Granada - Fit2Grow  [cmpczk9x800n2q1sed6a4z33e]",
+        "Entrenamiento Personal Maracena - Fit2Grow - Oficinas  [cmpczkap100n5q1sev9rtql47]",
+        "Entrenamiento Personal Churriana de la Vega - Fit2Grow  [cmpczkfv500npq1sehuuy9z85]"
+      ]
+    },
+    {
+      "telefono": "637859224",
+      "leads": [
+        "Feel Well entrenamiento personal Rodríguez Arias  [cmpcymgqg00a2ih9uvelu2cck]",
+        "Feel Well entrenamiento personal Santutxu  [cmpcymj6800abih9u7d5vhx9g]",
+        "Feel Well Entrenamiento Personal SL Miribilla  [cmpcyml2a00aiih9uv03ny7jo]",
+        "Feel well entrenamiento personal Gran Vía  [cmpcymmuw00apih9ulo0gsr7e]",
+        "Feel Well entrenamineto personal  [cmpcymnx400atih9urgncsb78]",
+        "Feel Well entrenamiento personal  [cmpczjive00l2q1seuc0sedx5]",
+        "Feel Well entrenamiento personal Portal de Arriaga  [cmpczjoco00l7q1se0fvs6z48]"
+      ]
+    },
+    {
+      "telefono": "640095023",
+      "leads": [
+        "BAIGENE Genetic Fitness Vitoria  [cmpczjo3h00l6q1se1lrj8cj1]",
+        "BAIGENE Genetic Fitness Miñano  [cmpczjoz900l9q1sen400blpm]"
+      ]
+    },
+    {
+      "telefono": "640709500",
+      "leads": [
+        "CG Personal Trainer Mallorca  [cmpcz5mhx004hq1sewggopyx2]",
+        "BMAST Body mind and spirit training  [cmpcz5oxn004kq1seenhn85db]"
+      ]
+    },
+    {
+      "telefono": "640763159",
+      "leads": [
+        "Mystery fit  [cmpczf7nm00bdq1seo8hoheq8]",
+        "Mystery Fit Plaza  [cmpczffta00c6q1se0dnggvjw]"
+      ]
+    },
+    {
+      "telefono": "641136113",
+      "leads": [
+        "Entrenamiento personal  [cmpczg97c00eaq1segx6a26t2]",
+        "Entrena-T Valladolid  [cmpczgb3q00ehq1set3ydfo44]"
+      ]
+    },
+    {
+      "telefono": "643336227",
+      "leads": [
+        "Pro Training Entrenamiento Personal Barcelona  [cmpcyk21n001yih9u0lkuvq66]",
+        "Entrenador Personal Barcelona Marcos Gómez  [cmpcyk2k00020ih9uu0ujwiyw]"
+      ]
+    },
+    {
+      "telefono": "645012672",
+      "leads": [
+        "Entrenadores Personales Madrid  [cmpcyjmzt000iih9u4zyffhg5]",
+        "Entrenadores Personales Madrid IMEO  [cmpcyjwba001iih9uyxl0ddwl]"
+      ]
+    },
+    {
+      "telefono": "645133599",
+      "leads": [
+        "Delfit Sports Training Barceló | Centro Entrenamiento Personal | Granada  [cmpczk7rh00muq1sewp33jijl]",
+        "Delfit Sports Training Los Ángeles | Centro Entrenamiento Personal | Granada  [cmpczk8sj00myq1se0atbt3cx]"
+      ]
+    },
+    {
+      "telefono": "645421174",
+      "leads": [
+        "HE Entrenador personal | Entrenamiento Personal | Barrio Salamanca  [cmpcyjt6e0016ih9uqjzc3ds8]",
+        "HE Entrenador personal | Entrenamiento Personal | Retiro  [cmpcyjtjs0017ih9u9k1ipu1q]",
+        "HE Entrenador personal Madrid | Entrenamiento personal Madrid  [cmpcyjvbi001eih9um2rotw1s]",
+        "HE Entrenador personal | Entrenamiento Personal | Chamartin  [cmpcz295x000nq1sea7lq4es9]"
+      ]
+    },
+    {
+      "telefono": "647910371",
+      "leads": [
+        "cronos entrenamiento personal  [cmpczlw1400pnq1see5rvqqkz]",
+        "Cronos Entrenamiento Personal  [cmpczlxhx00psq1selqcq4vw1]"
+      ]
+    },
+    {
+      "telefono": "647968454",
+      "leads": [
+        "PremierFit valencia. Entrenamiento personal  [cmpcykfug0038ih9upnld910j]",
+        "PremierFit Valencia. Entrenamiento grupal  [cmpcykjr0003nih9u0v7qbbmf]"
+      ]
+    },
+    {
+      "telefono": "652645658",
+      "leads": [
+        "Cuerpo Pleno  [cmpczm86p00quq1se1mxc8jqc]",
+        "Cuerpo Pleno Entrenamiento y Salud  [cmpczm9bk00qyq1sekz4o03ag]"
+      ]
+    },
+    {
+      "telefono": "652723373",
+      "leads": [
+        "IKER LARRIMBE (Entrenador Personal)  [cmpczjhd000kwq1serzn6yaqm]",
+        "Fit365  [cmpczjrmo00ljq1sec33gtg7z]"
+      ]
+    },
+    {
+      "telefono": "657571562",
+      "leads": [
+        "180 Training Club - Gimnasio en Murcia  [cmpcz7gdo006gq1segvimocei]",
+        "180 Training Club  [cmpcz7h6j006iq1seh7nkht9r]"
+      ]
+    },
+    {
+      "telefono": "660821219",
+      "leads": [
+        "Beattraining - Centro de Entrenamiento Personal  [cmpcz8iex006zq1senv5q5her]",
+        "Beattraining. Readaptación y Salud  [cmpd0svgr000613norlm08ss8]"
+      ]
+    },
+    {
+      "telefono": "662412111",
+      "leads": [
+        "RM Fitness Coach  [cmpczix9z00k6q1sefyjenntv]",
+        "Rubin_Trainer - Entrenador Online  [cmpczjejy00knq1seka4x77us]"
+      ]
+    },
+    {
+      "telefono": "664713180",
+      "leads": [
+        "ZUEK centro de entrenamiento  [cmpczjfs500kqq1sexmvx2ksf]",
+        "Zuriñe Martinez  [cmpczji3x00kzq1se3gn3n8xt]"
+      ]
+    },
+    {
+      "telefono": "665547169",
+      "leads": [
+        "M4U Alicante | Centro de entrenamiento  [cmpczc3t5008xq1se3fdt79e4]",
+        "M4U Novelda I Centro de Entrenamiento Personal  [cmpczlc2n00p9q1sef9m6e3js]"
+      ]
+    },
+    {
+      "telefono": "669863548",
+      "leads": [
+        "WIN Fitness  [cmpcyk3u20025ih9ufolrrdz9]",
+        "Entrenador Personal - WIN Fitness Les Corts  [cmpcykdl50036ih9um2j0317q]"
+      ]
+    },
+    {
+      "telefono": "671903712",
+      "leads": [
+        "VIVE Entrenamiento Personal  [cmpczg76b00e2q1se7srv9mqa]",
+        "Vive Entrenamiento Personal  [cmpczggdt00f1q1seyvlguysy]"
+      ]
+    },
+    {
+      "telefono": "677475571",
+      "leads": [
+        "FITLEAD UNIVERSITAT  [cmpcyk5og002cih9udmwjp57u]",
+        "FITLEAD BRUC  [cmpcykb06002wih9ut0biqxqs]"
+      ]
+    },
+    {
+      "telefono": "679646269",
+      "leads": [
+        "Nodos | Entrenamiento Personal Zaragoza  [cmpcylfs0006nih9umkgho17y]",
+        "Nodos I Centro de entrenamiento personal Cuarte  [cmpcylpn2007pih9ui6myptas]"
+      ]
+    },
+    {
+      "telefono": "684003183",
+      "leads": [
+        "Marc Mestre PT - Entrenador Personal Palma de Mallorca  [cmpcymw4o00bgih9uheeyc3u1]",
+        "La Fábrica Mallorca | CrossTraining Palma  [cmpcyn3z500c9ih9uo5m8rn9s]"
+      ]
+    },
+    {
+      "telefono": "689702281",
+      "leads": [
+        "Alberto trainer  [cmpczl3w800ogq1seujag55k3]",
+        "AT Box  [cmpczlmdo00pfq1sedj67knum]"
+      ]
+    },
+    {
+      "telefono": "689924933",
+      "leads": [
+        "DeNovo Movemento  [cmpczioq500j9q1se8i6lcc0i]",
+        "Denovo Movemento  [cmpcziv9c00jyq1sehqic4ghv]"
+      ]
+    },
+    {
+      "telefono": "691444921",
+      "leads": [
+        "Entrenador personal PYA Fitness & Health, Zaragoza, Diego Lerín  [cmpcylq5j007rih9uc1oxymhi]",
+        "pya Fitness & Health - Entrenador personal - Gimnasio  [cmpcylrqn007xih9urim1zp9h]"
+      ]
+    },
+    {
+      "telefono": "696760383",
+      "leads": [
+        "I-Motion Club Canarias  [cmpcza8k9007xq1sems3573y8]",
+        "Misport Centro de Entrenamiento  [cmpczaod80089q1se0qpvyip2]"
+      ]
+    },
+    {
+      "telefono": "696839197",
+      "leads": [
+        "BILBAO ENTRENADOR PERSONAL  [cmpcymcdk009mih9u74joenwl]",
+        "Concordia Lifestyle  [cmpcymiwl00aaih9uuchmh786]"
+      ]
+    },
+    {
+      "telefono": "697569044",
+      "leads": [
+        "ÚLTIMO SPRINT ll - Centro de Entrenamiento Personal  [cmpcykl0c003sih9utcyz19m7]",
+        "Ultimo Sprint  [cmpcyktcb004oih9usyk9rgri]"
+      ]
+    },
+    {
+      "telefono": "699868487",
+      "leads": [
+        "Madrid Entrena  [cmpcyjit30002ih9uly6zkb6r]",
+        "VALENCIA ENTRENA  [cmpcz306r001oq1sehdxjf0wr]"
+      ]
+    },
+    {
+      "telefono": "722178499",
+      "leads": [
+        "Fatbusters Mallorca  [cmpcymubw00b9ih9uker35f7m]",
+        "Bootyboosters Mallorca  [cmpcyn3q200c8ih9up40qae5q]"
+      ]
+    },
+    {
+      "telefono": "722451505",
+      "leads": [
+        "Muifit Training Lab  [cmpcz687k005oq1sen7dxlu65]",
+        "Gerardo Verdú Personal Training  [cmpcz6dfe0068q1sexvc1g40g]"
+      ]
+    },
+    {
+      "telefono": "744723452",
+      "leads": [
+        "Moverte da vida - Aira fitness club  [cmpczf96r00bjq1sevr2r76d4]",
+        "Moverte da vida - centro de salud y ejercicio  [cmpczfdm900byq1se6xrdjio1]",
+        "Moverte da Vida - Open Arena  [cmpczff2100c3q1se3ymkq8ub]"
+      ]
+    },
+    {
+      "telefono": "747428436",
+      "leads": [
+        "Avanza Fit Sevilla - Villalobos  [cmpcyl5au005rih9u4b275d8h]",
+        "Avanza Fit Valencia - Moncada  [cmpcz2xug001kq1sej2k9cdsv]",
+        "Avanza Fit Valencia - Valencia Calixto  [cmpcz2zon001nq1sei7g7pmcw]",
+        "Avanza Fit Córdoba - El Arcángel  [cmpczfgjv00c9q1se1onzcwfd]"
+      ]
+    },
+    {
+      "telefono": "858200177",
+      "leads": [
+        "Entrenador Personal Granada Selected Trainers  [cmpczk1yi00m8q1sex6yd86av]",
+        "Selected Trainers - Entrenador Personal Granada  [cmpczk27z00m9q1seer9no1w0]"
+      ]
+    },
+    {
+      "telefono": "868076897",
+      "leads": [
+        "PLAN 90 DIAS | Entrenador Personal Murcia | one2one  [cmpcz60bw004uq1se171wi2ss]",
+        "Entrenador Personal PLAN 90 DÍAS  [cmpcz61u2004zq1se6a55urw7]"
+      ]
+    },
+    {
+      "telefono": "928119582",
+      "leads": [
+        "Electrofitness Canarias  [cmpcz9r2q007lq1sevlzi9rxa]",
+        "DMDentrenamientopersonalizado  [cmpcza170007sq1sewtik82vj]"
+      ]
+    },
+    {
+      "telefono": "960078914",
+      "leads": [
+        "PERFORMA Aragón – Centro de entrenamiento personal en Valencia  [cmpcyki82003hih9ul2x18do3]",
+        "PERFORMA Gran Vía – Centro de entrenamiento personal en Valencia  [cmpcykk09003oih9uba6nnag7]"
+      ]
+    },
+    {
+      "telefono": "965427327",
+      "leads": [
+        "DomoPersonal Travalón  [cmpczf05o00aqq1senznbc038]",
+        "DomoPersonal  [cmpczf26w00ayq1seckxe929v]"
+      ]
+    },
+    {
+      "telefono": "983480808",
+      "leads": [
+        "DS - Daniel Simón - Entrenador Personal  [cmpczgbcq00eiq1se8dxi7fq4]",
+        "DS - Arco de Ladrillo - Gimnasio & Fitness Club  [cmpczgimk00faq1sevks0nej8]"
+      ]
+    }
+  ],
+  "dupWeb": [
+    {
+      "web": "http://www.entrenadorespersonalesmadrid.com",
+      "leads": [
+        "Entrenadores Personales Madrid  [cmpcyjmzt000iih9u4zyffhg5]",
+        "Entrenadores Personales Madrid IMEO  [cmpcyjwba001iih9uyxl0ddwl]"
+      ]
+    },
+    {
+      "web": "https://he.madridentrenadorpersonal.es",
+      "leads": [
+        "HE Entrenador personal | Entrenamiento Personal | Barrio Salamanca  [cmpcyjt6e0016ih9uqjzc3ds8]",
+        "HE Entrenador personal | Entrenamiento Personal | Retiro  [cmpcyjtjs0017ih9u9k1ipu1q]",
+        "HE Entrenador personal Madrid | Entrenamiento personal Madrid  [cmpcyjvbi001eih9um2rotw1s]",
+        "HE Entrenador personal | Entrenamiento Personal | Chamartin  [cmpcz295x000nq1sea7lq4es9]"
+      ]
+    },
+    {
+      "web": "https://www.entrenadorpersonalbcn.es",
+      "leads": [
+        "Entrenador personal en Barcelona - Martí Baró Personal Trainer  [cmpcyjz95001nih9uqewpmyzo]",
+        "Entrenador Personal Barcelona - Martí Baró  [cmpcyk7tb002kih9ue7lm1puh]"
+      ]
+    },
+    {
+      "web": "http://www.active-8.es",
+      "leads": [
+        "Activate Personal Trainer Barcelona  [cmpcyk114001uih9usq6xzvq2]",
+        "Activate Personal Training Barcelona  [cmpcyk54a002aih9u8a9bm4jf]"
+      ]
+    },
+    {
+      "web": "http://entrenadorpersonal-barcelona.es",
+      "leads": [
+        "Entrenadores personales en Barcelona - FitnessLab  [cmpcyk32g0022ih9uh6sb4h2t]",
+        "FitnessLab - Entrenamiento personal en Barcelona  [cmpcyk4uk0029ih9ukcuz9p9w]"
+      ]
+    },
+    {
+      "web": "http://www.fitleadtraining.com",
+      "leads": [
+        "FITLEAD UNIVERSITAT  [cmpcyk5og002cih9udmwjp57u]",
+        "FITLEAD BRUC  [cmpcykb06002wih9ut0biqxqs]"
+      ]
+    },
+    {
+      "web": "https://www.avanzafit.com",
+      "leads": [
+        "Avanza Fit - Valencia El Cid  [cmpcykr0c004fih9u4i6bymkt]",
+        "Avanza Fit - Valencia Ruzafa  [cmpcykuec004sih9uzm2rwd88]",
+        "Avanza Fit Zaragoza - Goya  [cmpcyloc9007kih9udd60syzv]",
+        "Avanza Fit Zaragoza - Actur  [cmpcylsiy0080ih9ugqvdi15q]",
+        "Avanza Fit - Bilbao Bolueta  [cmpcymhvp00a6ih9ug6t45qkp]",
+        "Avanza Fit Valencia - Nou Mestalla  [cmpcz2wgr001jq1se0wekkt93]",
+        "Avanza Fit Valencia - Moncada  [cmpcz2xug001kq1sej2k9cdsv]",
+        "Avanza Fit Valencia - Valencia Calixto  [cmpcz2zon001nq1sei7g7pmcw]",
+        "Avanza Fit - Aqua  [cmpcz3ebt002hq1sez79cfkii]",
+        "Avanza Fit - Murcia Atalayas  [cmpcz69gv005tq1seslyqddds]",
+        "Avanza Fit - Las Ramblas  [cmpcz909i0075q1se18hf4ehv]",
+        "Avanza Fit Gran Canaria - Tamaraceite  [cmpcz9so0007nq1seipbqeaet]",
+        "Avanza Fit Córdoba - El Arcángel  [cmpczfgjv00c9q1se1onzcwfd]",
+        "Avanza Fit - Gran Vía Vigo  [cmpczh1fy00frq1segpgik07a]",
+        "Avanza Fit A Coruña - Alfonso Molina  [cmpczilfo00iwq1sekfe6scxl]",
+        "Avanza Fit - A Coruña Marineda City  [cmpczip8d00jbq1se31bkyss1]",
+        "Avanza Fit - El Boulevard  [cmpczjfj600kpq1se3nps0zuv]",
+        "Avanza Fit Elche - Aljub  [cmpczl5da00olq1sezhma6y4r]",
+        "Avanza Fit Tenerife - La Cuesta  [cmpczmlzz00rdq1se5mmpc3gd]"
+      ]
+    },
+    {
+      "web": "https://instagram.com/fufutrainer",
+      "leads": [
+        "Fufutrainer  [cmpcylaya006dih9u4fcpk59k]",
+        "Fufutrainer Montequinto  [cmpcz3z9r003aq1seje4k4w9y]"
+      ]
+    },
+    {
+      "web": "http://www.sportup.es",
+      "leads": [
+        "SportUp Romareda | Entrenador Personal Zaragoza  [cmpcylezd006kih9urzx85jr2]",
+        "SportUp Torre del Agua | Entrenador Personal Zaragoza  [cmpcylhvy006vih9unmsl7c01]"
+      ]
+    },
+    {
+      "web": "https://www.fitactiva.com",
+      "leads": [
+        "Fitactiva Fleta | Entrenador Personal En Zaragoza  [cmpcylf8m006lih9uwwjev1xs]",
+        "FITACTIVA Actur I Entrenador personal y Fisioterapia en Zaragoza  [cmpcyllji0079ih9u0fbpvcdp]"
+      ]
+    },
+    {
+      "web": "http://www.fitactiva.com",
+      "leads": [
+        "FITACTIVA Servet | Entrenador personal en Zaragoza  [cmpcylgc2006pih9ufahosmkk]",
+        "FITACTIVA Bretón | Entrenador personal y Fisioterapia en Zaragoza  [cmpcylhmt006uih9u10l6cw0f]"
+      ]
+    },
+    {
+      "web": "https://www.sportup.es",
+      "leads": [
+        "SportUp Miraflores | Entrenador Personal Zaragoza  [cmpcyljj20071ih9ucyak3ld0]",
+        "SportUp Miralbueno | Entrenador Personal Zaragoza  [cmpcylntz007iih9ulnzkbb14]",
+        "SportUp Rosales | Entrenador Personal Zaragoza  [cmpcylo3a007jih9u7d7q4v60]"
+      ]
+    },
+    {
+      "web": "https://www.f4trainers.com",
+      "leads": [
+        "F4Trainers - Romareda  [cmpcylkae0074ih9uya5h17gl]",
+        "F4Trainers - Avenida Cataluña  [cmpcylolz007lih9uc4h8z8k6]",
+        "F4Trainers - Puerta del Carmen  [cmpcylqo7007tih9udxtbuprp]"
+      ]
+    },
+    {
+      "web": "http://www.pyazaragoza.com",
+      "leads": [
+        "Entrenador personal PYA Fitness & Health, Zaragoza, Diego Lerín  [cmpcylq5j007rih9uc1oxymhi]",
+        "pya Fitness & Health - Entrenador personal - Gimnasio  [cmpcylrqn007xih9urim1zp9h]"
+      ]
+    },
+    {
+      "web": "http://www.ufit.es",
+      "leads": [
+        "Entrenador Personal Miralbueno | UFIT  [cmpcyltzi0085ih9u6lzfnqfe]",
+        "Entrenador Personal Utebo | UFIT Zaragoza  [cmpcz48vu003fq1se6fu7tm94]"
+      ]
+    },
+    {
+      "web": "https://jesustenapersonaltrainer.com/entrenador-personal-malaga",
+      "leads": [
+        "Jesús Tena PT Entrenador Personal Málaga  [cmpcylwf50086ih9uhpveos4t]",
+        "Jesus Tena PT Entrenador Personal Teatinos  [cmpcym145008oih9uxrz442oe]"
+      ]
+    },
+    {
+      "web": "https://jesustenapersonaltrainer.com/entrenador-personal-bilbao",
+      "leads": [
+        "Jesus Tena PT Entrenador Personal Bilbao Deusto  [cmpcymef3009uih9urqbase2g]",
+        "Jesus Tena PT Entrenador Personal Bilbao  [cmpcymepd009vih9uxpce3cop]"
+      ]
+    },
+    {
+      "web": "https://www.feelwellpt.es",
+      "leads": [
+        "Feel Well entrenamiento personal Rodríguez Arias  [cmpcymgqg00a2ih9uvelu2cck]",
+        "Feel Well entrenamiento personal Santutxu  [cmpcymj6800abih9u7d5vhx9g]",
+        "Feel Well Entrenamiento Personal SL Miribilla  [cmpcyml2a00aiih9uv03ny7jo]",
+        "Feel well entrenamiento personal Gran Vía  [cmpcymmuw00apih9ulo0gsr7e]",
+        "Feel Well entrenamiento personal Portal de Arriaga  [cmpczjoco00l7q1se0fvs6z48]"
+      ]
+    },
+    {
+      "web": "https://feelwellpt.es",
+      "leads": [
+        "Entrenador personal al aire libre  [cmpcymnef00arih9u0wmmur5w]",
+        "Feel Well entrenamineto personal  [cmpcymnx400atih9urgncsb78]",
+        "Feel Well entrenamiento personal  [cmpczjive00l2q1seuc0sedx5]"
+      ]
+    },
+    {
+      "web": "https://www.finestsport.es",
+      "leads": [
+        "Finest Sport - Centro de Entrenamiento y Nutrición  [cmpcymvuz00bfih9u3wiszvri]",
+        "Finest Air - Entrenamiento Grupal  [cmpcyn09m00bwih9unj5fl7a1]"
+      ]
+    },
+    {
+      "web": "https://www.ritofithouse.com",
+      "leads": [
+        "RITŌ FIT HOUSE  [cmpcz45uy003dq1seogllt8e0]",
+        "Ritō Fit House  [cmpcz4hes003kq1sesp1vqf6q]"
+      ]
+    },
+    {
+      "web": "https://bmast360essalud.wixsite.com/entrenamiento",
+      "leads": [
+        "CG Personal Trainer Mallorca  [cmpcz5mhx004hq1sewggopyx2]",
+        "BMAST Body mind and spirit training  [cmpcz5oxn004kq1seenhn85db]"
+      ]
+    },
+    {
+      "web": "https://plan90dias.com",
+      "leads": [
+        "PLAN 90 DIAS | Entrenador Personal Murcia | one2one  [cmpcz60bw004uq1se171wi2ss]",
+        "Entrenador Personal PLAN 90 DÍAS  [cmpcz61u2004zq1se6a55urw7]"
+      ]
+    },
+    {
+      "web": "https://jesustenapersonaltrainer.com/entrenador-personal-murcia",
+      "leads": [
+        "Jesús Tena PT Entrenador Personal Murcia  [cmpcz64ka005aq1seo8e167bw]",
+        "Jesús Tena PT Entrenador Personal Murcia Centro  [cmpcz7hfk006jq1see8jvj1jf]"
+      ]
+    },
+    {
+      "web": "http://www.beattraining.es",
+      "leads": [
+        "Beattraining - Centro de Entrenamiento Personal  [cmpcz8iex006zq1senv5q5her]",
+        "Beattraining. Readaptación y Salud  [cmpd0svgr000613norlm08ss8]"
+      ]
+    },
+    {
+      "web": "http://www.itraining.es",
+      "leads": [
+        "iTRAINING - ALICANTE CENTRO  [cmpczau6j008cq1semyz3h3ky]",
+        "iTRAINING Elche  [cmpczkyr900nzq1se32sg0zk5]"
+      ]
+    },
+    {
+      "web": "http://athelastraining.com",
+      "leads": [
+        "Athelas Training Studio  [cmpczbh51008nq1se0akkuj27]",
+        "Athelas Fitness Training Studio  [cmpczd4iy009oq1sejhgowrn2]"
+      ]
+    },
+    {
+      "web": "https://movement4u.es",
+      "leads": [
+        "M4U Alicante | Centro de entrenamiento  [cmpczc3t5008xq1se3fdt79e4]",
+        "M4U Novelda I Centro de Entrenamiento Personal  [cmpczlc2n00p9q1sef9m6e3js]"
+      ]
+    },
+    {
+      "web": "https://tuequilibrio-com.webnode.es",
+      "leads": [
+        "Tu Equilibrio Entrenamiento Personal Estudio  [cmpczf4r400b2q1sefub7z74r]",
+        "Entrenamiento Personal Tu Equilibrio  [cmpczf52a00b3q1se3g42wp7j]"
+      ]
+    },
+    {
+      "web": "https://metodozenon.com",
+      "leads": [
+        "MÉTODO ZENON - Tenerias  [cmpczg7oq00e4q1se1whyu3o1]",
+        "MÉTODO ZENON - Parquesol  [cmpczg8oz00e8q1sekiqvqcns]"
+      ]
+    },
+    {
+      "web": "https://www.dsarcoladrillo.es",
+      "leads": [
+        "DS - Daniel Simón - Entrenador Personal  [cmpczgbcq00eiq1se8dxi7fq4]",
+        "DS - Arco de Ladrillo - Gimnasio & Fitness Club  [cmpczgimk00faq1sevks0nej8]"
+      ]
+    },
+    {
+      "web": "http://www.centro13body.es",
+      "leads": [
+        "Centro13body Jorge Molinero  [cmpczh5jd00g7q1sezfeabsmt]",
+        "13Body Urban Fit  [cmpczha4o00gpq1seoj8y76gv]"
+      ]
+    },
+    {
+      "web": "http://www.denovomovemento.com",
+      "leads": [
+        "DeNovo Movemento  [cmpczioq500j9q1se8i6lcc0i]",
+        "Denovo Movemento  [cmpcziv9c00jyq1sehqic4ghv]"
+      ]
+    },
+    {
+      "web": "https://www.selectedtrainers.com",
+      "leads": [
+        "Entrenador Personal Granada Selected Trainers  [cmpczk1yi00m8q1sex6yd86av]",
+        "Selected Trainers - Entrenador Personal Granada  [cmpczk27z00m9q1seer9no1w0]"
+      ]
+    },
+    {
+      "web": "https://jimenezwaddington.com",
+      "leads": [
+        "JW Entrenamiento - Melchor Almagro  [cmpczk40k00mgq1ser3195mhg]",
+        "JW Entrenamiento - Albayda  [cmpczkeuz00nlq1se6fps15nt]"
+      ]
+    },
+    {
+      "web": "https://tugimnasioes.com/delfit-sports-granada/dia-gratis",
+      "leads": [
+        "Delfit Sports Training Barceló | Centro Entrenamiento Personal | Granada  [cmpczk7rh00muq1sewp33jijl]",
+        "Delfit Sports Training Los Ángeles | Centro Entrenamiento Personal | Granada  [cmpczk8sj00myq1se0atbt3cx]"
+      ]
+    },
+    {
+      "web": "https://www.drtraining.es",
+      "leads": [
+        "Entrenador Personal en Granada | David Rodríguez | Oficina  [cmpczk8j300mxq1se1mnamipc]",
+        "David Rodríguez | Entrenador Personal en Granada Centro|  [cmpczkf4a00nmq1se75qtgtae]"
+      ]
+    },
+    {
+      "web": "https://fit2grow.es",
+      "leads": [
+        "Entrenamiento Personal Granada - Fit2Grow  [cmpczk9x800n2q1sed6a4z33e]",
+        "Entrenamiento Personal Churriana de la Vega - Fit2Grow  [cmpczkfv500npq1sehuuy9z85]"
+      ]
+    },
+    {
+      "web": "https://www.instagram.com/hawk.trainingcenter?igsh=aglrnzn3c2wyamyz",
+      "leads": [
+        "HAWK TRAINING CENTER - ENTRENAMIENTO FUNCIONAL  [cmpczl11x00o5q1seiuj27gz9]",
+        "HAWK TRAINING CENTER - ENTRENAMIENTO PERSONAL  [cmpczl2mv00obq1sew1wt2gej]"
+      ]
+    },
+    {
+      "web": "https://personalcronos.com",
+      "leads": [
+        "cronos entrenamiento personal  [cmpczlw1400pnq1see5rvqqkz]",
+        "Cronos Entrenamiento Personal  [cmpczlxhx00psq1selqcq4vw1]"
+      ]
+    }
+  ]
+}

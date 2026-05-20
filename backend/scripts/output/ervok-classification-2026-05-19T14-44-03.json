@@ -1,0 +1,78 @@
+{
+  "total": 3,
+  "ok": 3,
+  "fail": 0,
+  "results": [
+    {
+      "leadId": "cmpcqruw70000mgyn9jazl17e",
+      "nombre": "Clínica Dental Navarro Madrid - Dentistas - Implantes dentales",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de agendas y citas con fallos de coordinación entre dentistas",
+          "Control fragmentado de historiales de pacientes, presupuestos y planes de tratamiento",
+          "Trámites complicados con múltiples compañías de seguros dentales y sus correspondientes facturaciónes",
+          "Pérdida de pacientes por falta de recordatorios automáticos y reenganche post-tratamiento",
+          "Inventario difícil de controlar especialmente en implantes y material protésico de alto coste"
+        ],
+        "automationOpportunities": [
+          "Agenda online 24/7 con disponibilidad en tiempo real y recordatorios SMS/WhatsApp automáticos",
+          "Portal del paciente para acceso a su historial, presupuestos y tratamientos desde móvil",
+          "Workflow automatizado de gestión de seguros: preautorizaciones, facturación y cobros integrados",
+          "Campañas de comunicación automatizadas para seguimiento post-tratamiento y recall de revisiones",
+          "Dashboard centralizado con métricas de ocupación, rentabilidad por tratamiento y ratios de paciente nuevo vs recurrente"
+        ],
+        "personalizedPitch": "En Dental Navarro Madrid con 897 reseñas y 4.9 estrellas ya demuestran calidad clínica, pero sin un sistema digital unificado es probable que pierdan citas, cometan errores en facturación de seguros y no capitalicen el valor de cada paciente. Les propongo un software de gestión dental a medida que centralice agenda, historiales, presupuestos y facturación de seguros en una única plataforma con portal del paciente integrado. Esto reducirá su carga administrativa, eliminará errores de doble entrada y automatizará recordatorios y campañas de reenganche para fidelizar pacientes. El resultado: más citas filled, menos ausencias y mayor rentabilidad por paciente.",
+        "softwareType": "ERP sanitario dental + app de paciente + módulo de gestión de seguros",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqruys0001mgynpkf917tv",
+      "nombre": "CITADENTAL Orense",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión ineficaz de agenda con alto absentismo de pacientes (535 reseñas implica alto volumen)",
+          "Falta de recordatorios automáticos que generen huecos libres no recuperados",
+          "Proceso manual de seguimiento post-tratamiento y revisiones periódicas"
+        ],
+        "automationOpportunities": [
+          "Sistema de citas online con recordatorios automáticos SMS/WhatsApp 48h antes",
+          "Automatización de campañas de recall para revisiones y tratamientos pendientes",
+          "Gestión digital de seguros médicos y facturación integrada"
+        ],
+        "personalizedPitch": "Con 535 reseñas y 4.8 estrellas, Citadental tiene un volumen de pacientes que necesita una gestión de agenda inteligente que reduzca ausentismos. Proponemos un software de gestión clínica con agenda digital, recordatorios automáticos y módulo de fidelización que automatice recalls de revisiones. Esto reducirá huecos libres, aumentará ingresos por paciente y mejorará la experiencia del paciente con recordatorios proactivos.",
+        "softwareType": "software de gestión clínica (CRM dental) con agenda online, automatización de recordatorios y módulo de facturación",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqruzu0002mgynl8177s03",
+      "nombre": "Clínica ASISA Dental",
+      "classification": {
+        "sector": "salud",
+        "subsector": "clínica dental",
+        "painPoints": [
+          "Gestión manual de citas con volumen alto de pacientes (1700+ reseñas indica alto tráfico)",
+          "Integración y facturación con múltiples seguros médicos (ASISA y otros)",
+          "Seguimiento de tratamientos y presupuestos por paciente",
+          "Comunicación y recordatorios de citas personalizados",
+          "Gestión de agenda online y presencial sin solapamientos"
+        ],
+        "automationOpportunities": [
+          "Recordatorios automáticos de citas por SMS/WhatsApp",
+          "Sistema de cita online 24/7 integrado con agenda",
+          "Gestión automatizada de reclamaciones y facturación a seguros médicos",
+          "Recall automático de pacientes para revisiones periódicas",
+          "Portal del paciente con acceso a historial y presupuestos"
+        ],
+        "personalizedPitch": "Para una clínica dental con el volumen de pacientes de ASISA Dental Madrid, proponemos un software de gestión integral que automatice la agenda online, la comunicación con pacientes y la facturación a seguros médicos. El sistema incluirá historial clínico digital, portal del paciente y recordatorios automáticos para reducir ausencias y mejorar la retención. Todo en una plataforma modular que escale con el crecimiento de la clínica.",
+        "softwareType": "Software de gestión para clínica dental (software clínico + CRM + agenda online + facturación seguros + portal paciente)",
+        "confidence": "alta"
+      }
+    }
+  ]
+}

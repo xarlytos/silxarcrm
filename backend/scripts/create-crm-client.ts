@@ -2,7 +2,7 @@
  * Script para crear un CRM Client y generar su API Key
  *
  * Uso:
- *   npx ts-node scripts/create-crm-client.ts --name="Mi CRM" --saas="entrenadores"
+ *   npx ts-node scripts/create-crm-client.ts --name="Mi CRM" --saas="mi-saas"
  *
  * Opciones:
  *   --name        Nombre del CRM (requerido)
@@ -37,7 +37,7 @@ async function main() {
   if (!name || !saas) {
     console.error('❌ Error: --name y --saas son requeridos');
     console.log('\nUso:');
-    console.log('  npx ts-node scripts/create-crm-client.ts --name="Mi CRM" --saas="entrenadores"');
+    console.log('  npx ts-node scripts/create-crm-client.ts --name="Mi CRM" --saas="mi-saas"');
     console.log('\nOpciones:');
     console.log('  --name, -n     Nombre del CRM');
     console.log('  --saas, -s     Identificador del SaaS');

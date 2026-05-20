@@ -1,0 +1,2074 @@
+[
+  {
+    "id": "cmpcyjpb2000rih9u1ornnuui",
+    "action": "tag",
+    "nombre": "QURE - Entrenamiento personal y Fisioterapia",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "El nombre menciona explícitamente Fisioterapia, los tipos de Google incluyen medical_clinic y health, y las reseñas probablemente valoren más el servicio de fisioterapia que el de entrenamiento."
+  },
+  {
+    "id": "cmpcyjukl001bih9uz2ppkczd",
+    "action": "move-gym",
+    "nombre": "EmPawer Fitness | Gimnasio Madrid con Entrenador Personal",
+    "category": "gimnasio",
+    "confidence": "alta",
+    "reason": "El nombre incluye 'Gimnasio Madrid' y los tipos de Google incluyen 'gym' y 'sports_complex', indicando un gimnasio comercial que ofrece servicios de entrenador personal como complemento"
+  },
+  {
+    "id": "cmpcyk3u20025ih9ufolrrdz9",
+    "action": "move-gym",
+    "nombre": "WIN Fitness",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "WIN Fitness se presenta como club/fitness center con web propia (winfitclubs.com) y tipos de Google incluyen sports_club y association_or_organization, sugiriendo un gimnasio comercial aunque no es una cadena ampliamente conocida en España."
+  },
+  {
+    "id": "cmpcyk5f7002bih9uhg8herwf",
+    "action": "tag",
+    "nombre": "MovMent Barcelona",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Google types incluyen wellness_center, physiotherapist y medical_clinic, indicando un centro clínico/wellness más que un entrenador personal individual."
+  },
+  {
+    "id": "cmpcyk709002hih9uvargus7n",
+    "action": "tag",
+    "nombre": "GOALS Fisioterapia y Personal Training",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Google lo clasifica como medical_clinic y 'Fisioterapia' aparece primero en el nombre, indicando que la actividad principal es clínica aunque también ofrezcan entrenamiento personal."
+  },
+  {
+    "id": "cmpcykc0x0030ih9uj5lp0om0",
+    "action": "tag",
+    "nombre": "SANDO FITNESS",
+    "category": "gimnasio",
+    "confidence": "baja",
+    "reason": "Nombre con FITNESS pero sin web ni información adicional que permita distinguir si es un gimnasio comercial o un estudio de entrenamiento personal."
+  },
+  {
+    "id": "cmpcykkra003rih9utkdvcjd2",
+    "action": "tag",
+    "nombre": "ESPACIO CX",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Sin acceso web verificable, el nombre ESPACIO CX no permite identificar con certeza si es un entrenador personal, clínica de salud o servicio wellness; se requiere más info."
+  },
+  {
+    "id": "cmpcykl9h003tih9uj1noi6yx",
+    "action": "move-gym",
+    "nombre": "WORK ROOM training club",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "'Training club' sugiere gimnasio comercial más que entrenador personal individual, pero carecen de web propia y la info disponible es limitada para confirmar el tipo de servicio."
+  },
+  {
+    "id": "cmpcykoe30045ih9u6tb1scvy",
+    "action": "tag",
+    "nombre": "Become",
+    "category": "otro",
+    "confidence": "media",
+    "reason": "Centro de bienestar/salud sin enfoque claro de entrenamiento personal, parece más orientado a servicios de desarrollo personal o lifestyle health que a entrenamiento físico."
+  },
+  {
+    "id": "cmpcykt3h004nih9uwsrv3bg8",
+    "action": "tag",
+    "nombre": "Healthy Studio Valencia",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "El nombre 'Healthy Studio' es genérico y los tipos de Google son muy vagos (health, point_of_interest); sin web propia ni información sobre servicios específicos, no es posible clasificar con certeza."
+  },
+  {
+    "id": "cmpcyktlq004pih9ub6jfpiq4",
+    "action": "tag",
+    "nombre": "Nolbert Fit & Wellness Valencia Es",
+    "category": "gimnasio",
+    "confidence": "baja",
+    "reason": "Negocio 'Fit & Wellness' sin web ni reseñas que permitan confirmar si es estudio de entrenamiento personal o gimnasio comercial"
+  },
+  {
+    "id": "cmpcyl1cz005cih9u8nzuwp1r",
+    "action": "tag",
+    "nombre": "FitFree",
+    "category": "gimnasio",
+    "confidence": "baja",
+    "reason": "Nombre genérico tipo gimnasio comercial; sin web ni más datos para distinguir si es PT individual"
+  },
+  {
+    "id": "cmpcyl1ys005eih9ureo59qms",
+    "action": "move-gym",
+    "nombre": "SANO Sevilla Este - Entrenamiento Personal y Grupos Reducidos",
+    "category": "gimnasio",
+    "confidence": "alta",
+    "reason": "SANO es una cadena comercial de entrenamiento personal con múltiples centros, no un entrenador individual"
+  },
+  {
+    "id": "cmpcyl2gy005gih9unybw39ej",
+    "action": "tag",
+    "nombre": "XTRAINING by Daniel Salgueiro",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Centro wellness integral con servicios de fisioterapia, nutrición y clínica médica además de entrenamiento,命名为XTRAINING pero con estructura de clínica/multiservicio según tipos de Google"
+  },
+  {
+    "id": "cmpcyl6uq005xih9usccrznxi",
+    "action": "move-gym",
+    "nombre": "BODYCLUB",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "BODYCLUB suena a gimnasio o centro fitness comercial, sin indicación clara de entrenamiento personal individual."
+  },
+  {
+    "id": "cmpcyl7cy005zih9ue10b12h2",
+    "action": "move-gym",
+    "nombre": "Fisiko centro de entrenamientos",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Centro de entrenamientos con tipos Google que incluyen gym y sports_complex; nombre genérico sin referencia a entrenador personal individual"
+  },
+  {
+    "id": "cmpcyl8490062ih9uienbf51a",
+    "action": "tag",
+    "nombre": "Entrenamiento personal y clínica Credus",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Google types son principalmente health/physiotherapist/doctor y se autodenomina clínica, ofreciendo entrenamiento personal como servicio complementario a la fisioterapia"
+  },
+  {
+    "id": "cmpcyl9ee0067ih9ux6cs3nh3",
+    "action": "tag",
+    "nombre": "Training For Gold",
+    "category": "clinica-medica",
+    "confidence": "alta",
+    "reason": "Google types incluyen physiotherapist y medical_clinic, lo que indica una clínica de salud/deportiva más que un servicio de entrenamiento personal."
+  },
+  {
+    "id": "cmpcylhmt006uih9u10l6cw0f",
+    "action": "tag",
+    "nombre": "FITACTIVA Bretón | Entrenador personal y Fisioterapia en Zaragoza",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Google types indica physiotherapist como tipo principal, y aunque el nombre menciona Entrenamiento Personal, la clasificación de Google y la naturaleza del negocio priorizan la fisioterapia."
+  },
+  {
+    "id": "cmpcylksm0076ih9utm2pb0dx",
+    "action": "tag",
+    "nombre": "Personalzaragoza",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Google clasifica como fisioterapeuta con tipos health/physiotherapist, más consistente con clínica de fisioterapia que con entrenamiento personal."
+  },
+  {
+    "id": "cmpcylnbp007gih9uyu0qcfwf",
+    "action": "tag",
+    "nombre": "Espalda 360",
+    "category": "fisio",
+    "confidence": "media",
+    "reason": "El nombre 'Espalda 360' y el tipo Google 'health' indican una clínica de fisioterapia o rehabilitación especializada en espalda, no un servicio de entrenamiento personal."
+  },
+  {
+    "id": "cmpcylqxy007uih9u8424r6kh",
+    "action": "move-gym",
+    "nombre": "DOM Fitness Concept - Centro de entrenamiento en Zaragoza",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Centro de entrenamiento con nombre corporativo ('DOM Fitness Concept') y tipo primario de Google como 'gym', sin referencia a entrenador personal individual. Más indicativo de gimnasio comercial que de estudio de PT individual."
+  },
+  {
+    "id": "cmpcyls9p007zih9ubr9p0fl3",
+    "action": "move-gym",
+    "nombre": "Zennit Sport Center",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "'Sport Center' con tipo genérico de Google y sin mención específica a entrenamiento personal individual. Es un centro físico de salud/deporte con reseñas suficientes, pero sin indicios claros de ser un estudio de PT individual."
+  },
+  {
+    "id": "cmpcylr78007vih9ut8ac64tg",
+    "action": "tag",
+    "nombre": "WashingFlow",
+    "category": "otro",
+    "confidence": "media",
+    "reason": "El nombre 'WashingFlow' sugiere un servicio de lavandería o limpieza más que un negocio de fitness, aunque el tipo primario de Google sea 'health' y el término 'flow' podría relacionarse con bienestar"
+  },
+  {
+    "id": "cmpcylss30081ih9uv3qznry0",
+    "action": "tag",
+    "nombre": "Impulse Fisioterapia Zaragoza y Entrenamiento",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "El nombre prioriza Fisioterapia, tipo de Google es medical_clinic y el término wellness_center apunta a clínica de salud antes que a entrenamiento personal"
+  },
+  {
+    "id": "cmpcyltgs0083ih9uu8vis3uk",
+    "action": "tag",
+    "nombre": "CAF OSTEOPATIA Y ACONDICIONAMIENTO FÍSICO",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Centro especializado en osteopatía y recuperación, con acondicionamiento físico como complemento. El nombre prioriza 'osteopatía' y los tipos de Google incluyen wellness_center y health."
+  },
+  {
+    "id": "cmpcylztu008jih9ucc03pot8",
+    "action": "move-gym",
+    "nombre": "AMR fitness | Gimnasio en Málaga | entrenador personal en Málaga",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Se autodescribe como gimnasio en el nombre y tiene tipos de Google de gym/sports_complex, aunque menciona entrenador personal, el foco principal es comercial con múltiples usuarios"
+  },
+  {
+    "id": "cmpcym2e8008tih9ut5x7hhrp",
+    "action": "move-gym",
+    "nombre": "24 Fit Beach Málaga , Entrenamiento funcional en Málaga",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Centro de fitness con nombre de cadena que ofrece entrenamiento funcional, sin mención a entrenador personal individual."
+  },
+  {
+    "id": "cmpcym24s008sih9ut1n0kmpl",
+    "action": "move-gym",
+    "nombre": "Besoul Fitness",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Negocio con nombre genérico de fitness sin mención a entrenamiento personal individual; sin web ni información verificada para confirmar si es estudio pequeño o gimnasio comercial"
+  },
+  {
+    "id": "cmpcym3ym008zih9ur2aga8go",
+    "action": "tag",
+    "nombre": "Integra Health & Sport",
+    "category": "clinica-medica",
+    "confidence": "alta",
+    "reason": "Google clasifica el negocio como health con tipos physiotherapist y consultant, y el nombre incluye Health & Sport, indicando un centro de salud/wellness más que un estudio de entrenamiento personal."
+  },
+  {
+    "id": "cmpcym4gj0091ih9u9y8ot54g",
+    "action": "tag",
+    "nombre": "VERSATILE TRAINING MÁLAGA",
+    "category": "gimnasio",
+    "confidence": "baja",
+    "reason": "Nombre genérico 'Training' sin referencias a entrenador personal individual. Sin web ni información adicional para confirmar que es un PT individual vs gimnasio studio."
+  },
+  {
+    "id": "cmpcym4yx0093ih9uzbouz15n",
+    "action": "tag",
+    "nombre": "PRD Readaptación",
+    "category": "fisio",
+    "confidence": "media",
+    "reason": "Readaptación se asocia a fisioterapia y rehabilitación deportiva más que a entrenamiento personal"
+  },
+  {
+    "id": "cmpcym4pn0092ih9uy2w3jfc9",
+    "action": "tag",
+    "nombre": "Wellness Estímulo. (Masajes Málaga, Electroestimulación Málaga, Entrenamiento Personal Málaga).",
+    "category": "otro",
+    "confidence": "alta",
+    "reason": "Google clasifica el negocio como massage y la web se centra en masajes, aunque también ofrezcan electroestimulación y entrenamiento personal."
+  },
+  {
+    "id": "cmpcym8so009hih9u8sv6po1o",
+    "action": "tag",
+    "nombre": "APC Nutrición Y Entrenamiento",
+    "category": "nutricion",
+    "confidence": "media",
+    "reason": "El nombre prioriza Nutrición (primera palabra) y Google lo clasifica como consultant, aunque también ofrecen entrenamiento como servicio complementario."
+  },
+  {
+    "id": "cmpcymezt009wih9uc5p6tj4x",
+    "action": "tag",
+    "nombre": "Efecto Dorsal",
+    "category": "fisio",
+    "confidence": "media",
+    "reason": "El nombre 'Efecto Dorsal' hace referencia directa a la zona dorsal de la columna vertebral, sugiriendo un servicio de fisioterapia, quiropraxia o terapia manual. Google lo clasifica como 'health' y no hay indicios de entrenamiento personal."
+  },
+  {
+    "id": "cmpcymfbp009xih9u17y7eoop",
+    "action": "tag",
+    "nombre": "GOTI Readaptación y Entrenamiento",
+    "category": "fisio",
+    "confidence": "media",
+    "reason": "El término 'readaptación' indica recuperación deportiva/rehabilitación, strongly asociada a fisioterapia más que a entrenamiento personal convencional."
+  },
+  {
+    "id": "cmpcymjoy00adih9uuqsdo912",
+    "action": "tag",
+    "nombre": "Nutricionista en Bilbao | NutriSarmi - Asier Sarmiento",
+    "category": "nutricion",
+    "confidence": "alta",
+    "reason": "Nutricionista individual cuyo nombre comercial incluye 'Nutricionista' y nombre de persona física (Asier Sarmiento), especializado en nutrición y dietética."
+  },
+  {
+    "id": "cmpcymk7h00afih9u5bd7agq2",
+    "action": "tag",
+    "nombre": "Pal Deporte Bilbao",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Sin web propia, solo Instagram, y tipo genérico de Google (health/service) sin detalle sobre servicios específicos de entrenamiento"
+  },
+  {
+    "id": "cmpcymm2i00amih9ujzr5ssto",
+    "action": "tag",
+    "nombre": "FisioFitness Markel Simon",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "El nombre y el tipo principal de Google indican claramente que es una clínica de fisioterapia (physiotherapist), aunque el nombre incluya Fitness."
+  },
+  {
+    "id": "cmpcymlti00alih9ukc6jm0yb",
+    "action": "tag",
+    "nombre": "NMB Coach",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Google lo clasifica como massage/health pero no hay suficiente info sobre si ofrece entrenamiento personal, podría ser centro de masajes o bienestar"
+  },
+  {
+    "id": "cmpcymofj00avih9upxopmmao",
+    "action": "tag",
+    "nombre": "Body & Mind",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Nombre genérico Body & Mind sin web ni información específica sobre el tipo de servicio; el tipo Google 'health' es demasiado amplio y no permite distinguir si es gimnasio, estudio de yoga/pilates o estudio de entrenamiento personal"
+  },
+  {
+    "id": "cmpcymqbc00b2ih9u1z5igfui",
+    "action": "tag",
+    "nombre": "RT Nutrition Zenter",
+    "category": "nutricion",
+    "confidence": "alta",
+    "reason": "Negocio especializado en nutrición con nombre explícito 'RT Nutrition Zenter' y web propia de nutrición. Google lo clasifica como consultant en categoría health."
+  },
+  {
+    "id": "cmpcymosr00awih9urxdf2tbe",
+    "action": "tag",
+    "nombre": "Hazi Bilbao",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Google lo clasifica como wellness_center con tipos fisioterapeuta y consultant, sugiere un centro multidisciplinario de salud/bienestar más que un servicio de entrenamiento personal."
+  },
+  {
+    "id": "cmpcyn09m00bwih9unj5fl7a1",
+    "action": "move-gym",
+    "nombre": "Finest Air - Entrenamiento Grupal",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Centro de entrenamiento grupal en Mallorca sin especificar modalidad (crossfit, yoga, etc.), por lo que se clasifica como gimnasio centro de fitness grupal."
+  },
+  {
+    "id": "cmpcyn2ji00c4ih9uiq0zevk9",
+    "action": "tag",
+    "nombre": "Pau Herrera",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Nombre personal 'Pau Herrera' sin web ni perfil claro; tipo genérico health en Google Maps sin categoría específica que permita identificar si es entrenador personal, fisioterapeuta u otro profesional."
+  },
+  {
+    "id": "cmpcyn60r00chih9ul854747o",
+    "action": "tag",
+    "nombre": "FisioWorld Trainer",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Google indica tipo principal physiotherapist y medical_clinic; nombre prioriza Fisio sobre Trainer, y fichas técnicas de fisioterapeuta pesan más que el entrenamiento complementario."
+  },
+  {
+    "id": "cmpcyn5ie00cfih9u8xiboigd",
+    "action": "tag",
+    "nombre": "Iron Point",
+    "category": "gimnasio",
+    "confidence": "baja",
+    "reason": "Negocio de fitness en Mallorca sin información suficiente para distinguir entre gimnasio comercial y centro de entrenamiento personal."
+  },
+  {
+    "id": "cmpcyn7jn00cnih9u8fwrf7ah",
+    "action": "tag",
+    "nombre": "ME Esport i Salut",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Sin web ni información detallada sobre servicios específicos; solo se indica health sin poder determinar si es entrenamiento personal, fisioterapia u otro tipo de centro de salud."
+  },
+  {
+    "id": "cmpcyn7tm00coih9u7ch0bt20",
+    "action": "move-gym",
+    "nombre": "CrossWellness - Centro de Entrenamiento Físico, Mental y Social",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Centro con múltiples servicios (fitness, yoga, fisioterapia, entrenamiento) bajo una misma marca, sin especialización clara en entrenamiento personal individual ni disciplina única como crossfit o yoga."
+  },
+  {
+    "id": "cmpcz1yfb0003q1sea2uhj0m4",
+    "action": "tag",
+    "nombre": "BECOME Madrid",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Nombre ambiguo, sin web, tipo genérico 'health' en Google Maps sin detalles que permitan distinguir si es PT, gimnasio o clínica."
+  },
+  {
+    "id": "cmpcz205w0007q1sevzr8db5r",
+    "action": "tag",
+    "nombre": "TrainingBoutique Castelló - Entrenamiento y Pilates Reformer",
+    "category": "otro",
+    "confidence": "media",
+    "reason": "Estudio boutique que combina entrenamiento y pilates reformer, sin encajar claramente en categorías específicas como gimnasio comercial o estudio de yoga/pilates puro"
+  },
+  {
+    "id": "cmpcz24py000cq1se0lvxpt7e",
+    "action": "tag",
+    "nombre": "Under Track",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Under Track Center en Salamanca con tipo primario 'health' y sin menciones claras de entrenamiento personal o fitness. El nombre sugiere un centro de salud/wellness general."
+  },
+  {
+    "id": "cmpcz2643000eq1se5pafkc29",
+    "action": "tag",
+    "nombre": "ANEFF Academia Nacional de Entrenadores de Fútbol",
+    "category": "escuela",
+    "confidence": "alta",
+    "reason": "Academia de formación para entrenadores de fútbol, con tipo de Google 'educational_institution' y nombre que indica claramente actividad formativa, no entrenamiento personal con clientes finales."
+  },
+  {
+    "id": "cmpcz27pa000iq1se1m9pevvx",
+    "action": "tag",
+    "nombre": "T-center",
+    "category": "gimnasio",
+    "confidence": "baja",
+    "reason": "Nombre genérico T-center con tipo primario 'health' en Google Maps, sin suficientes datos sobre servicios específicos."
+  },
+  {
+    "id": "cmpcz2891000kq1sebv47dj4s",
+    "action": "move-gym",
+    "nombre": "Sport Running Club | Corredores y Opositores",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Centro deportivo especializado en entrenamiento de running y preparación física para oposiciones, con tipos de Google que incluyen gym y sports_complex, sin encajar en ninguna categoría específica."
+  },
+  {
+    "id": "cmpcz2aca000rq1sevekki0td",
+    "action": "tag",
+    "nombre": "Juanjo Rodriguez Lagasca",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Google types incluyen fisioterapeuta y beautician, no fitness ni entrenamiento personal"
+  },
+  {
+    "id": "cmpcz2ce2000xq1ses6q502vi",
+    "action": "tag",
+    "nombre": "Estarenforma",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Nombre genérico sin indicación clara de PT individual; tipos de Google muy vagos (solo health/establishment); se necesitaría acceso a la web para determinar si es estudio de EP o servicio diferente."
+  },
+  {
+    "id": "cmpcz2dog0012q1setwmx9ut1",
+    "action": "tag",
+    "nombre": "Maxi Gondar Readaptador Deportivo Readaptador Físico Madrid",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Readaptador Deportivo/Físico es un perfil de rehabilitación deportivo-sanitario, no entrenador personal convencional"
+  },
+  {
+    "id": "cmpcz2int0017q1sekytw18sm",
+    "action": "move-gym",
+    "nombre": "Ignite Fitness Barcelona",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Centro de fitness comercial en ubicación céntrica de Barcelona, sin indicación clara de entrenamiento personal individual en el nombre."
+  },
+  {
+    "id": "cmpcz2r6u001hq1sephg3fs2i",
+    "action": "tag",
+    "nombre": "Instituto ISAF.",
+    "category": "escuela",
+    "confidence": "alta",
+    "reason": "Instituto de formación deportiva catalogado como sports_school por Google, con nombre institucional y 163 reseñas"
+  },
+  {
+    "id": "cmpcz35yk001vq1sesfzvdqud",
+    "action": "tag",
+    "nombre": "Preparador Oposiciones Educación Física Valencia",
+    "category": "escuela",
+    "confidence": "alta",
+    "reason": "Academia de preparación de oposiciones para Educación Física, claramente una actividad formativa/académica."
+  },
+  {
+    "id": "cmpcz39l60022q1sejoraycl2",
+    "action": "tag",
+    "nombre": "Nutrilift",
+    "category": "nutricion",
+    "confidence": "alta",
+    "reason": "El nombre Nutrilift combina nutrición con entrenamiento, pero el tipo principal de Google es health/consultant y predomina 'Nutri', indicando que es consulta de nutrición y dietética."
+  },
+  {
+    "id": "cmpcz39cf0021q1se0xl05pwp",
+    "action": "tag",
+    "nombre": "VITALTRAIN Salud Integrativa",
+    "category": "clinica-medica",
+    "confidence": "alta",
+    "reason": "Vitaltrain se presenta como centro de salud integrativa, combinando medicina funcional, fisioterapia y bienestar, no como gimnasio ni estudio de entrenamiento personal."
+  },
+  {
+    "id": "cmpcz3aui0026q1sea20a9zrb",
+    "action": "move-gym",
+    "nombre": "LEGROS FITNESS",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "El nombre 'LEGROS FITNESS' indica un centro de fitness general, no un entrenador personal individual. Sin embargo, con 45 reseñas y tipo genérico de Google, no hay evidencia clara de que sea una cadena o un estudio pequeño."
+  },
+  {
+    "id": "cmpcz3b4s0027q1set9xw5jv6",
+    "action": "tag",
+    "nombre": "Iván Carrillo Readaptador y Preparador físico",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Readaptador físico asociado a clínica médica (Clínica Sóspedra), con tipo primario 'health' en Google y dirección en contexto clínico."
+  },
+  {
+    "id": "cmpcz3c5f0029q1se5sf9mwpc",
+    "action": "tag",
+    "nombre": "FEEPYF Federación Español de Entrenadores Personales y Fitness",
+    "category": "otro",
+    "confidence": "alta",
+    "reason": "Se trata de una federación/asociación profesional de entrenadores personales y fitness, no un centro de entrenamiento. Representa al colectivo, no ofrece servicios de entrenamiento directo."
+  },
+  {
+    "id": "cmpcz3cob002bq1seig0xelvu",
+    "action": "tag",
+    "nombre": "Blacksets",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Google lo clasifica como fisioterapeuta (physiotherapist) en sus tipos, con categoría health."
+  },
+  {
+    "id": "cmpcz3flt002mq1se62biju84",
+    "action": "tag",
+    "nombre": "Fisio & Performance - Centro de entrenamiento, fisioterapia y podología",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Centro con fisioterapia, podología y entrenamiento; nombre inicia con 'Fisio' y tipo principal de Google es medical_clinic"
+  },
+  {
+    "id": "cmpcz3oqr002rq1sevrfuqrk9",
+    "action": "move-gym",
+    "nombre": "MiCoach Fitness Club",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "El nombre 'Fitness Club' indica un gimnasio comercial con múltiples usuarios; los tipos de Google son genéricos (health, service) sin especificar entrenamiento personal individual"
+  },
+  {
+    "id": "cmpcz3u2v002tq1selfc2h9f0",
+    "action": "tag",
+    "nombre": "InMuv Torre Sevilla",
+    "category": "clinica-medica",
+    "confidence": "alta",
+    "reason": "Google lo clasifica como medical_clinic y physiotherapist, combinando wellness médico y fitness rehabilitativo con enfoque clínico en Torre Sevilla."
+  },
+  {
+    "id": "cmpcz3ugq002uq1se372o46w8",
+    "action": "tag",
+    "nombre": "QDiez",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Google lo clasifica como medical_clinic y tiene types mixtos (clínica + gimnasio), pero el tipo primario médico prevalece"
+  },
+  {
+    "id": "cmpcz3pkm002sq1se9g1khgs7",
+    "action": "move-yoga",
+    "nombre": "Sonia Diaz Salud y Deporte, S.L.",
+    "category": "yoga-pilates",
+    "confidence": "media",
+    "reason": "El Instagram hace referencia a pilates y el nombre incluye Salud y Deporte, pero no hay más información sobre si ofrece también entrenamiento personal 1-a-1"
+  },
+  {
+    "id": "cmpcz3v7o002xq1se4wnonspu",
+    "action": "tag",
+    "nombre": "Optimo Sport Sevilla",
+    "category": "clinica-medica",
+    "confidence": "alta",
+    "reason": "Google lo clasifica como medical_clinic y physiotherapist; su web menciona 'clinic' y ofrece servicios de fisioterapia deportiva y salud. Categoría médica, no fitness."
+  },
+  {
+    "id": "cmpcz3vh2002yq1se1vr82fhd",
+    "action": "tag",
+    "nombre": "Academia de porteros Fisionext by Ismael Salti",
+    "category": "escuela",
+    "confidence": "alta",
+    "reason": "Academia de porteros dirigida por Ismael Salti, estructura de escuela/formación deportiva."
+  },
+  {
+    "id": "cmpcz3xr50034q1sexe271zlj",
+    "action": "move-gym",
+    "nombre": "enMOVIMIENTO Centro de entrenamiento",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Centro de entrenamiento con tipo primario 'gym' y variedad de servicios en instalaciones deportivas. El nombre no sugiere entrenador personal individual sino una instalación/multiusos."
+  },
+  {
+    "id": "cmpcz3wvb0031q1sesb1tafmp",
+    "action": "move-gym",
+    "nombre": "ProSalud | Gimnasio Entrenamiento Funcional",
+    "category": "gimnasio",
+    "confidence": "alta",
+    "reason": "Llamado explícitamente 'Gimnasio' con tipo principal de Google 'gym' y sin indicios de entrenador personal individual"
+  },
+  {
+    "id": "cmpcz3z0c0039q1sepbdzkvni",
+    "action": "tag",
+    "nombre": "Oposiciones Educación Física Luis Timón",
+    "category": "escuela",
+    "confidence": "alta",
+    "reason": "Academia de preparación de oposiciones para Educación Física, claramente una institución educativa."
+  },
+  {
+    "id": "cmpcz45uy003dq1seogllt8e0",
+    "action": "move-gym",
+    "nombre": "RITŌ FIT HOUSE",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Estudio de fitness con nombre genérico 'Fit House', sin indicación clara de entrenador personal individual ni nombre de entrenador."
+  },
+  {
+    "id": "cmpcz4hes003kq1sesp1vqf6q",
+    "action": "tag",
+    "nombre": "Ritō Fit House",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Google lo clasifica como medical_clinic con buenas reseñas, sugiriendo un centro wellness o de rehabilitación que combina servicios médicos con actividad física más que un gimnasio tradicional"
+  },
+  {
+    "id": "cmpcz4ip4003nq1senpachbiv",
+    "action": "tag",
+    "nombre": "MObE Sport Clinic 1",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Nombre incluye 'Clinic', tipo principal de Google es medical_clinic, y los tipos incluyen physiotherapist; aunque ofrece fitness funcional y pilates, el núcleo es sanitario/deportivo"
+  },
+  {
+    "id": "cmpcz4hwr003lq1se44f7iaxc",
+    "action": "tag",
+    "nombre": "Nano Sport - Tienda de nutrición",
+    "category": "otro",
+    "confidence": "alta",
+    "reason": "Tienda de nutrición/suplementos deportivos, no ofrece servicios de entrenamiento ni consulta, es un retail de productos de salud."
+  },
+  {
+    "id": "cmpcz4ixz003oq1senj9jk1pq",
+    "action": "tag",
+    "nombre": "Nutripro Zaragoza Clara Campoamor 4, 50018",
+    "category": "nutricion",
+    "confidence": "alta",
+    "reason": "Nutripro es claramente un servicio de nutrición profesional ('consultant', 'health'), con dominio web relacionado con nutrición y nombre que indica servicio dietético-nutricional."
+  },
+  {
+    "id": "cmpcz4jgc003qq1se93obxg7m",
+    "action": "tag",
+    "nombre": "Mntoor | Nutricionista deportivo",
+    "category": "nutricion",
+    "confidence": "alta",
+    "reason": "El nombre incluye 'Nutricionista deportivo' y ofrece servicios de alimentación y nutrición deportiva."
+  },
+  {
+    "id": "cmpcz4j78003pq1sek62esl1w",
+    "action": "tag",
+    "nombre": "ESCUELAS CENETED",
+    "category": "escuela",
+    "confidence": "alta",
+    "reason": "Centro de formación de técnicos deportivos (tecnicodeportivo.net), tipo Google educational_institution, formación certificable en el sector deportivo/nutrición."
+  },
+  {
+    "id": "cmpcz4zsz0047q1seb1y3s6fj",
+    "action": "tag",
+    "nombre": "Clínica Solaris - Fisioterapia, entrenamiento y readaptación",
+    "category": "clinica-medica",
+    "confidence": "alta",
+    "reason": "Se denomina 'Clínica' y tiene tipo médico (medical_clinic, doctor), con fisioterapia y readaptación como servicios principales, no entrenamiento personal individual."
+  },
+  {
+    "id": "cmpcz50vd004bq1se8b07gk5m",
+    "action": "tag",
+    "nombre": "JM NUTRICIÓN",
+    "category": "nutricion",
+    "confidence": "alta",
+    "reason": "JM NUTRICIÓN es un servicio de nutrición y dietética, con dominio web especializado y tipos de Google que incluyen consultant y health."
+  },
+  {
+    "id": "cmpcz50d10049q1seey3k0hqp",
+    "action": "tag",
+    "nombre": "Fivestars International Graduate School",
+    "category": "escuela",
+    "confidence": "alta",
+    "reason": "Se autodenomina 'Graduate School' e 'International', indicando claramente una institución educativa o escuela de formación, en este caso vinculada al sector fitness."
+  },
+  {
+    "id": "cmpcz5ncn004iq1se8j7nyp6g",
+    "action": "tag",
+    "nombre": "Fit Tone",
+    "category": "gimnasio",
+    "confidence": "baja",
+    "reason": "Nombre genérico de fitness sin web ni más info; no se puede confirmar si es gimnasio comercial o estudio de entrenamiento personal."
+  },
+  {
+    "id": "cmpcz5lm1004gq1senaxj4a2h",
+    "action": "tag",
+    "nombre": "AK fitness",
+    "category": "gimnasio",
+    "confidence": "baja",
+    "reason": "Nombre genérico 'AK fitness' sin mención a entrenador personal. No hay web para confirmar si es estudio individual o gimnasio comercial."
+  },
+  {
+    "id": "cmpcz5x83004oq1sefcu3zndb",
+    "action": "tag",
+    "nombre": "Venancio Nicolau Calafell",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Profesional de la salud autónomo (nombre personal) sin especificación clara del servicio, posiblemente fisioterapeuta, terapeuta u otro profesional sanitario."
+  },
+  {
+    "id": "cmpcz5xgu004pq1sev6ufz46i",
+    "action": "move-gym",
+    "nombre": "Dcm Team Finess",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Nombre genérico 'Team Fitness' sin mención a entrenamiento personal individual; parece un gimnasio o centro de fitness local sin identidad clara de PT individual."
+  },
+  {
+    "id": "cmpcz5zu3004sq1se8sevnexw",
+    "action": "move-gym",
+    "nombre": "Sport Training Gimnasio & Cross Training I Entrenador Personal Murcia",
+    "category": "gimnasio",
+    "confidence": "alta",
+    "reason": "El nombre incluye 'Gimnasio' y el tipo principal de Google es 'gym', aunque también ofrece cross training y entrenamiento personal como servicios adicionales."
+  },
+  {
+    "id": "cmpcz60tq004wq1set4jko1pa",
+    "action": "tag",
+    "nombre": "JR Centro de Entrenamiento",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "El dominio y los tipos de Google (medical_clinic) indican que es una clínica de fisioterapia que incluye entrenamiento como complemento, no un entrenador personal."
+  },
+  {
+    "id": "cmpcz65y1005fq1secl5pt33w",
+    "action": "move-gym",
+    "nombre": "B-N FIT Murcia",
+    "category": "gimnasio",
+    "confidence": "alta",
+    "reason": "B-N FIT es un centro deportivo con múltiples tipos de Google (gym, sports_club, sports_complex) y sin referencia a entrenamiento personal individual o nombre de entrenador."
+  },
+  {
+    "id": "cmpcz68ph005qq1sekdhw4x7u",
+    "action": "tag",
+    "nombre": "AT Center",
+    "category": "fisio",
+    "confidence": "media",
+    "reason": "Google types indican principalmente fisioterapeuta y consultor health, con primaryType health. El nombre AT Center no es claramente de entrenamiento personal."
+  },
+  {
+    "id": "cmpcz67yi005nq1se29piaqz8",
+    "action": "tag",
+    "nombre": "Boofit entrenamientos y masajes",
+    "category": "otro",
+    "confidence": "media",
+    "reason": "Centro de bienestar que combina entrenamientos y masajes según el nombre, pero sin perfil claro de PT individual, gimnasio o clínica específica"
+  },
+  {
+    "id": "cmpcz6ar1005yq1seqw1bk6e4",
+    "action": "tag",
+    "nombre": "OSEOstudio",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Tipo principal physiotherapist y medical_clinic. Nombre con prefijo OSEO (hueso en griego), muy orientado a fisioterapia/osteopatía."
+  },
+  {
+    "id": "cmpcz6b0f005zq1sebytkbr1h",
+    "action": "move-gym",
+    "nombre": "Centro Boutique de Entrenamiento - Move It Center",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Centro boutique con múltiples tipos de Google (gym, fitness_center, sports_complex) que apunta a gimnasio comercial, aunque el nombre sugiere un enfoque más personalizado sin ser claramente un entrenador individual."
+  },
+  {
+    "id": "cmpcz77o0006dq1sey1tq4d1i",
+    "action": "tag",
+    "nombre": "VISTABELLA SPORT",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Nombre con 'SPORT' sugiere actividad fitness pero sin web ni reseñas detalladas que permitan distinguir si es entrenador personal, gimnasio u otro tipo de servicio."
+  },
+  {
+    "id": "cmpcz6dya006aq1se235augxp",
+    "action": "move-gym",
+    "nombre": "Koality Sport Club",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "El nombre 'Sport Club' sugiere un gimnasio comercial de barrio, aunque sin web ni más info no se descarta que sea un estudio de entrenamiento personal."
+  },
+  {
+    "id": "cmpcz7o61006oq1sejpfu59nz",
+    "action": "tag",
+    "nombre": "ENFAF - Formación Deportiva, Nutrición y Salud",
+    "category": "escuela",
+    "confidence": "alta",
+    "reason": "Centro de formación de profesionales del deporte, nutrición y salud con tipo principal de 'educational_institution' en Google"
+  },
+  {
+    "id": "cmpcz7fi0006fq1se3cyhfwqm",
+    "action": "move-gym",
+    "nombre": "Orangetheory Fitness Murcia | Entrenamiento grupal fuerza y cardio",
+    "category": "gimnasio",
+    "confidence": "alta",
+    "reason": "Cadena internacional de fitness con clases grupales de alta intensidad (Timed Interval Training), modelo de cuota mensual y usuarios simultáneos, no entrenamiento personal individual."
+  },
+  {
+    "id": "cmpcz7hoq006kq1serr3x2tk6",
+    "action": "move-gym",
+    "nombre": "Vitality Sport Center",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "El nombre 'Vitality Sport Center' sugiere un centro deportivo comercial, sin indicación clara de entrenador personal individual."
+  },
+  {
+    "id": "cmpcz7oex006pq1se7ojwwee8",
+    "action": "tag",
+    "nombre": "Equipo profesional y escuela de formación Rubén Ruano.",
+    "category": "escuela",
+    "confidence": "media",
+    "reason": "El nombre explicitly menciona 'escuela de formación', indicando un centro educativo/academia más que un entrenador personal individual"
+  },
+  {
+    "id": "cmpcz7peo006tq1seej6nyetk",
+    "action": "tag",
+    "nombre": "Daples Triatlón",
+    "category": "otro",
+    "confidence": "media",
+    "reason": "Establecimiento especializado en triatlón (probable tienda o club), no encaja en categorías de entrenamiento personal ni gimnasio comercial"
+  },
+  {
+    "id": "cmpcz7ps9006uq1sejodibvak",
+    "action": "tag",
+    "nombre": "Lion Mode",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Nombre no identificable como entrenador personal individual ni como tipo de negocio fitness claro, y sin suficiente información en los datos disponibles"
+  },
+  {
+    "id": "cmpcz90yc0076q1sepg7vfp4u",
+    "action": "tag",
+    "nombre": "Runhábitat",
+    "category": "otro",
+    "confidence": "media",
+    "reason": "Runhábitat no se identifica claramente como gimnasio, PT individual ni clínica. Parece un servicio especializado en running (posible tienda de equipamiento, club o centro de entrenamiento runner) pero necesita más info para una categoría precisa."
+  },
+  {
+    "id": "cmpcz9com007cq1se6pd71ojl",
+    "action": "move-gym",
+    "nombre": "La Sala Entrenamiento",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Google clasifica el negocio como 'gym' y 'sports_complex', y el nombre genérico 'La Sala Entrenamiento' sugiere un espacio de entrenamiento convencional más que un entrenador personal individual identificado por nombre de persona."
+  },
+  {
+    "id": "cmpcz9o74007jq1see0wvstf9",
+    "action": "tag",
+    "nombre": "FitLife Triana",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Nombre genérico FitLife sin web ni información suficiente para distinguir si es gimnasio comercial o centro de entrenamiento personal."
+  },
+  {
+    "id": "cmpcz9nmx007iq1se7txt01qb",
+    "action": "tag",
+    "nombre": "Basik Entrenamiento",
+    "category": "gimnasio",
+    "confidence": "baja",
+    "reason": "Clasificado como 'gym' por Google Maps, nombre genérico sin referencia a PT individual y único tipo visible"
+  },
+  {
+    "id": "cmpcza78x007wq1sefqnek4rq",
+    "action": "tag",
+    "nombre": "by Adriguti",
+    "category": "nutricion",
+    "confidence": "alta",
+    "reason": "Dietista-nutricionista en Las Palmas de Gran Canaria. La web confirma el servicio de dietista, tipo Google consultant."
+  },
+  {
+    "id": "cmpcza2zh007tq1se9llzwfpe",
+    "action": "tag",
+    "nombre": "Fuerza & Salud",
+    "category": "gimnasio",
+    "confidence": "baja",
+    "reason": "Nombre genérico sin mención de entrenador personal individual ni web. Clasificado como gimnasio/centro por defecto con info insuficiente."
+  },
+  {
+    "id": "cmpcza4jj007vq1sepmi5ydj7",
+    "action": "tag",
+    "nombre": "Next Level Canarias",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Los tipos de Google incluyen medical_clinic y government_office junto con health, lo que sugiere una clínica médica o servicio de salud más que un negocio de fitness puro."
+  },
+  {
+    "id": "cmpczaamo007yq1sedhf5y2im",
+    "action": "tag",
+    "nombre": "YoinFitness",
+    "category": "gimnasio",
+    "confidence": "baja",
+    "reason": "YoinFitness suena como centro de fitness/gimnasio local pero no hay info suficiente para confirmar si es gimnasio comercial o estudio de entrenamiento personal"
+  },
+  {
+    "id": "cmpczaia40086q1sechi28p6e",
+    "action": "tag",
+    "nombre": "Fix & Fit Fisioterapia, Readaptación y Entrenamiento",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Google tipo principal 'physiotherapist' y nombre prioriza Fisioterapia sobre Entrenamiento; es una clínica de fisioterapia que incluye readaptación."
+  },
+  {
+    "id": "cmpczbobw008qq1sedyandgka",
+    "action": "move-gym",
+    "nombre": "Punto Fit",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Punto Fit no menciona entrenamiento personal individual ni lleva nombre de entrenador. Es un centro de fitness local en Alicante sin indicadores claros de ser un estudio de PT individual o cadena."
+  },
+  {
+    "id": "cmpczbn0y008pq1sehy1joq1n",
+    "action": "tag",
+    "nombre": "MiaKtive Center",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Centro 'MiaKtive Center' no encaja en categorías claras. Nombre de marca propia sin palabras clave reconocibles; Instagram como web no permite verificar servicios. Se descarta como cadena conocida."
+  },
+  {
+    "id": "cmpczbtlm008uq1seulo64zpn",
+    "action": "tag",
+    "nombre": "Alicante Fit Corner",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Los tipos de Google incluyen 'physiotherapist' y el primaryType es health, indicando clínica de fisioterapia aunque también ofrezca consulta de salud general."
+  },
+  {
+    "id": "cmpczck4g0099q1senrsvnkfr",
+    "action": "move-gym",
+    "nombre": "Equilibrio Club",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "El nombre 'Equilibrio Club' con sufijo 'Club' sugiere un gimnasio o centro de fitness comercial, pero la falta de tipos específicos de Google y la ausencia de web consultable impiden confirmar si es un centro de entrenamiento personal o un gimnasio general."
+  },
+  {
+    "id": "cmpczcmbg009bq1sezftce5pc",
+    "action": "move-gym",
+    "nombre": "Next Training Concept, gimnasio en Alicante de entrenamiento funcional",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Se autodenomina 'gimnasio' y Google lo clasifica como 'gym', aunque ofrece entrenamiento funcional, no hay evidencia clara de que sea un entrenador individual o estudio pequeño."
+  },
+  {
+    "id": "cmpczcrnw009eq1se4wk5d2yx",
+    "action": "tag",
+    "nombre": "Academia El Temple",
+    "category": "escuela",
+    "confidence": "media",
+    "reason": "El nombre incluye 'Academia', indicando un centro formativo o escuela, aunque sin web propia no se confirma si es formación académica o de artes marciales"
+  },
+  {
+    "id": "cmpczcsul009fq1secs2pnu51",
+    "action": "move-gym",
+    "nombre": "O'Fit※ Entrenamiento Funcional",
+    "category": "gimnasio",
+    "confidence": "alta",
+    "reason": "Centro de entrenamiento funcional con orientación a usuarios recurrentes y múltiples tipos de actividad, no un estudio dedicado exclusivamente a entrenamiento personal 1-a-1."
+  },
+  {
+    "id": "cmpczcz03009lq1sej232muzw",
+    "action": "tag",
+    "nombre": "Simply Health Nutricionista y Entrenador Personal Alicante",
+    "category": "nutricion",
+    "confidence": "alta",
+    "reason": "El nombre menciona 'Nutricionista' primero y 'Entrenador Personal' como segunda actividad; el tipo principal de Google es consultant, y la web parece ser de consulta nutricional."
+  },
+  {
+    "id": "cmpczcye7009kq1semzuoxsr0",
+    "action": "tag",
+    "nombre": "DietingWell",
+    "category": "nutricion",
+    "confidence": "alta",
+    "reason": "El nombre 'DietingWell' y el tipo principal 'consultant' junto con los tipos de Google 'wellness_center' y 'health' indican claramente un servicio de nutrición o dietética, no de entrenamiento físico."
+  },
+  {
+    "id": "cmpczd68t009rq1seltzlm6sa",
+    "action": "delete",
+    "nombre": "COMO PONERSE EN FORMA",
+    "category": "app-online",
+    "confidence": "baja",
+    "reason": "El nombre 'COMO PONERSE EN FORMA' es genérico y podría corresponderse con un servicio digital o recurso online sobre fitness, sin presencia web ni categoría específica clara."
+  },
+  {
+    "id": "cmpczdatf009wq1seebmoha46",
+    "action": "tag",
+    "nombre": "Clínica Deportiva y Fisioterapia Punto Cero | Centro de entrenamiento en Alicante",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Clínica médica/deportiva y fisioterapia con tipo principal medical_clinic, tipos Google orientados a salud (physiotherapist, wellness_center)"
+  },
+  {
+    "id": "cmpczeudy00a6q1seh67ymjp1",
+    "action": "tag",
+    "nombre": "Pascual Navarro Profesor Natación especializado en niños y Entrenamiento funcional grupo adultos .",
+    "category": "escuela",
+    "confidence": "media",
+    "reason": "Google lo clasifica como school/educational institution; es profesor de natación (actividad docente) con entrenamiento funcional en grupo, no un entrenador personal 1-a-1."
+  },
+  {
+    "id": "cmpczewgo00acq1sew73evbab",
+    "action": "tag",
+    "nombre": "Fitnessfons",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Sin web ni más info, tipos genéricos de Google (consultant, health). No permite distinguir si es PT individual, gimnasio o clínica."
+  },
+  {
+    "id": "cmpczeyw800alq1se36a3dqoa",
+    "action": "tag",
+    "nombre": "Fitness saludable",
+    "category": "gimnasio",
+    "confidence": "baja",
+    "reason": "Nombre genérico 'Fitness saludable' sin referencia a entrenador personal individual; requiere más información para confirmar si es estudio de PT o gimnasio comercial."
+  },
+  {
+    "id": "cmpczf1xq00axq1se86luyw6m",
+    "action": "tag",
+    "nombre": "Tenis Coach David Simón",
+    "category": "otro",
+    "confidence": "alta",
+    "reason": "Entrenador/coach de tenis individual (David Simón). No es entrenador personal de fitness, sino coach deportivo de una disciplina específica."
+  },
+  {
+    "id": "cmpczf75r00bbq1se7wej9kmf",
+    "action": "move-gym",
+    "nombre": "Superate Sports",
+    "category": "gimnasio",
+    "confidence": "alta",
+    "reason": "Superate Sports es una cadena comercial de centros deportivos con modelo de gimnasio de cuotas mensuales y múltiples usuarios, no un estudio de entrenamiento personal individual."
+  },
+  {
+    "id": "cmpczf6nb00b9q1seetp27295",
+    "action": "tag",
+    "nombre": "Calum Córdoba",
+    "category": "fisio",
+    "confidence": "media",
+    "reason": "Nombre personal sin mención de entrenamiento personal, tipo genérico 'health' y sin referencia a fitness/gimnasio en tipos de Google."
+  },
+  {
+    "id": "cmpczf8or00bhq1se1am3qgg1",
+    "action": "tag",
+    "nombre": "Momentum Córdoba",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Tipo genérico 'health' sin subtypes específicos; no es una cadena conocida; no hay información suficiente para clasificar con certeza."
+  },
+  {
+    "id": "cmpczf9g700bkq1sewjv534rt",
+    "action": "tag",
+    "nombre": "Fitlife Córdoba",
+    "category": "gimnasio",
+    "confidence": "baja",
+    "reason": "El nombre Fitlife Córdoba es genérico y sugiere un gimnasio comercial de barrio. primaryType 'health' no es suficiente para distinguir de un estudio de entrenamiento personal. Se necesita más info de la web para confirmar."
+  },
+  {
+    "id": "cmpczfb8l00bqq1se1zgbgolp",
+    "action": "tag",
+    "nombre": "BODY KITE",
+    "category": "otro",
+    "confidence": "alta",
+    "reason": "Escuela de kitesurfing/water sports en la zona de Cañito Bazán (río Guadalquivir). No es entrenamiento personal, gimnasio ni clínica."
+  },
+  {
+    "id": "cmpczfd3700bwq1se6cylx6tx",
+    "action": "tag",
+    "nombre": "SISTOLE",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Nombre médico (Sistole = contracción cardíaca), tipo primario health, sinweb ni más info para confirmar actividad específica"
+  },
+  {
+    "id": "cmpczfgb300c8q1segmw1lmdg",
+    "action": "tag",
+    "nombre": "Nutrieca",
+    "category": "nutricion",
+    "confidence": "alta",
+    "reason": "Nombre con raíz nutri- + tipos Google health/consultant sin mención de entrenamiento físico"
+  },
+  {
+    "id": "cmpczfg2400c7q1seanuq3mci",
+    "action": "tag",
+    "nombre": "Home Fitness Investments SL",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Empresa SL con nombre comercial ambiguous ('Home Fitness Investments') que no deja claro si ofrece entrenamiento personal, venta de equipamiento o inversión en fitness; sin web ni información específica sobre servicios"
+  },
+  {
+    "id": "cmpczfhu200ceq1segbyerr6j",
+    "action": "tag",
+    "nombre": "Health in Motion",
+    "category": "fisio",
+    "confidence": "media",
+    "reason": "El tipo primario 'health' y el nombre 'Health in Motion' sugieren un servicio de salud/movimiento, posiblemente fisioterapia o rehabilitación, aunque no hay suficiente información web para confirmarlo con certeza."
+  },
+  {
+    "id": "cmpczfgto00caq1se9js0ptxw",
+    "action": "tag",
+    "nombre": "Tu Movimiento Saludable",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Nombre genérico 'Tu Movimiento Saludable' sin web ni tipo específico claro; no se puede determinar si es PT individual, fisio, nutrición u otro servicio health."
+  },
+  {
+    "id": "cmpczfile00chq1seij5pfg6j",
+    "action": "tag",
+    "nombre": "Functional Recovery",
+    "category": "fisio",
+    "confidence": "media",
+    "reason": "El nombre 'Functional Recovery' y el tipo primario de Google (health) apuntan a servicios de recuperación/fisioterapia más que a entrenamiento personal."
+  },
+  {
+    "id": "cmpczfoko00cnq1se2lqq8bfw",
+    "action": "tag",
+    "nombre": "JustGo Team",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Sin web ni descripción disponible, nombre no identificativo, solo tipos genéricos de Google (health/service) sin细分 que permitan determinar si es entrenamiento personal, gimnasio u otro tipo de negocio"
+  },
+  {
+    "id": "cmpczfqqd00cvq1sepk26w6tv",
+    "action": "move-gym",
+    "nombre": "Casa Fitness by lolo",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "El nombre Casa Fitness sugiere un gimnasio pequeño de barrio, aunque la ausencia de web y tipos genéricos de Google reducen la certeza"
+  },
+  {
+    "id": "cmpczfr8w00cxq1seqoxsk9gu",
+    "action": "tag",
+    "nombre": "Pro-Life Espacio 360",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Google lo clasifica como medical_clinic con doctor y consultant como tipos, combinado con fitness_center; parece un centro de bienestar integral más que un PT individual o gimnasio puro."
+  },
+  {
+    "id": "cmpczfrhq00cyq1sef1ktowt2",
+    "action": "move-gym",
+    "nombre": "Centro de Entrenamiento Córdoba. Más que un gimnasio",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Google lo clasifica como gym, tiene 352 reseñas (volumen alto para un estudio de PT individual), no aparece nombre de persona física, y el tagline 'Más que un gimnasio' sugiere un local comercial de mayor tamaño."
+  },
+  {
+    "id": "cmpczfs0k00d0q1seym2ydjgw",
+    "action": "tag",
+    "nombre": "SALGADODELRIO",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Tipo genérico de Google sin detalles, nombre que parece ser apellido personal pero sin información suficiente para clasificar como entrenador personal."
+  },
+  {
+    "id": "cmpczfv3l00dbq1seat0ahevg",
+    "action": "tag",
+    "nombre": "QUIERO",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Sin información clara sobre servicios de entrenamiento; 'wholesaler' sugiere，可能 ser tienda o distribución de productos de bienestar más que un servicio de fitness."
+  },
+  {
+    "id": "cmpczfwm400dhq1sez7bsmwq5",
+    "action": "move-gym",
+    "nombre": "𝗡𝗔𝗧𝗜𝗢𝗡 – un 𝗰𝗹𝘂𝗯 de entrenamiento",
+    "category": "gimnasio",
+    "confidence": "alta",
+    "reason": "Google lo clasifica como gym, se autodenomina 'club de entrenamiento', tiene 334 reseñas y parece ser un gimnasio comercial abierto al público."
+  },
+  {
+    "id": "cmpczfw3t00dfq1seb1x4ix5v",
+    "action": "tag",
+    "nombre": "Tecnofits",
+    "category": "escuela",
+    "confidence": "media",
+    "reason": "Tipo primario de Google como educational_institution y nombre que sugiere academia/formación en lugar de servicio directo de entrenamiento"
+  },
+  {
+    "id": "cmpczfvv000deq1sehvg6nk2y",
+    "action": "tag",
+    "nombre": "Instructor de Tiro.",
+    "category": "otro",
+    "confidence": "alta",
+    "reason": "Instructor de tiro/manejo de armas, actividad fuera del ámbito fitness/salud definido"
+  },
+  {
+    "id": "cmpczg0gh00dkq1sezdxsmq9h",
+    "action": "move-gym",
+    "nombre": "VECTOR - centro de entrenamiento especializado",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Centro de entrenamiento con tipo primario 'gym' en Google Maps, sin indicación clara de entrenador personal individual ni nombre de persona física."
+  },
+  {
+    "id": "cmpczg1gn00dnq1sefz45bl7a",
+    "action": "tag",
+    "nombre": "IPEF Córdoba",
+    "category": "escuela",
+    "confidence": "alta",
+    "reason": "IPEF parece ser un Instituto Profesional de Educación Física, una institución académica/formativa en fitness, no un servicio de entrenamiento personal."
+  },
+  {
+    "id": "cmpczg1qv00doq1sej93108dt",
+    "action": "tag",
+    "nombre": "Quality I.S.A.D. – Instituto Superior en Actividades Deportivas",
+    "category": "escuela",
+    "confidence": "alta",
+    "reason": "Instituto Superior educativo con nombre académico, tipo principal 'educational_institution' en Google, y formación en actividades deportivas"
+  },
+  {
+    "id": "cmpczg0pj00dlq1seoijsx9z4",
+    "action": "tag",
+    "nombre": "Chavero Sports Fisioterapia Y Entrenamiento Deportivo",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Fisioterapia aparece primero en el nombre y el primaryType es medical_clinic con physiotherapist como tipo, indicando clínica de rehabilitación física"
+  },
+  {
+    "id": "cmpczg1zz00dpq1se14es7z97",
+    "action": "tag",
+    "nombre": "Aerobics Center - Instituto de Formación",
+    "category": "escuela",
+    "confidence": "alta",
+    "reason": "Google lo clasifica como university/educational_institution. Instituto de formación académica, no centro de fitness."
+  },
+  {
+    "id": "cmpczg2de00dqq1seo50yfpi7",
+    "action": "tag",
+    "nombre": "EGDF ESCUELA DE GESTIÓN DEPORTE Y FITNESS",
+    "category": "escuela",
+    "confidence": "alta",
+    "reason": "Instituto/escuela de formación en gestión deportiva y fitness, según nombre completo y tipo de Google (educational_institution). No ofrece servicios de entrenamiento directo sino formación."
+  },
+  {
+    "id": "cmpczg5n500dwq1sef4k62qnl",
+    "action": "move-gym",
+    "nombre": "MR Sport Center | Entrenador personal en Valladolid",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "El nombre MR Sport Center con 'Center' sugiere un centro comercial más amplio, y los tipos de Google incluyen gym y fitness_center, aunque el subtítulo menciona 'Entrenador personal'."
+  },
+  {
+    "id": "cmpczg6x700e1q1seag4yr6n9",
+    "action": "tag",
+    "nombre": "IA Expert Training",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Google classify como medical_clinic y wellness_center, sin indicadores claros de entrenamiento físico o gimnasio"
+  },
+  {
+    "id": "cmpczg7oq00e4q1se1whyu3o1",
+    "action": "tag",
+    "nombre": "MÉTODO ZENON - Tenerias",
+    "category": "clinica-medica",
+    "confidence": "alta",
+    "reason": "Google lo clasifica como 'medical_clinic' y 'consultant', con enfoque de salud y bienestar general, no un gimnasio o estudio de entrenamiento personal convencional."
+  },
+  {
+    "id": "cmpczg8g100e7q1se2g7tuozz",
+    "action": "tag",
+    "nombre": "ALMA Entrenamientos y Fisioterapia",
+    "category": "fisio",
+    "confidence": "media",
+    "reason": "Aunque el nombre menciona Entrenamientos y Fisioterapia, los tipos de Google (physiotherapist, wellness_center, medical_clinic) y el tipo primario health apuntan a un centro de bienestar donde la fisioterapia es la actividad principal."
+  },
+  {
+    "id": "cmpczg9pg00ecq1segrqf9aak",
+    "action": "tag",
+    "nombre": "VIGUA",
+    "category": "fisio",
+    "confidence": "media",
+    "reason": "Centro wellness con tipos 'health' y 'wellness_center', sin mención a entrenamiento personal. Probable clínica de fisioterapia o centro de bienestar."
+  },
+  {
+    "id": "cmpczg9gg00ebq1se34tbk5vi",
+    "action": "move-gym",
+    "nombre": "Veinte Fitness Valladolid",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Gimnasio local en Valladolid, nombre genérico de centro fitness sin mención a entrenamiento personal individual ni cadena. Clasificado por nombre y tipología de centro fitness."
+  },
+  {
+    "id": "cmpczgbuw00ekq1sesys3kmma",
+    "action": "tag",
+    "nombre": "Actium Espacio Salud",
+    "category": "clinica-medica",
+    "confidence": "alta",
+    "reason": "Google types incluyen 'physiotherapist' y 'medical_clinic', y el nombre 'Espacio Salud' indica clínica de salud general, no estudio de entrenamiento personal."
+  },
+  {
+    "id": "cmpczgesd00evq1sepvg9xv1y",
+    "action": "move-yoga",
+    "nombre": "MORIS COBA Barre Studio",
+    "category": "yoga-pilates",
+    "confidence": "alta",
+    "reason": "Estudio especializado en clases de Barre (ejercicio basado en barra de ballet), actividad de fitness cuerpo-mente similar a yoga/pilates"
+  },
+  {
+    "id": "cmpczgfbm00exq1segtdhfs3e",
+    "action": "tag",
+    "nombre": "Hipopresivos Valladolid Montse Sánchez. Dietista",
+    "category": "nutricion",
+    "confidence": "media",
+    "reason": "El nombre explicitly dice 'Dietista' como servicio principal, aunque también ofrece hipopresivos (ejercicio postural). La actividad principal es nutrición."
+  },
+  {
+    "id": "cmpczghdv00f5q1se4tpcldz7",
+    "action": "tag",
+    "nombre": "Sara Panizo Estética y Deporte",
+    "category": "otro",
+    "confidence": "alta",
+    "reason": "Centro de estética y belleza (beauty_salon, massage_spa) con 'Estética' como actividad principal en el nombre; los tipos de Google confirman perfil de spa/masajes sin actividad de entrenamiento personal claramente definida."
+  },
+  {
+    "id": "cmpczgh4m00f4q1sejhgfbz8u",
+    "action": "tag",
+    "nombre": "Alcuadrado Wellness - Fisioterapia, rehabilitación y entrenamiento personal",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Fisioterapia y rehabilitación aparecen en primer lugar en el nombre, Google lo clasifica como medical_clinic y sus tipos incluyen physiotherapist. El entrenamiento personal es complemento secundario."
+  },
+  {
+    "id": "cmpczgidp00f9q1sej5n3vq7n",
+    "action": "tag",
+    "nombre": "Eclosion Coaching",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "El nombre 'Coaching' es genérico y sin información clara sobre servicios de fitness; el tipo de Google es 'health' sin细分 pero no hay evidencia de entrenamiento personal, yoga, fisio ni nutrición específicos."
+  },
+  {
+    "id": "cmpczgr8y00feq1segr8n33v0",
+    "action": "move-gym",
+    "nombre": "MUJER DEPORTE Y SALUD. Centro de entrenamiento para la mujer.",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Centro de entrenamiento boutique enfocado en mujeres, clasificado por Google como gym/fitness_center, sin mención explícita de entrenador personal individual."
+  },
+  {
+    "id": "cmpczgj5m00fcq1se5yd8dbk4",
+    "action": "move-gym",
+    "nombre": "Desafío Fitness",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Nombre genérico 'Desafío Fitness' sin mención a entrenador personal individual ni tipo de actividad específica. Sin info clara del web para confirmar si es centro de PT o gimnasio."
+  },
+  {
+    "id": "cmpczgstv00fgq1se0tplc0aa",
+    "action": "tag",
+    "nombre": "SPACIO WELLNESS",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Centro wellness con tipos de Google que incluyen wellness_center y medical_clinic, sin indicación clara de entrenamiento personal individual en el nombre ni tipos."
+  },
+  {
+    "id": "cmpczgzy500flq1seihjwtvu3",
+    "action": "tag",
+    "nombre": "Vigoentrena",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Google lo clasifica como medical_clinic con tipo physiotherapist, indicando que es una clínica de fisioterapia/recuperación que puede ofrecer entrenamiento como complemento."
+  },
+  {
+    "id": "cmpczh2gs00fvq1seg6zqh0vh",
+    "action": "tag",
+    "nombre": "SteticLab - Entrenamiento Personal y Estética · Fitness Estético",
+    "category": "otro",
+    "confidence": "media",
+    "reason": "Centro híbrido de entrenamiento personal y estética/fitness estético, combina servicios de fitness con tratamientos estéticos sin encajar en categorías puras de gimnasio ni pt-individual clásico"
+  },
+  {
+    "id": "cmpczh2yq00fxq1se29vzc8yj",
+    "action": "move-gym",
+    "nombre": "PRÍNCIPE FITNESS VIGO",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "El nombre 'FITNESS' sugiere gimnasio comercial, sin mención de entrenador personal individual ni nombre de persona física."
+  },
+  {
+    "id": "cmpczh40g00g1q1seklg8ue7r",
+    "action": "move-gym",
+    "nombre": "Tierra Sport Club",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Nombre 'Tierra Sport Club' y dirección física en Vigo sugieren gimnasio/club deportivo comercial, no entrenador personal individual."
+  },
+  {
+    "id": "cmpczh7m000gfq1sejvwot0gg",
+    "action": "tag",
+    "nombre": "Oposiciones David Gómez - Oly (Vigo)",
+    "category": "escuela",
+    "confidence": "alta",
+    "reason": "Academia de preparación de oposiciones/concursos públicos claramente identificable por el nombre y temática del sitio web."
+  },
+  {
+    "id": "cmpczh8vm00gkq1seyjqed0s2",
+    "action": "tag",
+    "nombre": "The Invisible Center",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Negocio sin web ni tipos claros de fitness; tipo Google 'consultant' y 'store' no apuntan a entrenamiento personal"
+  },
+  {
+    "id": "cmpczh8mf00gjq1se6ag49z9k",
+    "action": "move-gym",
+    "nombre": "Vital Training",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Estudio de entrenamiento sin indicadores de cadena ni de entrenador personal individual. Nombre genérico tipo 'gym' con tipo health en Google."
+  },
+  {
+    "id": "cmpczh9vm00goq1sep9zgr1q3",
+    "action": "move-yoga",
+    "nombre": "POWER PILATES - Entrenamiento Para Mujeres",
+    "category": "yoga-pilates",
+    "confidence": "alta",
+    "reason": "El nombre 'POWER PILATES - Entrenamiento Para Mujeres' y la especialización en pilates son claros; el tipo de Google 'gym' es genérico pero el enfoque y actividad principal es pilates para mujeres."
+  },
+  {
+    "id": "cmpczhaf600gqq1se42evu3vc",
+    "action": "tag",
+    "nombre": "Alex Gutiérrez. Readaptación al Movimiento.",
+    "category": "fisio",
+    "confidence": "media",
+    "reason": "Readaptación al Movimiento es un servicio de rehabilitación física/post-lesión, más cercano a fisioterapia que a entrenamiento personal convencional"
+  },
+  {
+    "id": "cmpczhbnj00gvq1selrsnqzsh",
+    "action": "tag",
+    "nombre": "Fit Center",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Google types incluyen 'medical_clinic' y el tipo primario es 'health', sugiriendo centro de salud más que gimnasio convencional, aunque el nombre 'Fit Center' es ambiguo."
+  },
+  {
+    "id": "cmpczhc5h00gxq1senil656ol",
+    "action": "tag",
+    "nombre": "FIX Salud y Deporte",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Google types incluyen physiotherapist y el primaryType es health, indicando enfoque sanitario principal aunque el nombre sugiere también actividad deportiva"
+  },
+  {
+    "id": "cmpczhb6300gtq1sedvnxrn17",
+    "action": "tag",
+    "nombre": "ZONA CENTRO ENTRENAMIENTO",
+    "category": "gimnasio",
+    "confidence": "baja",
+    "reason": "Nombre genérico de centro de entrenamiento sin indicadores claros de PT individual o disciplina específica. No hay información suficiente para descartar que sea un gimnasio pequeño o un estudio de entrenamiento personal."
+  },
+  {
+    "id": "cmpczhuri00hcq1seowxd6gd0",
+    "action": "tag",
+    "nombre": "FISIOTERAPEUTA y ENTRENADOR PERSONAL. Centro Deportivo Equipo EGN Gijón",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Google lo clasifica como medical_clinic y el nombre prioriza FISIOTERAPEUTA sobre ENTRENADOR PERSONAL, indicando que la actividad principal es fisioterapia/rehabilitación"
+  },
+  {
+    "id": "cmpczhx1b00hlq1se0r5t81ta",
+    "action": "move-gym",
+    "nombre": "Centro de entrenamiento La Cueva",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Centro de entrenamiento con tipo Google 'gym' y nombre genérico, no parece un entrenador personal individual con nombre de persona física"
+  },
+  {
+    "id": "cmpczhxb200hmq1sexng64dll",
+    "action": "tag",
+    "nombre": "Holos Estudio Fitnees",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Sin web ni información de servicios, solo 4 reseñas. 'Estudio Fitnees' sugiere espacio pequeño local pero no hay datos para distinguir si es entrenador personal, gimnasio o estudio grupal."
+  },
+  {
+    "id": "cmpczhz2d00htq1sen6q0qk03",
+    "action": "tag",
+    "nombre": "Kinés Entrenamiento y Fisioterapia",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Google types muestran 'physiotherapist' y el nombre incluye 'Fisioterapia' como actividad principal; el entrenamiento es complemento secundario."
+  },
+  {
+    "id": "cmpczhytd00hsq1sen9ouh61m",
+    "action": "tag",
+    "nombre": "Centro Asturbarra",
+    "category": "clinica-medica",
+    "confidence": "baja",
+    "reason": "Centro de salud en Gijón sin web ni información específica sobre sus servicios, solo tipo genérico health y establishment"
+  },
+  {
+    "id": "cmpczi03000hxq1semg0nxv5x",
+    "action": "move-gym",
+    "nombre": "NEXT Salud y Deporte",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Centro de bienestar 'wellness_center' con enfoque en salud y deporte, sin mención clara de entrenador personal individual ni disciplina específica como yoga o crossfit."
+  },
+  {
+    "id": "cmpczi0lb00hzq1se4tavkmwj",
+    "action": "tag",
+    "nombre": "P3 wellness",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "P3 wellness es un centro de bienestar general sin web ni información específica sobre servicios de entrenamiento personal; el término wellness abarca múltiples disciplinas sin clarificar cuál es la principal"
+  },
+  {
+    "id": "cmpczi1u600i4q1sep2abxumd",
+    "action": "move-gym",
+    "nombre": "On Institute Health Club",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "On Institute Health Club es un health club con denominación de centro wellness/fitness, sin mención específica de entrenamiento personal individual."
+  },
+  {
+    "id": "cmpczi2xe00i8q1sepws7c4e4",
+    "action": "tag",
+    "nombre": "Dinâmika",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Sin web ni tipos específicos de Google, no hay información suficiente para identificar si es entrenamiento personal, fisioterapia u otro servicio de salud"
+  },
+  {
+    "id": "cmpczi36b00i9q1se4wu5ixgb",
+    "action": "tag",
+    "nombre": "Wellness Core",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Wellness Core está clasificado como 'wellness_center' en Google Maps, categoría general de salud/bienestar que agrupa múltiples servicios (masajes, tratamientos estéticos, fisioterapia o similar), sin perfil claro de gimnasio, box de crossfit ni estudio de yoga/pilates."
+  },
+  {
+    "id": "cmpczi3xs00icq1sein3nzorn",
+    "action": "tag",
+    "nombre": "Maneras de vivir",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Sin web ni reseñas, el nombre no indica actividad fitness/salud específica y el tipo genérico 'health' no permite determinar si es centro de entrenamiento, fisioterapia, estética u otra actividad."
+  },
+  {
+    "id": "cmpczi48000idq1se9qd3seq7",
+    "action": "tag",
+    "nombre": "RPM Fitness",
+    "category": "gimnasio",
+    "confidence": "baja",
+    "reason": "Nombre genérico con 'Fitness' sin detalles que confirmen si es gimnasio comercial o estudio de entrenamiento personal"
+  },
+  {
+    "id": "cmpczi58x00ihq1se5b4l92lr",
+    "action": "tag",
+    "nombre": "Pausansi",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Nombre no reconocible como entrenador personal o gimnasio. Tipos Google genéricos (health, service). Sin información clara sobre el servicio específico."
+  },
+  {
+    "id": "cmpczi4gz00ieq1sed76ezw58",
+    "action": "tag",
+    "nombre": "Cabosport",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Sin web ni reseñas, no hay suficiente información para determinar si es entrenador personal, gimnasio u otro tipo de negocio deportivo local"
+  },
+  {
+    "id": "cmpczifby00ipq1se5jvsxo4x",
+    "action": "tag",
+    "nombre": "Deportes Trainer",
+    "category": "otro",
+    "confidence": "alta",
+    "reason": "Es una tienda de artículos y ropa deportiva (sporting_goods_store), no ofrece servicios de entrenamiento personal"
+  },
+  {
+    "id": "cmpczieg300ioq1sexlmrjf7c",
+    "action": "tag",
+    "nombre": "Coaching Azul",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Coaching genérico sin indicación clara de entrenamiento físico; podría ser coaching de vida, salud o bienestar"
+  },
+  {
+    "id": "cmpczil6i00ivq1se9vhhcasw",
+    "action": "tag",
+    "nombre": "RRSalud",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "El nombre 'RRSalud' y el tipo primario de Google 'health' sugieren una clínica de salud general o wellness, sin indicadores claros de entrenamiento personal o fitness."
+  },
+  {
+    "id": "cmpczim6q00izq1se7lh7rkfg",
+    "action": "tag",
+    "nombre": "ZonaMV",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Nombre genérico 'ZonaMV' sin referencia a entrenamiento personal; tipo genérico de Google Maps sin información suficiente para clasificar el servicio concreto."
+  },
+  {
+    "id": "cmpczimfq00j0q1senejvmafq",
+    "action": "tag",
+    "nombre": "Centrogst A Coruña",
+    "category": "fisio",
+    "confidence": "media",
+    "reason": "Tipo Google 'health' y nombre 'Centro' sugiere clínica de salud (fisioterapia, osteopatía). No parece gimnasio ni PT individual."
+  },
+  {
+    "id": "cmpczimor00j1q1se56mtpnth",
+    "action": "tag",
+    "nombre": "Amelia Roca",
+    "category": "fisio",
+    "confidence": "media",
+    "reason": "Amelia Roca es nombre personal con tipo health en Google Maps, consistente con profesionales de fisioterapia o recuperación deportiva, aunque sin más detalles disponibles para confirmar"
+  },
+  {
+    "id": "cmpcziqrt00jhq1sewkb2pvck",
+    "action": "tag",
+    "nombre": "Not Another Workout",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Tipo de Google como medical_clinic sin referencia clara a entrenamiento personal, nombre comercial ambiguo y poca info para clasificar como PT individual."
+  },
+  {
+    "id": "cmpczis1w00jmq1sebr764gc7",
+    "action": "tag",
+    "nombre": "Javier Pérez - Nutricionista y Entrenador Personal",
+    "category": "nutricion",
+    "confidence": "media",
+    "reason": "El nombre y web priorizan 'Nutricionista' sobre 'Entrenador Personal', aunque ofrece ambos servicios. Dominio y posicionamiento parecen centrarse en nutrición."
+  },
+  {
+    "id": "cmpcziuhw00jvq1selnbj33ja",
+    "action": "tag",
+    "nombre": "Fisiotrainner Center",
+    "category": "fisio",
+    "confidence": "media",
+    "reason": "El nombre combina Fisio+Trainner pero Google primaryType es health y Fisiotrainer aparece primero, sugiriendo que la fisioterapia es la actividad principal del centro."
+  },
+  {
+    "id": "cmpcziw9s00k2q1se17g6ucqt",
+    "action": "tag",
+    "nombre": "David Rey Nutrición Y Entrenamiento Híbrido",
+    "category": "nutricion",
+    "confidence": "media",
+    "reason": "El nombre prioriza 'Nutrición' y los tipos Google incluyen 'consultant', indicando que la nutrición es el servicio principal, aunque también ofrece entrenamiento híbrido como complemento."
+  },
+  {
+    "id": "cmpczix9z00k6q1sefyjenntv",
+    "action": "move-gym",
+    "nombre": "RM Fitness Coach",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "La web es de Basic Fit (cadena de gimnasios) y el PT opera dentro de esa cadena, no como negocio independiente."
+  },
+  {
+    "id": "cmpczixj200k7q1se7maush2a",
+    "action": "move-gym",
+    "nombre": "RPE 10 Centro de entrenamiento",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Nombre 'Centro de entrenamiento' sin mención a entrenador personal individual; Google lo clasifica como gym y tiene types de sports_complex/sports_school, sugiriendo un centro comercial más amplio."
+  },
+  {
+    "id": "cmpczizba00keq1sesnatzxdm",
+    "action": "move-gym",
+    "nombre": "HIPOGYM",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Nombre con 'GYM' sugiere gimnasio comercial, aunque sin web ni reseñas para confirmar"
+  },
+  {
+    "id": "cmpczizkw00kfq1selq7656yv",
+    "action": "tag",
+    "nombre": "CENTRO EQUILIBRIUM A CORUÑA",
+    "category": "clinica-medica",
+    "confidence": "alta",
+    "reason": "Google primaryType='medical_clinic' con tipos complementarios de salud y consultoría wellness, no un gimnasio comercial ni estudio de entrenamiento personal."
+  },
+  {
+    "id": "cmpczj8bu00khq1sedgpoziz6",
+    "action": "tag",
+    "nombre": "JR fitness",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Nombre genérico sin web ni reseñas que no permite distinguir si es gimnasio, PT individual u otro negocio de salud."
+  },
+  {
+    "id": "cmpczjguc00kuq1senqau8fhy",
+    "action": "tag",
+    "nombre": "VIVE VITORIA Fisioterapia y Entrenamiento Personal",
+    "category": "clinica-medica",
+    "confidence": "alta",
+    "reason": "Google lo clasifica como medical_clinic y el nombre coloca Fisioterapia primero, siendo la actividad principal una clínica de fisioterapia con entrenamiento como servicio complementario"
+  },
+  {
+    "id": "cmpczjgl600ktq1sez5z09ojr",
+    "action": "move-gym",
+    "nombre": "SportFit Vitoria",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Nombre genérico 'SportFit' sin mención a entrenador personal individual ni nombre de persona física, con pinta de gimnasio local."
+  },
+  {
+    "id": "cmpczjimb00l1q1sefdgymsjb",
+    "action": "tag",
+    "nombre": "MOVEMENT & HEALTH",
+    "category": "clinica-medica",
+    "confidence": "baja",
+    "reason": "El nombre y tipo primario 'health' en Google Maps no permiten determinar con certeza si es un entrenador personal, fisioterapia o centro médico sin más info en la web."
+  },
+  {
+    "id": "cmpczjj4600l3q1seavtc252c",
+    "action": "tag",
+    "nombre": "Santano Sport Nutrition",
+    "category": "nutricion",
+    "confidence": "alta",
+    "reason": "El nombre 'Santano Sport Nutrition' indica claramente un negocio de nutrición deportiva/suplementos, con tipo de Google 'medical_clinic' y 'store' que sugiere venta de productos nutricionales, no un entrenador personal."
+  },
+  {
+    "id": "cmpczjq1e00ldq1seuhrad0ad",
+    "action": "tag",
+    "nombre": "Centro de Nutrición-Dietética y Entrenamiento Personal, Ayurveda",
+    "category": "nutricion",
+    "confidence": "media",
+    "reason": "El nombre prioriza nutrición-dietética sobre entrenamiento, y Google lo clasifica como consultant, aunque menciona ambos servicios."
+  },
+  {
+    "id": "cmpczjps400lcq1setmxwaa6a",
+    "action": "move-gym",
+    "nombre": "Gymnasios V&M Vitoria | Entrenador Personal - Defensa Personal Mujeres",
+    "category": "gimnasio",
+    "confidence": "alta",
+    "reason": "Se denomina 'Gymnasios V&M' (plural) y Google lo clasifica como gym, con instalación tipo gimnasio comercial, aunque ofrece servicios de entrenamiento personal y defensa personal."
+  },
+  {
+    "id": "cmpczjqkq00lfq1seiljoloop",
+    "action": "tag",
+    "nombre": "Dayana Frontado",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Nombre personal sin indicadores claros de entrenamiento o servicio fitness; los tipos genéricos de Google no permiten determinar la actividad específica"
+  },
+  {
+    "id": "cmpczjr3q00lhq1se7me37cnk",
+    "action": "move-gym",
+    "nombre": "Fitgüne",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "El nombre genérico 'Fitgüne' y la ausencia de menciones claras a entrenamiento personal individual o fisioterapeuta, junto con el tipo genérico 'health' de Google, sugieren un gimnasio o centro deportivo comercial más que un entrenador personal."
+  },
+  {
+    "id": "cmpczjtn900lrq1seb7qeutff",
+    "action": "tag",
+    "nombre": "XZ Fitness",
+    "category": "gimnasio",
+    "confidence": "baja",
+    "reason": "Nombre genérico de fitness sin web ni reseñas; no hay indicios de que sea entrenador personal individual o cadena conocida"
+  },
+  {
+    "id": "cmpczjsw400loq1seqanc2d7g",
+    "action": "tag",
+    "nombre": "Restart Readaptación de Lesiones y Entrenamiento Personal",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Se anuncia como readaptación de lesiones y entrenamiento personal, pero los tipos de Google y la ausencia de web apunta a clínica médica/rehabilitación (readaptación es término sanitario)."
+  },
+  {
+    "id": "cmpczjxqf00m7q1se3ysvafe4",
+    "action": "tag",
+    "nombre": "I.M. Quiromasaje Entrenamiento",
+    "category": "otro",
+    "confidence": "alta",
+    "reason": "Google clasifica el negocio como massage y los tipos son exclusivamente de masaje, con 'entrenamiento' en el nombre como servicio complementario"
+  },
+  {
+    "id": "cmpczjwf700m2q1sevdlvk8mm",
+    "action": "tag",
+    "nombre": "Centro de Osteopatia PALOMA ALONSO",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Centro de osteopatía (terapia manual de salud), no es un servicio de entrenamiento físico aunque Google lo liste parcialmente como gym."
+  },
+  {
+    "id": "cmpczk6e700mpq1seon8kzths",
+    "action": "move-gym",
+    "nombre": "Vital centro de entrenamiento",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Centro con nombre genérico 'centro de entrenamiento' y tipo Google 'gym', sin indicación clara de entrenador personal individual ni nombre de persona física."
+  },
+  {
+    "id": "cmpczkafw00n4q1se648zlqpn",
+    "action": "tag",
+    "nombre": "JCBlasco | Readaptación Lumbar",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Readaptación lumbar es un servicio de fisioterapia/rehabilitación, no entrenamiento personal"
+  },
+  {
+    "id": "cmpczkfd500nnq1se6huo6mu0",
+    "action": "tag",
+    "nombre": "GRANADA BIOMEC",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "GRANADA BIOMEC parece ser una consultoría de biomecánica/salud, pero sin web ni más info no es posible confirmar si ofrece entrenamiento personal como servicio principal."
+  },
+  {
+    "id": "cmpczkgdc00nrq1seab1rv66e",
+    "action": "tag",
+    "nombre": "Andrés Campoy. Readaptación y Entrenamiento",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Andrés Campoy es un profesional individual cuyo nombre menciona 'Readaptación y Entrenamiento', término asociado a readaptación física/deportiva que encaja más con fisioterapia que con entrenamiento personal convencional. El tipo de Google 'health' refuerza la clasificación como servicio de salud."
+  },
+  {
+    "id": "cmpczkw1k00nxq1sev2lm2fvf",
+    "action": "tag",
+    "nombre": "Fisiosport Granada. Centro de Fisioterapia y Entrenamiento Personal",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Centro de fisioterapia con nombre y tipos de Google (medical_clinic, physiotherapist) que indican actividad sanitaria principal, con entrenamiento personal como complemento secundario."
+  },
+  {
+    "id": "cmpczkwap00nyq1se3pkltpfz",
+    "action": "move-gym",
+    "nombre": "Centro de Entrenamiento Citius Sport Center",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "La web gimnasiocitius.com y el tipo Google 'gym' indican gimnasio comercial, aunque el nombre 'Centro de Entrenamiento' podría confundirse con PT."
+  },
+  {
+    "id": "cmpczl06000o3q1sek3f93b8m",
+    "action": "move-gym",
+    "nombre": "Fitness Body Balance Gimnasio Elche - Fisioterapia, Nutrición, Entrenamiento Personal Elche",
+    "category": "gimnasio",
+    "confidence": "alta",
+    "reason": "El nombre incluye 'Gimnasio' de forma prominente y ofrece servicios múltiples (fisioterapia, nutrición, entrenamiento), característica de un gimnasio comercial con servicios complementarios"
+  },
+  {
+    "id": "cmpczl1cg00o6q1se46sm9mvu",
+    "action": "tag",
+    "nombre": "Group Training Elche",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Nombre indica entrenamiento grupal pero sin web ni más datos no es suficiente para clasificar como gimnasio, box funcional o estudio"
+  },
+  {
+    "id": "cmpczl2vr00ocq1segfj7edyj",
+    "action": "move-gym",
+    "nombre": "ZEVRAS, Mujer y Entrenamiento",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Centro de entrenamiento enfocado en mujeres, clasificado como gym por Google y con nombre de marca propia. No se identifica como entrenador personal individual."
+  },
+  {
+    "id": "cmpczl4qf00ojq1sez8vezj1z",
+    "action": "tag",
+    "nombre": "Entrenamiento y Fisioterapia ZOI CENTRO",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Google types claramente 'physiotherapist' y 'medical_clinic', nombre incluye 'Fisioterapia' como actividad principal."
+  },
+  {
+    "id": "cmpczl5m800omq1seaywyr40z",
+    "action": "move-gym",
+    "nombre": "GORILAS FACTORY",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Establecimiento de fitness con nombre corporativo (Factory) y tipo principal health en Google Maps, sin указание de entrenador personal individual; se requiere revisar web para confirmar si es gimnasio comercial o centro de entrenamiento."
+  },
+  {
+    "id": "cmpczl7ty00ouq1seuo6cs012",
+    "action": "tag",
+    "nombre": "Método BMT. Especialistas en Neuromecánica Funcional",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Consultorio de salud especializado en neuromecánica funcional, enfoque clínico/rehabilitador más que entrenamiento convencional."
+  },
+  {
+    "id": "cmpczl8td00oyq1sei8fppaeb",
+    "action": "tag",
+    "nombre": "Mircasport",
+    "category": "clinica-medica",
+    "confidence": "alta",
+    "reason": "Google lo clasifica como medical_clinic y su web indica clínica de medicina deportiva, no negocio de fitness."
+  },
+  {
+    "id": "cmpczl9u600p1q1se5y5aacj2",
+    "action": "tag",
+    "nombre": "NATURVITIA ELCHE",
+    "category": "nutricion",
+    "confidence": "media",
+    "reason": "Nombre y marca sugieren orientación hacia nutrición/salud natural. El tipo de Google 'consultant' con categoría 'health' y valoración de 424 reseñas indica un servicio de asesoramiento en nutrición o dietética. No es claramente fisioterapia ni entrenamiento personal."
+  },
+  {
+    "id": "cmpczlao700p4q1sesppludlt",
+    "action": "tag",
+    "nombre": "BE HUMAN ELCHE",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Google lo clasifica como medical_clinic y no tiene mención de entrenamiento personal en el nombre"
+  },
+  {
+    "id": "cmpczlbst00p8q1se9fpb9jh8",
+    "action": "tag",
+    "nombre": "Futcoach10 Formación",
+    "category": "escuela",
+    "confidence": "alta",
+    "reason": "Centro de formación con tipo principal educational_institution en Google, nombre incluye 'Formación' y ofrece cursos"
+  },
+  {
+    "id": "cmpczlae800p3q1seuorpcq27",
+    "action": "tag",
+    "nombre": "Iliser",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "wellness_center sin web ni detalles sobre servicios específicos, no se puede confirmar si es entrenamiento personal u otro tipo de centro"
+  },
+  {
+    "id": "cmpczlrt700phq1se4v6s2fe3",
+    "action": "tag",
+    "nombre": "Clínica Fisioterapia Samuel Asensio",
+    "category": "fisio",
+    "confidence": "alta",
+    "reason": "Clínica de fisioterapia con nombre explícito y tipo principal medical_clinic en Google"
+  },
+  {
+    "id": "cmpczlwww00pqq1seciu9ah58",
+    "action": "move-box",
+    "nombre": "BeMe Training - Entrenamiento Funcional Tenerife y Cross Training",
+    "category": "crossfit-box",
+    "confidence": "alta",
+    "reason": "Centro de entrenamiento funcional y cross training con clases grupales, clasificado como gym en Google, no ofrece servicios de entrenamiento personal 1-a-1"
+  },
+  {
+    "id": "cmpczlxs000ptq1sel36mqtpk",
+    "action": "move-box",
+    "nombre": "SS Entrenamiento BOX",
+    "category": "crossfit-box",
+    "confidence": "media",
+    "reason": "El nombre incluye BOX, término característico de crossfit/funcional grupal, y Google lo clasifica como fitness_center/gym."
+  },
+  {
+    "id": "cmpczm16n00q5q1sep58wmyot",
+    "action": "tag",
+    "nombre": "SALUD Y FUERZA",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Nombre genérico 'Salud y Fuerza' sin indicación clara de servicios específicos de fitness, gimnasio o entrenamiento personal"
+  },
+  {
+    "id": "cmpczlzpx00q0q1sehs3w44pg",
+    "action": "tag",
+    "nombre": "DxD-Deporte x Diversión",
+    "category": "escuela",
+    "confidence": "media",
+    "reason": "Centro deportivo en nave industrial con enfoque recreativo ('Deporte por Diversión'), probablemente escuela o academia de actividades deportivas, posiblemente infantil/juvenil, con alto rating y perfil en Instagram"
+  },
+  {
+    "id": "cmpczm36f00qcq1se6lwe1m92",
+    "action": "tag",
+    "nombre": "SportWell",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Nombre sugiere wellness/deporte pero sin web ni types específicos de Google, no es posible confirmar si es gimnasio, entrenamiento personal u otro tipo de negocio health"
+  },
+  {
+    "id": "cmpczm40g00qfq1seu6fozemi",
+    "action": "move-gym",
+    "nombre": "El Rincón | Sala de entrenamiento funcional en La Laguna",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Sala de entrenamiento funcional pequeña pero con perfil de gimnasio local más que de entrenador personal individual."
+  },
+  {
+    "id": "cmpczm4k600qhq1se4nn2p3mq",
+    "action": "move-box",
+    "nombre": "Coliseumbox- Crosstrainer, entrenamiento funcional y personal.",
+    "category": "crossfit-box",
+    "confidence": "media",
+    "reason": "Nombre termina en 'box' y ofrece crosstrainer y entrenamiento funcional grupal, aunque también menciona servicios de entrenamiento personal"
+  },
+  {
+    "id": "cmpczm69p00qnq1se5m1d680k",
+    "action": "move-gym",
+    "nombre": "El Método, Centro de entrenamiento Funcional",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Centro de entrenamiento funcional con nombre institucional, sin mención de entrenador personal individual; el término 'Centro' y la ausencia de nombre personal sugieren un gimnasio/estudio grupal."
+  },
+  {
+    "id": "cmpczm5pi00qlq1se5z9z7xo6",
+    "action": "tag",
+    "nombre": "Arashi Training (Sport & Art)",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Sin web ni info adicional, pero los Google types incluyen massage y consultant, y el primaryType es health genérico, sin claridad sobre si ofrecen entrenamiento personal."
+  },
+  {
+    "id": "cmpczm55k00qjq1se275wyen3",
+    "action": "tag",
+    "nombre": "Canary Titan",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Sin web ni información específica sobre servicios; el nombre y tipos de Google no permiten clasificarlo como negocio de fitness o entrenamiento"
+  },
+  {
+    "id": "cmpczm6ji00qoq1sejdlx2q7x",
+    "action": "move-gym",
+    "nombre": "Entrenamiento Funcional WFC",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Centro de entrenamiento funcional con nombre genérico tipo gimnasio, no claramente un entrenador individual. La URL referencia un club deportivo y los tipos de Google incluyen 'gym' y 'sports_complex', lo que indica una instalación comercial multiusuario."
+  },
+  {
+    "id": "cmpczm7n100qsq1sedkxm60nf",
+    "action": "tag",
+    "nombre": "efficienTraining Botánico Center",
+    "category": "clinica-medica",
+    "confidence": "media",
+    "reason": "Clasificado por Google como medical_clinic con tipos de salud, sin presencia de términos de entrenamiento personal en el nombre ni en las categorías de Google."
+  },
+  {
+    "id": "cmpczmlah00rbq1seu10e8530",
+    "action": "tag",
+    "nombre": "Entrenamiento y Recuperación",
+    "category": "fisio",
+    "confidence": "media",
+    "reason": "Google lo identifica como fisioterapeuta y el nombre incluye Recuperación, sugiriendo clínica de fisioterapia/rehabilitación más que estudio de entrenamiento personal."
+  },
+  {
+    "id": "cmpczmtvl00rlq1seou1i6qox",
+    "action": "tag",
+    "nombre": "OPOEFI Preparadores",
+    "category": "escuela",
+    "confidence": "alta",
+    "reason": "Centro de preparación de oposiciones/formación académica. El tipo es 'educational_institution' y el nombre indica preparación de oposiciones, no entrenamiento personal."
+  },
+  {
+    "id": "cmpczmufk00rnq1segocd4k7a",
+    "action": "tag",
+    "nombre": "Health & Sport Canarias (Centro Salud Anaga)",
+    "category": "clinica-medica",
+    "confidence": "alta",
+    "reason": "Tipo primario medical_clinic, nombre incluye 'Centro Salud' y ofrece servicios combinados de medicina deportiva, fisioterapia y gimnasio como wellness center integral."
+  },
+  {
+    "id": "cmpd0swcy000913nozmgz2rth",
+    "action": "move-gym",
+    "nombre": "Xcelsior",
+    "category": "gimnasio",
+    "confidence": "media",
+    "reason": "Se autodenomina 'amusement_center' y 'gym' con múltiples tipos de instalación deportiva; parece un centro comercial/multiservicio más que un entrenador personal individual, aunque la web no es concluyente."
+  },
+  {
+    "id": "cmpd0swvd000b13noa7vjuz99",
+    "action": "tag",
+    "nombre": "Reto Metabólico",
+    "category": "otro",
+    "confidence": "baja",
+    "reason": "Sin web ni reseñas, el nombre 'Reto Metabólico' no deja claro si es entrenador, nutricionista o servicio de salud; no parece un centro de entrenamiento personal tradicional"
+  }
+]

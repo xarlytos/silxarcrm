@@ -1,0 +1,212 @@
+{
+  "total": 10,
+  "ok": 10,
+  "fail": 0,
+  "results": [
+    {
+      "leadId": "cmpcqrv76001omgynqpldapze",
+      "nombre": "Clínica Badal",
+      "sectorBusqueda": "clínica dental",
+      "enrichment": {
+        "painPoints": [
+          "Gestión manual de citas con altas tasas de impuntualidad y cancelaciones de último momento",
+          "Falta de recordatorios automáticos que，导致 pacientes olvidan sus citas y aumenta el absentismo",
+          "Complejidad en la gestión de seguros médicos, facturación y cobros con diferentes aseguradoras",
+          "Dificultad para hacer seguimiento post-tratamiento y mantener comunicación fluida con los 426 pacientes"
+        ],
+        "automationOpportunities": [
+          "Agenda digital inteligente con recordatorios automáticos por SMS/email para reducir ausencias",
+          "Sistema de confirmación automática de citas con opción de reagendar online",
+          "Envío automático de mensajes post-tratamiento: consejos de cuidado, citas de revisión y promociones personalizadas",
+          "Gestión automatizada de seguros médicos: preautorizaciones, facturación directa y control de importes",
+          "Encuestas de satisfacción post-visita con recopilación automática de reseñas Google"
+        ],
+        "personalizedPitch": "Clínica Badal, con vuestras 5 estrellas y 426 reseñas en Valencia, ya habéis demostrado que ofrecéis un servicio excelente. Sin embargo, si el absentismo o las tareas administrativas os quitan tiempo que podríais dedicar a vuestros pacientes, un software de gestión dental personalizado automatizaría citas, recordatorios y facturación. Así vuestra clínica seguiría siendo 5 estrellas en atención y no en trabajo administrativo.",
+        "softwareType": "Sistema de gestión para clínicas dentales (software médico-dental) con módulo de citas online, gestión de seguros, historial clínico digital, facturación y comunicación con pacientes + app móvil para pacientes",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrvob007wmgynsmyla4eh",
+      "nombre": "Abada Club",
+      "sectorBusqueda": "gimnasio",
+      "enrichment": {
+        "painPoints": [
+          "Gestión manual de membresías y cobros mensuales prone a errores y olvidos",
+          "Falta de canal digital para comunicar horarios, clases y promociones a sus 114 clientes que ya valoran el club con 4.2⭐",
+          "Seguimiento limitado del progreso y asistencia de usuarios para personalizar su experiencia en Madrid"
+        ],
+        "automationOpportunities": [
+          "Renovación automática de cuotas mensuales con recordatorios de pago",
+          "Envío de notificaciones push para cambios de horario o nuevas clases grupales",
+          "Registro digital de asistencia integrado con control de acceso al gimnasio"
+        ],
+        "personalizedPitch": "Con 114 reseñas y un 4.2⭐ en Madrid, Abada Club tiene una base sólida de clientes satisfechos, pero probablemente pierde oportunidades por procesos manuales. Un software de gestión con app para socios automatizaría cobros, enviaría recordatorios y permitiría a tus miembros reservar clases desde el móvil. Esto reduce tu carga administrativa y mejora la experiencia del usuario que ya te valora positivamente, translate eso en más retenciones y ingresos recurrentes.",
+        "softwareType": "Plataforma de gestión integral para gyms con app móvil para socios (reservas, pagos, seguimiento de progreso y comunicación)",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrwc600g3mgynbll1z6og",
+      "nombre": "ASESORIA FISCAL, LABORAL Y CONTABLE. FUICA GESTION. S.L.",
+      "sectorBusqueda": "asesoría fiscal",
+      "enrichment": {
+        "painPoints": [
+          "Gestión manual de plazos fiscales y laborales con riesgo de perdidas de plazos y sanciones para sus clientes",
+          "Comunicación ineficiente con clientes mediante email o teléfono sin trazabilidad de las conversaciones",
+          "Organización deficiente de expedientes y documentación de cada cliente",
+          "Seguimiento manual del estado de cada expediente y tarea pendiente"
+        ],
+        "automationOpportunities": [
+          "Sistema de alertas y recordatorios automáticos para fechas límite de declaraciones, impuestos y nóminas",
+          "Portal de cliente para que puedan subir documentos y consultar estado de sus expedientes online",
+          "Gestión centralizada de todos los clientes con historial documental y tareas asociadas",
+          "Automatización de facturas y creación de templates por tipo de servicio"
+        ],
+        "personalizedPitch": "En FUICA GESTION tienen la calificación perfecta de 5⭐, pero gestionar una asesoría fiscal, laboral y contable en Madrid con procesos manuales limita su crecimiento. Un software personalizado automatizaría sus recordatorios de plazos fiscales, centralizaría todos los expedientes de clientes y permitiría que sus clientes suban documentación online, reduciendo su carga administrativa y errores. Así podrían dedicar más tiempo a crecer su cartera de clientes.",
+        "softwareType": "ERP específico para asesorías con CRM de clientes, gestión documental, calendario fiscal integrado, portal de cliente y facturación automatizada",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrwwe00nbmgynkcazxkns",
+      "nombre": "Samnauto",
+      "sectorBusqueda": "taller mecánico",
+      "enrichment": {
+        "painPoints": [
+          "Gestión manual de citas y agenda que genera solapamientos y esperas de clientes",
+          "Seguimiento precario del estado de cada reparación, lo que genera llamadas innecesarias y desinformación",
+          "Control de inventario de piezas y repuestos deficiente, provocando retrasos y compras desorganizadas"
+        ],
+        "automationOpportunities": [
+          "Agenda digital con confirmación automática por SMS/WhatsApp y recordatorios de cita",
+          "Portal cliente donde pueda consultar en tiempo real el estado de su vehículo y recibir presupuestos instantáneamente",
+          "Sistema de inventario inteligente con alertas de stock mínimo y pedidos automáticos a proveedores"
+        ],
+        "personalizedPitch": "Samnauto, con esas 203 reseñas y un 4.9⭐ tu mayor activo es la confianza que has construido. Un software que organice tu agenda, permita a cada cliente seguir su reparación desde el móvil y controle tu stock de piezas eliminaría las consultas que te frenan y reduciría tiempos muertos. Todo en una plataforma que ya manejas desde tu móvil, sin cambiar tu forma de trabajar.",
+        "softwareType": "ERP especializado para talleres + app móvil para mecánicos + portal cliente de seguimiento",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrv8e0024mgynox5levox",
+      "nombre": "Clínica Dental Valencia Sala & Moreno",
+      "sectorBusqueda": "clínica dental",
+      "enrichment": {
+        "painPoints": [
+          "Gestión ineficiente de la agenda con cancelaciones y no-shows que generan huecos en la agenda y pérdida de ingresos",
+          "Seguimiento manual de pacientes para revisiones y tratamientos pendientes, perdiendo oportunidades de retención",
+          "Comunicación descentralizada (teléfono, WhatsApp, email) que genera confusiones y respuestas tardías",
+          "Falta de sistematización en la confirmación de citas y recordatorios, aumentando las ausencias"
+        ],
+        "automationOpportunities": [
+          "Envío automático de recordatorios de cita por SMS/WhatsApp/email con opción de confirmar o reprogramar",
+          "Gestión inteligente de agenda con ocupación en tiempo real y aviso de huecos disponibles",
+          "Sistema automatizado de seguimiento post-tratamiento con recordatorios de revisiones periódicas",
+          "Confirmación automática de citas con enlace de pago o señal online para reducir ausencias"
+        ],
+        "personalizedPitch": "Con 4.9 estrellas y 513 reseñas positivas, Clínica Dental Valencia Sala & Moreno ha construido una reputación excelente en Valencia. El principal riesgo es que la gestión manual de citas y el seguimiento de pacientes no escala con el crecimiento. Un software de gestión clínica que automatice recordatorios, confirme citas y gestione el seguimiento post-tratamiento les permitiría mantener esa valoración impecable sin añadir carga administrativa al equipo.",
+        "softwareType": "Plataforma CRM para clínicas dentales con agenda inteligente, automatización de comunicación (SMS/WhatsApp) y gestión de pacientes",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrvoe007xmgynsqy9l5q9",
+      "nombre": "Fit Club Boutique - Chueca",
+      "sectorBusqueda": "gimnasio",
+      "enrichment": {
+        "painPoints": [
+          "Gestión manual de reservas de clases que genera confusión y sobrecupos",
+          "Pérdida de clientes por falta de seguimiento y comunicación personalizada post-entrenamiento",
+          "Proceso lento de cobro de membresías y control de accesos sin integración"
+        ],
+        "automationOpportunities": [
+          "Sistema de reservas online 24/7 con recordatorios automáticos por WhatsApp/email",
+          "Programa de fidelización con objetivos personalizados y notificaciones de renovación de membresía"
+        ],
+        "personalizedPitch": "Fit Club Boutique tiene un rating excelente de 4.7⭐ con 77 reseñas, lo que demuestra que el servicio ya funciona. Sin embargo, con 77 reseñas positivas y un 4.7, hay potencial para fidelizar más clientes con un software de reservas automatizadas y recordatorios. Un sistema centralizado reduciría abandonos de clase y mejoraría la experiencia. En Madrid el sector fitness es muy competitivo, y la automatización de pagos y seguimiento te permitiría dedicar más tiempo a lo que importa: entrenar a tus clientes.",
+        "softwareType": "Plataforma de reservas + CRM con app móvil y automatización de comunicación",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrwap00flmgyn19vpu63j",
+      "nombre": "KS Asesores - Gestoría Autónomos y Empresas",
+      "sectorBusqueda": "asesoría fiscal",
+      "enrichment": {
+        "painPoints": [
+          "Sobrecarga administrativa con procesos fiscales repetitivos (IVA trimestral, retenciones, declaraciones) que consumen horas de trabajo manual",
+          "Gestión分散ada de documentos y plazos fiscales de clientes sin un sistema centralizado que alerte automáticamente de vencimientos",
+          "Comunicación ineficiente con clientes (emails, WhatsApp) para solicitar documentación y confirmar información, generando retrasos en los trámites"
+        ],
+        "automationOpportunities": [
+          "Automatización de cálculos fiscales y generación de modelos tributarios (303, 390, 130, 180...) con integración directa con AEAT",
+          "Portal de cliente online para subida de documentos y firma digital, eliminando intercambios por email",
+          "Sistema de alertas y recordatorios automáticos de plazos fiscales y obligaciones legales de cada cliente"
+        ],
+        "personalizedPitch": "Con un 4.9⭐ de rating y 55 reseñas positivas en Madrid, KS Asesores demuestra que ofrece un servicio excelente, pero la carga de trabajo manual en asesoría fiscal puede estarlimitando su crecimiento. Un software de gestión integral para asesorías automatizaría declaraciones, integraría datos con la AEAT y centralizaría documentos de clientes, permitiéndote dedicar más tiempo a crecer tu cartera y dar un servicio aún más personalizado.",
+        "softwareType": "ERP especializado para asesorías fiscales con módulo fiscal automatizado, portal de cliente y integraciones con AEAT/Seguridad Social",
+        "confidence": "alta"
+      }
+    },
+    {
+      "leadId": "cmpcqrwxx00npmgynd1izjrvt",
+      "nombre": "Dávila Auto.",
+      "sectorBusqueda": "taller mecánico",
+      "enrichment": {
+        "painPoints": [
+          "Gestión manual de citas que genera esperas y conflictos de horarios, reduciendo la eficiencia del taller",
+          "Dificultad para hacer seguimiento del estado de cada reparación y mantener informados a los clientes, perdiendo oportunidades de fidelización en un negocio con 4.8⭐",
+          "Control impreciso del inventario de piezas y repuestos, generando desabastecimientos o excesos de stock que afectan a la rentabilidad"
+        ],
+        "automationOpportunities": [
+          "Agenda digital inteligente con recordatorios automáticos por SMS/WhatsApp, reduciendo ausencias de clientes y optimizando la ocupación del taller",
+          "Portal de cliente donde puedan consultar en tiempo real el estado de su reparación, generando transparencia y ahorrando llamadas al taller"
+        ],
+        "personalizedPitch": "Dávila Auto, con vuestro excelente rating de 4.8⭐ y 279 reseñas en Madrid, ya tenéis la confianza de vuestros clientes. Con un software de taller a medida podríais ofrecerles un portal donde consulten el estado de su reparación en tiempo real, reduciendo llamadas y aumentando vuestra valoración online. Además, automatizaríamos la gestión de citas y el control de inventario,消化ando que os centréis en lo que mejor sabéis hacer: arreglar coches.",
+        "softwareType": "ERP para taller mecánico con módulo de gestión de citas, portal de cliente (app/web) y control de inventario integrado",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrv9b002hmgynulom4sdc",
+      "nombre": "Institutos Odontológicos - Clínica Dental Valencia",
+      "sectorBusqueda": "clínica dental",
+      "enrichment": {
+        "painPoints": [
+          "Gestión ineficiente de citas con elevado absentismo y cancelaciones de última hora",
+          "Complejidad en la coordinación de tratamientos multiespecialidad y seguimiento de pacientes",
+          "Pérdida de oportunidades de negocio por falta de reklamo proactivo y gestión de reseñas"
+        ],
+        "automationOpportunities": [
+          "Sistema de recordatorios automáticos de citas por SMS/WhatsApp con confirmación de asistencia",
+          "Encuestas de satisfacción post-tratamiento y gestión automatizada de reseñas positivas en Google",
+          "Agenda inteligente con optimización de tiempos entre tratamientos y bloqueo automático de huecos"
+        ],
+        "personalizedPitch": "Con 478 reseñas y un 4.8⭐ en Valencia, Institutos Odontológicos tiene una reputación excelente, pero probablemente pierde ingresos por no-shows y no capitaliza suficiente su presencia online. Un sistema de gestión integral con recordatorios automáticos y gestión de citas reduciría absentismo un 30-40%, y con reklamo automatizado de reseñas tras tratamientos exitosos podrías consolidate aún más tu liderazgo local. Te propongo una demo personalizada para tu clínica.",
+        "softwareType": "ERP + CRM específico para clínicas dentales con módulo de agenda inteligente, automatización de comunicación paciente (SMS/WhatsApp) y gestión de reputación online",
+        "confidence": "media"
+      }
+    },
+    {
+      "leadId": "cmpcqrvkk006umgynwitsq78v",
+      "nombre": "Fitness Park Madrid - Méndez Álvaro",
+      "sectorBusqueda": "gimnasio",
+      "enrichment": {
+        "painPoints": [
+          "Gestión manual de reservas y disponibilidad de clases grupales que genera sobrecupos y espacios vacíos",
+          "Dificultad para fidelizar clientes y gestionar campañas de retención debido a la falta de datos centralizados de usuarios",
+          "Procesos de cobros y renovaciones de membresías que consumen tiempo administrativo excesivo"
+        ],
+        "automationOpportunities": [
+          "Reservas online de clases y turnos con confirmación automática y recordatorios por WhatsApp/email",
+          "Renovaciones automáticas de cuotas con alertas de pago y gestión de impagos",
+          "Segmentación de clientes por asistencia y generación de ofertas personalizadas para recuperar usuarios inactivos"
+        ],
+        "personalizedPitch": "Con 972 reseñas y un 4.6⭐ en Madrid, Fitness Park ya demuestra calidad de servicio. Un software de gestión con reservas online, automatización de cobros y CRM reduciría su carga administrativa y mejoraría la retención de socios. Podríamos integrar todo en una app con su marca que fidelice y reduzca cancelaciones.",
+        "softwareType": "Plataforma de gestión integral para gimnasios: sistema de reservas online, CRM de socios, automatización de cobros/renovaciones y app móvil con marca blanca",
+        "confidence": "media"
+      }
+    }
+  ]
+}

@@ -18,14 +18,21 @@ export const env = {
 
   OPENAI_API_KEY: process.env.OPENAI_API_KEY || '',
   OPENAI_MODEL: process.env.OPENAI_MODEL || 'gpt-4-1106-preview',
+  OPENAI_BASE_URL: process.env.OPENAI_BASE_URL || '',
+
+  ZADARMA_USER_KEY: process.env.ZADARMA_USER_KEY || '',
+  ZADARMA_SECRET_KEY: process.env.ZADARMA_SECRET_KEY || '',
+  ZADARMA_NUMBER_DID: process.env.ZADARMA_NUMBER_DID || '',
+  ZADARMA_DEFAULT_AGENT_PHONE: process.env.ZADARMA_DEFAULT_AGENT_PHONE || '',
 
   FIREBASE_PROJECT_ID: process.env.FIREBASE_PROJECT_ID || '',
   FIREBASE_PRIVATE_KEY: process.env.FIREBASE_PRIVATE_KEY || '',
   FIREBASE_CLIENT_EMAIL: process.env.FIREBASE_CLIENT_EMAIL || '',
   FIREBASE_SERVICE_ACCOUNT: process.env.FIREBASE_SERVICE_ACCOUNT || '',
 
-  WEBHOOK_SECRET_ENTRENADORES: process.env.WEBHOOK_SECRET_ENTRENADORES || '',
-  WEBHOOK_SECRET_NUTRICION: process.env.WEBHOOK_SECRET_NUTRICION || '',
+  RESEND_API_KEY: process.env.RESEND_API_KEY || '',
+  RESEND_WEBHOOK_SECRET: process.env.RESEND_WEBHOOK_SECRET || '',
+  EMAIL_UNSUBSCRIBE_SECRET: process.env.EMAIL_UNSUBSCRIBE_SECRET || 'unsubscribe-secret-placeholder-change-me',
 
   FRONTEND_URL: process.env.FRONTEND_URL || 'http://localhost:3000',
   MOBILE_APP_SCHEME: process.env.MOBILE_APP_SCHEME || 'crm-maestro',

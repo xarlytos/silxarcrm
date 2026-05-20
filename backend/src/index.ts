@@ -40,13 +40,21 @@ app.use(helmet());
 const allowedOrigins = [
   ...env.FRONTEND_URL.split(',').map((o) => o.trim()).filter(Boolean),
   'https://crmpropio.vercel.app',
+  'https://app.ervok.com',
+  'https://ervok.com',
   'http://localhost:3000',
   'http://localhost:3001',
 ];
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin) return callback(null, true);
-    if (allowedOrigins.includes(origin) || /\.vercel\.app$/.test(new URL(origin).hostname)) {
+    const hostname = new URL(origin).hostname;
+    if (
+      allowedOrigins.includes(origin) ||
+      /\.vercel\.app$/.test(hostname) ||
+      /\.ervok\.com$/.test(hostname) ||
+      hostname === 'ervok.com'
+    ) {
       return callback(null, true);
     }
     return callback(new Error(`CORS: origen no permitido (${origin})`));

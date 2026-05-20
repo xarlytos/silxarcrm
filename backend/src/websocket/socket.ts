@@ -9,7 +9,30 @@ let io: Server;
 export function initSocket(httpServer: HttpServer): Server {
   io = new Server(httpServer, {
     cors: {
-      origin: [env.FRONTEND_URL, 'http://localhost:3000'],
+      origin: (origin, callback) => {
+        if (!origin) return callback(null, true);
+        try {
+          const hostname = new URL(origin).hostname;
+          const envOrigins = env.FRONTEND_URL.split(',').map((o) => o.trim()).filter(Boolean);
+          const staticAllowed = [
+            ...envOrigins,
+            'https://crmpropio.vercel.app',
+            'https://app.ervok.com',
+            'https://ervok.com',
+            'http://localhost:3000',
+            'http://localhost:3001',
+          ];
+          if (
+            staticAllowed.includes(origin) ||
+            /\.vercel\.app$/.test(hostname) ||
+            /\.ervok\.com$/.test(hostname) ||
+            hostname === 'ervok.com'
+          ) {
+            return callback(null, true);
+          }
+        } catch { /* fallthrough */ }
+        return callback(new Error(`Socket CORS: origen no permitido (${origin})`));
+      },
       methods: ['GET', 'POST'],
       credentials: true,
     },
@@ -38,6 +61,14 @@ export function initSocket(httpServer: HttpServer): Server {
 
     socket.on('leave_saas', (saas: string) => {
       socket.leave(`saas:${saas}`);
+    });
+
+    socket.on('join_llamadas', () => {
+      socket.join('llamadas');
+    });
+
+    socket.on('leave_llamadas', () => {
+      socket.leave('llamadas');
     });
 
     socket.on('disconnect', () => {

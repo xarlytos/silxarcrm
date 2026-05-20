@@ -1,0 +1,34 @@
+{
+  "atleevo": {
+    "total": 1469,
+    "porEstado": {
+      "NUEVO": 1469
+    },
+    "conEmail": 1,
+    "conWeb": 1221
+  },
+  "atleevogym": {
+    "total": 1760,
+    "porEstado": {
+      "NUEVO": 1760
+    },
+    "conEmail": 0,
+    "conWeb": 1501
+  },
+  "atleevoyoga": {
+    "total": 1284,
+    "porEstado": {
+      "NUEVO": 1284
+    },
+    "conEmail": 0,
+    "conWeb": 1068
+  },
+  "atleevobox": {
+    "total": 839,
+    "porEstado": {
+      "NUEVO": 839
+    },
+    "conEmail": 0,
+    "conWeb": 638
+  }
+}

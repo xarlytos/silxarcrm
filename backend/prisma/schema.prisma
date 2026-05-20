@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model ClienteGlobal {
@@ -173,7 +174,7 @@ model WebhookConfig {
 model CrmClient {
   id          String   @id @default(cuid())
   name        String
-  saas        String   // Identificador del SaaS (ej: "entrenadores", "nutricion")
+  saas        String   // Identificador del SaaS
   descripcion String?
   activo      Boolean  @default(true)
   createdAt   DateTime @default(now()) @map("created_at")
@@ -231,6 +232,216 @@ model TrackedEvent {
   @@map("tracked_events")
 }
 
+enum LeadEstado {
+  NUEVO
+  CONTACTADO
+  INTERESADO
+  EN_SEGUIMIENTO
+  CALIFICADO
+  RECHAZADO
+  NO_RESPONDE
+  CONVERTIDO
+}
+
+enum PrioridadLead {
+  BAJA
+  MEDIA
+  ALTA
+  URGENTE
+}
+
+model Lead {
+  id             String      @id @default(cuid())
+  nombre         String
+  email          String?
+  telefono       String?
+  empresa        String?
+  cargo          String?
+  pais           String?
+  origen         String      @default("manual")
+  softwareId     String      @map("software_id")
+  estado         LeadEstado  @default(NUEVO)
+  prioridad      PrioridadLead @default(MEDIA)
+  notas          String?
+  ultimoContacto DateTime?   @map("ultimo_contacto")
+  asignadoA      Int?        @map("asignado_a")
+  convertidoA    Int?        @map("convertido_a")
+  metadata       Json?
+  createdAt      DateTime    @default(now()) @map("created_at")
+  updatedAt      DateTime    @updatedAt @map("updated_at")
+
+  historial      LeadHistorial[]
+  etiquetas      LeadEtiqueta[]
+  gestor         UsuarioCrm?     @relation(fields: [asignadoA], references: [id])
+  llamadas       LlamadaReal[]
+  whatsappEnvios WhatsappEnvio[]
+  whatsappConversacion WhatsappConversacion?
+
+  @@unique([email, softwareId])
+  @@index([estado])
+  @@index([prioridad])
+  @@index([softwareId])
+  @@index([asignadoA])
+  @@index([createdAt])
+  @@map("leads")
+}
+
+model LeadHistorial {
+  id          String   @id @default(cuid())
+  leadId      String   @map("lead_id")
+  tipo        String
+  descripcion String
+  usuarioId   Int?     @map("usuario_id")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  lead Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@index([leadId])
+  @@index([createdAt])
+  @@map("lead_historial")
+}
+
+model LeadEtiqueta {
+  id     String @id @default(cuid())
+  nombre String @unique
+  color  String @default("#6B7280")
+  leads  Lead[]
+
+  @@map("lead_etiquetas")
+}
+
+model WhatsappPlantilla {
+  id         String   @id @default(cuid())
+  softwareId String   @map("software_id")
+  nombre     String
+  contenido  String
+  categoria  String   @default("general")
+  variables  String[] @default([])
+  activa     Boolean  @default(true)
+  orden      Int      @default(0)
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  envios     WhatsappEnvio[]
+  variantes  WhatsappABTestVariante[]
+  battlesAsA WhatsappArenaBattle[] @relation("BattlesAsA")
+  battlesAsB WhatsappArenaBattle[] @relation("BattlesAsB")
+
+  @@index([softwareId])
+  @@index([categoria])
+  @@index([activa])
+  @@map("whatsapp_plantillas")
+}
+
+model WhatsappEnvio {
+  id          String   @id @default(cuid())
+  leadId      String   @map("lead_id")
+  plantillaId String?  @map("plantilla_id")
+  varianteId  String?  @map("variante_id")
+  telefono    String
+  mensaje     String
+  usuarioId   Int?     @map("usuario_id")
+  enviadoAt   DateTime @default(now()) @map("enviado_at")
+
+  lead      Lead               @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  plantilla WhatsappPlantilla? @relation(fields: [plantillaId], references: [id], onDelete: SetNull)
+  variante  WhatsappABTestVariante? @relation(fields: [varianteId], references: [id], onDelete: SetNull)
+
+  @@index([leadId])
+  @@index([plantillaId])
+  @@index([varianteId])
+  @@index([enviadoAt])
+  @@map("whatsapp_envios")
+}
+
+model WhatsappABTest {
+  id          String   @id @default(cuid())
+  softwareId  String   @map("software_id")
+  nombre      String
+  descripcion String?
+  categoria   String   @default("general")
+  estado      String   @default("ACTIVO")
+  enviosTotal Int      @default(0) @map("envios_total")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  variantes WhatsappABTestVariante[]
+
+  @@index([softwareId])
+  @@index([estado])
+  @@index([categoria])
+  @@map("whatsapp_ab_tests")
+}
+
+model WhatsappABTestVariante {
+  id          String @id @default(cuid())
+  testId      String @map("test_id")
+  plantillaId String @map("plantilla_id")
+  peso        Int    @default(50)
+  envios      Int    @default(0)
+  respuestas  Int    @default(0)
+
+  test      WhatsappABTest     @relation(fields: [testId], references: [id], onDelete: Cascade)
+  plantilla WhatsappPlantilla  @relation(fields: [plantillaId], references: [id], onDelete: Cascade)
+  enviosReg WhatsappEnvio[]
+
+  @@index([testId])
+  @@index([plantillaId])
+  @@map("whatsapp_ab_test_variantes")
+}
+
+model WhatsappConversacion {
+  id              String   @id @default(cuid())
+  leadId          String   @unique @map("lead_id")
+  softwareId      String   @map("software_id")
+  ultimaActividad DateTime @default(now()) @map("ultima_actividad")
+  noLeidos        Int      @default(0) @map("no_leidos")
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  lead     Lead              @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  mensajes WhatsappMensaje[]
+
+  @@index([softwareId])
+  @@index([ultimaActividad])
+  @@map("whatsapp_conversaciones")
+}
+
+model WhatsappMensaje {
+  id             String   @id @default(cuid())
+  conversacionId String   @map("conversacion_id")
+  direccion      String   // "IN" (lead) | "OUT" (yo)
+  cuerpo         String
+  iaGenerado     Boolean  @default(false) @map("ia_generado")
+  usuarioId      Int?     @map("usuario_id")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  conversacion WhatsappConversacion @relation(fields: [conversacionId], references: [id], onDelete: Cascade)
+
+  @@index([conversacionId, createdAt])
+  @@map("whatsapp_mensajes")
+}
+
+model WhatsappArenaBattle {
+  id            String   @id @default(cuid())
+  softwareId    String   @map("software_id")
+  plantillaAId  String   @map("plantilla_a_id")
+  plantillaBId  String   @map("plantilla_b_id")
+  perfiles      Json     // [{nombre, descripcion}]
+  resultado     Json     // { resultados[], ganadorGlobal, resumen }
+  ganadorGlobal String   @map("ganador_global") // 'A' | 'B' | 'EMPATE'
+  nota          String?  // opcional, anotación del usuario
+  usuarioId     Int?     @map("usuario_id")
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  plantillaA WhatsappPlantilla @relation("BattlesAsA", fields: [plantillaAId], references: [id], onDelete: Cascade)
+  plantillaB WhatsappPlantilla @relation("BattlesAsB", fields: [plantillaBId], references: [id], onDelete: Cascade)
+
+  @@index([softwareId])
+  @@index([createdAt])
+  @@map("whatsapp_arena_battles")
+}
+
 model UsuarioCrm {
   id                    Int       @id @default(autoincrement())
   email                 String    @unique
@@ -246,6 +457,8 @@ model UsuarioCrm {
   updatedAt             DateTime  @updatedAt @map("updated_at")
 
   conversaciones ConversacionIa[]
+  leads          Lead[]
+  llamadas       LlamadaReal[]
 
   @@map("usuarios_crm")
 }
@@ -260,11 +473,34 @@ model ConversacionIa {
   tiempoRespuesta Int?     @map("tiempo_respuesta_ms")
   fecha           DateTime @default(now())
 
-  usuario UsuarioCrm @relation(fields: [usuarioId], references: [id])
+  usuario  UsuarioCrm @relation(fields: [usuarioId], references: [id])
+  acciones AccionIa[]
 
   @@index([usuarioId])
   @@index([fecha])
   @@map("conversaciones_ia")
+}
+
+model AccionIa {
+  id             String    @id @default(cuid())
+  usuarioId      Int       @map("usuario_id")
+  conversacionId Int?      @map("conversacion_id")
+  tipo           String // create_lead | update_lead_status | create_calendar_event | add_lead_note | send_whatsapp
+  descripcion    String
+  datosEntrada   Json      @map("datos_entrada")
+  datosSalida    Json?     @map("datos_salida")
+  estado         String    @default("propuesta") // propuesta | confirmada | ejecutada | cancelada | fallida
+  confirmadoPor  Int?      @map("confirmado_por")
+  error          String?
+  ejecutadaAt    DateTime? @map("ejecutada_at")
+  createdAt      DateTime  @default(now()) @map("created_at")
+
+  conversacion ConversacionIa? @relation(fields: [conversacionId], references: [id], onDelete: SetNull)
+
+  @@index([usuarioId])
+  @@index([estado])
+  @@index([conversacionId])
+  @@map("acciones_ia")
 }
 
 // Sistema de Calendario para socios
@@ -294,4 +530,374 @@ model CalendarioEvento {
   @@index([asignadoA])
   @@index([completado])
   @@map("calendario_eventos")
+}
+
+// Centro de Llamadas: guiones reutilizables por software/SaaS
+model SpechLlamada {
+  id          String   @id @default(cuid())
+  softwareId  String   @map("software_id")
+  titulo      String
+  contenido   String   @db.Text
+  objetivo    String   @default("Cierre")
+  objeciones  Json?
+  orden       Int      @default(0)
+  activo      Boolean  @default(true)
+  esDefault   Boolean  @default(false) @map("es_default")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  sesionesPractica SesionPruebaIA[]
+  llamadasReales   LlamadaReal[]
+
+  @@index([softwareId])
+  @@index([activo])
+  @@map("spechs_llamada")
+}
+
+// Centro de Llamadas: sesion de practica con IA
+model SesionPruebaIA {
+  id           String   @id @default(cuid())
+  softwareId   String   @map("software_id")
+  spechId      String?  @map("spech_id")
+  usuarioId    Int?     @map("usuario_id")
+  leadSimulado Json     @map("lead_simulado")
+  mensajes     Json     @default("[]")
+  resultado    String?
+  feedback     Json?
+  notas        String?
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  spech SpechLlamada? @relation(fields: [spechId], references: [id], onDelete: SetNull)
+
+  @@index([softwareId])
+  @@index([usuarioId])
+  @@index([createdAt])
+  @@map("sesiones_prueba_ia")
+}
+
+// Centro de Llamadas: registro de llamadas reales (Zadarma)
+model LlamadaReal {
+  id             String    @id @default(cuid())
+  softwareId     String    @map("software_id")
+  leadId         String    @map("lead_id")
+  spechId        String?   @map("spech_id")
+  agenteId       Int       @map("agente_id")
+  estado         String    @default("iniciando")
+  direccion      String    @default("saliente")
+  telefonoLead   String    @map("telefono_lead")
+  telefonoAgente String?   @map("telefono_agente")
+  duracionSeg    Int?      @map("duracion_seg")
+  grabacionUrl   String?   @map("grabacion_url")
+  notasPost      String?   @map("notas_post")
+  leadEstadoPrev String?   @map("lead_estado_prev")
+  leadEstadoPost String?   @map("lead_estado_post")
+  transcript     String?   @db.Text
+  calificacion   Int?
+  proximaAccion  String?   @map("proxima_accion")
+  zadarmaCallId  String?   @map("zadarma_call_id")
+  metadata       Json?
+  iniciadaAt     DateTime? @map("iniciada_at")
+  terminadaAt   DateTime? @map("terminada_at")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+
+  lead   Lead          @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  spech  SpechLlamada? @relation(fields: [spechId], references: [id], onDelete: SetNull)
+  agente UsuarioCrm    @relation(fields: [agenteId], references: [id])
+
+  @@index([softwareId])
+  @@index([leadId])
+  @@index([agenteId])
+  @@index([estado])
+  @@index([createdAt])
+  @@index([zadarmaCallId])
+  @@map("llamadas_reales")
+}
+
+// === Email Outreach ===
+
+model EmailAccount {
+  id           String    @id @default(cuid())
+  softwareId   String    @map("software_id")
+  proveedor    String    @default("resend") // resend | mailersend | mailerlite (futuro)
+  nombre       String    // Etiqueta libre: "Resend principal", "Resend backup", etc.
+  apiKey       String    @map("api_key") // En claro en BD por simplicidad; tratar como secreto
+  cuotaMax     Int?      @map("cuota_max")
+  cuotaUsada   Int       @default(0) @map("cuota_usada")
+  cuotaResetEn DateTime? @map("cuota_reset_en")
+  activo       Boolean   @default(true)
+  ultimoError  String?   @map("ultimo_error")
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+
+  senders EmailSender[]
+
+  @@unique([softwareId, nombre])
+  @@index([softwareId])
+  @@index([activo])
+  @@map("email_accounts")
+}
+
+model EmailSender {
+  id             String   @id @default(cuid())
+  softwareId     String   @map("software_id")
+  accountId      String?  @map("account_id")
+  email          String
+  nombre         String
+  esDefault      Boolean  @default(false) @map("es_default")
+  activo         Boolean  @default(true)
+  verificado     Boolean  @default(false)
+  resendDomainId String?  @map("resend_domain_id")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  account  EmailAccount?  @relation(fields: [accountId], references: [id], onDelete: SetNull)
+  campanas EmailCampana[]
+  envios   EmailEnvio[]
+
+  @@unique([softwareId, email])
+  @@index([softwareId])
+  @@index([accountId])
+  @@index([activo])
+  @@map("email_senders")
+}
+
+model EmailPlantilla {
+  id          String   @id @default(cuid())
+  softwareId  String   @map("software_id")
+  nombre      String
+  asunto      String
+  cuerpoHtml  String   @map("cuerpo_html") @db.Text
+  cuerpoTexto String?  @map("cuerpo_texto") @db.Text
+  variables   String[] @default([])
+  tipo        String   @default("custom") @map("tipo")
+  activo      Boolean  @default(true)
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  campanas EmailCampana[]
+
+  @@index([softwareId])
+  @@index([activo])
+  @@index([tipo])
+  @@map("email_plantillas")
+}
+
+model EmailCampana {
+  id              String    @id @default(cuid())
+  softwareId      String    @map("software_id")
+  nombre          String
+  senderId        String    @map("sender_id")
+  plantillaId     String?   @map("plantilla_id")
+  asuntoSnapshot  String    @map("asunto_snapshot")
+  cuerpoSnapshot  String    @map("cuerpo_snapshot") @db.Text
+  estado          String    @default("borrador") // borrador | enviando | enviada | cancelada | error
+  esAbTest        Boolean   @default(false) @map("es_ab_test")
+  ganadoraPromovidaEn DateTime? @map("ganadora_promovida_en")
+  totalLeads      Int       @default(0) @map("total_leads")
+  enviados        Int       @default(0)
+  abiertos        Int       @default(0)
+  clicks          Int       @default(0)
+  rebotes         Int       @default(0)
+  bajas           Int       @default(0)
+  filtros         Json?
+  programadaPara  DateTime? @map("programada_para")
+  iniciadaEn      DateTime? @map("iniciada_en")
+  completadaEn    DateTime? @map("completada_en")
+  creadoPor       Int?      @map("creado_por")
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt @map("updated_at")
+
+  sender    EmailSender     @relation(fields: [senderId], references: [id])
+  plantilla EmailPlantilla? @relation(fields: [plantillaId], references: [id], onDelete: SetNull)
+  envios    EmailEnvio[]
+  variantes EmailVariante[]
+
+  @@index([softwareId])
+  @@index([estado])
+  @@index([createdAt])
+  @@map("email_campanas")
+}
+
+model EmailVariante {
+  id          String   @id @default(cuid())
+  campanaId   String   @map("campana_id")
+  letra       String
+  asunto      String
+  cuerpoHtml  String   @map("cuerpo_html") @db.Text
+  porcentaje  Int
+  esGanadora  Boolean  @default(false) @map("es_ganadora")
+  enviados    Int      @default(0)
+  abiertos    Int      @default(0)
+  clicks      Int      @default(0)
+  rebotes     Int      @default(0)
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  campana EmailCampana @relation(fields: [campanaId], references: [id], onDelete: Cascade)
+  envios  EmailEnvio[]
+
+  @@unique([campanaId, letra])
+  @@index([campanaId])
+  @@map("email_variantes")
+}
+
+model EmailEnvio {
+  id            String    @id @default(cuid())
+  campanaId     String?   @map("campana_id")
+  varianteId    String?   @map("variante_id")
+  reservado     Boolean   @default(false) // true = espera promoción de ganadora antes de enviar
+  leadId        String?   @map("lead_id")
+  senderId      String    @map("sender_id")
+  destinatario  String
+  asunto        String
+  cuerpoHtml    String    @map("cuerpo_html") @db.Text
+  resendId      String?   @map("resend_id")
+  estado        String    @default("pendiente") // pendiente | enviado | fallido | rebotado | reservado
+  enviadoEn     DateTime? @map("enviado_en")
+  abiertoEn     DateTime? @map("abierto_en")
+  ultimoClickEn DateTime? @map("ultimo_click_en")
+  error         String?
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+
+  campana  EmailCampana?  @relation(fields: [campanaId], references: [id], onDelete: SetNull)
+  variante EmailVariante? @relation(fields: [varianteId], references: [id], onDelete: SetNull)
+  sender   EmailSender    @relation(fields: [senderId], references: [id])
+  eventos  EmailEvento[]
+
+  @@index([campanaId])
+  @@index([varianteId])
+  @@index([leadId])
+  @@index([resendId])
+  @@index([estado])
+  @@index([destinatario])
+  @@map("email_envios")
+}
+
+model EmailEvento {
+  id      String   @id @default(cuid())
+  envioId String   @map("envio_id")
+  tipo    String // sent | delivered | opened | clicked | bounced | complained | unsubscribed | failed
+  datos   Json?
+  fecha   DateTime @default(now())
+
+  envio EmailEnvio @relation(fields: [envioId], references: [id], onDelete: Cascade)
+
+  @@index([envioId])
+  @@index([tipo])
+  @@index([fecha])
+  @@map("email_eventos")
+}
+
+model EmailBaja {
+  id         String   @id @default(cuid())
+  email      String
+  softwareId String   @map("software_id")
+  motivo     String?
+  ipOrigen   String?  @map("ip_origen")
+  fecha      DateTime @default(now())
+
+  @@unique([email, softwareId])
+  @@index([softwareId])
+  @@map("email_bajas")
+}
+
+enum LandingEstado {
+  BORRADOR
+  PUBLICADA
+  PAUSADA
+}
+
+enum FreeValueEstado {
+  BORRADOR
+  PUBLICADO
+  PAUSADO
+}
+
+model Landing {
+  id             String        @id @default(cuid())
+  softwareId     String        @map("software_id")
+  nombre         String
+  slug           String
+  url            String
+  descripcion    String?
+  estado         LandingEstado @default(BORRADOR)
+  visitas        Int           @default(0)
+  conversiones   Int           @default(0)
+  leadsGenerados Int           @default(0) @map("leads_generados")
+  metadata       Json?
+  createdAt      DateTime      @default(now()) @map("created_at")
+  updatedAt      DateTime      @updatedAt @map("updated_at")
+
+  @@unique([slug, softwareId])
+  @@index([softwareId])
+  @@index([estado])
+  @@index([createdAt])
+  @@map("landings")
+}
+
+model FreeValue {
+  id             String          @id @default(cuid())
+  softwareId     String          @map("software_id")
+  nombre         String
+  slug           String
+  url            String
+  tipo           String
+  descripcion    String?
+  estado         FreeValueEstado @default(BORRADOR)
+  usos           Int             @default(0)
+  leadsGenerados Int             @default(0) @map("leads_generados")
+  metadata       Json?
+  createdAt      DateTime        @default(now()) @map("created_at")
+  updatedAt      DateTime        @updatedAt @map("updated_at")
+
+  @@unique([slug, softwareId])
+  @@index([softwareId])
+  @@index([tipo])
+  @@index([estado])
+  @@index([createdAt])
+  @@map("free_values")
+}
+
+enum PropuestaEstado {
+  BORRADOR
+  ENVIADA
+  VISTA
+  ACEPTADA
+  RECHAZADA
+  EXPIRADA
+}
+
+model Propuesta {
+  id            String          @id @default(cuid())
+  softwareId    String          @map("software_id")
+  titulo        String
+  descripcion   String?
+  leadId        String?         @map("lead_id")
+  clienteNombre String          @map("cliente_nombre")
+  clienteEmail  String?         @map("cliente_email")
+  items         Json            // [{servicio, descripcion, cantidad, precioUnitario, subtotal}]
+  subtotal      Decimal         @default(0) @db.Decimal(10, 2)
+  impuestos     Decimal?        @db.Decimal(10, 2)
+  total         Decimal         @default(0) @db.Decimal(10, 2)
+  condiciones   String?
+  validezDias   Int             @default(30) @map("validez_dias")
+  estado        PropuestaEstado @default(BORRADOR)
+  urlToken      String          @unique @default(cuid()) @map("url_token")
+  enviadaAt     DateTime?       @map("enviada_at")
+  vistaAt       DateTime?       @map("vista_at")
+  aceptadaAt    DateTime?       @map("aceptada_at")
+  rechazadaAt   DateTime?       @map("rechazada_at")
+  notasRechazo  String?         @map("notas_rechazo")
+  creadoPor     Int             @map("creado_por")
+  createdAt     DateTime        @default(now()) @map("created_at")
+  updatedAt     DateTime        @updatedAt @map("updated_at")
+
+  @@index([softwareId])
+  @@index([estado])
+  @@index([leadId])
+  @@index([urlToken])
+  @@index([createdAt])
+  @@map("propuestas")
 }
