@@ -49,7 +49,7 @@ export function TabMisiones({
   return (
     <div className="space-y-5">
       {/* TAROT + COFRE en grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-4 items-start">
         <TarotWidget card={tarotCard} revealed={tarotRevealed} onReveal={onRevealTarot} />
         <MysteryChest
           tier={chestTier}

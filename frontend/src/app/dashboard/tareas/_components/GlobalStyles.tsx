@@ -126,25 +126,25 @@ export function GlobalStyles() {
 
       /* ===== Sistema de materiales (paneles flotantes) ===== */
       .panel-base {
-        background: rgba(14, 14, 19, 0.72);
-        border: 1px solid rgba(255, 255, 255, 0.06);
+        background: color-mix(in srgb, var(--bg-secondary) 85%, transparent);
+        border: 1px solid var(--border-primary);
         box-shadow:
-          inset 0 1px 0 0 rgba(255, 255, 255, 0.05),
-          0 1px 2px 0 rgba(0, 0, 0, 0.5),
-          0 20px 40px -16px rgba(0, 0, 0, 0.5);
+          inset 0 1px 0 0 color-mix(in srgb, var(--text-primary) 5%, transparent),
+          0 1px 2px 0 rgba(0, 0, 0, 0.15),
+          0 20px 40px -16px rgba(0, 0, 0, 0.15);
         backdrop-filter: blur(20px) saturate(180%);
       }
-      .panel-base:hover { border-color: rgba(255, 255, 255, 0.10); }
+      .panel-base:hover { border-color: color-mix(in srgb, var(--text-primary) 15%, transparent); }
 
       .panel-premium {
         background:
           radial-gradient(120% 100% at 0% 0%, rgba(245, 158, 11, 0.12), transparent 60%),
           radial-gradient(120% 100% at 100% 100%, rgba(180, 83, 9, 0.10), transparent 60%),
-          rgba(20, 14, 8, 0.78);
+          color-mix(in srgb, var(--bg-secondary) 90%, transparent);
         border: 1px solid rgba(245, 158, 11, 0.22);
         box-shadow:
           inset 0 1px 0 0 rgba(251, 191, 36, 0.15),
-          0 1px 2px 0 rgba(0, 0, 0, 0.5),
+          0 1px 2px 0 rgba(0, 0, 0, 0.15),
           0 20px 60px -20px rgba(245, 158, 11, 0.15);
       }
 
@@ -152,33 +152,33 @@ export function GlobalStyles() {
         background:
           radial-gradient(120% 100% at 0% 0%, rgba(168, 85, 247, 0.13), transparent 60%),
           radial-gradient(120% 100% at 100% 100%, rgba(168, 85, 247, 0.08), transparent 60%),
-          rgba(15, 10, 24, 0.78);
+          color-mix(in srgb, var(--bg-secondary) 90%, transparent);
         border: 1px solid rgba(168, 85, 247, 0.22);
         box-shadow:
           inset 0 1px 0 0 rgba(196, 181, 253, 0.15),
-          0 1px 2px 0 rgba(0, 0, 0, 0.5),
+          0 1px 2px 0 rgba(0, 0, 0, 0.15),
           0 20px 60px -20px rgba(139, 92, 246, 0.15);
       }
 
       .panel-tech {
         background:
           radial-gradient(120% 100% at 100% 0%, rgba(34, 211, 238, 0.10), transparent 60%),
-          rgba(8, 14, 20, 0.78);
+          color-mix(in srgb, var(--bg-secondary) 90%, transparent);
         border: 1px solid rgba(34, 211, 238, 0.20);
         box-shadow:
           inset 0 1px 0 0 rgba(165, 243, 252, 0.12),
-          0 1px 2px 0 rgba(0, 0, 0, 0.5),
+          0 1px 2px 0 rgba(0, 0, 0, 0.15),
           0 20px 60px -20px rgba(34, 211, 238, 0.12);
       }
 
       .panel-dark {
         background:
           radial-gradient(120% 100% at 0% 0%, rgba(190, 18, 60, 0.10), transparent 60%),
-          rgba(10, 8, 8, 0.84);
+          color-mix(in srgb, var(--bg-secondary) 92%, transparent);
         border: 1px solid rgba(244, 63, 94, 0.18);
         box-shadow:
           inset 0 1px 0 0 rgba(254, 205, 211, 0.10),
-          0 1px 2px 0 rgba(0, 0, 0, 0.6),
+          0 1px 2px 0 rgba(0, 0, 0, 0.15),
           0 20px 60px -20px rgba(190, 18, 60, 0.18);
       }
 

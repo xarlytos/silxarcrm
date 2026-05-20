@@ -208,28 +208,29 @@ export default function CalendarioPage() {
   return (
     <div className="flex flex-col gap-6 w-full xl:flex-1 xl:min-h-0">
       {/* Header */}
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center">
-              <CalendarIcon className="w-5 h-5 text-white" />
+          <div className="flex items-center gap-3 mb-1 sm:mb-2">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shrink-0">
+              <CalendarIcon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
             </div>
-            <h1 className="text-[32px] font-bold tracking-tight text-[var(--text-primary)]">
+            <h1 className="text-[24px] sm:text-[28px] lg:text-[32px] font-bold tracking-tight text-[var(--text-primary)]">
               Calendario
             </h1>
           </div>
-          <p className="text-[15px] text-[var(--text-secondary)]">
+          <p className="text-[13px] sm:text-[15px] text-[var(--text-secondary)]">
             Gestiona eventos y tareas entre Carlos y Silviu
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <button
             onClick={() => abrirModalCrear()}
-            className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-violet-500 to-purple-600 text-white rounded-xl text-[14px] font-medium hover:shadow-lg hover:shadow-violet-500/25 transition-all"
+            className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 bg-gradient-to-r from-violet-500 to-purple-600 text-white rounded-xl text-[13px] sm:text-[14px] font-medium hover:shadow-lg hover:shadow-violet-500/25 transition-all shrink-0"
           >
-            <Plus className="w-4 h-4" />
-            Nuevo Evento
+            <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            <span className="hidden sm:inline">Nuevo Evento</span>
+            <span className="sm:hidden">Nuevo</span>
           </button>
         </div>
       </div>
@@ -380,55 +381,55 @@ export default function CalendarioPage() {
         {/* Calendar Grid */}
         <div className="xl:flex-1 xl:min-h-0 min-h-[500px] bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-2xl overflow-hidden flex flex-col">
           {/* Calendar Header */}
-          <div className="px-6 py-4 border-b border-[var(--border-primary)] flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <h2 className="text-[20px] font-semibold text-[var(--text-primary)] capitalize">
+          <div className="px-3 sm:px-6 py-3 sm:py-4 border-b border-[var(--border-primary)] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div className="flex items-center justify-between sm:justify-start gap-3 sm:gap-4">
+              <h2 className="text-[16px] sm:text-[20px] font-semibold text-[var(--text-primary)] capitalize truncate min-w-0">
                 {format(fechaActual, 'MMMM yyyy', { locale: es })}
               </h2>
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1 shrink-0">
                 <button
                   onClick={mesAnterior}
-                  className="p-2 hover:bg-[var(--bg-tertiary)] rounded-lg transition-colors"
+                  className="p-1.5 sm:p-2 hover:bg-[var(--bg-tertiary)] rounded-lg transition-colors"
                 >
-                  <ChevronLeft className="w-5 h-5 text-[var(--text-secondary)]" />
+                  <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--text-secondary)]" />
                 </button>
                 <button
                   onClick={irAHoy}
-                  className="px-3 py-1.5 text-[13px] font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)] rounded-lg transition-colors"
+                  className="px-2 sm:px-3 py-1 sm:py-1.5 text-[12px] sm:text-[13px] font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)] rounded-lg transition-colors"
                 >
                   Hoy
                 </button>
                 <button
                   onClick={mesSiguiente}
-                  className="p-2 hover:bg-[var(--bg-tertiary)] rounded-lg transition-colors"
+                  className="p-1.5 sm:p-2 hover:bg-[var(--bg-tertiary)] rounded-lg transition-colors"
                 >
-                  <ChevronRight className="w-5 h-5 text-[var(--text-secondary)]" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--text-secondary)]" />
                 </button>
               </div>
             </div>
 
-            <div className="inline-flex items-center gap-1 p-1 bg-[var(--bg-tertiary)] rounded-xl">
+            <div className="inline-flex items-center gap-1 p-0.5 sm:p-1 bg-[var(--bg-tertiary)] rounded-xl self-start sm:self-auto">
               <button
                 onClick={() => setVista('calendario')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] font-medium transition-all ${
+                className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[12px] sm:text-[13px] font-medium transition-all ${
                   vista === 'calendario'
                     ? 'bg-[var(--bg-secondary)] text-[var(--text-primary)] shadow-sm'
                     : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                 }`}
               >
-                <LayoutGrid className="w-4 h-4" />
-                Calendario
+                <LayoutGrid className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <span className="hidden sm:inline">Calendario</span>
               </button>
               <button
                 onClick={() => setVista('lista')}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] font-medium transition-all ${
+                className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[12px] sm:text-[13px] font-medium transition-all ${
                   vista === 'lista'
                     ? 'bg-[var(--bg-secondary)] text-[var(--text-primary)] shadow-sm'
                     : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                 }`}
               >
-                <List className="w-4 h-4" />
-                Lista
+                <List className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <span className="hidden sm:inline">Lista</span>
               </button>
             </div>
           </div>
@@ -438,8 +439,9 @@ export default function CalendarioPage() {
           {/* Days Header */}
           <div className="grid grid-cols-7 border-b border-[var(--border-primary)]">
             {diasSemana.map((dia) => (
-              <div key={dia} className="px-2 py-3 text-center text-[13px] font-medium text-[var(--text-tertiary)]">
-                {dia}
+              <div key={dia} className="px-0.5 sm:px-2 py-2 sm:py-3 text-center text-[10px] sm:text-[13px] font-medium text-[var(--text-tertiary)]">
+                <span className="hidden sm:inline">{dia}</span>
+                <span className="sm:hidden">{dia.charAt(0)}</span>
               </div>
             ))}
           </div>
@@ -455,26 +457,26 @@ export default function CalendarioPage() {
                 <div
                   key={idx}
                   onClick={() => abrirModalCrear(dia)}
-                  className={`min-h-0 p-2 border-b border-r border-[var(--border-primary)] cursor-pointer transition-colors hover:bg-[var(--bg-tertiary)]/50 overflow-hidden ${
+                  className={`min-h-0 p-0.5 sm:p-2 border-b border-r border-[var(--border-primary)] cursor-pointer transition-colors hover:bg-[var(--bg-tertiary)]/50 overflow-hidden ${
                     !esMesActual ? 'bg-[var(--bg-tertiary)]/30' : ''
                   }`}
                 >
-                  <div className={`w-7 h-7 flex items-center justify-center text-[13px] font-medium rounded-full mb-1 ${
+                  <div className={`w-5 h-5 sm:w-7 sm:h-7 flex items-center justify-center text-[11px] sm:text-[13px] font-medium rounded-full mb-0.5 sm:mb-1 ${
                     esHoy
                       ? 'bg-violet-500 text-white'
                       : 'text-[var(--text-secondary)]'
                   }`}>
                     {format(dia, 'd')}
                   </div>
-                  <div className="space-y-1">
-                    {eventosDia.slice(0, 3).map((evento) => (
+                  <div className="space-y-0.5 sm:space-y-1">
+                    {eventosDia.slice(0, 2).map((evento) => (
                       <div
                         key={evento.id}
                         onClick={(e) => {
                           e.stopPropagation();
                           abrirModalEditar(evento);
                         }}
-                        className={`px-2 py-1 rounded-lg text-[11px] font-medium truncate cursor-pointer transition-all hover:opacity-80 ${
+                        className={`hidden sm:block px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md sm:rounded-lg text-[9px] sm:text-[11px] font-medium truncate cursor-pointer transition-all hover:opacity-80 ${
                           evento.completado
                             ? 'bg-gray-200 text-gray-500 line-through'
                             : `${COLORES[evento.color].light} ${COLORES[evento.color].text}`
@@ -484,9 +486,29 @@ export default function CalendarioPage() {
                         {evento.titulo}
                       </div>
                     ))}
-                    {eventosDia.length > 3 && (
-                      <div className="text-[11px] text-[var(--text-tertiary)] px-2">
-                        +{eventosDia.length - 3} más
+                    {/* Mobile: dot indicator for events */}
+                    {eventosDia.length > 0 && (
+                      <div className="flex sm:hidden gap-0.5 flex-wrap px-0.5">
+                        {eventosDia.slice(0, 4).map((evento) => (
+                          <div
+                            key={evento.id}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              abrirModalEditar(evento);
+                            }}
+                            className={`w-1.5 h-1.5 rounded-full ${
+                              evento.completado ? 'bg-gray-400' : COLORES[evento.color].bg
+                            }`}
+                          />
+                        ))}
+                        {eventosDia.length > 4 && (
+                          <span className="text-[8px] text-[var(--text-tertiary)]">+{eventosDia.length - 4}</span>
+                        )}
+                      </div>
+                    )}
+                    {eventosDia.length > 2 && (
+                      <div className="hidden sm:block text-[10px] sm:text-[11px] text-[var(--text-tertiary)] px-1.5 sm:px-2">
+                        +{eventosDia.length - 2} más
                       </div>
                     )}
                   </div>

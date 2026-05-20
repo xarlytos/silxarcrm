@@ -334,14 +334,16 @@ model WhatsappPlantilla {
 }
 
 model WhatsappEnvio {
-  id          String   @id @default(cuid())
-  leadId      String   @map("lead_id")
-  plantillaId String?  @map("plantilla_id")
-  varianteId  String?  @map("variante_id")
-  telefono    String
-  mensaje     String
-  usuarioId   Int?     @map("usuario_id")
-  enviadoAt   DateTime @default(now()) @map("enviado_at")
+  id             String    @id @default(cuid())
+  leadId         String    @map("lead_id")
+  plantillaId    String?   @map("plantilla_id")
+  varianteId     String?   @map("variante_id")
+  telefono       String
+  mensaje        String
+  usuarioId      Int?      @map("usuario_id")
+  enviadoAt      DateTime  @default(now()) @map("enviado_at")
+  programadoPara DateTime? @map("programado_para")
+  estado         String    @default("enviado") @map("estado") // 'enviado' | 'programado' | 'fallido'
 
   lead      Lead               @relation(fields: [leadId], references: [id], onDelete: Cascade)
   plantilla WhatsappPlantilla? @relation(fields: [plantillaId], references: [id], onDelete: SetNull)
@@ -352,6 +354,23 @@ model WhatsappEnvio {
   @@index([varianteId])
   @@index([enviadoAt])
   @@map("whatsapp_envios")
+}
+
+model WhatsappChatbotRegla {
+  id           String   @id @default(cuid())
+  softwareId   String   @map("software_id")
+  nombre       String
+  palabrasClave String[] @map("palabras_clave")
+  respuesta    String
+  tipo         String   @default("keyword") // 'keyword' | 'ia'
+  activa       Boolean  @default(true)
+  orden        Int      @default(0)
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@index([softwareId])
+  @@index([activa])
+  @@map("whatsapp_chatbot_reglas")
 }
 
 model WhatsappABTest {
@@ -440,6 +459,21 @@ model WhatsappArenaBattle {
   @@index([softwareId])
   @@index([createdAt])
   @@map("whatsapp_arena_battles")
+}
+
+model WhatsappArenaPerfil {
+  id          String   @id @default(cuid())
+  softwareId  String   @map("software_id")
+  nombre      String
+  descripcion String
+  origen      String   @default("ia") // 'ia' | 'manual'
+  activo      Boolean  @default(true)
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@index([softwareId, activo])
+  @@index([softwareId])
+  @@map("whatsapp_arena_perfiles")
 }
 
 model UsuarioCrm {

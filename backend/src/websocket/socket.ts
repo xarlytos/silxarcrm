@@ -71,6 +71,16 @@ export function initSocket(httpServer: HttpServer): Server {
       socket.leave('llamadas');
     });
 
+    socket.on('join_whatsapp', (softwareId: string) => {
+      socket.join(`whatsapp:${softwareId}`);
+      logger.info(`Socket ${socket.id} joined whatsapp room: ${softwareId}`);
+    });
+
+    socket.on('leave_whatsapp', (softwareId: string) => {
+      socket.leave(`whatsapp:${softwareId}`);
+      logger.info(`Socket ${socket.id} left whatsapp room: ${softwareId}`);
+    });
+
     socket.on('disconnect', () => {
       logger.info(`WebSocket disconnected: ${(socket as any).user?.email}`);
     });

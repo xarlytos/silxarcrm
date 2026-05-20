@@ -85,19 +85,33 @@ const navGroups: NavGroup[] = [
 ];
 
 interface SidebarProps {
-  /** When true, the sidebar slides off-screen and a floating expand button appears. */
-  collapsed?: boolean;
-  onToggle?: () => void;
+  /** Desktop: when true the sidebar slides off-screen on lg+ and a floating expand button appears. */
+  desktopCollapsed?: boolean;
+  onDesktopToggle?: () => void;
+  /** Mobile drawer state — controls visibility on <lg viewports. */
+  mobileOpen?: boolean;
+  onMobileClose?: () => void;
 }
 
-export default function Sidebar({ collapsed: controlledCollapsed, onToggle }: SidebarProps = {}) {
+export default function Sidebar({
+  desktopCollapsed: controlledCollapsed,
+  onDesktopToggle,
+  mobileOpen = false,
+  onMobileClose,
+}: SidebarProps = {}) {
   const pathname = usePathname();
   const { logout, user } = useAuth();
   const { open: openCommandPalette } = useCommandPalette();
   const [internalCollapsed, setInternalCollapsed] = useState(false);
 
-  const hidden = controlledCollapsed ?? internalCollapsed;
-  const toggle = onToggle ? () => onToggle() : () => setInternalCollapsed((p) => !p);
+  const desktopHidden = controlledCollapsed ?? internalCollapsed;
+  const toggle = onDesktopToggle ? () => onDesktopToggle() : () => setInternalCollapsed((p) => !p);
+
+  // Auto-close mobile drawer when route changes
+  useEffect(() => {
+    if (mobileOpen) onMobileClose?.();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   const isItemActive = (item: NavItem) =>
     item.exact ? pathname === item.href : pathname.startsWith(item.href);
@@ -168,18 +182,20 @@ export default function Sidebar({ collapsed: controlledCollapsed, onToggle }: Si
 
   return (
     <>
-      {/* ===== Floating expand button — only visible when sidebar is hidden ===== */}
+      {/* ===== Floating expand button — desktop only, when sidebar is hidden ===== */}
       <button
         type="button"
         onClick={toggle}
         aria-label="Mostrar menú"
         title="Mostrar menú"
-        style={{ transitionDelay: hidden ? '180ms' : '0ms' }}
+        style={{ transitionDelay: desktopHidden ? '180ms' : '0ms' }}
         className={cn(
-          'ease-luxe group fixed top-4 left-4 z-[51] w-10 h-10 rounded-xl bg-[var(--bg-secondary)]/90 backdrop-blur border border-[var(--border-primary)] flex items-center justify-center shadow-md hover:shadow-xl hover:border-blue-500/40 hover:scale-[1.06] active:scale-95 transition-[opacity,transform,box-shadow,border-color] duration-[380ms]',
-          hidden
-            ? 'opacity-100 translate-x-0 pointer-events-auto'
-            : 'opacity-0 -translate-x-4 pointer-events-none',
+          'ease-luxe group fixed top-4 left-4 z-[51] w-10 h-10 rounded-xl bg-[var(--bg-secondary)]/90 backdrop-blur border border-[var(--border-primary)] items-center justify-center shadow-md hover:shadow-xl hover:border-blue-500/40 hover:scale-[1.06] active:scale-95 transition-[opacity,transform,box-shadow,border-color] duration-[380ms]',
+          // Only on lg+: shown when desktop sidebar is hidden
+          'hidden lg:flex',
+          desktopHidden
+            ? 'lg:opacity-100 lg:translate-x-0 lg:pointer-events-auto'
+            : 'lg:opacity-0 lg:-translate-x-4 lg:pointer-events-none',
         )}
       >
         <span className="pointer-events-none absolute -inset-1 rounded-2xl bg-gradient-to-br from-blue-500/30 via-violet-500/30 to-fuchsia-500/30 blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
@@ -188,16 +204,29 @@ export default function Sidebar({ collapsed: controlledCollapsed, onToggle }: Si
         />
       </button>
 
+      {/* ===== Mobile backdrop overlay ===== */}
+      <div
+        onClick={onMobileClose}
+        aria-hidden="true"
+        className={cn(
+          'fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-opacity duration-300 lg:hidden',
+          mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none',
+        )}
+      />
+
       {/* ===== Sidebar ===== */}
       <aside
         ref={asideRef}
         onMouseMove={handleCursorMove}
         onMouseLeave={handleCursorLeave}
         className={cn(
-          'ease-luxe h-screen fixed top-0 left-0 w-[260px] border-r border-[var(--border-primary)] bg-[var(--bg-secondary)] flex flex-col transition-transform duration-[460ms] z-50',
-          hidden && '-translate-x-full',
+          'ease-luxe h-screen h-[100dvh] fixed top-0 left-0 w-[280px] border-r border-[var(--border-primary)] bg-[var(--bg-secondary)] flex flex-col transition-transform duration-[460ms] z-50',
+          // Mobile: hidden by default, shown when mobileOpen
+          mobileOpen ? 'translate-x-0' : '-translate-x-full',
+          // Desktop overrides mobile: visible unless desktopHidden
+          desktopHidden ? 'lg:-translate-x-full' : 'lg:translate-x-0',
         )}
-        aria-hidden={hidden}
+        aria-hidden={!mobileOpen && desktopHidden}
       >
         {/* Ambient decoration (clipped) */}
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
@@ -264,15 +293,26 @@ export default function Sidebar({ collapsed: controlledCollapsed, onToggle }: Si
             </button>
           </div>
 
-          {/* ===== Collapse pill button — hides the sidebar ===== */}
+          {/* ===== Collapse pill button — desktop only (hides the sidebar) ===== */}
           <button
             type="button"
             onClick={toggle}
-            className="ease-luxe absolute -right-3 top-[60px] w-6 h-6 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-primary)] flex items-center justify-center shadow-md hover:shadow-lg hover:bg-[var(--bg-tertiary)] hover:border-blue-500/40 hover:scale-110 active:scale-90 transition-all duration-[320ms] group z-20"
+            className="ease-luxe absolute -right-3 top-[60px] w-6 h-6 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-primary)] hidden lg:flex items-center justify-center shadow-md hover:shadow-lg hover:bg-[var(--bg-tertiary)] hover:border-blue-500/40 hover:scale-110 active:scale-90 transition-all duration-[320ms] group z-20"
             title="Ocultar menú"
             aria-label="Ocultar menú"
           >
             <ChevronLeft className="ease-luxe w-3.5 h-3.5 text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)] transition-all duration-[520ms]" />
+          </button>
+
+          {/* ===== Mobile close button (X) ===== */}
+          <button
+            type="button"
+            onClick={onMobileClose}
+            className="lg:hidden absolute right-3 top-4 w-9 h-9 rounded-lg bg-[var(--bg-tertiary)] border border-[var(--border-primary)] flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)] active:scale-95 transition-all duration-200 z-30"
+            title="Cerrar menú"
+            aria-label="Cerrar menú"
+          >
+            <ChevronLeft className="w-5 h-5" />
           </button>
 
           {/* ===== Navigation ===== */}

@@ -7,6 +7,7 @@ import {
   createPlantilla,
   updatePlantilla,
   deletePlantilla,
+  generarPlantillaWhatsappIA,
   enviarWhatsapp,
   previewPlantilla,
   listEnvios,
@@ -26,6 +27,9 @@ import {
   generarMensajeResurreccion,
   batallaPlantillas,
   generarPerfilesSinteticos,
+  listArenaPerfiles,
+  crearPerfilManual,
+  eliminarArenaPerfil,
   listArenaBattles,
   getArenaBattle,
   deleteArenaBattle,
@@ -77,6 +81,22 @@ router.post('/plantillas', async (req: Request, res: Response) => {
   } catch (error) {
     logger.error('Whatsapp plantilla create error:', error);
     res.status(400).json({ error: (error as Error).message || 'Error creando plantilla' });
+  }
+});
+
+// POST /api/whatsapp/plantillas/generar-ia — genera plantilla con IA
+router.post('/plantillas/generar-ia', async (req: Request, res: Response) => {
+  try {
+    const { softwareId, categoria, objetivo, tono, longitud } = req.body;
+    if (!softwareId?.trim() || !objetivo?.trim()) {
+      res.status(400).json({ error: 'softwareId y objetivo son obligatorios' });
+      return;
+    }
+    const generada = await generarPlantillaWhatsappIA({ softwareId, categoria, objetivo, tono, longitud });
+    res.json({ success: true, data: generada });
+  } catch (error) {
+    logger.error('Whatsapp plantilla generar-ia error:', error);
+    res.status(400).json({ error: (error as Error).message || 'Error generando plantilla con IA' });
   }
 });
 
@@ -390,7 +410,23 @@ router.post('/arena', async (req: Request, res: Response) => {
   }
 });
 
-// POST /api/whatsapp/arena/perfiles { softwareId, cantidad }
+// GET /api/whatsapp/arena/perfiles?softwareId=xxx
+router.get('/arena/perfiles', async (req: Request, res: Response) => {
+  try {
+    const softwareId = req.query.softwareId as string;
+    if (!softwareId) {
+      res.status(400).json({ error: 'softwareId obligatorio' });
+      return;
+    }
+    const data = await listArenaPerfiles(softwareId);
+    res.json({ success: true, data });
+  } catch (error) {
+    logger.error('Arena perfiles list error:', error);
+    res.status(500).json({ error: 'Error listando perfiles' });
+  }
+});
+
+// POST /api/whatsapp/arena/perfiles { softwareId, cantidad, regenerar? }
 router.post('/arena/perfiles', async (req: Request, res: Response) => {
   try {
     const data = await generarPerfilesSinteticos(req.body);
@@ -398,6 +434,33 @@ router.post('/arena/perfiles', async (req: Request, res: Response) => {
   } catch (error) {
     logger.error('Arena perfiles error:', error);
     res.status(400).json({ error: (error as Error).message || 'Error generando perfiles' });
+  }
+});
+
+// POST /api/whatsapp/arena/perfiles/manual { softwareId, nombre, descripcion }
+router.post('/arena/perfiles/manual', async (req: Request, res: Response) => {
+  try {
+    const { softwareId, nombre, descripcion } = req.body;
+    if (!softwareId || !nombre || !descripcion) {
+      res.status(400).json({ error: 'softwareId, nombre y descripcion obligatorios' });
+      return;
+    }
+    const data = await crearPerfilManual(softwareId, { nombre, descripcion });
+    res.json({ success: true, data });
+  } catch (error) {
+    logger.error('Arena perfil manual error:', error);
+    res.status(400).json({ error: (error as Error).message || 'Error creando perfil' });
+  }
+});
+
+// DELETE /api/whatsapp/arena/perfiles/:id
+router.delete('/arena/perfiles/:id', async (req: Request, res: Response) => {
+  try {
+    await eliminarArenaPerfil(req.params.id);
+    res.json({ success: true });
+  } catch (error) {
+    logger.error('Arena perfil delete error:', error);
+    res.status(400).json({ error: (error as Error).message || 'Error eliminando perfil' });
   }
 });
 

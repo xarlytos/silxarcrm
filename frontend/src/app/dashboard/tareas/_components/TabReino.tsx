@@ -116,13 +116,13 @@ export function TabReino({ stats, level, topClientes }: { stats: Stats; level: n
                     className={`relative w-[64px] h-[64px] md:w-[72px] md:h-[72px] rounded-2xl flex items-center justify-center transition-all ${
                       unlocked
                         ? `bg-gradient-to-br ${b.color} ring-2 ${isSelected ? 'ring-amber-300' : 'ring-amber-400/40'} shadow-lg shadow-amber-500/15`
-                        : 'bg-black/40 ring-1 ring-white/10 border border-dashed border-white/15'
+                        : 'bg-[var(--bg-tertiary)] ring-1 ring-[var(--border-primary)] border border-dashed border-[var(--border-primary)]'
                     }`}
                   >
                     {unlocked ? (
                       <Icon className={`w-9 h-9 md:w-10 md:h-10 ${b.iconColor} drop-shadow-lg`} strokeWidth={1.5} />
                     ) : (
-                      <Lock className="w-5 h-5 text-white/40" />
+                      <Lock className="w-5 h-5 text-[var(--text-tertiary)]" />
                     )}
                     {/* Selección */}
                     {isSelected && (
@@ -180,7 +180,7 @@ export function TabReino({ stats, level, topClientes }: { stats: Stats; level: n
                     )}
                     <div className="flex items-start gap-3">
                       <div className={`shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${palette} flex items-center justify-center shadow-lg`}>
-                        <span className="text-white text-[15px] font-black">{initials}</span>
+                        <span className="text-[var(--text-inverse)] text-[15px] font-black">{initials}</span>
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="text-[13.5px] font-bold text-[var(--text-primary)] truncate">{c.nombre}</p>
@@ -204,7 +204,7 @@ export function TabReino({ stats, level, topClientes }: { stats: Stats; level: n
       {selected ? (
         <div className={`relative overflow-hidden rounded-2xl border p-4 bg-gradient-to-br ${selected.color} ${isBuildingUnlocked(selected, stats, level) ? 'border-amber-400/40' : 'border-[var(--border-primary)] opacity-90'}`}>
           <div className="flex items-center gap-4">
-            <div className="shrink-0 w-16 h-16 rounded-2xl bg-black/30 ring-2 ring-amber-400/40 flex items-center justify-center">
+            <div className="shrink-0 w-16 h-16 rounded-2xl bg-[var(--bg-tertiary)] ring-2 ring-amber-400/40 flex items-center justify-center">
               {(() => {
                 const Icon = ICON_MAP[selected.icon] ?? Home;
                 return <Icon className={`w-9 h-9 ${selected.iconColor}`} strokeWidth={1.5} />;
@@ -219,7 +219,7 @@ export function TabReino({ stats, level, topClientes }: { stats: Stats; level: n
                 </p>
               )}
             </div>
-            <button type="button" onClick={() => setSelected(null)} className="text-amber-200/70 hover:text-amber-100 w-7 h-7 rounded-lg flex items-center justify-center hover:bg-black/20">×</button>
+            <button type="button" onClick={() => setSelected(null)} className="text-amber-200/70 hover:text-amber-100 w-7 h-7 rounded-lg flex items-center justify-center hover:bg-[var(--surface-hover)]">×</button>
           </div>
         </div>
       ) : (

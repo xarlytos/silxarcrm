@@ -34,48 +34,48 @@ function StatItem({
   return (
     <div
       style={{ '--accent': accent } as CSSProperties}
-      className={`group relative overflow-hidden rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-primary)] p-5 dash-lift dash-rise ${delayClass ?? ''}`}
+      className={`group relative overflow-hidden rounded-xl sm:rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-primary)] p-3 sm:p-5 dash-lift dash-rise ${delayClass ?? ''}`}
     >
       <span className="dash-stat-stripe" />
       <span className="dash-stat-blob" />
 
       <div className="relative flex items-start justify-between gap-4">
         <div className="min-w-0 flex-1">
-          <p className="text-[12.5px] font-medium uppercase tracking-[0.04em] text-[var(--text-tertiary)] mb-1.5">
+          <p className="text-[10px] sm:text-[12.5px] font-medium uppercase tracking-[0.04em] text-[var(--text-tertiary)] mb-1 sm:mb-1.5 leading-tight">
             {label}
           </p>
-          <p className="text-[30px] leading-[1.05] font-bold text-[var(--text-primary)] tracking-tight dash-tick">
+          <p className="text-[20px] sm:text-[30px] leading-[1.05] font-bold text-[var(--text-primary)] tracking-tight dash-tick">
             {prefix}{value}{suffix}
           </p>
           {change !== undefined && change !== null ? (
             <div
-              className={`inline-flex items-center gap-1 mt-3 px-2 py-0.5 rounded-full text-[12px] font-semibold ${
+              className={`inline-flex items-center gap-1 mt-2 sm:mt-3 px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] sm:text-[12px] font-semibold ${
                 positive
                   ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
                   : 'bg-red-500/10 text-red-600 dark:text-red-400'
               }`}
             >
               {positive ? (
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <ArrowUpRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
               ) : (
-                <ArrowDownRight className="w-3.5 h-3.5" />
+                <ArrowDownRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
               )}
               <span>{positive ? '+' : ''}{change.toFixed(1)}%</span>
-              <span className="text-[11.5px] font-medium text-[var(--text-tertiary)] ml-1">
+              <span className="hidden sm:inline text-[11.5px] font-medium text-[var(--text-tertiary)] ml-1">
                 vs mes anterior
               </span>
             </div>
           ) : (
-            <div className="inline-flex items-center gap-1 mt-3 px-2 py-0.5 rounded-full bg-[var(--bg-tertiary)] text-[12px] text-[var(--text-tertiary)]">
-              <Minus className="w-3.5 h-3.5" />
-              <span>Sin datos históricos</span>
+            <div className="inline-flex items-center gap-1 mt-2 sm:mt-3 px-1.5 sm:px-2 py-0.5 rounded-full bg-[var(--bg-tertiary)] text-[10px] sm:text-[12px] text-[var(--text-tertiary)]">
+              <Minus className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+              <span>Sin datos</span>
             </div>
           )}
         </div>
         <div
-          className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ring-1 ring-inset ring-black/[0.04] dark:ring-white/[0.06] transition-transform duration-300 ease-luxe group-hover:scale-[1.05] group-hover:-rotate-[3deg] ${iconBg} dark:opacity-95`}
+          className={`w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0 ring-1 ring-inset ring-black/[0.04] dark:ring-white/[0.06] transition-transform duration-300 ease-luxe group-hover:scale-[1.05] group-hover:-rotate-[3deg] ${iconBg} dark:opacity-95`}
         >
-          <Icon className={`w-6 h-6 ${iconColor}`} />
+          <Icon className={`w-4 h-4 sm:w-6 sm:h-6 ${iconColor}`} />
         </div>
       </div>
     </div>
@@ -112,7 +112,7 @@ export default function StatsWidget({
   const hasData = mrr > 0 || totalClients > 0;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+    <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
       <StatItem
         label="MRR (Ingresos Recurrentes)"
         value={formatCurrency(mrr)}

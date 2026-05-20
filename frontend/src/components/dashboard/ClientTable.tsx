@@ -24,15 +24,15 @@ export default function ClientTable({ clientes, pagination, onPageChange, onSear
     <div className="bg-expo-white border border-expo-border rounded-comfortable overflow-hidden">
       {/* Search */}
       <div className="px-6 py-4 border-b border-expo-border">
-        <form onSubmit={handleSearch} className="flex gap-3">
+        <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-2 sm:gap-3">
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Buscar por nombre o email..."
-            className="flex-1 px-4 py-2.5 rounded-subtle border border-expo-input bg-expo-white text-[15px] text-expo-near focus:outline-none focus:ring-2 focus:ring-expo-focus/30 placeholder:text-expo-silver"
+            className="flex-1 px-4 py-2.5 rounded-subtle border border-expo-input bg-expo-white text-[14px] sm:text-[15px] text-expo-near focus:outline-none focus:ring-2 focus:ring-expo-focus/30 placeholder:text-expo-silver"
           />
-          <button type="submit" className="px-5 py-2.5 bg-expo-black text-white rounded-subtle text-[15px] font-medium">
+          <button type="submit" className="px-5 py-2.5 bg-expo-black text-white rounded-subtle text-[14px] sm:text-[15px] font-medium shrink-0">
             Buscar
           </button>
         </form>

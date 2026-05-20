@@ -21,3 +21,23 @@ export function disconnectSocket(): void {
     socket = null;
   }
 }
+
+export function joinWhatsappRoom(softwareId: string): void {
+  const s = getSocket();
+  s.emit('join_whatsapp', softwareId);
+}
+
+export function leaveWhatsappRoom(softwareId: string): void {
+  const s = getSocket();
+  s.emit('leave_whatsapp', softwareId);
+}
+
+export function joinSaas(saas: string): void {
+  const s = getSocket();
+  s.emit('join_saas', saas);
+}
+
+export function leaveSaas(saas: string): void {
+  const s = getSocket();
+  s.emit('leave_saas', saas);
+}

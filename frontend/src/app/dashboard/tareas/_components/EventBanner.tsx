@@ -23,14 +23,14 @@ export function EventBanner({ event }: { event: DailyEvent }) {
   const c = colorMap[event.color] ?? colorMap.violet;
   return (
     <div className="relative overflow-hidden rounded-2xl panel-base panel-hover px-4 py-3 flex items-center gap-3.5"
-         style={{ background: `linear-gradient(135deg, ${c.tint}, transparent 60%), rgba(14,14,19,0.72)` }}>
-      <div className={`relative shrink-0 w-10 h-10 rounded-xl bg-black/30 ring-1 ring-white/10 flex items-center justify-center`}
+         style={{ background: `linear-gradient(135deg, ${c.tint}, transparent 60%), color-mix(in srgb, var(--bg-secondary) 72%, transparent)` }}>
+      <div className={`relative shrink-0 w-10 h-10 rounded-xl bg-[var(--bg-tertiary)] ring-1 ring-[var(--border-primary)] flex items-center justify-center`}
            style={{ boxShadow: `inset 0 0 16px ${c.glow}` }}>
         <Icon className={`w-5 h-5 ${c.text}`} strokeWidth={1.8} />
       </div>
       <div className="flex-1 min-w-0 leading-tight">
         <div className="flex items-center gap-2">
-          <span className="text-[9.5px] uppercase tracking-[0.16em] font-semibold text-white/45">Evento del día</span>
+          <span className="text-[9.5px] uppercase tracking-[0.16em] font-semibold text-[var(--text-tertiary)]">Evento del día</span>
           <span className="inline-flex items-center gap-1">
             <span className={`relative flex w-1.5 h-1.5`}>
               <span className={`absolute inline-flex h-full w-full rounded-full opacity-60 animate-ping ${c.dot}`} />
@@ -39,8 +39,8 @@ export function EventBanner({ event }: { event: DailyEvent }) {
             <span className={`text-[9px] font-bold uppercase tracking-wider ${c.text}`}>Activo</span>
           </span>
         </div>
-        <h3 className="text-[14px] font-bold text-white leading-tight mt-0.5">{event.titulo}</h3>
-        <p className="text-[11.5px] text-white/55 leading-snug truncate">{event.desc}</p>
+        <h3 className="text-[14px] font-bold text-[var(--text-primary)] leading-tight mt-0.5">{event.titulo}</h3>
+        <p className="text-[11.5px] text-[var(--text-secondary)] leading-snug truncate">{event.desc}</p>
       </div>
     </div>
   );

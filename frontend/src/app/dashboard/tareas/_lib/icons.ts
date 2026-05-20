@@ -1,3 +1,4 @@
+import type { ElementType } from 'react';
 import {
   MessageCircle,
   Phone,
@@ -29,70 +30,145 @@ import {
   Medal,
   Sword,
   Activity,
-  // Companion
   Egg, Bird, Wand2, Sun,
-  // Chest tiers
   Package, Box,
-  // Slot symbols
   Cherry, Citrus,
-  // Kingdom buildings
   Home, Store, Wheat, Trees, Landmark, Building2, Castle, Mountain, Church, Hammer,
-  // Tarot symbols
   Pencil, Repeat, Infinity as InfinityIcon, Feather, Moon, Compass, Flower2, Leaf, Anchor, Smile, Sunrise, AlertTriangle, CircleDashed, ArrowRight,
-  // Dinero
   Coins, Banknote, Diamond, PiggyBank,
-  // Reino extendido
   Warehouse, Factory, Tent, TreePine, Tractor, GraduationCap,
-  // Saga / Empire
   Skull, Drama, KeyRound, Telescope, Library, Ship,
-  // Mastery
   GaugeCircle, BookOpen, Atom, Layers,
-  // Companions extended
   Cat, Dog, Rabbit, Fish,
-  // Tarot extra
   Hexagon, Triangle, ChevronsUp, Cloud, Wind, Snowflake,
-  type LucideIcon,
 } from 'lucide-react';
+import {
+  IconSword,
+  IconShield,
+  IconSkull,
+  IconFlame,
+  IconSparkles,
+  IconStar,
+  IconTarget,
+  IconTrophy,
+  IconCrown,
+  IconDiamond,
+  IconGift,
+  IconPackage,
+  IconBox,
+  IconLock,
+  IconLockOpen,
+  IconCalendar,
+  IconBolt,
+  IconTrendingUp,
+  IconRocket,
+  IconFlag,
+  IconChecklist,
+  IconHourglass,
+  IconMap,
+  IconBookmark,
+  IconDice,
+  IconCoins,
+  IconMoon,
+  IconSun,
+  IconHeart,
+  IconCrosshair,
+  IconCompass,
+  IconAnchor,
+  IconFeather,
+  IconLeaf,
+  IconWind,
+  IconCloud,
+  IconSnowflake,
+  IconHexagon,
+  IconTriangle,
+  IconAlertTriangle,
+  IconArrowRight,
+  IconPhone,
+  IconMail,
+  IconUsers,
+  IconPencil,
+  IconRepeat,
+  IconSunrise,
+  IconCashBanknote,
+  IconPigMoney,
+  IconTent,
+  IconKey,
+  IconTelescope,
+  IconShip,
+  IconGauge,
+  IconBook,
+  IconAtom,
+  IconCat,
+  IconDog,
+  IconFish,
+  IconEgg,
+  IconTag,
+  IconEye,
+  IconSend,
+  IconBuilding,
+  IconHammer,
+  IconChevronRight,
+  IconCheck,
+  IconChevronDown,
+  IconChevronUp,
+  IconHome,
+  IconTree,
+  IconMountain,
+  IconMessageCircle,
+  IconFileText,
+  IconGlobe,
+  IconWorld,
+} from '@tabler/icons-react';
 import type { Rareza, Categoria } from './types';
 
 /* ============================================================
-   Iconos + rarezas + categorías
+   Iconos + rarezas + categorias
 ============================================================ */
 
-export const ICON_MAP: Record<string, LucideIcon> = {
+// Tipo generico que acepta iconos de Lucide, Tabler o cualquier biblioteca
+export type IconType = ElementType<{ className?: string; strokeWidth?: string | number }>;
+
+export const ICON_MAP: Record<string, IconType> = {
+  // Lucide (originales)
   MessageCircle, Phone, Mail, Users, Trophy, FileText, Globe, Gift,
   FlaskConical, Calendar, Sparkles, Swords, Shield, Star, Zap,
   Target, Crosshair, TrendingUp, Rocket, Crown, Tag, Eye, Send,
   Handshake, Flame, Award, Medal,
-  // Companion
   Egg, Bird, Wand2, Sun,
-  // Chests
   Package, Box, Gem,
-  // Slot
   Cherry, Citrus,
-  // Kingdom
   Home, Store, Wheat, Trees, Landmark, Building2, Castle, Mountain, Church, Hammer,
-  // Tarot
   Pencil, Repeat, Feather, Moon, Compass, Flower2, Leaf, Anchor, Smile, Sunrise, AlertTriangle, CircleDashed, ArrowRight, Sword,
-  // Infinity (renombrado para evitar choque con tipo global)
   Infinity: InfinityIcon,
-  // Dinero
   Coins, Banknote, Diamond, PiggyBank,
-  // Edificios extra
   Warehouse, Factory, Tent, TreePine, Tractor, GraduationCap,
-  // Saga / Empire
   Skull, Drama, KeyRound, Telescope, Library, Ship,
-  // Mastery
   GaugeCircle, BookOpen, Atom, Layers,
-  // Companions
   Cat, Dog, Rabbit, Fish,
-  // Tarot extras
   Hexagon, Triangle, ChevronsUp, Cloud, Wind, Snowflake,
+
+  // Tabler Icons — mejor estilo para RPG/gaming
+  IconSword, IconShield, IconSkull, IconFlame, IconSparkles, IconStar,
+  IconTarget, IconTrophy, IconCrown, IconDiamond, IconGift, IconPackage,
+  IconBox, IconLock, IconLockOpen, IconCalendar, IconBolt, IconTrendingUp,
+  IconRocket, IconFlag, IconChecklist, IconHourglass, IconMap, IconBookmark,
+  IconDice, IconCoins, IconMoon, IconSun,
+  IconHeart, IconCrosshair, IconCompass, IconAnchor, IconFeather, IconLeaf,
+  IconWind, IconCloud, IconSnowflake, IconHexagon,
+  IconTriangle, IconAlertTriangle, IconArrowRight,
+  IconPhone, IconMail, IconUsers, IconPencil, IconRepeat, IconSunrise,
+  IconCashBanknote, IconPigMoney, IconTent, IconKey, IconTelescope, IconShip,
+  IconGauge, IconBook, IconAtom, IconCat, IconDog, IconFish, IconEgg,
+  IconTag, IconEye, IconSend, IconBuilding, IconHammer,
+  IconChevronRight, IconCheck, IconChevronDown, IconChevronUp,
+  IconHome, IconTree, IconMountain, IconMessageCircle, IconFileText, IconGlobe,
+  IconWorld,
 };
 
 export const RAREZA_INFO: Record<Rareza, { label: string; ring: string; bg: string; text: string; glow: string; border: string }> = {
   comun: {
-    label: 'Común',
+    label: 'Comun',
     ring: 'ring-slate-400/30',
     bg: 'from-slate-500/10 to-slate-400/5',
     text: 'text-slate-400',
@@ -108,7 +184,7 @@ export const RAREZA_INFO: Record<Rareza, { label: string; ring: string; bg: stri
     border: 'border-blue-400/30',
   },
   epico: {
-    label: 'Épico',
+    label: 'Epico',
     ring: 'ring-violet-400/50',
     bg: 'from-violet-500/20 to-fuchsia-500/10',
     text: 'text-violet-400',
@@ -124,7 +200,7 @@ export const RAREZA_INFO: Record<Rareza, { label: string; ring: string; bg: stri
     border: 'border-amber-400/50',
   },
   mitico: {
-    label: 'Mítico',
+    label: 'Mitico',
     ring: 'ring-rose-400/70',
     bg: 'from-rose-500/30 via-fuchsia-500/20 to-amber-500/10',
     text: 'text-rose-400',
@@ -133,8 +209,8 @@ export const RAREZA_INFO: Record<Rareza, { label: string; ring: string; bg: stri
   },
 };
 
-export const CATEGORIA_INFO: Record<Categoria, { label: string; icon: LucideIcon; color: string; accent: string }> = {
-  comunicacion: { label: 'Comunicación', icon: MessageCircle, color: 'text-emerald-500', accent: 'from-emerald-500/20 to-emerald-500/0' },
+export const CATEGORIA_INFO: Record<Categoria, { label: string; icon: IconType; color: string; accent: string }> = {
+  comunicacion: { label: 'Comunicacion', icon: MessageCircle, color: 'text-emerald-500', accent: 'from-emerald-500/20 to-emerald-500/0' },
   cazador: { label: 'Cazador', icon: Target, color: 'text-blue-500', accent: 'from-blue-500/20 to-blue-500/0' },
   ventas: { label: 'Ventas', icon: TrendingUp, color: 'text-amber-500', accent: 'from-amber-500/20 to-amber-500/0' },
   marketing: { label: 'Marketing', icon: Rocket, color: 'text-fuchsia-500', accent: 'from-fuchsia-500/20 to-fuchsia-500/0' },

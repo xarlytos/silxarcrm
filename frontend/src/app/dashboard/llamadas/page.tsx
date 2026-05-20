@@ -274,21 +274,21 @@ export default function LlamadasPage() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-end justify-between flex-wrap gap-4">
-        <div>
-          <h1 className="text-[32px] font-bold tracking-tight text-[var(--text-primary)]">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4">
+        <div className="min-w-0">
+          <h1 className="text-[24px] sm:text-[28px] lg:text-[32px] font-bold tracking-tight text-[var(--text-primary)]">
             Centro de Llamadas
           </h1>
-          <p className="text-[15px] text-[var(--text-secondary)] mt-1">
+          <p className="text-[13px] sm:text-[15px] text-[var(--text-secondary)] mt-1">
             Llama a tus leads, practica con IA y gestiona tus guiones
           </p>
         </div>
-        <div className="flex items-center gap-2 bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-xl px-3 py-2">
+        <div className="flex items-center gap-2 bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-xl px-3 py-2 shrink-0">
           <Building2 className="w-4 h-4 text-[var(--text-tertiary)]" />
           <select
             value={softwareId}
             onChange={(e) => setSoftwareId(e.target.value)}
-            className="bg-transparent text-[14px] font-medium text-[var(--text-primary)] focus:outline-none cursor-pointer pr-2"
+            className="bg-transparent text-[13px] sm:text-[14px] font-medium text-[var(--text-primary)] focus:outline-none cursor-pointer pr-2 max-w-[160px] sm:max-w-none truncate"
           >
             {softwares.map((s) => (
               <option key={s.saas} value={s.saas}>
@@ -303,13 +303,13 @@ export default function LlamadasPage() {
       <LlamadaStats stats={stats} loading={!stats} />
 
       {/* Tabs */}
-      <div className="border-b border-[var(--border-primary)]">
-        <div className="flex gap-1">
+      <div className="border-b border-[var(--border-primary)] -mx-2 px-2 sm:mx-0 sm:px-0 overflow-x-auto scrollbar-hide">
+        <div className="flex gap-1 min-w-max">
           {TABS.map(({ id, label, icon: Icon }) => (
             <button
               key={id}
               onClick={() => setTab(id)}
-              className={`flex items-center gap-2 px-4 py-2.5 text-[14px] font-medium border-b-2 transition-colors -mb-px ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 text-[13px] sm:text-[14px] font-medium border-b-2 transition-colors -mb-px ${
                 tab === id
                   ? 'border-violet-500 text-[var(--text-primary)]'
                   : 'border-transparent text-[var(--text-tertiary)] hover:text-[var(--text-secondary)]'
@@ -352,16 +352,16 @@ export default function LlamadasPage() {
                 onUpdated={(l) => setLlamadaActiva(l)}
               />
             ) : selectedLead ? (
-              <div className="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-2xl p-6 space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-white text-[20px] font-bold">
+              <div className="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-2xl p-4 sm:p-6 space-y-4">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-white text-[18px] sm:text-[20px] font-bold shrink-0">
                     {selectedLead.nombre.charAt(0).toUpperCase()}
                   </div>
-                  <div className="flex-1">
-                    <h2 className="text-[20px] font-bold text-[var(--text-primary)]">
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-[18px] sm:text-[20px] font-bold text-[var(--text-primary)] truncate">
                       {selectedLead.nombre}
                     </h2>
-                    <p className="text-[13px] text-[var(--text-tertiary)]">
+                    <p className="text-[12px] sm:text-[13px] text-[var(--text-tertiary)] truncate">
                       {selectedLead.empresa || 'Sin empresa'}
                       {selectedLead.cargo && ` · ${selectedLead.cargo}`}
                       {selectedLead.email && ` · ${selectedLead.email}`}
@@ -370,7 +370,7 @@ export default function LlamadasPage() {
                   <button
                     disabled={!selectedLead.telefono}
                     onClick={() => setShowIniciarModal(true)}
-                    className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-xl text-[14px] font-medium hover:shadow-lg hover:shadow-emerald-500/25 transition-all disabled:opacity-40"
+                    className="flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-xl text-[13px] sm:text-[14px] font-medium hover:shadow-lg hover:shadow-emerald-500/25 transition-all disabled:opacity-40 shrink-0 w-full sm:w-auto justify-center"
                   >
                     <Phone className="w-4 h-4" />
                     {selectedLead.telefono ? 'Llamar ahora' : 'Sin telefono'}

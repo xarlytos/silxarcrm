@@ -1,7 +1,8 @@
 import cron from 'node-cron';
 import { calculateDailyMetrics } from '../services/metricsService';
+import { procesarEnviosProgramados } from '../services/whatsappWebJsService';
 import { prisma } from '../config/database';
-import { sendPushNotification, buildNotificationTitle, buildNotificationBody } from '../services/notificationService';
+import { sendPushNotification } from '../services/notificationService';
 import { logger } from '../utils/logger';
 
 export function initCronJobs(): void {
@@ -106,6 +107,15 @@ export function initCronJobs(): void {
     }
 
     logger.info(`Checked ${byClient.size} clients with failed payments`);
+  });
+
+  // Procesar envíos de WhatsApp programados cada minuto
+  cron.schedule('* * * * *', async () => {
+    try {
+      await procesarEnviosProgramados();
+    } catch (error) {
+      logger.error('Error procesando envíos programados:', error);
+    }
   });
 
   logger.info('Cron jobs initialized');

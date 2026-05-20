@@ -132,10 +132,10 @@ export default function DashboardPage() {
               En vivo
             </span>
           </div>
-          <h1 className="text-[32px] font-bold tracking-tight text-[var(--text-primary)] leading-[1.1]">
+          <h1 className="text-[24px] sm:text-[28px] lg:text-[32px] font-bold tracking-tight text-[var(--text-primary)] leading-[1.1]">
             Command Center
           </h1>
-          <p className="text-[14.5px] text-[var(--text-secondary)] mt-1.5 max-w-xl">
+          <p className="text-[13px] sm:text-[14.5px] text-[var(--text-secondary)] mt-1.5 max-w-xl">
             Visualiza y gestiona todo tu negocio SaaS desde un solo lugar
           </p>
         </div>

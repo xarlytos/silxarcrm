@@ -71,7 +71,7 @@ export function TabTalentos({
           {/* Title */}
           <div className="flex-1 text-center md:text-left">
             <p className="text-[11px] uppercase tracking-[0.3em] font-bold text-amber-400/80">Árbol de Talentos</p>
-            <h2 className="text-[36px] md:text-[44px] font-black text-white mt-1 leading-tight">Especialízate</h2>
+            <h2 className="text-[36px] md:text-[44px] font-black text-[var(--text-primary)] mt-1 leading-tight">Especialízate</h2>
             <p className="text-[13px] md:text-[14px] text-[var(--text-secondary)] mt-2 max-w-xl mx-auto md:mx-0">
               Cada nivel te concede 1 punto. Invierte en 3 ramas con sinergias propias.<br className="hidden md:block" />
               Los efectos son permanentes y se aplican al <span className="text-amber-300 font-semibold">instante</span>.
@@ -118,7 +118,7 @@ export function TabTalentos({
               <div className={`absolute -top-16 -right-16 w-40 h-40 rounded-full blur-3xl opacity-30 bg-gradient-to-br ${info.bg} pointer-events-none`} />
 
               {/* Header */}
-              <div className="relative p-4 pb-3 border-b border-white/5">
+              <div className="relative p-4 pb-3 border-b border-[var(--border-primary)]">
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3 min-w-0">
                     {/* Diamond icon */}
@@ -213,11 +213,11 @@ export function TabTalentos({
                   className={`relative rounded-xl p-3 flex items-center gap-3 border transition-colors ${
                     active
                       ? `border-amber-400/60 bg-gradient-to-br ${s.tone}`
-                      : 'border-white/5 bg-black/20'
+                      : 'border-[var(--border-primary)] bg-[var(--bg-tertiary)]'
                   }`}
                 >
                   <div className={`shrink-0 w-10 h-10 relative flex items-center justify-center`}>
-                    <div className={`absolute inset-0 rotate-45 rounded-md bg-gradient-to-br ${s.tone} ring-1 ring-white/10`} />
+                    <div className={`absolute inset-0 rotate-45 rounded-md bg-gradient-to-br ${s.tone} ring-1 ring-[var(--border-primary)]`} />
                     <SIcon className={`relative w-4 h-4 ${s.color}`} />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -288,7 +288,7 @@ function TalentRow({
               ? `bg-gradient-to-br ${info.bg} ring-1 ${info.ring} shadow-[0_0_12px_currentColor] ${info.color}`
               : interactive
                 ? `bg-[var(--bg-tertiary)] ring-1 ${info.ring} group-hover:scale-110 cursor-pointer`
-                : 'bg-[var(--bg-tertiary)]/60 ring-1 ring-white/10'
+                : 'bg-[var(--bg-tertiary)]/60 ring-1 ring-[var(--border-primary)]'
           }`}
         />
         {dimmed ? (

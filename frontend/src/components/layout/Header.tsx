@@ -11,6 +11,7 @@ import {
   Sun,
   Moon,
   X,
+  Menu,
   Users,
   Layers,
   BarChart3,
@@ -34,7 +35,11 @@ interface SearchResult {
   href: string;
 }
 
-export default function Header() {
+interface HeaderProps {
+  onMobileMenuClick?: () => void;
+}
+
+export default function Header({ onMobileMenuClick }: HeaderProps = {}) {
   const { theme, toggleTheme } = useTheme();
   const { user } = useAuth();
   const [searchOpen, setSearchOpen] = useState(false);
@@ -219,22 +224,32 @@ export default function Header() {
 
   return (
     <>
-      <header className="h-[72px] border-b border-[var(--border-primary)] bg-[var(--bg-secondary)] sticky top-0 z-40 flex items-center justify-between px-6">
-        {/* Left - Page Title & Breadcrumb */}
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500/10 to-purple-600/10 flex items-center justify-center">
+      <header className="h-14 sm:h-[72px] border-b border-[var(--border-primary)] bg-[var(--bg-secondary)] sticky top-0 z-40 flex items-center justify-between px-3 sm:px-6 gap-2">
+        {/* Left - Hamburger (mobile) + Page Title */}
+        <div className="flex items-center gap-2 sm:gap-4 min-w-0 flex-1 sm:flex-initial">
+          {/* Mobile hamburger */}
+          <button
+            type="button"
+            onClick={onMobileMenuClick}
+            className="lg:hidden shrink-0 p-2 rounded-lg hover:bg-[var(--bg-tertiary)] transition-colors text-[var(--text-secondary)] hover:text-[var(--text-primary)] active:scale-95"
+            aria-label="Abrir menú"
+          >
+            <Menu className="w-5 h-5" />
+          </button>
+
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+            <div className="hidden sm:flex w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500/10 to-purple-600/10 items-center justify-center shrink-0">
               <BarChart3 className="w-5 h-5 text-violet-600 dark:text-violet-400" />
             </div>
-            <div>
-              <h1 className="text-lg font-semibold text-[var(--text-primary)]">{getCurrentPageTitle()}</h1>
-              <p className="text-xs text-[var(--text-tertiary)]">CRM Maestro</p>
+            <div className="min-w-0">
+              <h1 className="text-[15px] sm:text-lg font-semibold text-[var(--text-primary)] truncate">{getCurrentPageTitle()}</h1>
+              <p className="hidden sm:block text-xs text-[var(--text-tertiary)]">CRM Maestro</p>
             </div>
           </div>
         </div>
 
-        {/* Center - Search */}
-        <div className="flex-1 max-w-md mx-8">
+        {/* Center - Search (desktop only) */}
+        <div className="hidden md:block flex-1 max-w-md mx-4 lg:mx-8">
           <button
             onClick={() => setSearchOpen(true)}
             className="w-full flex items-center gap-3 px-4 py-2.5 bg-[var(--bg-tertiary)] hover:bg-[var(--surface-hover)] rounded-xl border border-[var(--border-primary)] transition-all duration-200 group"
@@ -249,17 +264,26 @@ export default function Header() {
         </div>
 
         {/* Right - Actions */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+          {/* Search icon (mobile) */}
+          <button
+            onClick={() => setSearchOpen(true)}
+            className="md:hidden p-2 rounded-lg hover:bg-[var(--bg-tertiary)] transition-colors text-[var(--text-secondary)]"
+            aria-label="Buscar"
+          >
+            <Search className="w-5 h-5" />
+          </button>
+
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className="p-2.5 rounded-xl hover:bg-[var(--bg-tertiary)] transition-all duration-200 border border-transparent hover:border-[var(--border-primary)]"
+            className="p-2 sm:p-2.5 rounded-lg sm:rounded-xl hover:bg-[var(--bg-tertiary)] transition-all duration-200 border border-transparent hover:border-[var(--border-primary)]"
             aria-label={theme === 'light' ? 'Activar modo oscuro' : 'Activar modo claro'}
           >
             {theme === 'light' ? (
-              <Moon className="w-[20px] h-[20px] text-[var(--text-secondary)]" />
+              <Moon className="w-5 h-5 sm:w-[20px] sm:h-[20px] text-[var(--text-secondary)]" />
             ) : (
-              <Sun className="w-[20px] h-[20px] text-[var(--text-secondary)]" />
+              <Sun className="w-5 h-5 sm:w-[20px] sm:h-[20px] text-[var(--text-secondary)]" />
             )}
           </button>
 
@@ -267,15 +291,15 @@ export default function Header() {
           <div className="relative" ref={notificationsRef}>
             <button
               onClick={() => setNotificationsOpen(!notificationsOpen)}
-              className="relative p-2.5 rounded-xl hover:bg-[var(--bg-tertiary)] transition-all duration-200 border border-transparent hover:border-[var(--border-primary)]"
+              className="relative p-2 sm:p-2.5 rounded-lg sm:rounded-xl hover:bg-[var(--bg-tertiary)] transition-all duration-200 border border-transparent hover:border-[var(--border-primary)]"
             >
-              <Bell className="w-[20px] h-[20px] text-[var(--text-secondary)]" />
-              <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500 border-2 border-[var(--bg-secondary)]" />
+              <Bell className="w-5 h-5 sm:w-[20px] sm:h-[20px] text-[var(--text-secondary)]" />
+              <span className="absolute top-1 right-1 sm:top-1.5 sm:right-1.5 w-2 h-2 rounded-full bg-red-500 border-2 border-[var(--bg-secondary)]" />
             </button>
 
             {/* Notifications Dropdown */}
             {notificationsOpen && (
-              <div className="absolute right-0 mt-2 w-80 bg-[var(--bg-secondary)] rounded-xl border border-[var(--border-primary)] shadow-xl z-50"
+              <div className="absolute right-0 mt-2 w-[calc(100vw-1.5rem)] max-w-[20rem] sm:w-80 bg-[var(--bg-secondary)] rounded-xl border border-[var(--border-primary)] shadow-xl z-50"
               onClick={(e) => e.stopPropagation()}
               >
                 <div className="px-4 py-3 border-b border-[var(--border-primary)] flex items-center justify-between">
@@ -346,22 +370,22 @@ export default function Header() {
           </div>
 
           {/* User Menu */}
-          <div className="relative ml-2" ref={userMenuRef}>
+          <div className="relative ml-1 sm:ml-2" ref={userMenuRef}>
             <button
               onClick={() => setUserMenuOpen(!userMenuOpen)}
-              className="flex items-center gap-2 pl-2 pr-3 py-1.5 rounded-xl hover:bg-[var(--bg-tertiary)] transition-all duration-200 border border-transparent hover:border-[var(--border-primary)]"
+              className="flex items-center gap-1.5 sm:gap-2 pl-1.5 pr-2 sm:pl-2 sm:pr-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl hover:bg-[var(--bg-tertiary)] transition-all duration-200 border border-transparent hover:border-[var(--border-primary)]"
             >
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-violet-500 flex items-center justify-center">
-                <span className="text-white text-sm font-bold">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-blue-500 to-violet-500 flex items-center justify-center">
+                <span className="text-white text-xs sm:text-sm font-bold">
                   {user?.nombre?.charAt(0).toUpperCase() || 'U'}
                 </span>
               </div>
-              <ChevronDown className="w-4 h-4 text-[var(--text-secondary)]" />
+              <ChevronDown className="hidden sm:block w-4 h-4 text-[var(--text-secondary)]" />
             </button>
 
             {/* User Dropdown */}
             {userMenuOpen && (
-              <div className="absolute right-0 mt-2 w-64 bg-[var(--bg-secondary)] rounded-xl border border-[var(--border-primary)] shadow-xl z-50">
+              <div className="absolute right-0 mt-2 w-[calc(100vw-1.5rem)] max-w-[16rem] sm:w-64 bg-[var(--bg-secondary)] rounded-xl border border-[var(--border-primary)] shadow-xl z-50">
                 <div className="px-4 py-3 border-b border-[var(--border-primary)]">
                   <p className="font-semibold text-[var(--text-primary)]">{user?.nombre}</p>
                   <p className="text-xs text-[var(--text-tertiary)]">{user?.email}</p>

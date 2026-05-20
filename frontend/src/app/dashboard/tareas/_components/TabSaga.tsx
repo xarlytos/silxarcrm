@@ -108,7 +108,7 @@ function ChapterCard({
         </span>
       )}
       <div className="relative flex items-start gap-4">
-        <div className="shrink-0 w-14 h-14 rounded-2xl bg-black/30 ring-2 ring-amber-400/40 flex items-center justify-center">
+        <div className="shrink-0 w-14 h-14 rounded-2xl bg-[var(--bg-tertiary)] ring-2 ring-amber-400/40 flex items-center justify-center">
           <span className="text-amber-300 font-black text-[18px]">{romanize(index)}</span>
         </div>
         <div className="flex-1 min-w-0">
@@ -118,7 +118,7 @@ function ChapterCard({
             <div className="mt-3 animate-fade-in">
               <p className="text-[13.5px] leading-relaxed text-amber-50/90 italic">{chapter.cuerpo}</p>
               <div className="mt-4 pl-4 border-l-2 border-amber-400/40">
-                <p className="text-[13px] font-bold text-amber-300/90 italic">— "{chapter.cita}"</p>
+                <p className="text-[13px] font-bold text-amber-300/90 italic">— &quot;{chapter.cita}&quot;</p>
               </div>
             </div>
           ) : (

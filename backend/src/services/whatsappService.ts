@@ -161,6 +161,110 @@ export async function deletePlantilla(id: string) {
 }
 
 /* ============================================================
+   Generador de plantillas con IA
+============================================================ */
+
+export interface GenerarPlantillaIAInput {
+  softwareId: string;
+  categoria?: string;
+  objetivo: string;
+  tono?: string;
+  longitud?: 'corta' | 'media' | 'larga';
+}
+
+export async function generarPlantillaWhatsappIA(input: GenerarPlantillaIAInput) {
+  if (!input.softwareId?.trim()) throw new Error('softwareId obligatorio');
+  if (!input.objetivo?.trim()) throw new Error('objetivo obligatorio');
+
+  const categoria = (input.categoria || 'general').toLowerCase();
+  if (!CATEGORIAS_VALIDAS.has(categoria)) {
+    throw new Error(`Categoría no válida. Debe ser una de: ${[...CATEGORIAS_VALIDAS].join(', ')}`);
+  }
+
+  const crm = await prisma.crmClient.findFirst({ where: { saas: input.softwareId } });
+  const sampleLeads = await prisma.lead.findMany({
+    where: { softwareId: input.softwareId },
+    select: { nombre: true, empresa: true, cargo: true, pais: true, estado: true, notas: true },
+    take: 15,
+    orderBy: { createdAt: 'desc' },
+  });
+
+  const longitudGuia = {
+    corta: 'Muy corto: 1-2 líneas, ideal para primer contacto. Máx 30 palabras.',
+    media: 'Medio: 2-4 líneas con contexto + CTA. Máx 60 palabras.',
+    larga: 'Largo: 4-6 líneas, más personalizado. Máx 100 palabras.',
+  }[input.longitud || 'media'];
+
+  const system = `Eres un copywriter experto en mensajería comercial por WhatsApp para SaaS B2B.
+Generas mensajes cortos, naturales y efectivos que suenan a conversación real, no a spam.
+
+REGLAS:
+1. Mensaje en español de España, tono conversacional.
+2. Usa variables en formato {{nombre_variable}} SOLO cuando aporta personalización real.
+3. Variables disponibles: {{nombre}}, {{primer_nombre}}, {{empresa}}, {{cargo}}, {{email}}, {{pais}}, {{estado}}, {{telefono}}.
+4. NUNCA incluyas "Estimado" o saludos formales fijos; usa {{primer_nombre}} o {{nombre}}.
+5. Termina con una pregunta abierta corta o CTA suave (sin presionar).
+6. Sin emojis (o máximo 1 relevante).
+7. El mensaje debe sonar como si lo escribiera una persona real, no un robot de marketing.
+8. ${longitudGuia}
+
+Responde ÚNICAMENTE en formato JSON:
+{
+  "nombre": "Nombre descriptivo de la plantilla (3-6 palabras)",
+  "contenido": "Texto del mensaje con \\n para saltos de línea y {{variables}} donde corresponda",
+  "categoria": "${categoria}"
+}`;
+
+  const user = `SOFTWARE/PRODUCTO:
+- ID: ${input.softwareId}
+- Nombre: ${crm?.name || input.softwareId}
+- Descripción: ${crm?.descripcion || '(sin descripción)'}
+
+OBJETIVO DEL MENSAJE:
+${input.objetivo}
+
+TONO DESEADO: ${input.tono || 'profesional y cercano'}
+
+AUDIENCIA (sample de leads reales, anonimizado):
+${sampleLeads.length > 0
+    ? sampleLeads.slice(0, 5).map((l) =>
+        `- ${l.cargo || 'Contacto'} en ${l.empresa || 'empresa'} (${l.pais || '?'}) · estado=${l.estado}`
+      ).join('\n')
+    : '- Sin leads de referencia'
+}
+
+Genera una plantilla de WhatsApp que encaje con esta audiencia y objetivo.`;
+
+  const raw = await llamadaIA({ system, user, temperature: 0.8, maxTokens: 1200, json: true });
+
+  let parsed: any;
+  try {
+    parsed = extractJson(raw);
+  } catch (parseErr: any) {
+    logger.error('generarPlantillaWhatsappIA: JSON inválido de la IA', {
+      rawPreview: raw.slice(0, 2000),
+      parseError: parseErr?.message,
+      softwareId: input.softwareId,
+    });
+    throw new Error(`La IA devolvió un JSON inválido: ${parseErr?.message || 'unknown'}`);
+  }
+
+  if (!parsed.contenido?.trim()) {
+    throw new Error('La IA no generó contenido para la plantilla');
+  }
+
+  const contenido = parsed.contenido.trim();
+  const variables = extractVariables(contenido);
+
+  return {
+    nombre: String(parsed.nombre || `Plantilla ${categoria}`).slice(0, 100),
+    contenido,
+    categoria,
+    variables,
+  };
+}
+
+/* ============================================================
    Envíos — generar link y registrar
 ============================================================ */
 
@@ -723,6 +827,32 @@ async function llamadaIA(opts: {
   return text;
 }
 
+/** Extrae JSON válido de una respuesta de IA que puede incluir ruido:
+ *  - tags <think>...</think>
+ *  - bloques markdown ```json ... ```
+ *  - texto explicativo antes/después del JSON
+ */
+function extractJson(raw: string): any {
+  // 1. Quitar bloques <think>...</think>
+  let cleaned = raw.replace(/<think>[\s\S]*?<\/think>/g, '');
+
+  // 2. Extraer JSON de bloques markdown ```json ... ``` o ``` ... ```
+  const codeBlockMatch = cleaned.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
+  if (codeBlockMatch) {
+    cleaned = codeBlockMatch[1];
+  }
+
+  // 3. Buscar el primer '{' o '[' y el último '}' o ']'
+  const firstBrace = cleaned.search(/[{[]/);
+  const lastBrace = Math.max(cleaned.lastIndexOf('}'), cleaned.lastIndexOf(']'));
+  if (firstBrace === -1 || lastBrace === -1 || lastBrace < firstBrace) {
+    throw new Error('No se encontró estructura JSON en la respuesta');
+  }
+  const jsonStr = cleaned.slice(firstBrace, lastBrace + 1);
+
+  return JSON.parse(jsonStr);
+}
+
 function leadContexto(lead: any): string {
   return [
     `Nombre: ${lead.nombre}`,
@@ -801,21 +931,33 @@ export interface PerfilSintetico {
 export async function generarPerfilesSinteticos(input: {
   softwareId: string;
   cantidad: number;
-}): Promise<{ perfiles: PerfilSintetico[]; modelo: string }> {
+  regenerar?: boolean;
+}): Promise<{ perfiles: PerfilSintetico[]; modelo: string; origen: 'guardados' | 'ia' }> {
   const cantidad = Math.min(Math.max(input.cantidad || 5, 1), 20);
 
-  // Datos del software (CrmClient) — descripción real del producto
-  const crm = await prisma.crmClient.findFirst({ where: { saas: input.softwareId } });
+  // 1) Reutilizar perfiles guardados si existen y no se pide regenerar
+  if (!input.regenerar) {
+    const guardados = await prisma.whatsappArenaPerfil.findMany({
+      where: { softwareId: input.softwareId, activo: true },
+      orderBy: { createdAt: 'desc' },
+    });
+    if (guardados.length > 0) {
+      return {
+        perfiles: guardados.map((p) => ({ nombre: p.nombre, descripcion: p.descripcion })),
+        modelo: env.OPENAI_MODEL,
+        origen: 'guardados',
+      };
+    }
+  }
 
-  // Sample de leads reales del software (anonimizado) para inspirar el perfilado
+  // 2) Generar con IA
+  const crm = await prisma.crmClient.findFirst({ where: { saas: input.softwareId } });
   const sampleLeads = await prisma.lead.findMany({
     where: { softwareId: input.softwareId },
     select: { empresa: true, cargo: true, pais: true, estado: true, notas: true },
     take: 30,
     orderBy: { createdAt: 'desc' },
   });
-
-  // Distribución de cargos/sectores reales
   const cargos = Array.from(new Set(sampleLeads.map((l) => l.cargo).filter(Boolean))).slice(0, 10);
   const paises = Array.from(new Set(sampleLeads.map((l) => l.pais).filter(Boolean))).slice(0, 6);
 
@@ -850,19 +992,59 @@ BASE DE LEADS REALES DEL PRODUCTO (sample anonimizado):
 Genera ${cantidad} perfiles representativos para testear plantillas A/B de WhatsApp con esta audiencia.`;
 
   const raw = await llamadaIA({ system, user, temperature: 0.9, maxTokens: 2000, json: true });
+  let perfiles: PerfilSintetico[];
   try {
-    const json = JSON.parse(raw);
-    if (!Array.isArray(json.perfiles)) throw new Error('formato inválido');
-    return {
-      perfiles: json.perfiles.slice(0, cantidad).map((p: any) => ({
-        nombre: String(p.nombre || 'Perfil sin nombre').slice(0, 80),
-        descripcion: String(p.descripcion || '').slice(0, 400),
-      })),
-      modelo: env.OPENAI_MODEL,
-    };
-  } catch {
-    throw new Error('La IA devolvió un JSON inválido');
+    const json = extractJson(raw);
+    if (!Array.isArray(json.perfiles)) throw new Error('campo "perfiles" no es array');
+    perfiles = json.perfiles.slice(0, cantidad).map((p: any) => ({
+      nombre: String(p.nombre || 'Perfil sin nombre').slice(0, 80),
+      descripcion: String(p.descripcion || '').slice(0, 400),
+    }));
+  } catch (parseErr: any) {
+    logger.error('generarPerfilesSinteticos: JSON inválido de la IA', {
+      rawPreview: raw.slice(0, 2000),
+      parseError: parseErr?.message,
+      softwareId: input.softwareId,
+    });
+    throw new Error(`La IA devolvió un JSON inválido: ${parseErr?.message || 'unknown'}. Raw: ${raw.slice(0, 500)}`);
   }
+
+  // 3) Persistir: desactivar anteriores, crear nuevos
+  await prisma.$transaction([
+    prisma.whatsappArenaPerfil.updateMany({
+      where: { softwareId: input.softwareId },
+      data: { activo: false },
+    }),
+    ...perfiles.map((p) =>
+      prisma.whatsappArenaPerfil.create({
+        data: { softwareId: input.softwareId, nombre: p.nombre, descripcion: p.descripcion, origen: 'ia' },
+      }),
+    ),
+  ]);
+
+  return { perfiles, modelo: env.OPENAI_MODEL, origen: 'ia' };
+}
+
+export async function listArenaPerfiles(softwareId: string) {
+  return prisma.whatsappArenaPerfil.findMany({
+    where: { softwareId, activo: true },
+    orderBy: { createdAt: 'desc' },
+  });
+}
+
+export async function crearPerfilManual(softwareId: string, perfil: PerfilSintetico) {
+  return prisma.whatsappArenaPerfil.create({
+    data: {
+      softwareId,
+      nombre: perfil.nombre.slice(0, 80),
+      descripcion: perfil.descripcion.slice(0, 400),
+      origen: 'manual',
+    },
+  });
+}
+
+export async function eliminarArenaPerfil(id: string) {
+  return prisma.whatsappArenaPerfil.update({ where: { id }, data: { activo: false } });
 }
 
 export async function batallaPlantillas(input: {
@@ -912,9 +1094,10 @@ Evalúa.`;
   const raw = await llamadaIA({ system, user, temperature: 0.4, maxTokens: 1200, json: true });
   let resultado: any;
   try {
-    resultado = JSON.parse(raw);
-  } catch {
-    throw new Error('La IA devolvió un JSON inválido');
+    resultado = extractJson(raw);
+  } catch (parseErr: any) {
+    logger.error('batallaPlantillas: JSON inválido de la IA', { rawPreview: raw.slice(0, 2000), parseError: parseErr?.message });
+    throw new Error(`La IA devolvió un JSON inválido: ${parseErr?.message || 'unknown'}. Raw: ${raw.slice(0, 500)}`);
   }
 
   // Persistir (a menos que se desactive)
@@ -1052,9 +1235,10 @@ Analiza y devuelve el JSON.`;
 
   const raw = await llamadaIA({ system, user, temperature: 0.5, maxTokens: 700, json: true });
   try {
-    return JSON.parse(raw);
-  } catch {
-    throw new Error('La IA devolvió un JSON inválido');
+    return extractJson(raw);
+  } catch (parseErr: any) {
+    logger.error('sugerirRespuesta: JSON inválido de la IA', { rawPreview: raw.slice(0, 2000), parseError: parseErr?.message });
+    throw new Error(`La IA devolvió un JSON inválido: ${parseErr?.message || 'unknown'}. Raw: ${raw.slice(0, 500)}`);
   }
 }
 
@@ -1316,10 +1500,10 @@ Genera un mensaje único por lead.`;
 
   const raw = await llamadaIA({ system, user, temperature: 0.85, maxTokens: 3000, json: true });
   try {
-    const json = JSON.parse(raw);
-    return json;
-  } catch {
-    throw new Error('La IA devolvió un JSON inválido');
+    return extractJson(raw);
+  } catch (parseErr: any) {
+    logger.error('generarMensajesBulk: JSON inválido de la IA', { rawPreview: raw.slice(0, 2000), parseError: parseErr?.message });
+    throw new Error(`La IA devolvió un JSON inválido: ${parseErr?.message || 'unknown'}. Raw: ${raw.slice(0, 500)}`);
   }
 }
 

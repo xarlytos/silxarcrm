@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { apiClient } from '@/lib/api';
+import { getSocket, joinWhatsappRoom, leaveWhatsappRoom } from '@/lib/socket';
 import type { Lead, LeadEstado } from '@/types';
 import { formatRelativeTime } from '@/lib/utils';
 import { detectPhoneType, type PhoneType } from '@/lib/phone';
@@ -43,6 +44,13 @@ import {
   Lightbulb,
   Calendar,
   PhoneCall,
+  Smartphone,
+  Power,
+  QrCode,
+  Wifi,
+  WifiOff,
+  RefreshCw,
+  Rocket,
 } from 'lucide-react';
 
 /* ============================================================
@@ -95,7 +103,7 @@ type ABTestVariante = {
   plantilla: Plantilla;
 };
 
-type Tab = 'enviar' | 'chat' | 'cementerio' | 'arena' | 'plantillas' | 'historial' | 'ab_tests';
+type Tab = 'enviar' | 'chat' | 'cementerio' | 'arena' | 'plantillas' | 'historial' | 'ab_tests' | 'chatbot';
 
 type WhatsappMensaje = {
   id: string;
@@ -263,6 +271,23 @@ export default function WhatsappPage() {
   const [editing, setEditing] = useState<Plantilla | null>(null);
   const [toast, setToast] = useState<{ kind: 'ok' | 'err'; msg: string } | null>(null);
 
+  // WhatsApp Web.js automatización (uno por software)
+  const [wwebEstados, setWwebEstados] = useState<Record<string, any>>({});
+  const [wwebLoading, setWwebLoading] = useState(false);
+  const [wwebQrOpen, setWwebQrOpen] = useState(false);
+  const wwebEstado = softwareId ? wwebEstados[softwareId] : null;
+
+  // Chatbot
+  const [chatbotReglas, setChatbotReglas] = useState<any[]>([]);
+  const [chatbotEditorOpen, setChatbotEditorOpen] = useState(false);
+  const [chatbotEditing, setChatbotEditing] = useState<any | null>(null);
+
+  // Programación de envíos
+  const [programarOpen, setProgramarOpen] = useState(false);
+  const [programarLead, setProgramarLead] = useState<Lead | null>(null);
+  const [programarFecha, setProgramarFecha] = useState('');
+  const [programarHora, setProgramarHora] = useState('');
+
   /* Init: cargar softwares */
   useEffect(() => {
     apiClient
@@ -282,6 +307,7 @@ export default function WhatsappPage() {
     void loadEnvios();
     void loadABTests();
     void loadConversaciones();
+    void loadChatbotReglas();
   }, [softwareId]);
 
   /* Auto-recarga lista de conversaciones cada 30s mientras el tab Chat esté abierto */
@@ -305,6 +331,76 @@ export default function WhatsappPage() {
     if (tab !== 'cementerio' || !softwareId) return;
     void loadCementerio();
   }, [tab, softwareId, cementerioDias]);
+
+  /* Socket.io: unirse a room de WhatsApp y escuchar eventos en tiempo real */
+  useEffect(() => {
+    if (!softwareId) return;
+    const socket = getSocket();
+    joinWhatsappRoom(softwareId);
+
+    const handleQr = (data: any) => {
+      setWwebEstados((prev) => ({ ...prev, [data.softwareId]: { ...prev[data.softwareId], estado: 'qr', qrCode: data.qrCode } }));
+      setWwebQrOpen(true);
+    };
+    const handleReady = (data: any) => {
+      setWwebEstados((prev) => ({
+        ...prev,
+        [data.softwareId]: { ...prev[data.softwareId], estado: 'listo', qrCode: null, info: data.info },
+      }));
+      showToast('ok', 'WhatsApp Web conectado');
+    };
+    const handleDisconnected = (data: any) => {
+      setWwebEstados((prev) => ({
+        ...prev,
+        [data.softwareId]: { ...prev[data.softwareId], estado: 'desconectado', qrCode: null },
+      }));
+      showToast('err', `WhatsApp Web desconectado: ${data.reason}`);
+    };
+    const handleMensajeEntrante = (data: any) => {
+      showToast('ok', `${data.leadNombre || data.numero}: mensaje recibido`);
+      void loadConversaciones();
+      if (chatLeadId === data.leadId) {
+        void loadHilo(data.leadId);
+      }
+    };
+    const handleMensajeEnviado = (data: any) => {
+      void loadEnvios();
+      if (chatLeadId) {
+        void loadHilo(chatLeadId);
+      }
+    };
+    const handleError = (data: any) => {
+      showToast('err', data.error || 'Error de WhatsApp Web');
+    };
+    const handleReconectando = (data: any) => {
+      showToast('ok', `Reconectando en ${data.delayMs / 1000}s (intento ${data.intento})`);
+    };
+
+    socket.on('wweb:qr', handleQr);
+    socket.on('wweb:ready', handleReady);
+    socket.on('wweb:disconnected', handleDisconnected);
+    socket.on('wweb:mensaje_entrante', handleMensajeEntrante);
+    socket.on('wweb:mensaje_enviado', handleMensajeEnviado);
+    socket.on('wweb:error', handleError);
+    socket.on('wweb:reconectando', handleReconectando);
+
+    return () => {
+      leaveWhatsappRoom(softwareId);
+      socket.off('wweb:qr', handleQr);
+      socket.off('wweb:ready', handleReady);
+      socket.off('wweb:disconnected', handleDisconnected);
+      socket.off('wweb:mensaje_entrante', handleMensajeEntrante);
+      socket.off('wweb:mensaje_enviado', handleMensajeEnviado);
+      socket.off('wweb:error', handleError);
+      socket.off('wweb:reconectando', handleReconectando);
+    };
+  }, [softwareId, chatLeadId]);
+
+  /* Consultar estado inicial de WhatsApp Web.js al cargar/cambiar software */
+  useEffect(() => {
+    if (!softwareId) return;
+    void loadWwebEstado();
+  }, [softwareId]);
 
   /* Reset a página 1 cuando cambian filtros (no cuando solo cambia la página) */
   useEffect(() => {
@@ -385,6 +481,16 @@ export default function WhatsappPage() {
       setConversaciones(res.data || []);
     } catch {
       setConversaciones([]);
+    }
+  };
+
+  const loadChatbotReglas = async () => {
+    if (!softwareId) return;
+    try {
+      const res: any = await apiClient.getWhatsappChatbotReglas(softwareId);
+      setChatbotReglas(res.data || []);
+    } catch {
+      setChatbotReglas([]);
     }
   };
 
@@ -512,6 +618,142 @@ export default function WhatsappPage() {
   const showToast = (kind: 'ok' | 'err', msg: string) => {
     setToast({ kind, msg });
     setTimeout(() => setToast(null), 3500);
+  };
+
+  /* ===== WhatsApp Web.js ===== */
+
+  const loadWwebEstado = async () => {
+    try {
+      const res: any = await apiClient.wwebEstado(softwareId);
+      if (softwareId) {
+        setWwebEstados((prev) => ({
+          ...prev,
+          [softwareId]: res.data || null,
+        }));
+        // Abrir modal QR automáticamente si hay QR nuevo para este software
+        if (res.data?.estado === 'qr' && res.data?.qrCode) {
+          setWwebQrOpen(true);
+        }
+      }
+    } catch {
+      if (softwareId) {
+        setWwebEstados((prev) => ({ ...prev, [softwareId]: null }));
+      }
+    }
+  };
+
+  const handleWwebIniciar = async () => {
+    if (!softwareId) return;
+    setWwebLoading(true);
+    try {
+      await apiClient.wwebIniciar(softwareId);
+      showToast('ok', 'WhatsApp Web iniciándose...');
+      setWwebQrOpen(true);
+    } catch (e: any) {
+      showToast('err', e.message || 'Error iniciando');
+    } finally {
+      setWwebLoading(false);
+    }
+  };
+
+  const handleWwebDetener = async () => {
+    if (!softwareId) return;
+    setWwebLoading(true);
+    try {
+      await apiClient.wwebDetener(softwareId);
+      showToast('ok', 'WhatsApp Web detenido');
+    } catch (e: any) {
+      showToast('err', e.message || 'Error deteniendo');
+    } finally {
+      setWwebLoading(false);
+    }
+  };
+
+  const sendOneAuto = async (lead: Lead) => {
+    if (!softwareId) return;
+    if (!plantillaActual) {
+      showToast('err', 'Selecciona una plantilla primero');
+      return;
+    }
+    if (!lead.telefono) {
+      showToast('err', `${lead.nombre} no tiene teléfono`);
+      return;
+    }
+    if (detectPhoneType(lead.telefono) === 'fixed') {
+      showToast('err', `${lead.nombre} tiene número fijo`);
+      return;
+    }
+    if (wwebEstado?.estado !== 'listo') {
+      showToast('err', 'WhatsApp Web no está listo. Inícialo primero.');
+      return;
+    }
+    try {
+      await apiClient.wwebEnviarLead({ softwareId, leadId: lead.id, plantillaId: plantillaActual.id });
+      showToast('ok', `Mensaje enviado a ${lead.nombre}`);
+      void loadEnvios();
+      void loadConversaciones();
+    } catch (e: any) {
+      showToast('err', e.message || 'Error enviando automáticamente');
+    }
+  };
+
+  const sendBulkAuto = async () => {
+    if (!softwareId) return;
+    if (!plantillaActual) {
+      showToast('err', 'Selecciona una plantilla primero');
+      return;
+    }
+    if (seleccionados.size === 0) return;
+    if (wwebEstado?.estado !== 'listo') {
+      showToast('err', 'WhatsApp Web no está listo. Inícialo primero.');
+      return;
+    }
+    const all = leads.filter((l) => seleccionados.has(l.id));
+    const targets = all.filter((l) => detectPhoneType(l.telefono) !== 'fixed');
+    if (targets.length === 0) {
+      showToast('err', 'Todos los seleccionados son fijos');
+      return;
+    }
+    if (!confirm(`Se enviarán ${targets.length} mensajes automáticamente vía WhatsApp Web (con delays de ~3.5s). ¿Continuar?`)) return;
+
+    let ok = 0;
+    let fail = 0;
+    for (const lead of targets) {
+      try {
+        await apiClient.wwebEnviarLead({ softwareId, leadId: lead.id, plantillaId: plantillaActual.id });
+        ok++;
+        await new Promise((r) => setTimeout(r, 500));
+      } catch {
+        fail++;
+      }
+    }
+    setSeleccionados(new Set());
+    void loadEnvios();
+    void loadConversaciones();
+    showToast('ok', `${ok} enviados${fail ? `, ${fail} con error` : ''}`);
+  };
+
+  const handleSendChatAuto = async () => {
+    if (!softwareId || !chatLeadId || !composerText.trim()) return;
+    const lead = chatHilo ? conversaciones.find((c) => c.leadId === chatLeadId)?.lead : null;
+    if (lead?.telefono && detectPhoneType(lead.telefono) === 'fixed') {
+      showToast('err', 'Este lead tiene un número fijo');
+      return;
+    }
+    if (wwebEstado?.estado !== 'listo') {
+      showToast('err', 'WhatsApp Web no está listo. Inícialo primero.');
+      return;
+    }
+    try {
+      await apiClient.wwebEnviarLead({ softwareId, leadId: chatLeadId, contenidoFinal: composerText.trim() });
+      setComposerText('');
+      await loadHilo(chatLeadId);
+      void loadConversaciones();
+      void loadEnvios();
+      showToast('ok', 'Mensaje enviado automáticamente');
+    } catch (e: any) {
+      showToast('err', e.message || 'Error enviando');
+    }
   };
 
   /* ===== Envíos ===== */
@@ -727,7 +969,18 @@ export default function WhatsappPage() {
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
+          {/* Estado WhatsApp Web.js */}
+          <WwebStatusPanel
+            softwareId={softwareId}
+            softwareName={softwares.find((s) => s.saas === softwareId)?.descripcion || softwareId}
+            estado={wwebEstado}
+            loading={wwebLoading}
+            onIniciar={handleWwebIniciar}
+            onDetener={handleWwebDetener}
+            onVerQr={() => setWwebQrOpen(true)}
+          />
+
           {softwares.length > 1 && (
             <select
               value={softwareId}
@@ -755,6 +1008,7 @@ export default function WhatsappPage() {
             { id: 'plantillas', label: 'Plantillas', icon: Sparkles, count: plantillas.length },
             { id: 'historial', label: 'Historial', icon: History, count: envios.length },
             { id: 'ab_tests', label: 'A/B Tests', icon: FlaskConical, count: abTests.length },
+            { id: 'chatbot', label: 'Chatbot', icon: Bot, count: chatbotReglas.length },
           ] as const
         ).map((t) => {
           const Active = t.id === tab;
@@ -967,6 +1221,16 @@ export default function WhatsappPage() {
                 <Send className="w-4 h-4" />
                 Enviar a {seleccionados.size}
               </button>
+              <button
+                type="button"
+                disabled={seleccionados.size === 0 || wwebEstado?.estado !== 'listo'}
+                onClick={sendBulkAuto}
+                title={wwebEstado?.estado !== 'listo' ? 'Inicia WhatsApp Web primero' : 'Envío automático vía WhatsApp Web'}
+                className="inline-flex items-center gap-2 h-10 px-4 rounded-xl bg-violet-600 text-white text-[13px] font-semibold hover:bg-violet-700 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-sm shadow-violet-600/20"
+              >
+                <Rocket className="w-4 h-4" />
+                Auto ({seleccionados.size})
+              </button>
             </div>
 
             {/* Tabla de leads */}
@@ -1057,16 +1321,33 @@ export default function WhatsappPage() {
                         <div className="hidden lg:block w-32 text-[11.5px] text-[var(--text-tertiary)]">
                           {lead.ultimoContacto ? formatRelativeTime(lead.ultimoContacto) : '—'}
                         </div>
-                        <div className="w-24 text-right">
+                        <div className="w-24 text-right flex items-center justify-end gap-1">
                           <button
                             type="button"
                             onClick={() => sendOne(lead)}
                             disabled={!plantillaActual || isFixed}
-                            title={isFixed ? 'Número fijo — no puede recibir WhatsApp' : undefined}
-                            className="inline-flex items-center gap-1 px-2.5 h-8 rounded-lg bg-emerald-600/10 text-emerald-700 dark:text-emerald-400 text-[12px] font-semibold hover:bg-emerald-600 hover:text-white active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                            title={isFixed ? 'Número fijo — no puede recibir WhatsApp' : 'Abrir WhatsApp Web'}
+                            className="inline-flex items-center gap-1 px-2 h-7 rounded-lg bg-emerald-600/10 text-emerald-700 dark:text-emerald-400 text-[11px] font-semibold hover:bg-emerald-600 hover:text-white active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
                           >
-                            <Send className="w-3.5 h-3.5" />
-                            Enviar
+                            <Send className="w-3 h-3" />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => sendOneAuto(lead)}
+                            disabled={!plantillaActual || isFixed || wwebEstado?.estado !== 'listo'}
+                            title={wwebEstado?.estado !== 'listo' ? 'Inicia WhatsApp Web primero' : 'Enviar automáticamente'}
+                            className="inline-flex items-center gap-1 px-2 h-7 rounded-lg bg-violet-600/10 text-violet-700 dark:text-violet-400 text-[11px] font-semibold hover:bg-violet-600 hover:text-white active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                          >
+                            <Rocket className="w-3 h-3" />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => { setProgramarLead(lead); setProgramarOpen(true); }}
+                            disabled={!plantillaActual || isFixed}
+                            title="Programar envío"
+                            className="inline-flex items-center gap-1 px-2 h-7 rounded-lg bg-amber-600/10 text-amber-700 dark:text-amber-400 text-[11px] font-semibold hover:bg-amber-600 hover:text-white active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                          >
+                            <Calendar className="w-3 h-3" />
                           </button>
                         </div>
                       </div>
@@ -1164,6 +1445,7 @@ export default function WhatsappPage() {
           inboundText={inboundText}
           setInboundText={setInboundText}
           onSend={handleSendChat}
+          onSendAuto={handleSendChatAuto}
           onAddInbound={handleAddInbound}
           onAskMinimax={handleAskMinimax}
           onNuevoChat={() => setIniciarChatOpen(true)}
@@ -1172,6 +1454,7 @@ export default function WhatsappPage() {
           leadActual={
             conversaciones.find((c) => c.leadId === chatLeadId)?.lead || null
           }
+          wwebListo={wwebEstado?.estado === 'listo'}
         />
       )}
 
@@ -1528,6 +1811,26 @@ export default function WhatsappPage() {
         </div>
       )}
 
+      {/* ===== Tab: Chatbot ===== */}
+      {tab === 'chatbot' && (
+        <ChatbotTab
+          reglas={chatbotReglas}
+          onRecargar={loadChatbotReglas}
+          onNueva={() => { setChatbotEditing(null); setChatbotEditorOpen(true); }}
+          onEditar={(r: any) => { setChatbotEditing(r); setChatbotEditorOpen(true); }}
+          onEliminar={async (id: string) => {
+            if (!confirm('¿Eliminar esta regla?')) return;
+            try {
+              await apiClient.deleteWhatsappChatbotRegla(id);
+              showToast('ok', 'Regla eliminada');
+              void loadChatbotReglas();
+            } catch (e: any) {
+              showToast('err', e.message);
+            }
+          }}
+        />
+      )}
+
       {/* ===== Editor modal ===== */}
       {editorOpen && (
         <PlantillaEditor
@@ -1557,6 +1860,82 @@ export default function WhatsappPage() {
         />
       )}
 
+      {/* ===== Modal QR WhatsApp Web.js ===== */}
+      {wwebQrOpen && wwebEstado?.qrCode && (
+        <WwebQrModal
+          qrCode={wwebEstado.qrCode}
+          estado={wwebEstado.estado}
+          onClose={() => setWwebQrOpen(false)}
+        />
+      )}
+
+      {/* ===== Modal QR WhatsApp Web.js ===== */}
+      {wwebQrOpen && wwebEstado?.qrCode && (
+        <WwebQrModal
+          qrCode={wwebEstado.qrCode}
+          estado={wwebEstado.estado}
+          onClose={() => setWwebQrOpen(false)}
+        />
+      )}
+
+      {/* ===== Chatbot Editor Modal ===== */}
+      {chatbotEditorOpen && (
+        <ChatbotEditorModal
+          initial={chatbotEditing}
+          onClose={() => {
+            setChatbotEditorOpen(false);
+            setChatbotEditing(null);
+          }}
+          onSave={async (input) => {
+            try {
+              if (input.id) {
+                await apiClient.updateWhatsappChatbotRegla(input.id, { ...input, softwareId });
+                showToast('ok', 'Regla actualizada');
+              } else {
+                await apiClient.createWhatsappChatbotRegla({ ...input, softwareId });
+                showToast('ok', 'Regla creada');
+              }
+              setChatbotEditorOpen(false);
+              setChatbotEditing(null);
+              void loadChatbotReglas();
+            } catch (e: any) {
+              showToast('err', e.message || 'Error guardando regla');
+            }
+          }}
+        />
+      )}
+
+      {/* ===== Programar Envío Modal ===== */}
+      {programarOpen && programarLead && (
+        <ProgramarEnvioModal
+          lead={programarLead}
+          plantilla={plantillaActual}
+          onClose={() => { setProgramarOpen(false); setProgramarLead(null); }}
+          onProgramar={async (fecha, hora) => {
+            if (!softwareId || !plantillaActual) return;
+            try {
+              const programadoPara = new Date(`${fecha}T${hora}`);
+              if (isNaN(programadoPara.getTime()) || programadoPara <= new Date()) {
+                showToast('err', 'Fecha/hora inválida o en el pasado');
+                return;
+              }
+              await apiClient.wwebProgramar({
+                softwareId,
+                leadId: programarLead.id,
+                plantillaId: plantillaActual.id,
+                programadoPara: programadoPara.toISOString(),
+              });
+              showToast('ok', `Envío programado para ${programadoPara.toLocaleString()}`);
+              setProgramarOpen(false);
+              setProgramarLead(null);
+              void loadEnvios();
+            } catch (e: any) {
+              showToast('err', e.message || 'Error programando envío');
+            }
+          }}
+        />
+      )}
+
       {/* ===== Toast ===== */}
       {toast && (
         <div
@@ -1569,6 +1948,204 @@ export default function WhatsappPage() {
           {toast.msg}
         </div>
       )}
+    </div>
+  );
+}
+
+/* ============================================================
+   Panel de estado WhatsApp Web.js
+============================================================ */
+
+function WwebStatusPanel({
+  softwareId,
+  softwareName,
+  estado,
+  loading,
+  onIniciar,
+  onDetener,
+  onVerQr,
+}: {
+  softwareId: string;
+  softwareName: string;
+  estado: any;
+  loading: boolean;
+  onIniciar: () => void;
+  onDetener: () => void;
+  onVerQr: () => void;
+}) {
+  const esListo = estado?.estado === 'listo';
+  const esQr = estado?.estado === 'qr';
+  const esIniciando = estado?.estado === 'iniciando' || estado?.estado === 'autenticando';
+  const esError = estado?.estado === 'error';
+
+  if (!estado || estado.estado === 'desconectado') {
+    return (
+      <button
+        type="button"
+        onClick={onIniciar}
+        disabled={loading}
+        className="inline-flex items-center gap-2 h-10 px-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-primary)] text-[12px] font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-emerald-500/40 transition-all"
+      >
+        {loading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Smartphone className="w-3.5 h-3.5" />}
+        Conectar WhatsApp
+      </button>
+    );
+  }
+
+  return (
+    <div className="inline-flex items-center gap-2 h-10 px-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-primary)]">
+      {esListo ? (
+        <>
+          <Wifi className="w-3.5 h-3.5 text-emerald-500" />
+          <span className="text-[12px] font-medium text-emerald-600 dark:text-emerald-400 truncate max-w-[120px]">
+            {estado.info?.nombre || softwareName || 'Conectado'}
+          </span>
+          <span className="text-[11px] text-[var(--text-tertiary)]">
+            {estado.mensajesEnviados} enviados
+          </span>
+          <button
+            type="button"
+            onClick={onDetener}
+            disabled={loading}
+            title="Desconectar"
+            className="p-1 rounded-md hover:bg-red-500/10 text-[var(--text-tertiary)] hover:text-red-500 transition-colors"
+          >
+            <Power className="w-3.5 h-3.5" />
+          </button>
+        </>
+      ) : esQr ? (
+        <>
+          <QrCode className="w-3.5 h-3.5 text-amber-500" />
+          <span className="text-[12px] font-medium text-amber-600 dark:text-amber-400">Escanea QR</span>
+          <button
+            type="button"
+            onClick={onVerQr}
+            className="text-[11px] font-medium text-amber-600 dark:text-amber-400 hover:underline"
+          >
+            Ver QR
+          </button>
+          <button
+            type="button"
+            onClick={onDetener}
+            disabled={loading}
+            className="p-1 rounded-md hover:bg-red-500/10 text-[var(--text-tertiary)] hover:text-red-500 transition-colors"
+          >
+            <X className="w-3.5 h-3.5" />
+          </button>
+        </>
+      ) : esIniciando ? (
+        <>
+          <Loader2 className="w-3.5 h-3.5 animate-spin text-[var(--text-tertiary)]" />
+          <span className="text-[12px] font-medium text-[var(--text-secondary)]">Conectando...</span>
+          <button
+            type="button"
+            onClick={onDetener}
+            disabled={loading}
+            className="p-1 rounded-md hover:bg-red-500/10 text-[var(--text-tertiary)] hover:text-red-500 transition-colors"
+          >
+            <X className="w-3.5 h-3.5" />
+          </button>
+        </>
+      ) : esError ? (
+        <>
+          <WifiOff className="w-3.5 h-3.5 text-red-500" />
+          <span className="text-[12px] font-medium text-red-600">Error</span>
+          <button
+            type="button"
+            onClick={onIniciar}
+            disabled={loading}
+            className="text-[11px] font-medium text-[var(--text-secondary)] hover:underline"
+          >
+            Reintentar
+          </button>
+          <button
+            type="button"
+            onClick={onDetener}
+            disabled={loading}
+            className="p-1 rounded-md hover:bg-red-500/10 text-[var(--text-tertiary)] hover:text-red-500 transition-colors"
+          >
+            <X className="w-3.5 h-3.5" />
+          </button>
+        </>
+      ) : (
+        <span className="text-[12px] text-[var(--text-tertiary)]">{estado.estado}</span>
+      )}
+    </div>
+  );
+}
+
+/* ============================================================
+   Modal QR WhatsApp Web.js
+============================================================ */
+
+function WwebQrModal({
+  qrCode,
+  estado,
+  onClose,
+}: {
+  qrCode: string;
+  estado: string;
+  onClose: () => void;
+}) {
+  const [qrUrl, setQrUrl] = useState('');
+
+  useEffect(() => {
+    // Generar QR code como data URL usando una API pública
+    // El qrCode de whatsapp-web.js es un string que puede ser usado con qrcode
+    // Como no tenemos qrcode en frontend, usamos una API de generación
+    setQrUrl(`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(qrCode)}`);
+  }, [qrCode]);
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-[400px] bg-[var(--bg-secondary)] rounded-2xl shadow-2xl border border-[var(--border-primary)] p-6 text-center animate-in zoom-in-95 duration-200"
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute top-3 right-3 p-1.5 rounded-md hover:bg-[var(--surface-hover)] text-[var(--text-tertiary)] hover:text-[var(--text-primary)]"
+        >
+          <X className="w-4 h-4" />
+        </button>
+
+        <Smartphone className="w-8 h-8 text-emerald-500 mx-auto mb-3" />
+        <h2 className="text-[16px] font-semibold text-[var(--text-primary)] mb-1">
+          Conectar WhatsApp Web
+        </h2>
+        <p className="text-[13px] text-[var(--text-secondary)] mb-5">
+          Abre WhatsApp en tu móvil, ve a <b>Más opciones {'>'} Dispositivos vinculados {'>'} Vincular dispositivo</b> y escanea el código.
+        </p>
+
+        {estado === 'qr' ? (
+          qrUrl ? (
+            <img
+              src={qrUrl}
+              alt="QR Code"
+              className="w-[260px] h-[260px] mx-auto rounded-xl border border-[var(--border-primary)]"
+            />
+          ) : (
+            <div className="w-[260px] h-[260px] mx-auto rounded-xl border border-[var(--border-primary)] bg-[var(--bg-tertiary)] flex items-center justify-center">
+              <Loader2 className="w-6 h-6 animate-spin text-[var(--text-tertiary)]" />
+            </div>
+          )
+        ) : estado === 'listo' ? (
+          <div className="w-[260px] h-[260px] mx-auto rounded-xl border border-emerald-500/30 bg-emerald-500/5 flex flex-col items-center justify-center">
+            <Check className="w-12 h-12 text-emerald-500 mb-2" />
+            <p className="text-[14px] font-medium text-emerald-600 dark:text-emerald-400">¡Conectado!</p>
+          </div>
+        ) : (
+          <div className="w-[260px] h-[260px] mx-auto rounded-xl border border-[var(--border-primary)] bg-[var(--bg-tertiary)] flex items-center justify-center">
+            <Loader2 className="w-6 h-6 animate-spin text-[var(--text-tertiary)]" />
+          </div>
+        )}
+
+        <p className="text-[11px] text-[var(--text-tertiary)] mt-4">
+          La sesión se guarda automáticamente. No necesitarás escanear de nuevo.
+        </p>
+      </div>
     </div>
   );
 }
@@ -2121,12 +2698,14 @@ function ChatTab({
   inboundText,
   setInboundText,
   onSend,
+  onSendAuto,
   onAddInbound,
   onAskMinimax,
   onNuevoChat,
   onOpenSparring,
   onOpenStoryboard,
   leadActual,
+  wwebListo,
 }: {
   conversaciones: ConversacionLista[];
   chatSearch: string;
@@ -2143,12 +2722,14 @@ function ChatTab({
   inboundText: string;
   setInboundText: (s: string) => void;
   onSend: () => void;
+  onSendAuto: () => void;
   onAddInbound: () => void;
   onAskMinimax: () => void;
   onNuevoChat: () => void;
   onOpenSparring: (leadId: string) => void;
   onOpenStoryboard: (leadId: string) => void;
   leadActual: { id: string; nombre: string; empresa: string | null; telefono: string | null; estado: string } | null;
+  wwebListo: boolean;
 }) {
   // Whisper Mode
   const [whisperOn, setWhisperOn] = useState(false);
@@ -2266,7 +2847,7 @@ function ChatTab({
               <Inbox className="w-8 h-8 text-[var(--text-tertiary)] mx-auto mb-2" />
               <p className="text-[12.5px] text-[var(--text-secondary)]">Aún no hay chats abiertos</p>
               <p className="text-[11px] text-[var(--text-tertiary)] mt-1">
-                Envía un WhatsApp desde la pestaña "Enviar" o crea uno nuevo.
+                Envía un WhatsApp desde la pestaña &quot;Enviar&quot; o crea uno nuevo.
               </p>
             </div>
           ) : (
@@ -2402,7 +2983,7 @@ function ChatTab({
                     <MessageCircle className="w-10 h-10 text-[var(--text-tertiary)] mx-auto mb-2" />
                     <p className="text-[13px] text-[var(--text-secondary)]">Sin mensajes todavía</p>
                     <p className="text-[11.5px] text-[var(--text-tertiary)] mt-1">
-                      Escribe abajo y pulsa "Enviar por WhatsApp" para iniciar el hilo.
+                      Escribe abajo y pulsa &quot;Enviar por WhatsApp&quot; para iniciar el hilo.
                     </p>
                   </div>
                 </div>
@@ -2598,19 +3179,33 @@ function ChatTab({
                       e.preventDefault();
                       onSend();
                     }
+                    if (e.key === 'Enter' && e.altKey) {
+                      e.preventDefault();
+                      onSendAuto();
+                    }
                   }}
                   rows={3}
-                  placeholder="Escribe el mensaje (Ctrl+Enter para enviar · / para snippets)..."
+                  placeholder="Escribe el mensaje (Ctrl+Enter para abrir WA · Alt+Enter para auto-envío · / para snippets)..."
                   className="flex-1 p-3 rounded-xl bg-[var(--bg-tertiary)] border border-[var(--border-primary)] text-[13.5px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-emerald-500/30 resize-none"
                 />
                 <button
                   type="button"
                   onClick={onSend}
                   disabled={!composerText.trim()}
-                  className="inline-flex items-center gap-2 h-10 px-4 rounded-xl bg-emerald-600 text-white text-[13px] font-semibold hover:bg-emerald-700 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-sm shadow-emerald-600/20"
+                  className="inline-flex items-center gap-2 h-10 px-3 rounded-xl bg-emerald-600 text-white text-[13px] font-semibold hover:bg-emerald-700 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-sm shadow-emerald-600/20"
                 >
                   <Send className="w-4 h-4" />
-                  Enviar
+                  Abrir
+                </button>
+                <button
+                  type="button"
+                  onClick={onSendAuto}
+                  disabled={!composerText.trim() || !wwebListo}
+                  title={!wwebListo ? 'Inicia WhatsApp Web primero' : 'Enviar automáticamente'}
+                  className="inline-flex items-center gap-2 h-10 px-3 rounded-xl bg-violet-600 text-white text-[13px] font-semibold hover:bg-violet-700 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-sm shadow-violet-600/20"
+                >
+                  <Rocket className="w-4 h-4" />
+                  Auto
                 </button>
               </div>
             </div>
@@ -2883,7 +3478,7 @@ function CementerioTab({
                   />
                 ) : (
                   <div className="flex-1 p-2.5 rounded-lg bg-[var(--bg-tertiary)] border border-dashed border-[var(--border-primary)] text-[12px] text-[var(--text-tertiary)] italic flex items-center justify-center min-h-[100px]">
-                    Pulsa "Generar" para que MiniMax escriba el mensaje.
+                    Pulsa &quot;Generar&quot; para que MiniMax escriba el mensaje.
                   </div>
                 )}
 
@@ -3196,7 +3791,7 @@ function ArenaTab({
             <Wand2 className="w-8 h-8 text-violet-500/60 mx-auto mb-2" />
             <p className="text-[13px] font-semibold text-[var(--text-primary)]">Sin perfiles</p>
             <p className="text-[11.5px] text-[var(--text-tertiary)] mt-1 mb-3">
-              Pulsa "Generar con IA" para que MiniMax cree perfiles realistas usando la descripción de tu SaaS y tus leads.
+              Pulsa &quot;Generar con IA&quot; para que MiniMax cree perfiles realistas usando la descripción de tu SaaS y tus leads.
             </p>
             <button
               type="button"
@@ -3341,7 +3936,7 @@ function ArenaHistorial({
         <History className="w-10 h-10 text-[var(--text-tertiary)] mx-auto mb-3" />
         <p className="text-[14px] font-medium text-[var(--text-primary)]">Sin batallas guardadas</p>
         <p className="text-[12.5px] text-[var(--text-tertiary)] mt-1">
-          Cada vez que ejecutas una batalla en "Nueva", queda registrada aquí automáticamente.
+          Cada vez que ejecutas una batalla en &quot;Nueva&quot;, queda registrada aquí automáticamente.
         </p>
       </div>
     );
@@ -3627,6 +4222,300 @@ function BattleDetailModal({
 }
 
 /* ============================================================
+   Chatbot Tab
+============================================================ */
+
+function ChatbotTab({
+  reglas,
+  onRecargar,
+  onNueva,
+  onEditar,
+  onEliminar,
+}: {
+  reglas: any[];
+  onRecargar: () => void;
+  onNueva: () => void;
+  onEditar: (r: any) => void;
+  onEliminar: (id: string) => void;
+}) {
+  return (
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
+        <div>
+          <p className="text-[13px] text-[var(--text-secondary)]">
+            {reglas.length} regla{reglas.length !== 1 && 's'} de respuesta automática
+          </p>
+          <p className="text-[11.5px] text-[var(--text-tertiary)]">
+            El chatbot responde automáticamente a mensajes entrantes según palabras clave o IA.
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={onNueva}
+          className="inline-flex items-center gap-2 px-4 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-[13px] font-semibold hover:shadow-lg hover:shadow-cyan-500/25 transition-all"
+        >
+          <Plus className="w-4 h-4" />
+          Nueva regla
+        </button>
+      </div>
+
+      {reglas.length === 0 ? (
+        <div className="p-12 rounded-2xl bg-[var(--bg-secondary)] border border-dashed border-[var(--border-primary)] text-center">
+          <Bot className="w-10 h-10 text-[var(--text-tertiary)] mx-auto mb-3" />
+          <p className="text-[14px] font-medium text-[var(--text-primary)]">Sin reglas de chatbot</p>
+          <p className="text-[12.5px] text-[var(--text-tertiary)] mt-1">
+            Crea reglas para que el bot responda automáticamente cuando un lead escriba.
+          </p>
+          <button
+            type="button"
+            onClick={onNueva}
+            className="mt-4 inline-flex items-center gap-2 px-4 h-9 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-[13px] font-semibold hover:shadow-lg hover:shadow-cyan-500/25 transition-all"
+          >
+            <Plus className="w-4 h-4" />
+            Crear primera regla
+          </button>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {reglas.map((r) => (
+            <div
+              key={r.id}
+              className={`p-4 rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-primary)] hover:border-[var(--text-tertiary)] transition-colors ${
+                !r.activa ? 'opacity-60' : ''
+              }`}
+            >
+              <div className="flex items-start justify-between gap-2 mb-2">
+                <div className="flex items-center gap-2">
+                  <span
+                    className={`inline-flex items-center px-2 h-5 rounded-md text-[10px] font-bold uppercase tracking-wider ${
+                      r.tipo === 'ia'
+                        ? 'bg-violet-500/10 text-violet-700 dark:text-violet-400 ring-1 ring-violet-500/20'
+                        : 'bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 ring-1 ring-cyan-500/20'
+                    }`}
+                  >
+                    {r.tipo === 'ia' ? 'IA' : 'Palabra clave'}
+                  </span>
+                  {!r.activa && (
+                    <span className="text-[9px] font-bold uppercase tracking-wider text-[var(--text-tertiary)]">
+                      Inactiva
+                    </span>
+                  )}
+                </div>
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() => onEditar(r)}
+                    className="p-1.5 rounded-md hover:bg-[var(--surface-hover)] text-[var(--text-tertiary)] hover:text-[var(--text-primary)]"
+                    title="Editar"
+                  >
+                    <Edit3 className="w-3.5 h-3.5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onEliminar(r.id)}
+                    className="p-1.5 rounded-md hover:bg-red-500/10 text-[var(--text-tertiary)] hover:text-red-500"
+                    title="Eliminar"
+                  >
+                    <Trash2 className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+              <p className="text-[14px] font-semibold text-[var(--text-primary)] mb-1">{r.nombre}</p>
+              {r.tipo === 'keyword' && r.palabrasClave?.length > 0 && (
+                <div className="flex flex-wrap gap-1 mb-2">
+                  {r.palabrasClave.map((pk: string) => (
+                    <span
+                      key={pk}
+                      className="inline-flex items-center px-1.5 h-[18px] rounded-md bg-slate-500/10 text-slate-600 dark:text-slate-400 text-[10px] font-mono ring-1 ring-slate-500/20"
+                    >
+                      {pk}
+                    </span>
+                  ))}
+                </div>
+              )}
+              <p className="text-[12.5px] text-[var(--text-secondary)] line-clamp-3 font-mono leading-relaxed whitespace-pre-wrap">
+                {r.respuesta}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ============================================================
+   Chatbot Editor Modal
+============================================================ */
+
+function ChatbotEditorModal({
+  initial,
+  onClose,
+  onSave,
+}: {
+  initial: any | null;
+  onClose: () => void;
+  onSave: (input: any) => Promise<void>;
+}) {
+  const [nombre, setNombre] = useState(initial?.nombre || '');
+  const [tipo, setTipo] = useState(initial?.tipo || 'keyword');
+  const [palabrasClave, setPalabrasClave] = useState(initial?.palabrasClave?.join(', ') || '');
+  const [respuesta, setRespuesta] = useState(initial?.respuesta || '');
+  const [activa, setActiva] = useState(initial?.activa ?? true);
+  const [saving, setSaving] = useState(false);
+
+  const handleSave = async () => {
+    if (!nombre.trim() || !respuesta.trim()) return;
+    if (tipo === 'keyword' && !palabrasClave.trim()) return;
+    setSaving(true);
+    try {
+      await onSave({
+        id: initial?.id,
+        nombre: nombre.trim(),
+        tipo,
+        palabrasClave: tipo === 'keyword'
+          ? palabrasClave.split(',').map((p: string) => p.trim()).filter(Boolean)
+          : [],
+        respuesta: respuesta.trim(),
+        activa,
+      });
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-[560px] max-h-[90vh] overflow-y-auto bg-[var(--bg-secondary)] rounded-2xl shadow-2xl border border-[var(--border-primary)] animate-in zoom-in-95 duration-200"
+      >
+        <div className="sticky top-0 bg-[var(--bg-secondary)] flex items-center justify-between px-6 h-14 border-b border-[var(--border-primary)] z-10">
+          <h2 className="text-[15px] font-semibold text-[var(--text-primary)]">
+            {initial ? 'Editar regla' : 'Nueva regla de chatbot'}
+          </h2>
+          <button type="button" onClick={onClose} className="p-1.5 rounded-md hover:bg-[var(--surface-hover)] text-[var(--text-tertiary)] hover:text-[var(--text-primary)]">
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+
+        <div className="p-6 space-y-5">
+          <div>
+            <label className="text-[11px] uppercase tracking-wider font-semibold text-[var(--text-tertiary)]">Nombre</label>
+            <input
+              type="text"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+              placeholder="ej. Respuesta a preguntas de precio"
+              className="mt-1 w-full h-10 px-3 rounded-xl bg-[var(--bg-tertiary)] border border-[var(--border-primary)] text-[14px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
+            />
+          </div>
+
+          <div>
+            <label className="text-[11px] uppercase tracking-wider font-semibold text-[var(--text-tertiary)]">Tipo</label>
+            <div className="mt-1.5 flex gap-2">
+              <button
+                type="button"
+                onClick={() => setTipo('keyword')}
+                className={`flex-1 h-10 rounded-xl border text-[13px] font-medium transition-colors ${
+                  tipo === 'keyword'
+                    ? 'bg-cyan-500/10 border-cyan-500/30 text-cyan-700 dark:text-cyan-400'
+                    : 'bg-[var(--bg-tertiary)] border-[var(--border-primary)] text-[var(--text-secondary)]'
+                }`}
+              >
+                Palabra clave
+              </button>
+              <button
+                type="button"
+                onClick={() => setTipo('ia')}
+                className={`flex-1 h-10 rounded-xl border text-[13px] font-medium transition-colors ${
+                  tipo === 'ia'
+                    ? 'bg-violet-500/10 border-violet-500/30 text-violet-700 dark:text-violet-400'
+                    : 'bg-[var(--bg-tertiary)] border-[var(--border-primary)] text-[var(--text-secondary)]'
+                }`}
+              >
+                Inteligencia artificial
+              </button>
+            </div>
+            <p className="text-[11px] text-[var(--text-tertiary)] mt-1.5">
+              {tipo === 'keyword'
+                ? 'El bot responde cuando el mensaje del lead contiene alguna de las palabras clave.'
+                : 'El bot usa IA para generar una respuesta personalizada basada en el contexto del negocio.'}
+            </p>
+          </div>
+
+          {tipo === 'keyword' && (
+            <div>
+              <label className="text-[11px] uppercase tracking-wider font-semibold text-[var(--text-tertiary)]">Palabras clave</label>
+              <input
+                type="text"
+                value={palabrasClave}
+                onChange={(e) => setPalabrasClave(e.target.value)}
+                placeholder="precio, coste, tarifa, cuánto vale"
+                className="mt-1 w-full h-10 px-3 rounded-xl bg-[var(--bg-tertiary)] border border-[var(--border-primary)] text-[14px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
+              />
+              <p className="text-[11px] text-[var(--text-tertiary)] mt-1">Separa por comas. No importan mayúsculas/minúsculas.</p>
+            </div>
+          )}
+
+          {tipo === 'ia' && (
+            <div className="p-3 rounded-xl bg-violet-500/5 border border-violet-500/15 text-[12px] text-violet-700 dark:text-violet-400">
+              <p className="font-medium mb-1">Instrucciones para la IA</p>
+              <p>Escribe el contexto del negocio y cómo debe responder el bot. La IA usará esto como prompt de sistema.</p>
+            </div>
+          )}
+
+          <div>
+            <div className="flex items-center justify-between mb-1">
+              <label className="text-[11px] uppercase tracking-wider font-semibold text-[var(--text-tertiary)]">
+                {tipo === 'keyword' ? 'Respuesta' : 'Instrucciones / Contexto'}
+              </label>
+              <span className="text-[11px] text-[var(--text-tertiary)]">{respuesta.length} caracteres</span>
+            </div>
+            <textarea
+              value={respuesta}
+              onChange={(e) => setRespuesta(e.target.value)}
+              rows={5}
+              placeholder={tipo === 'keyword'
+                ? 'Hola {{primer_nombre}}, nuestros planes empiezan desde 49€/mes. ¿Te gustaría que charlemos?'
+                : 'Eres el asistente de ventas de una agencia de marketing digital. Responde preguntas sobre servicios, precios y agenda demos. Sé breve y profesional.'
+              }
+              className="w-full p-3 rounded-xl bg-[var(--bg-tertiary)] border border-[var(--border-primary)] text-[14px] text-[var(--text-primary)] font-mono leading-relaxed focus:outline-none focus:ring-2 focus:ring-cyan-500/30 resize-none"
+            />
+          </div>
+
+          <label className="flex items-center gap-2.5 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={activa}
+              onChange={(e) => setActiva(e.target.checked)}
+              className="w-4 h-4 rounded accent-cyan-500"
+            />
+            <span className="text-[13px] text-[var(--text-primary)]">Regla activa</span>
+          </label>
+        </div>
+
+        <div className="sticky bottom-0 bg-[var(--bg-secondary)] flex items-center justify-end gap-2 px-6 h-14 border-t border-[var(--border-primary)]">
+          <button type="button" onClick={onClose} className="px-4 h-9 rounded-xl text-[13px] font-medium text-[var(--text-secondary)] hover:bg-[var(--surface-hover)]">
+            Cancelar
+          </button>
+          <button
+            type="button"
+            onClick={handleSave}
+            disabled={saving || !nombre.trim() || !respuesta.trim() || (tipo === 'keyword' && !palabrasClave.trim())}
+            className="inline-flex items-center gap-2 px-4 h-9 rounded-xl bg-cyan-600 text-white text-[13px] font-semibold hover:bg-cyan-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          >
+            {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Check className="w-4 h-4" />}
+            {initial ? 'Guardar cambios' : 'Crear regla'}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
    SPARRING — modal para ensayar conversación con clon IA del lead
 ============================================================ */
 
@@ -3692,7 +4581,7 @@ function SparringModal({
                 <Drama className="w-10 h-10 text-[var(--text-tertiary)] mx-auto mb-2" />
                 <p className="text-[13px] text-[var(--text-secondary)]">Empieza tú escribiendo el primer mensaje</p>
                 <p className="text-[11px] text-[var(--text-tertiary)] mt-1">
-                  El "lead" IA te contestará en función de su perfil.
+                  El &quot;lead&quot; IA te contestará en función de su perfil.
                 </p>
               </div>
             </div>
@@ -4203,6 +5092,102 @@ function HiperpersonalizarModal({
             </button>
           </div>
         )}
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+   Programar Envío Modal
+============================================================ */
+
+function ProgramarEnvioModal({
+  lead,
+  plantilla,
+  onClose,
+  onProgramar,
+}: {
+  lead: Lead;
+  plantilla: any;
+  onClose: () => void;
+  onProgramar: (fecha: string, hora: string) => void;
+}) {
+  const [fecha, setFecha] = useState('');
+  const [hora, setHora] = useState('');
+
+  const hoy = new Date().toISOString().split('T')[0];
+
+  const handleSubmit = () => {
+    if (!fecha || !hora) return;
+    onProgramar(fecha, hora);
+  };
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-[400px] bg-[var(--bg-secondary)] rounded-2xl shadow-2xl border border-[var(--border-primary)] p-6 animate-in zoom-in-95 duration-200"
+      >
+        <div className="flex items-center justify-between mb-5">
+          <h2 className="text-[15px] font-semibold text-[var(--text-primary)]">Programar envío</h2>
+          <button type="button" onClick={onClose} className="p-1.5 rounded-md hover:bg-[var(--surface-hover)] text-[var(--text-tertiary)] hover:text-[var(--text-primary)]">
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+
+        <div className="space-y-4">
+          <div className="p-3 rounded-xl bg-amber-500/5 border border-amber-500/15 text-[12.5px] text-[var(--text-secondary)]">
+            <p className="font-medium text-[var(--text-primary)]">{lead.nombre}</p>
+            <p className="text-[11px] text-[var(--text-tertiary)]">{lead.telefono}</p>
+            {plantilla && (
+              <p className="mt-1.5 text-[11px] font-mono text-amber-700 dark:text-amber-400">
+                Plantilla: {plantilla.nombre}
+              </p>
+            )}
+          </div>
+
+          <div>
+            <label className="text-[11px] uppercase tracking-wider font-semibold text-[var(--text-tertiary)]">Fecha</label>
+            <input
+              type="date"
+              min={hoy}
+              value={fecha}
+              onChange={(e) => setFecha(e.target.value)}
+              className="mt-1 w-full h-10 px-3 rounded-xl bg-[var(--bg-tertiary)] border border-[var(--border-primary)] text-[14px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+            />
+          </div>
+
+          <div>
+            <label className="text-[11px] uppercase tracking-wider font-semibold text-[var(--text-tertiary)]">Hora</label>
+            <input
+              type="time"
+              value={hora}
+              onChange={(e) => setHora(e.target.value)}
+              className="mt-1 w-full h-10 px-3 rounded-xl bg-[var(--bg-tertiary)] border border-[var(--border-primary)] text-[14px] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+            />
+          </div>
+
+          <div className="flex items-start gap-2 p-2 rounded-lg bg-[var(--bg-tertiary)] text-[11px] text-[var(--text-tertiary)]">
+            <AlertTriangle className="w-3.5 h-3.5 shrink-0 mt-0.5" />
+            <p>El envío se procesará automáticamente si WhatsApp Web está conectado. Si no, se reintentará cada minuto.</p>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-end gap-2 mt-6">
+          <button type="button" onClick={onClose} className="px-4 h-9 rounded-xl text-[13px] font-medium text-[var(--text-secondary)] hover:bg-[var(--surface-hover)]">
+            Cancelar
+          </button>
+          <button
+            type="button"
+            onClick={handleSubmit}
+            disabled={!fecha || !hora}
+            className="inline-flex items-center gap-2 px-4 h-9 rounded-xl bg-amber-600 text-white text-[13px] font-semibold hover:bg-amber-700 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+          >
+            <Calendar className="w-3.5 h-3.5" />
+            Programar
+          </button>
+        </div>
       </div>
     </div>
   );

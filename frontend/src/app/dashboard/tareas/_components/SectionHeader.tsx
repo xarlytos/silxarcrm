@@ -1,12 +1,12 @@
 'use client';
 
-import type { LucideIcon } from 'lucide-react';
+import type { IconType } from '../_lib/icons';
 
 /* ============================================================
    Componentes auxiliares
 ============================================================ */
 
-export function SectionHeader({ icon: Icon, iconColor, title, subtitle, right }: { icon: LucideIcon; iconColor: string; title: string; subtitle?: string; right?: string }) {
+export function SectionHeader({ icon: Icon, iconColor, title, subtitle, right }: { icon: IconType; iconColor: string; title: string; subtitle?: string; right?: string }) {
   return (
     <div className="flex items-end justify-between mb-3 px-1 gap-3">
       <div className="min-w-0">
@@ -21,7 +21,7 @@ export function SectionHeader({ icon: Icon, iconColor, title, subtitle, right }:
   );
 }
 
-export function BigStatCard({ icon: Icon, label, value, color, bg }: { icon: LucideIcon; label: string; value: number | string; color: string; bg: string }) {
+export function BigStatCard({ icon: Icon, label, value, color, bg }: { icon: IconType; label: string; value: number | string; color: string; bg: string }) {
   return (
     <div className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${bg} border border-[var(--border-primary)] p-4`}>
       <div className="flex items-start justify-between gap-2">

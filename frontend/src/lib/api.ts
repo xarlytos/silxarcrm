@@ -203,6 +203,8 @@ export const apiClient = {
     api(`/api/whatsapp/plantillas/${id}`, { method: 'DELETE' }),
   seedWhatsappPlantillas: (softwareId: string) =>
     api('/api/whatsapp/plantillas/seed', { method: 'POST', body: { softwareId } }),
+  generarWhatsappPlantillaIA: (data: { softwareId: string; categoria?: string; objetivo: string; tono?: string; longitud?: string }) =>
+    api('/api/whatsapp/plantillas/generar-ia', { method: 'POST', body: data }),
   enviarWhatsapp: (data: { leadId: string; plantillaId?: string; contenidoFinal?: string }) =>
     api('/api/whatsapp/enviar', { method: 'POST', body: data }),
   previewWhatsapp: (plantillaId: string, leadId: string) =>
@@ -272,6 +274,34 @@ export const apiClient = {
   getWhatsappSnippets: () => api('/api/whatsapp/snippets'),
   resolverWhatsappSnippet: (data: { comando: string; leadId?: string; borrador?: string }) =>
     api('/api/whatsapp/snippet', { method: 'POST', body: data }),
+
+  // WhatsApp Web.js (automatización)
+  wwebEstado: (softwareId?: string) =>
+    api(`/api/whatsapp-wweb/estado${softwareId ? `?softwareId=${softwareId}` : ''}`),
+  wwebIniciar: (softwareId: string) =>
+    api('/api/whatsapp-wweb/iniciar', { method: 'POST', body: { softwareId } }),
+  wwebDetener: (softwareId: string) =>
+    api('/api/whatsapp-wweb/detener', { method: 'POST', body: { softwareId } }),
+  wwebDetenerTodos: () => api('/api/whatsapp-wweb/detener-todos', { method: 'POST' }),
+  wwebEnviar: (data: { softwareId: string; telefono: string; mensaje: string }) =>
+    api('/api/whatsapp-wweb/enviar', { method: 'POST', body: data }),
+  wwebEnviarLead: (data: { softwareId: string; leadId: string; plantillaId?: string; contenidoFinal?: string }) =>
+    api('/api/whatsapp-wweb/enviar-lead', { method: 'POST', body: data }),
+  wwebEnviarBulk: (data: { softwareId: string; leadIds: string[]; mensaje: string }) =>
+    api('/api/whatsapp-wweb/enviar-bulk', { method: 'POST', body: data }),
+  wwebProgramar: (data: { softwareId: string; leadId: string; plantillaId?: string; contenidoFinal?: string; programadoPara: string }) =>
+    api('/api/whatsapp-wweb/programar', { method: 'POST', body: data }),
+
+  // WhatsApp Chatbot
+  getWhatsappChatbotReglas: (softwareId?: string) =>
+    api(`/api/whatsapp-chatbot/reglas${softwareId ? `?softwareId=${softwareId}` : ''}`),
+  getWhatsappChatbotRegla: (id: string) => api(`/api/whatsapp-chatbot/reglas/${id}`),
+  createWhatsappChatbotRegla: (data: any) =>
+    api('/api/whatsapp-chatbot/reglas', { method: 'POST', body: data }),
+  updateWhatsappChatbotRegla: (id: string, data: any) =>
+    api(`/api/whatsapp-chatbot/reglas/${id}`, { method: 'PUT', body: data }),
+  deleteWhatsappChatbotRegla: (id: string) =>
+    api(`/api/whatsapp-chatbot/reglas/${id}`, { method: 'DELETE' }),
 
   // Spechs (Centro de Llamadas)
   getSpechs: (softwareId?: string) =>

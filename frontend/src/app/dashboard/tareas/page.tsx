@@ -445,7 +445,7 @@ export default function TareasPage() {
             { id: 'saga', label: 'Saga', icon: FileText, group: 'meta' },
             { id: 'records', label: 'Récords', icon: Award, group: 'meta' },
           ] as const).map((t) => {
-            if (t.group === 'sep') return <div key={t.id} className="w-px h-6 bg-white/10 mx-1" />;
+            if (t.group === 'sep') return <div key={t.id} className="w-px h-6 bg-[var(--border-primary)] mx-1" />;
             const active = tab === t.id;
             const Icon = t.icon;
             return (
@@ -455,14 +455,14 @@ export default function TareasPage() {
                 onClick={() => setTab(t.id as Tab)}
                 className={`relative flex items-center gap-2 h-9 px-3.5 rounded-xl text-[12.5px] font-semibold transition-all whitespace-nowrap ${
                   active
-                    ? 'text-white bg-white/[0.07] ring-1 ring-white/15'
-                    : 'text-white/55 hover:text-white hover:bg-white/[0.04]'
+                    ? 'text-[var(--text-primary)] bg-[var(--surface-hover)] ring-1 ring-[var(--border-primary)]'
+                    : 'text-[var(--text-tertiary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-hover)]'
                 }`}
               >
                 {active && (
                   <span className="absolute -top-px left-1/2 -translate-x-1/2 w-8 h-px bg-gradient-to-r from-transparent via-amber-300 to-transparent" />
                 )}
-                <Icon className={`w-3.5 h-3.5 ${active ? 'text-amber-300' : ''}`} />
+                <Icon className={`w-3.5 h-3.5 ${active ? 'text-amber-500' : ''}`} />
                 {t.label}
               </button>
             );

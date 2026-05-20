@@ -56,7 +56,7 @@ export function TabCarrera({
           <div className="relative flex flex-col md:flex-row md:items-center gap-5">
             <div className="relative shrink-0 mx-auto md:mx-0">
               <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-amber-400 via-fuchsia-500 to-violet-500 blur-2xl opacity-60 animate-pulse-slow" />
-              <div className="relative w-[100px] h-[100px] rounded-3xl bg-black/40 ring-4 ring-amber-400/40 flex items-center justify-center">
+              <div className="relative w-[100px] h-[100px] rounded-3xl bg-[var(--bg-tertiary)] ring-4 ring-amber-400/40 flex items-center justify-center">
                 <Sparkles className="w-12 h-12 text-amber-300" />
                 {aureolas > 0 && (
                   <span className="absolute -bottom-2 -right-2 inline-flex items-center justify-center px-2 h-7 rounded-xl bg-amber-400 ring-2 ring-amber-900 text-amber-900 text-[14px] font-black">

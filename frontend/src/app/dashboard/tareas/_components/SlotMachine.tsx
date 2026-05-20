@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Star } from 'lucide-react';
+import { IconDice } from '@tabler/icons-react';
 import { ICON_MAP } from '../_lib/icons';
 import { SLOT_SYMBOLS, type SlotSymbol } from '../_lib/slots';
 
@@ -58,9 +58,9 @@ export function SlotMachine({
   const restantes = Math.max(0, 3 - spinsUsed);
   const isJackpot = lastTipo?.startsWith('jackpot') || lastTipo?.startsWith('JACKPOT');
   return (
-    <div className="relative overflow-hidden rounded-3xl border-2 border-fuchsia-500/40 bg-gradient-to-br from-fuchsia-950/60 via-violet-950/60 to-rose-950/60 p-5 shadow-2xl shadow-fuchsia-500/20">
-      <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-fuchsia-500/20 blur-3xl animate-pulse-slow" />
-      <div className="absolute -bottom-20 -right-20 w-72 h-72 rounded-full bg-rose-500/20 blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
+    <div className="relative overflow-hidden rounded-2xl border border-fuchsia-500/30 bg-gradient-to-br from-fuchsia-950/50 via-violet-950/50 to-rose-950/50 p-4 shadow-xl shadow-fuchsia-500/15">
+      <div className="absolute -top-10 -left-10 w-48 h-48 rounded-full bg-fuchsia-500/12 blur-2xl animate-pulse-slow" />
+      <div className="absolute -bottom-10 -right-10 w-48 h-48 rounded-full bg-rose-500/12 blur-2xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
 
       <div className="relative flex flex-col md:flex-row md:items-center gap-5">
         <div className="flex-1 min-w-0">
@@ -72,7 +72,7 @@ export function SlotMachine({
               Tiradas restantes: <span className="text-amber-400 font-bold">{restantes} / 3</span>
             </span>
           </div>
-          <h2 className="text-[22px] md:text-[24px] font-black text-fuchsia-100 leading-tight mt-1">Casino del Fin de Semana</h2>
+          <h2 className="text-[18px] md:text-[20px] font-black text-fuchsia-100 leading-tight mt-1">Casino del Fin de Semana</h2>
           <p className="text-[12.5px] text-fuchsia-200/70 leading-snug">3-en-raya = jackpot (más raro el símbolo, mayor premio). 🐉 = 8000 XP + 1500 gemas.</p>
 
           {lastTipo && (
@@ -91,12 +91,12 @@ export function SlotMachine({
         </div>
 
         {/* Slots */}
-        <div className="shrink-0 flex items-center gap-2 p-3 rounded-2xl bg-black/40 ring-2 ring-amber-400/30 mx-auto md:mx-0">
+        <div className="shrink-0 flex items-center gap-2 p-2.5 rounded-xl bg-[var(--bg-tertiary)] ring-1 ring-amber-400/30 mx-auto md:mx-0">
           {reels.map((s, i) => {
-            const Icon = ICON_MAP[s.icon] ?? Star;
+            const Icon = ICON_MAP[s.icon] ?? IconDice;
             return (
-              <div key={i} className={`w-16 h-20 rounded-xl bg-gradient-to-br from-slate-950 to-slate-900 ring-1 ring-amber-500/30 flex items-center justify-center ${spinning ? 'animate-slot-blur' : ''}`}>
-                <Icon className={`w-10 h-10 ${s.color} drop-shadow-[0_0_8px_currentColor]`} strokeWidth={1.6} fill={s.id === 'gem' || s.id === 'star' ? 'currentColor' : 'none'} fillOpacity={0.25} />
+              <div key={i} className={`w-14 h-16 rounded-lg bg-gradient-to-br from-slate-950 to-slate-900 ring-1 ring-amber-500/30 flex items-center justify-center ${spinning ? 'animate-slot-blur' : ''}`}>
+                <Icon className={`w-8 h-8 ${s.color} drop-shadow-[0_0_6px_currentColor]`} strokeWidth={1.6} />
               </div>
             );
           })}
@@ -107,7 +107,7 @@ export function SlotMachine({
           type="button"
           onClick={handleSpin}
           disabled={spinning || restantes === 0}
-          className="shrink-0 w-full md:w-auto px-6 h-12 rounded-2xl bg-gradient-to-r from-amber-400 via-fuchsia-500 to-rose-500 text-white text-[14px] font-black uppercase tracking-wider hover:brightness-110 active:scale-[0.97] shadow-xl shadow-fuchsia-500/40 ring-2 ring-amber-400/50 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+          className="shrink-0 w-full md:w-auto px-5 h-10 rounded-xl bg-gradient-to-r from-amber-400 via-fuchsia-500 to-rose-500 text-white text-[13px] font-black uppercase tracking-wider hover:brightness-110 active:scale-[0.97] shadow-lg shadow-fuchsia-500/30 ring-1 ring-amber-400/40 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
         >
           {spinning ? 'Girando...' : restantes === 0 ? 'Vuelve el próximo finde' : '¡Tirar!'}
         </button>

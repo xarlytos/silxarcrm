@@ -11,7 +11,8 @@ import { CommandPaletteProvider } from '@/components/layout/CommandPalette';
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
   const router = useRouter();
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [desktopCollapsed, setDesktopCollapsed] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     if (!loading && !user) {
@@ -19,17 +20,38 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     }
   }, [user, loading, router]);
 
-  // Restore sidebar state from localStorage
+  // Restore desktop sidebar state from localStorage
   useEffect(() => {
     const saved = localStorage.getItem('sidebarCollapsed');
     if (saved) {
-      setSidebarCollapsed(saved === 'true');
+      setDesktopCollapsed(saved === 'true');
     }
   }, []);
 
-  const handleToggleSidebar = () => {
-    const newState = !sidebarCollapsed;
-    setSidebarCollapsed(newState);
+  // Close mobile drawer when crossing into desktop breakpoint
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1024px)');
+    const handle = (e: MediaQueryListEvent) => {
+      if (e.matches) setMobileOpen(false);
+    };
+    mq.addEventListener('change', handle);
+    return () => mq.removeEventListener('change', handle);
+  }, []);
+
+  // Lock body scroll when mobile drawer is open
+  useEffect(() => {
+    if (mobileOpen) {
+      const original = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = original;
+      };
+    }
+  }, [mobileOpen]);
+
+  const handleDesktopToggle = () => {
+    const newState = !desktopCollapsed;
+    setDesktopCollapsed(newState);
     localStorage.setItem('sidebarCollapsed', String(newState));
   };
 
@@ -49,15 +71,20 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   return (
     <CommandPaletteProvider>
       <div className="flex min-h-screen bg-[var(--bg-primary)]">
-        <Sidebar collapsed={sidebarCollapsed} onToggle={handleToggleSidebar} />
+        <Sidebar
+          desktopCollapsed={desktopCollapsed}
+          onDesktopToggle={handleDesktopToggle}
+          mobileOpen={mobileOpen}
+          onMobileClose={() => setMobileOpen(false)}
+        />
         <div
           className={cn(
-            'ease-luxe flex-1 flex flex-col min-w-0 transition-[padding-left] duration-[460ms]',
-            sidebarCollapsed ? 'pl-[64px]' : 'pl-[260px]',
+            'ease-luxe flex-1 flex flex-col min-w-0 transition-[padding-left] duration-[460ms] pl-0',
+            desktopCollapsed ? 'lg:pl-[64px]' : 'lg:pl-[260px]',
           )}
         >
-          <Header />
-          <main className="flex-1 flex flex-col p-8 bg-[var(--bg-primary)] min-h-[calc(100vh-72px)]">
+          <Header onMobileMenuClick={() => setMobileOpen(true)} />
+          <main className="flex-1 flex flex-col p-4 sm:p-6 lg:p-8 bg-[var(--bg-primary)] min-h-[calc(100vh-56px)] sm:min-h-[calc(100vh-72px)]">
             <div className="max-w-[1600px] mx-auto w-full flex-1 flex flex-col">
               {children}
             </div>
