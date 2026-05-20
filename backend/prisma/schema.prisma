@@ -170,6 +170,47 @@ model WebhookConfig {
   @@map("webhooks_config")
 }
 
+// --- Perfil de Software/SaaS (configuracion y marketing) ---
+model Software {
+  id                String   @id @default(cuid())
+  slug              String   @unique // ej: "groomly", "silxar" — coincide con saas/softwareId
+  nombre            String   // ej: "Groomly Pro"
+  tagline           String?  // One-liner para headers, ads, meta description
+  descripcion       String?  @db.Text // Pitch largo para landing pages
+  urlWebsite        String?  @map("url_website")
+  logoUrl           String?  @map("logo_url")
+  faviconUrl        String?  @map("favicon_url")
+  colorPrimario     String   @default("#6366F1") @map("color_primario")
+  colorSecundario   String?  @map("color_secundario")
+  dominioLanding    String?  @map("dominio_landing")
+
+  // Posicionamiento
+  categoria         String?  // ej: "SaaS", "Agencia", "Consultoria"
+  nicho             String?  // ej: "peluquerias caninas"
+  problemaPrincipal String?  @map("problema_principal") @db.Text
+  promesaValor      String?  @map("promesa_valor") @db.Text
+  diferenciador     String?  @db.Text
+
+  // Audiencia objetivo (ICP)
+  icpTitulo         String?  @map("icp_titulo")
+  icpDescripcion    String?  @map("icp_descripcion") @db.Text
+  icpIngresosAnuales String? @map("icp_ingresos_anuales")
+  icpTamanoEquipo   String?  @map("icp_tamano_equipo")
+  icpUbicacion      String?  @map("icp_ubicacion")
+  icpDolorTop1      String?  @map("icp_dolor_top1")
+  icpDolorTop2      String?  @map("icp_dolor_top2")
+  icpDolorTop3      String?  @map("icp_dolor_top3")
+
+  // Estado
+  activo            Boolean  @default(true)
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+
+  @@index([slug])
+  @@index([activo])
+  @@map("softwares")
+}
+
 // Sistema de Tracking de Eventos (tipo Segment/Mixpanel)
 model CrmClient {
   id          String   @id @default(cuid())

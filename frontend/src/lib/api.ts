@@ -496,4 +496,11 @@ export const apiClient = {
   updateFreeValue: (id: string, data: Record<string, any>) =>
     api(`/api/free-values/${id}`, { method: 'PUT', body: data }),
   deleteFreeValue: (id: string) => api(`/api/free-values/${id}`, { method: 'DELETE' }),
+
+  // Softwares (configuracion y marketing)
+  getSoftwares: () => api('/api/softwares'),
+  getSoftware: (slug: string) => api(`/api/softwares/${slug}`),
+  createSoftware: (data: Record<string, any>) => api('/api/softwares', { method: 'POST', body: data }),
+  updateSoftware: (id: string, data: Record<string, any>) => api(`/api/softwares/${id}`, { method: 'PUT', body: data }),
+  deleteSoftware: (id: string) => api(`/api/softwares/${id}`, { method: 'DELETE' }),
 };

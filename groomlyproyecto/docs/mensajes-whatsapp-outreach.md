@@ -6,63 +6,53 @@
 
 ---
 
-## 1. El del dolor concreto
+## 1. El del dolor concreto (Estilo Saul Goodman)
 
-Hola [Nombre]. Te escribo porque estoy contactando con peluquerías caninas y me pregunto si también te pasa lo que le pasa al 90% de las que hablo: al final del día siguen con montones de WhatsApp sin responder de clientes pidiendo hueco, la agenda es un puzzle mental y sientes que si tú no estás, el negocio se para.
+Hola [Nombre]. Mira, sé que estás hasta el gorro de WhatsApp de dueños de perros pidiendo hueco para baño, deslanado o corte, y la agenda de la peluquería canina se te ha convertido en un puzzle imposible. Yo te saco de ese lío en 15 minutos, sin coste. ¿Hablamos mañana o pasado?
 
-No te vendo nada por mensaje. Solo quería saber si tienes 15 min esta semana para una llamada rápida. Te muestro cómo otras peluquerías han dejado de depender del WhatsApp para gestionar citas. ¿Te viene bien el martes o el miércoles por la mañana?
+Vengo de peluguau, aquí tienes la página para más información: https://www.peluguau.com/
 
-**Por qué funciona:** Nombra el dolor exacto (WhatsApp, agenda mental, dependencia total). Pide poco (15 min). CTA binario.
-
----
-
-## 2. El de curiosidad con resultado
-
-Hola [Nombre], soy [tu nombre]. Llevo unos meses ayudando a peluquerías caninas a pasar de gestionar todo con Excel + WhatsApp a tener un sistema donde los clientes reservan solos, llegan recordatorios automáticos y tú ves en un pantallazo qué hay hoy, mañana y esta semana.
-
-Hace poco una peluquería de 3 peluqueros me decía que había recuperado casi 2 horas diarias solo en dejar de contestar mensajes de "¿tenéis hueco?".
-
-¿Te apetece que hagamos una llamada de 15 min y te cuento exactamente qué cambió? Sin compromiso, si no ves valor en los primeros 5 min me dices y cortamos.
-
-**Por qué funciona:** Storytelling corto con resultado medible. Reduce la presión ("cortamos en 5 min si no hay valor").
+**Por qué funciona:** Nombra el dolor exacto del sector canino. Ofrece solución rápida. CTA binario.
 
 ---
 
-## 3. El provocador
+## 2. El de curiosidad con resultado (Estilo Isra Bravo)
 
-Hola [Nombre]. Voy a ser directo: ¿cuánto dinero crees que pierdes al mes por clientes que no vienen porque se les olvidó la cita, o porque les dio pereza escribir por WhatsApp para pedir hora?
+¡Ey [Nombre]! ¿También tienes la agenda de la peluquería canina hecha un lío de mensajes de "¿tenéis hueco para mi perro?"? Una peluquería canina como la tuya recuperó 2 horas al día con esto. Te lo cuento en 15 min, sin compromiso. Si no te mola, cortamos y listo.
 
-He hablado con dueñas de peluquería canina que me han dicho cifras entre 800€ y 2.000€ al mes. Y lo peor: lo normalizan como "parte del negocio".
+Vengo de peluguau, aquí tienes la página para más información: https://www.peluguau.com/
 
-No es parte del negocio. Es un agujero que se tapa.
-
-Si quieres, en 15 min por teléfono te enseño cómO otras peluquerías del mismo tamaño lo solucionaron. ¿Tienes hueco mañana por la mañana o pasado por la tarde?
-
-**Por qué funciona:** Desafía una creencia. Cuantifica el dolor en €. CTA con dos opciones de horario.
+**Por qué funciona:** Energía alta, resultado concreto y cero presión. Menciona específicamente el sector canino.
 
 ---
 
-## 4. El de la pregunta de diagnóstico
+## 3. El provocador (Estilo Saul Goodman)
 
-Hola [Nombre], te escribo porque estoy contactando con peluquerías caninas independientes para entender cómo gestionan la agenda y los clientes. Me gustaría tu opinión de experta.
+[Nombre], voy a ser directo: ¿cuánto dinero se te escapa cada mes porque el dueño del perro no aparece, o porque le da pereza escribir por WhatsApp para pedir hora de baño? He visto peluquerías caninas perdiendo entre 800€ y 2.000€. Eso no es "parte del negocio", es un agujero que tapamos en 15 min. ¿Hablamos mañana o pasado?
 
-Solo una pregunta: ¿cuál es la parte de la gestión diaria que más tiempo te roba y que ojalá se hiciera sola?
+Vengo de peluguau, aquí tienes la página para más información: https://www.peluguau.com/
 
-No te escribo para venderte nada. Estoy recopilando respuestas para mejorar una herramienta que estamos construyendo. Si me das tu punto de vista, te compensaré con 15 min de mi tiempo mostrándote lo que hemos aprendido de otras peluquerías como la tuya. ¿Te interesa?
-
-**Por qué funciona:** No huele a venta. Pide opinión. El "compenso con 15 min" es la transición a demo.
+**Por qué funciona:** Desafía la normalización del problema. Cuantifica en €. Cierra con dos opciones.
 
 ---
 
-## 5. El de selección
+## 4. El de la pregunta de diagnóstico (Estilo Isra Bravo)
 
-Hola [Nombre]. Me presento: soy [tu nombre] de Groomly. Ahora mismo estoy trabajando con varias peluquerías caninas para organizarles la agenda, automatizar recordatorios y que sus clientes puedan pedir cita online sin depender del WhatsApp.
+¡Ey [Nombre]! Dime una cosa: ¿qué parte del día en la peluquería canina te roba más tiempo y dices "ojalá esto se hiciera solo"? ¿La agenda de perros? ¿Los recordatorios? ¿El WhatsApp de dueños? Solo eso te pregunto. Y como agradecimiento te regalo 15 min mostrándote cómo otras peluquerías caninas lo solucionaron. ¿Te mola?
 
-Te escribo porque estoy buscando 10 peluquerías con las que probar algo nuevo este mes, y tu perfil encaja con lo que busco: equipo definido, clientela fiel, y probablemente en ese punto donde la gestión manual empieza a ser un cuello de botella.
+Vengo de peluguau, aquí tienes la página para más información: https://www.peluguau.com/
 
-¿Tendrías 15 min esta semana para que te cuente qué estamos haciendo y si tiene sentido para ti? Sin compromiso.
+**Por qué funciona:** No huele a venta. Pide opinión específica del sector canino. Transición suave a la demo.
 
-**Por qué funciona:** Les hace sentir seleccionados. Escasez ("10 peluquerías este mes"). Menciona el dolor sin necesidad de datos específicos.
+---
+
+## 5. El de selección (Estilo Saul Goodman)
+
+[Nombre], te escribo porque busco solo 10 peluquerías caninas este mes para probar algo nuevo. Tu perfil encaja: equipo de peluqueros caninos definido, clientela fiel de perros, y probablemente en ese punto donde la gestión manual de citas y baños te frena. 15 min para mostrártelo, sin compromiso. ¿Entramos en la lista?
+
+Vengo de peluguau, aquí tienes la página para más información: https://www.peluguau.com/
+
+**Por qué funciona:** Escasez real. Selección exclusiva para el nicho canino. CTA directo.
 
 ---
 
@@ -80,19 +70,17 @@ Te escribo porque estoy buscando 10 peluquerías con las que probar algo nuevo e
 
 ## Follow-up para quienes no responden (día 3-4)
 
-Hola [Nombre], sé que estas semanas en la peluquería son una locura y probablemente esto se te ha quedado atrás. No te preocupes.
+Hola [Nombre], sé que la peluquería canina es una locura con tantos perros y esto se te ha quedado atrás. Normal. Cuando sientas que la gestión de citas de perros te come más tiempo del que debería, tengo 15 min para sacarte de ahí. Me dices cuando tengas un respiro.
 
-Te escribo rápido: si en algún momento sientes que la gestión de citas y clientes te come más tiempo del que debería, tengo 15 min para mostrarte cómO otras peluquerías lo han organizado. Me dices cuando tengas un respiro y lo hablamos. Un saludo.
+Vengo de peluguau, aquí tienes la página para más información: https://www.peluguau.com/
 
 ---
 
 ## Follow-up para quienes responden pero no quieren llamada (objeción suave)
 
-Entiendo perfectamente, [Nombre]. A veces lo que funciona para otras no tiene por qué encajar en la tuya.
+Entiendo, [Nombre]. Lo que funciona para unas peluquerías caninas no tiene por qué encajar en la tuya. Te paso 7 plantillas de WhatsApp para reducir no-shows de dueños de perros, gratis y sin letra pequeña. Si te sirven y luego quieres automatizarlas, ya hablamos.
 
-Sin compromiso: te paso aquí un PDF con 7 plantillas de WhatsApp que usan peluquerías caninas para reducir no-shows y olvidos de cita. Es gratuito, sin letra pequeña. Si alguna te sirve, genial. Si después de probarlas quieres ver cómo se automatizan del todo, ya hablamos.
-
-[Enlace al lead magnet]
+Vengo de peluguau, aquí tienes la página para más información: https://www.peluguau.com/
 
 ---
 

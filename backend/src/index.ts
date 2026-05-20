@@ -31,6 +31,7 @@ import landingsRoutes from './routes/landings';
 import freeValuesRoutes from './routes/freeValues';
 import propuestasRoutes from './routes/propuestas';
 import tareasRoutes from './routes/tareas';
+import softwareRoutes from './routes/software';
 
 console.log('[BOOT] CRM Maestro API process started');
 
@@ -100,6 +101,7 @@ app.use('/api/landings', landingsRoutes);
 app.use('/api/free-values', freeValuesRoutes);
 app.use('/api/propuestas', propuestasRoutes);
 app.use('/api/tareas', tareasRoutes);
+app.use('/api/softwares', softwareRoutes);
 app.use('/events', eventsRoutes);
 
 // Error handler
