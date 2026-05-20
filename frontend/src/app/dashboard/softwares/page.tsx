@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { apiClient } from '@/lib/api';
 import { formatCurrency } from '@/lib/utils';
-import { Layers, ExternalLink, Activity, CreditCard, RefreshCw } from 'lucide-react';
+import { Layers, ExternalLink, Activity, CreditCard, RefreshCw, Users, Plus } from 'lucide-react';
 import Link from 'next/link';
 
 export default function SoftwaresPage() {
@@ -162,6 +162,26 @@ export default function SoftwaresPage() {
                     <p className="text-[11px] text-[var(--text-tertiary)]">
                       {pct.toFixed(1)}% del total
                     </p>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="flex items-center gap-2 shrink-0">
+                    <Link
+                      href={`/dashboard/leads?software=${saas.saas}`}
+                      className="flex items-center gap-1.5 px-3 py-1.5 bg-[var(--bg-tertiary)] border border-[var(--border-primary)] rounded-lg text-[12px] font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--text-tertiary)] transition-all"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Users className="w-3.5 h-3.5" />
+                      Ver leads
+                    </Link>
+                    <Link
+                      href={`/dashboard/softwares/${saas.saas}/buscar-leads`}
+                      className="flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-violet-500 to-purple-600 text-white rounded-lg text-[12px] font-medium hover:shadow-lg hover:shadow-violet-500/25 transition-all"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Plus className="w-3.5 h-3.5" />
+                      Obtener leads
+                    </Link>
                   </div>
                 </Link>
               );

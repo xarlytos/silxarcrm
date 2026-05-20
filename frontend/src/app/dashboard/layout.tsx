@@ -6,6 +6,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { cn } from '@/lib/utils';
 import Sidebar from '@/components/layout/Sidebar';
 import Header from '@/components/layout/Header';
+import { CommandPaletteProvider } from '@/components/layout/CommandPalette';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
@@ -46,16 +47,23 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   if (!user) return null;
 
   return (
-    <div className="flex min-h-screen bg-[var(--bg-primary)]">
-      <Sidebar collapsed={sidebarCollapsed} onToggle={handleToggleSidebar} />
-      <div className={cn("flex-1 flex flex-col min-w-0 transition-all duration-300", sidebarCollapsed ? "pl-[72px]" : "pl-[260px]")}>
-        <Header />
-        <main className="flex-1 p-8 bg-[var(--bg-primary)] min-h-[calc(100vh-72px)]">
-          <div className="max-w-[1600px] mx-auto">
-            {children}
-          </div>
-        </main>
+    <CommandPaletteProvider>
+      <div className="flex min-h-screen bg-[var(--bg-primary)]">
+        <Sidebar collapsed={sidebarCollapsed} onToggle={handleToggleSidebar} />
+        <div
+          className={cn(
+            'ease-luxe flex-1 flex flex-col min-w-0 transition-[padding-left] duration-[460ms]',
+            sidebarCollapsed ? 'pl-[64px]' : 'pl-[260px]',
+          )}
+        >
+          <Header />
+          <main className="flex-1 flex flex-col p-8 bg-[var(--bg-primary)] min-h-[calc(100vh-72px)]">
+            <div className="max-w-[1600px] mx-auto w-full flex-1 flex flex-col">
+              {children}
+            </div>
+          </main>
+        </div>
       </div>
-    </div>
+    </CommandPaletteProvider>
   );
 }

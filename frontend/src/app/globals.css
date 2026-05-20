@@ -139,3 +139,506 @@ body {
   background-color: #3b82f6;
   color: white;
 }
+
+/* Auth — aurora blobs */
+@keyframes aurora-drift {
+  0%   { transform: translate(0%, 0%) scale(1); }
+  33%  { transform: translate(8%, -6%) scale(1.08); }
+  66%  { transform: translate(-6%, 6%) scale(0.95); }
+  100% { transform: translate(0%, 0%) scale(1); }
+}
+
+@keyframes aurora-drift-slow {
+  0%   { transform: translate(0%, 0%) scale(1.05); }
+  50%  { transform: translate(-10%, 8%) scale(1); }
+  100% { transform: translate(0%, 0%) scale(1.05); }
+}
+
+@keyframes grid-fade {
+  0%, 100% { opacity: 0.35; }
+  50%      { opacity: 0.55; }
+}
+
+.aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  will-change: transform;
+}
+
+.aurora-blob-1 { animation: aurora-drift      18s ease-in-out infinite; }
+.aurora-blob-2 { animation: aurora-drift-slow 22s ease-in-out infinite; }
+.aurora-blob-3 { animation: aurora-drift      26s ease-in-out infinite reverse; }
+
+/* Auth — subtle grid overlay */
+.auth-grid {
+  background-image:
+    linear-gradient(to right,  rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  animation: grid-fade 8s ease-in-out infinite;
+}
+
+/* Auth — entrance animations */
+@keyframes auth-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.auth-rise         { animation: auth-rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.auth-rise-delay-1 { animation-delay: 0.05s; }
+.auth-rise-delay-2 { animation-delay: 0.12s; }
+.auth-rise-delay-3 { animation-delay: 0.20s; }
+.auth-rise-delay-4 { animation-delay: 0.28s; }
+.auth-rise-delay-5 { animation-delay: 0.36s; }
+.auth-rise-delay-6 { animation-delay: 0.44s; }
+.auth-rise-delay-7 { animation-delay: 0.52s; }
+
+/* Auth — shimmer gradient on headline */
+@keyframes auth-shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.auth-shimmer {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #93c5fd 25%,
+    #c4b5fd 50%,
+    #93c5fd 75%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: auth-shimmer 6s linear infinite;
+}
+
+/* Auth — error shake */
+@keyframes auth-shake {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-6px); }
+  40%      { transform: translateX(6px); }
+  60%      { transform: translateX(-4px); }
+  80%      { transform: translateX(4px); }
+}
+.auth-shake { animation: auth-shake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97); }
+
+/* Auth — cursor spotlight (panel left) */
+.auth-spotlight {
+  background: radial-gradient(
+    600px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(147, 197, 253, 0.12),
+    transparent 40%
+  );
+  transition: background 0.15s ease-out;
+}
+
+/* Auth — button shine sweep */
+@keyframes auth-shine {
+  0%   { transform: translateX(-120%) skewX(-20deg); }
+  100% { transform: translateX(220%)  skewX(-20deg); }
+}
+.auth-btn-shine::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+}
+.auth-btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 100%
+  );
+  transform: translateX(-120%) skewX(-20deg);
+  pointer-events: none;
+}
+.auth-btn-shine:hover::after {
+  animation: auth-shine 0.9s ease-out;
+}
+
+/* Auth — logo conic ring */
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.auth-logo-ring {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(13, 116, 206, 0.7) 60deg,
+    rgba(139, 92, 246, 0.7) 180deg,
+    rgba(232, 121, 249, 0.7) 270deg,
+    transparent 360deg
+  );
+  animation: spin-slow 6s linear infinite;
+}
+
+/* Auth — floating particles */
+@keyframes float-up {
+  0%   { transform: translateY(0)      scale(1);   opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.8; }
+  100% { transform: translateY(-120vh) scale(0.6); opacity: 0; }
+}
+.auth-particle {
+  position: absolute;
+  bottom: -10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 8px rgba(147, 197, 253, 0.7);
+  animation: float-up linear infinite;
+}
+
+/* Auth — feature item active pulse */
+@keyframes feature-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(147, 197, 253, 0); }
+  50%      { box-shadow: 0 0 0 6px rgba(147, 197, 253, 0.15); }
+}
+.feature-active {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+.feature-active .feature-icon {
+  background: linear-gradient(135deg, rgba(13, 116, 206, 0.4), rgba(139, 92, 246, 0.4));
+  border-color: rgba(255, 255, 255, 0.25);
+  animation: feature-glow 2.4s ease-in-out infinite;
+}
+
+/* Auth — floating label (input) */
+.auth-field { position: relative; }
+.auth-field label {
+  position: absolute;
+  left: 44px;
+  top: 50%;
+  transform: translateY(-50%) scale(1);
+  transform-origin: left center;
+  color: var(--text-tertiary);
+  font-size: 14.5px;
+  pointer-events: none;
+  padding: 0;
+  background: transparent;
+  transition: top 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+              color 0.18s, background-color 0.18s, padding 0.18s, left 0.18s;
+}
+.auth-field input:focus + label,
+.auth-field input:not(:placeholder-shown) + label {
+  top: 0;
+  left: 38px;
+  transform: translateY(-50%) scale(0.82);
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  padding: 0 6px;
+}
+.dark .auth-field input:focus + label,
+.dark .auth-field input:not(:placeholder-shown) + label {
+  color: #f3f4f6;
+}
+
+/* Auth — animated number tick */
+@keyframes tick-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.auth-tick { animation: tick-in 0.4s ease-out both; }
+
+/* ===== Premium easing system =====
+ * --ease-spring: physics-based spring with subtle overshoot (~12%) then settling
+ * --ease-luxe:   refined deceleration, the bread-and-butter
+ * --ease-luxe-out: slower exit ramp for hover-outs
+ */
+:root {
+  --ease-spring: linear(
+    0, 0.012, 0.05 3.6%, 0.166, 0.323, 0.51, 0.715,
+    0.918, 1.071, 1.121, 1.143, 1.137, 1.107, 1.063,
+    1.022, 0.992, 0.974, 0.969, 0.974, 0.984, 0.997, 1
+  );
+  --ease-luxe: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-luxe-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Sidebar — luxury micro-animations */
+@keyframes sidebar-item-enter {
+  from { opacity: 0; transform: translate3d(-6px, 4px, 0) scale(0.97); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0)      scale(1);    }
+}
+
+/* The active pill breathes — barely perceptible, like ambient light */
+@keyframes sidebar-pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 22px -10px rgba(13, 116, 206, 0.28),
+                inset 0 0 0 0 rgba(99, 102, 241, 0);
+  }
+  50% {
+    box-shadow: 0 0 34px -6px rgba(13, 116, 206, 0.42),
+                inset 0 0 0 1px rgba(99, 102, 241, 0.08);
+  }
+}
+
+/* Logo breath — synchronized with breath cadence (~10 bpm) */
+@keyframes sidebar-bob {
+  0%, 100% { transform: translateY(0)    scale(1); }
+  50%      { transform: translateY(-1.5px) scale(1.01); }
+}
+
+/* Background blobs drift — too slow to "see" moving */
+@keyframes sidebar-blob-drift {
+  0%   { transform: translate3d(0, 0, 0)         scale(1);    }
+  33%  { transform: translate3d(5%, -3%, 0)      scale(1.04); }
+  66%  { transform: translate3d(-3%, 4%, 0)      scale(0.97); }
+  100% { transform: translate3d(0, 0, 0)         scale(1);    }
+}
+
+/* Light streak crosses the top edge — a heartbeat for the workspace */
+@keyframes sidebar-shimmer-line {
+  0%   { transform: translateX(-100%); opacity: 0; }
+  20%  { opacity: 0.55; }
+  80%  { opacity: 0.55; }
+  100% { transform: translateX(100%);  opacity: 0; }
+}
+
+/* Avatar presence — soft expanding ring */
+@keyframes sidebar-ring-ripple {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  70%  { opacity: 0; }
+  100% { transform: scale(2.2); opacity: 0;   }
+}
+
+.sidebar-item-enter {
+  animation: sidebar-item-enter 0.6s var(--ease-luxe) both;
+}
+.sidebar-pulse-glow   { animation: sidebar-pulse-glow 4.5s ease-in-out infinite; }
+.sidebar-bob          { animation: sidebar-bob 6s ease-in-out infinite; }
+.sidebar-blob-a       { animation: sidebar-blob-drift 38s ease-in-out infinite; }
+.sidebar-blob-b       { animation: sidebar-blob-drift 46s ease-in-out infinite reverse; }
+.sidebar-shimmer      { animation: sidebar-shimmer-line 9s ease-in-out infinite; }
+.sidebar-ring-ripple  { animation: sidebar-ring-ripple 3.5s ease-out infinite; }
+
+/* Cursor-following ambient glow — soft light spot that tracks the pointer */
+.sidebar-cursor-glow {
+  background: radial-gradient(
+    260px circle at var(--cursor-x, -200px) var(--cursor-y, -200px),
+    rgba(99, 102, 241, 0.07),
+    rgba(99, 102, 241, 0.02) 35%,
+    transparent 60%
+  );
+  transition: background 0.22s ease-out;
+}
+.dark .sidebar-cursor-glow {
+  background: radial-gradient(
+    260px circle at var(--cursor-x, -200px) var(--cursor-y, -200px),
+    rgba(99, 102, 241, 0.12),
+    rgba(99, 102, 241, 0.03) 35%,
+    transparent 60%
+  );
+}
+
+/* Easing utility classes */
+.ease-luxe       { transition-timing-function: var(--ease-luxe); }
+.ease-luxe-out   { transition-timing-function: var(--ease-luxe-out); }
+.ease-spring     { transition-timing-function: var(--ease-spring); }
+
+/* Hover surfaces with asymmetric in/out (fast in, slow grace out) */
+.sidebar-hover-grace {
+  transition-property: background-color, color, border-color;
+  transition-duration: 380ms;
+  transition-timing-function: var(--ease-luxe-out);
+}
+.sidebar-hover-grace:hover {
+  transition-duration: 180ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-item-enter,
+  .sidebar-pulse-glow,
+  .sidebar-bob,
+  .sidebar-blob-a,
+  .sidebar-blob-b,
+  .sidebar-shimmer,
+  .sidebar-ring-ripple {
+    animation: none !important;
+  }
+  .sidebar-cursor-glow { background: none !important; }
+}
+
+/* ===== Dashboard — luxury micro-animations ===== */
+
+/* Card rise — staggered entrance for widgets */
+@keyframes dash-rise {
+  from { opacity: 0; transform: translate3d(0, 10px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+.dash-rise            { animation: dash-rise 0.55s var(--ease-luxe) both; }
+.dash-rise-delay-1    { animation-delay: 0.06s; }
+.dash-rise-delay-2    { animation-delay: 0.12s; }
+.dash-rise-delay-3    { animation-delay: 0.18s; }
+.dash-rise-delay-4    { animation-delay: 0.24s; }
+.dash-rise-delay-5    { animation-delay: 0.30s; }
+.dash-rise-delay-6    { animation-delay: 0.36s; }
+.dash-rise-delay-7    { animation-delay: 0.42s; }
+.dash-rise-delay-8    { animation-delay: 0.48s; }
+
+/* Value tick — for stat numbers appearing */
+@keyframes dash-tick {
+  from { opacity: 0; transform: translateY(4px); filter: blur(2px); }
+  to   { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+.dash-tick { animation: dash-tick 0.5s var(--ease-luxe) both; }
+
+/* Hover lift — used on stat cards and widget cards */
+.dash-lift {
+  transition: transform 380ms var(--ease-luxe-out),
+              border-color 260ms var(--ease-luxe-out),
+              box-shadow 380ms var(--ease-luxe-out);
+  will-change: transform;
+}
+.dash-lift:hover {
+  transform: translate3d(0, -2px, 0);
+  transition-duration: 220ms;
+  box-shadow: 0 12px 32px -18px rgba(0, 0, 0, 0.18),
+              0 2px 6px -2px rgba(0, 0, 0, 0.06);
+}
+.dark .dash-lift:hover {
+  box-shadow: 0 14px 38px -16px rgba(0, 0, 0, 0.6),
+              0 2px 6px -2px rgba(0, 0, 0, 0.35);
+}
+
+/* Decorative gradient blob inside stat cards — uses --accent var per card */
+.dash-stat-blob {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  border-radius: 9999px;
+  filter: blur(40px);
+  opacity: 0.18;
+  pointer-events: none;
+  background: var(--accent, currentColor);
+  transition: opacity 380ms var(--ease-luxe-out), transform 600ms var(--ease-luxe);
+}
+.dash-lift:hover .dash-stat-blob {
+  opacity: 0.28;
+  transform: scale(1.08);
+}
+.dark .dash-stat-blob { opacity: 0.14; }
+.dark .dash-lift:hover .dash-stat-blob { opacity: 0.22; }
+
+/* Top accent stripe — thin, uses --accent */
+.dash-stat-stripe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent, currentColor) 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 320ms var(--ease-luxe-out);
+}
+.dash-lift:hover .dash-stat-stripe { opacity: 0.8; }
+
+/* Refresh button — soft shine on hover */
+@keyframes dash-shine {
+  0%   { transform: translateX(-120%) skewX(-20deg); }
+  100% { transform: translateX(220%)  skewX(-20deg); }
+}
+.dash-btn-shine { position: relative; overflow: hidden; }
+.dash-btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 100%);
+  transform: translateX(-120%) skewX(-20deg);
+  pointer-events: none;
+}
+.dark .dash-btn-shine::after {
+  background: linear-gradient(100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%);
+}
+.dash-btn-shine:hover::after { animation: dash-shine 0.9s var(--ease-luxe-out); }
+
+/* Live indicator — soft pulse dot */
+@keyframes dash-pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.45); }
+  70%      { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+}
+.dash-live-dot { animation: dash-pulse-dot 2.2s ease-out infinite; }
+
+/* Loading skeleton shimmer */
+@keyframes dash-skeleton-shimmer {
+  0%   { background-position: -400% 0; }
+  100% { background-position: 400% 0; }
+}
+.dash-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary) 0%,
+    var(--surface-hover) 50%,
+    var(--bg-tertiary) 100%
+  );
+  background-size: 400% 100%;
+  animation: dash-skeleton-shimmer 1.6s linear infinite;
+  border-radius: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dash-rise,
+  .dash-tick,
+  .dash-live-dot,
+  .dash-skeleton,
+  .dash-btn-shine::after {
+    animation: none !important;
+  }
+  .dash-lift:hover { transform: none; }
+}
+
+/* Command palette — entrance animations */
+@keyframes cmd-rise {
+  from { opacity: 0; transform: translateY(-10px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes cmd-backdrop-rise {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.cmd-rise          { animation: cmd-rise 0.18s cubic-bezier(0.22, 1, 0.36, 1); }
+.cmd-backdrop-rise { animation: cmd-backdrop-rise 0.15s ease-out; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob-1,
+  .aurora-blob-2,
+  .aurora-blob-3,
+  .auth-grid,
+  .auth-shimmer,
+  .auth-particle,
+  .auth-logo-ring,
+  .feature-active .feature-icon {
+    animation: none !important;
+  }
+}

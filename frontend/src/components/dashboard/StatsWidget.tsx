@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowUpRight, ArrowDownRight, TrendingUp, Users, CreditCard, Activity, Minus } from 'lucide-react';
+import type { CSSProperties } from 'react';
 import { formatCurrency } from '@/lib/utils';
 
 interface StatItemProps {
@@ -12,37 +13,68 @@ interface StatItemProps {
   icon: React.ElementType;
   iconBg: string;
   iconColor: string;
+  accent: string;
+  delayClass?: string;
 }
 
-function StatItem({ label, value, change, prefix = '', suffix = '', icon: Icon, iconBg, iconColor }: StatItemProps) {
+function StatItem({
+  label,
+  value,
+  change,
+  prefix = '',
+  suffix = '',
+  icon: Icon,
+  iconBg,
+  iconColor,
+  accent,
+  delayClass,
+}: StatItemProps) {
+  const positive = (change ?? 0) >= 0;
+
   return (
-    <div className="relative overflow-hidden rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-primary)] p-5">
-      <div className="flex items-start justify-between">
-        <div>
-          <p className="text-[13px] font-medium text-[var(--text-tertiary)] mb-1">{label}</p>
-          <p className="text-[28px] font-bold text-[var(--text-primary)] tracking-tight">
+    <div
+      style={{ '--accent': accent } as CSSProperties}
+      className={`group relative overflow-hidden rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-primary)] p-5 dash-lift dash-rise ${delayClass ?? ''}`}
+    >
+      <span className="dash-stat-stripe" />
+      <span className="dash-stat-blob" />
+
+      <div className="relative flex items-start justify-between gap-4">
+        <div className="min-w-0 flex-1">
+          <p className="text-[12.5px] font-medium uppercase tracking-[0.04em] text-[var(--text-tertiary)] mb-1.5">
+            {label}
+          </p>
+          <p className="text-[30px] leading-[1.05] font-bold text-[var(--text-primary)] tracking-tight dash-tick">
             {prefix}{value}{suffix}
           </p>
           {change !== undefined && change !== null ? (
-            <div className={`flex items-center gap-1 mt-2 ${change >= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-600 dark:text-red-400'}`}>
-              {change >= 0 ? (
-                <ArrowUpRight className="w-4 h-4" />
+            <div
+              className={`inline-flex items-center gap-1 mt-3 px-2 py-0.5 rounded-full text-[12px] font-semibold ${
+                positive
+                  ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
+                  : 'bg-red-500/10 text-red-600 dark:text-red-400'
+              }`}
+            >
+              {positive ? (
+                <ArrowUpRight className="w-3.5 h-3.5" />
               ) : (
-                <ArrowDownRight className="w-4 h-4" />
+                <ArrowDownRight className="w-3.5 h-3.5" />
               )}
-              <span className="text-[13px] font-semibold">
-                {change >= 0 ? '+' : ''}{change.toFixed(1)}%
+              <span>{positive ? '+' : ''}{change.toFixed(1)}%</span>
+              <span className="text-[11.5px] font-medium text-[var(--text-tertiary)] ml-1">
+                vs mes anterior
               </span>
-              <span className="text-[13px] text-[var(--text-tertiary)] ml-1">vs mes anterior</span>
             </div>
           ) : (
-            <div className="flex items-center gap-1 mt-2 text-[var(--text-tertiary)]">
-              <Minus className="w-4 h-4" />
-              <span className="text-[13px]">Sin datos históricos</span>
+            <div className="inline-flex items-center gap-1 mt-3 px-2 py-0.5 rounded-full bg-[var(--bg-tertiary)] text-[12px] text-[var(--text-tertiary)]">
+              <Minus className="w-3.5 h-3.5" />
+              <span>Sin datos históricos</span>
             </div>
           )}
         </div>
-        <div className={`w-12 h-12 rounded-xl ${iconBg} dark:opacity-90 flex items-center justify-center`}>
+        <div
+          className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ring-1 ring-inset ring-black/[0.04] dark:ring-white/[0.06] transition-transform duration-300 ease-luxe group-hover:scale-[1.05] group-hover:-rotate-[3deg] ${iconBg} dark:opacity-95`}
+        >
           <Icon className={`w-6 h-6 ${iconColor}`} />
         </div>
       </div>
@@ -88,6 +120,8 @@ export default function StatsWidget({
         icon={CreditCard}
         iconBg="bg-emerald-100"
         iconColor="text-emerald-600"
+        accent="#10b981"
+        delayClass="dash-rise-delay-1"
       />
       <StatItem
         label="Clientes Activos"
@@ -96,6 +130,8 @@ export default function StatsWidget({
         icon={Users}
         iconBg="bg-blue-100"
         iconColor="text-blue-600"
+        accent="#3b82f6"
+        delayClass="dash-rise-delay-2"
       />
       <StatItem
         label="ARR Proyección Anual"
@@ -104,6 +140,8 @@ export default function StatsWidget({
         icon={TrendingUp}
         iconBg="bg-violet-100"
         iconColor="text-violet-600"
+        accent="#8b5cf6"
+        delayClass="dash-rise-delay-3"
       />
       <StatItem
         label="Suscripciones Activas"
@@ -112,6 +150,8 @@ export default function StatsWidget({
         icon={Activity}
         iconBg="bg-amber-100"
         iconColor="text-amber-600"
+        accent="#f59e0b"
+        delayClass="dash-rise-delay-4"
       />
       <StatItem
         label="Churn Rate"
@@ -121,6 +161,8 @@ export default function StatsWidget({
         icon={ArrowDownRight}
         iconBg="bg-rose-100"
         iconColor="text-rose-600"
+        accent="#f43f5e"
+        delayClass="dash-rise-delay-5"
       />
       <StatItem
         label="Ingresos 30 días"
@@ -129,6 +171,8 @@ export default function StatsWidget({
         icon={CreditCard}
         iconBg="bg-cyan-100"
         iconColor="text-cyan-600"
+        accent="#06b6d4"
+        delayClass="dash-rise-delay-6"
       />
     </div>
   );

@@ -14,6 +14,9 @@ import {
   Filter,
   CalendarDays,
   CheckSquare,
+  List,
+  LayoutGrid,
+  Clock,
 } from 'lucide-react';
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isSameDay, addMonths, subMonths, startOfWeek, endOfWeek, isToday, parseISO } from 'date-fns';
 import { es } from 'date-fns/locale';
@@ -58,6 +61,7 @@ export default function CalendarioPage() {
   const [eventos, setEventos] = useState<CalendarioEvento[]>([]);
   const [stats, setStats] = useState({ hoy: 0, pendientesCarlos: 0, pendientesSilviu: 0, completadosEsteMes: 0 });
   const [filtro, setFiltro] = useState<'todos' | 'carlos' | 'silviu'>('todos');
+  const [vista, setVista] = useState<'calendario' | 'lista'>('calendario');
   const [modalAbierto, setModalAbierto] = useState(false);
   const [modalEliminar, setModalEliminar] = useState<CalendarioEvento | null>(null);
   const [eventoEditando, setEventoEditando] = useState<CalendarioEvento | null>(null);
@@ -173,8 +177,36 @@ export default function CalendarioPage() {
     return eventos.filter(e => isSameDay(parseISO(e.fechaInicio), dia));
   };
 
+  const eventosAgrupados = useMemo(() => {
+    const ordenados = [...eventos].sort(
+      (a, b) => parseISO(a.fechaInicio).getTime() - parseISO(b.fechaInicio).getTime()
+    );
+    const grupos = new Map<string, CalendarioEvento[]>();
+    for (const ev of ordenados) {
+      const key = format(parseISO(ev.fechaInicio), 'yyyy-MM-dd');
+      const lista = grupos.get(key) || [];
+      lista.push(ev);
+      grupos.set(key, lista);
+    }
+    return Array.from(grupos.entries()).map(([key, items]) => ({
+      fecha: parseISO(key + 'T00:00:00'),
+      eventos: items,
+    }));
+  }, [eventos]);
+
+  const toggleCompletado = async (evento: CalendarioEvento, e: React.MouseEvent) => {
+    e.stopPropagation();
+    try {
+      await apiClient.updateCalendarioEvento(evento.id, { completado: !evento.completado });
+      fetchEventos();
+      fetchStats();
+    } catch (error) {
+      console.error('Error actualizando evento:', error);
+    }
+  };
+
   return (
-    <div className="space-y-6 w-full h-[calc(100vh-120px)]">
+    <div className="flex flex-col gap-6 w-full xl:flex-1 xl:min-h-0">
       {/* Header */}
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
         <div>
@@ -250,9 +282,9 @@ export default function CalendarioPage() {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col xl:flex-row gap-6 h-full">
+      <div className="flex flex-col xl:flex-row gap-6 xl:flex-1 xl:min-h-0">
         {/* Sidebar */}
-        <div className="w-full xl:w-80 space-y-6">
+        <div className="w-full xl:w-80 space-y-6 xl:overflow-y-auto xl:pr-2">
           {/* Quick Add Form */}
           <div className="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-2xl p-5">
             <h3 className="text-[16px] font-semibold text-[var(--text-primary)] mb-4 flex items-center gap-2">
@@ -346,7 +378,7 @@ export default function CalendarioPage() {
         </div>
 
         {/* Calendar Grid */}
-        <div className="flex-1 bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-2xl overflow-hidden">
+        <div className="xl:flex-1 xl:min-h-0 min-h-[500px] bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-2xl overflow-hidden flex flex-col">
           {/* Calendar Header */}
           <div className="px-6 py-4 border-b border-[var(--border-primary)] flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -374,8 +406,35 @@ export default function CalendarioPage() {
                 </button>
               </div>
             </div>
+
+            <div className="inline-flex items-center gap-1 p-1 bg-[var(--bg-tertiary)] rounded-xl">
+              <button
+                onClick={() => setVista('calendario')}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] font-medium transition-all ${
+                  vista === 'calendario'
+                    ? 'bg-[var(--bg-secondary)] text-[var(--text-primary)] shadow-sm'
+                    : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
+                }`}
+              >
+                <LayoutGrid className="w-4 h-4" />
+                Calendario
+              </button>
+              <button
+                onClick={() => setVista('lista')}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[13px] font-medium transition-all ${
+                  vista === 'lista'
+                    ? 'bg-[var(--bg-secondary)] text-[var(--text-primary)] shadow-sm'
+                    : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
+                }`}
+              >
+                <List className="w-4 h-4" />
+                Lista
+              </button>
+            </div>
           </div>
 
+          {vista === 'calendario' && (
+          <>
           {/* Days Header */}
           <div className="grid grid-cols-7 border-b border-[var(--border-primary)]">
             {diasSemana.map((dia) => (
@@ -386,7 +445,7 @@ export default function CalendarioPage() {
           </div>
 
           {/* Days Grid */}
-          <div className="grid grid-cols-7 flex-1">
+          <div className="grid grid-cols-7 grid-rows-[repeat(6,1fr)] flex-1 overflow-y-auto">
             {diasDelMes.map((dia, idx) => {
               const esHoy = isToday(dia);
               const esMesActual = isSameMonth(dia, fechaActual);
@@ -396,7 +455,7 @@ export default function CalendarioPage() {
                 <div
                   key={idx}
                   onClick={() => abrirModalCrear(dia)}
-                  className={`min-h-[100px] p-2 border-b border-r border-[var(--border-primary)] cursor-pointer transition-colors hover:bg-[var(--bg-tertiary)]/50 ${
+                  className={`min-h-0 p-2 border-b border-r border-[var(--border-primary)] cursor-pointer transition-colors hover:bg-[var(--bg-tertiary)]/50 overflow-hidden ${
                     !esMesActual ? 'bg-[var(--bg-tertiary)]/30' : ''
                   }`}
                 >
@@ -435,6 +494,113 @@ export default function CalendarioPage() {
               );
             })}
           </div>
+          </>
+          )}
+
+          {vista === 'lista' && (
+            <div className="flex-1 overflow-y-auto">
+              {eventosAgrupados.length === 0 ? (
+                <div className="flex flex-col items-center justify-center h-full py-16 gap-3">
+                  <div className="w-14 h-14 rounded-2xl bg-[var(--bg-tertiary)] flex items-center justify-center">
+                    <CalendarDays className="w-7 h-7 text-[var(--text-tertiary)]" />
+                  </div>
+                  <p className="text-[14px] text-[var(--text-secondary)]">
+                    No hay eventos este mes
+                  </p>
+                  <button
+                    onClick={() => abrirModalCrear()}
+                    className="text-[13px] text-violet-600 hover:text-violet-700 font-medium"
+                  >
+                    Crear evento
+                  </button>
+                </div>
+              ) : (
+                <div className="divide-y divide-[var(--border-primary)]">
+                  {eventosAgrupados.map((grupo) => {
+                    const esHoyGrupo = isToday(grupo.fecha);
+                    return (
+                      <div key={grupo.fecha.toISOString()} className="px-6 py-4">
+                        <div className="flex items-baseline gap-3 mb-3">
+                          <div className={`text-[13px] font-semibold uppercase tracking-wide ${
+                            esHoyGrupo ? 'text-violet-600' : 'text-[var(--text-tertiary)]'
+                          }`}>
+                            {esHoyGrupo ? 'Hoy · ' : ''}{format(grupo.fecha, "EEEE d 'de' MMMM", { locale: es })}
+                          </div>
+                          <span className="text-[12px] text-[var(--text-tertiary)]">
+                            {grupo.eventos.length} {grupo.eventos.length === 1 ? 'evento' : 'eventos'}
+                          </span>
+                        </div>
+                        <div className="space-y-2">
+                          {grupo.eventos.map((evento) => {
+                            const asignado = ASIGNADOS.find(a => a.value === evento.asignadoA);
+                            return (
+                              <div
+                                key={evento.id}
+                                onClick={() => abrirModalEditar(evento)}
+                                className={`group flex items-center gap-3 px-4 py-3 rounded-xl border border-[var(--border-primary)] bg-[var(--bg-primary)] cursor-pointer transition-all hover:shadow-sm hover:border-violet-200 ${
+                                  evento.completado ? 'opacity-60' : ''
+                                }`}
+                              >
+                                <button
+                                  onClick={(e) => toggleCompletado(evento, e)}
+                                  className={`flex-shrink-0 w-5 h-5 rounded-md border-2 flex items-center justify-center transition-all ${
+                                    evento.completado
+                                      ? 'bg-emerald-500 border-emerald-500'
+                                      : 'border-[var(--border-primary)] hover:border-violet-400'
+                                  }`}
+                                  title={evento.completado ? 'Marcar como pendiente' : 'Marcar como completado'}
+                                >
+                                  {evento.completado && <CheckSquare className="w-3 h-3 text-white" />}
+                                </button>
+
+                                <div className={`flex-shrink-0 w-1 h-10 rounded-full ${COLORES[evento.color].bg}`} />
+
+                                <div className="flex-shrink-0 flex items-center gap-1.5 min-w-[80px] text-[13px] text-[var(--text-secondary)]">
+                                  <Clock className="w-3.5 h-3.5" />
+                                  {evento.todoElDia ? 'Todo el día' : format(parseISO(evento.fechaInicio), 'HH:mm')}
+                                </div>
+
+                                <div className="flex-1 min-w-0">
+                                  <div className={`text-[14px] font-medium text-[var(--text-primary)] truncate ${
+                                    evento.completado ? 'line-through' : ''
+                                  }`}>
+                                    {evento.titulo}
+                                  </div>
+                                  {evento.descripcion && (
+                                    <div className="text-[12px] text-[var(--text-tertiary)] truncate">
+                                      {evento.descripcion}
+                                    </div>
+                                  )}
+                                </div>
+
+                                {asignado && (
+                                  <div className={`flex-shrink-0 flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[12px] font-medium bg-[var(--bg-tertiary)] ${asignado.color}`}>
+                                    <asignado.icon className="w-3 h-3" />
+                                    {asignado.label}
+                                  </div>
+                                )}
+
+                                <button
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setModalEliminar(evento);
+                                  }}
+                                  className="flex-shrink-0 p-1.5 rounded-lg text-[var(--text-tertiary)] hover:text-red-600 hover:bg-red-50 opacity-0 group-hover:opacity-100 transition-all"
+                                  title="Eliminar"
+                                >
+                                  <Trash2 className="w-4 h-4" />
+                                </button>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
 

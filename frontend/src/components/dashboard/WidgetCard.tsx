@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { LucideIcon } from 'lucide-react';
+import { ChevronRight, LucideIcon } from 'lucide-react';
 
 interface WidgetCardProps {
   title: string;
@@ -29,27 +29,37 @@ export default function WidgetCard({
 }: WidgetCardProps) {
   return (
     <div className={cn(
-      'bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-2xl overflow-hidden',
+      'group relative bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-2xl overflow-hidden dash-lift',
       className
     )}>
-      <div className="px-5 py-4 border-b border-[var(--border-primary)] flex items-center justify-between">
-        <div className="flex items-center gap-3">
+      <div className="px-5 py-4 border-b border-[var(--border-secondary)] flex items-center justify-between">
+        <div className="flex items-center gap-3 min-w-0">
           {Icon && (
-            <div className={cn('w-10 h-10 rounded-xl flex items-center justify-center', iconBg)}>
+            <div
+              className={cn(
+                'w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ring-1 ring-inset ring-black/[0.03] dark:ring-white/[0.05] transition-transform duration-300 ease-luxe group-hover:scale-[1.04]',
+                iconBg,
+              )}
+            >
               <Icon className={cn('w-5 h-5', iconColor)} />
             </div>
           )}
-          <div>
-            <h3 className="text-[15px] font-semibold text-[var(--text-primary)]">{title}</h3>
-            {subtitle && <p className="text-[13px] text-[var(--text-tertiary)]">{subtitle}</p>}
+          <div className="min-w-0">
+            <h3 className="text-[15px] font-semibold text-[var(--text-primary)] tracking-tight truncate">
+              {title}
+            </h3>
+            {subtitle && (
+              <p className="text-[12.5px] text-[var(--text-tertiary)] truncate">{subtitle}</p>
+            )}
           </div>
         </div>
         {action && (
           <button
             onClick={action.onClick}
-            className="text-sm font-medium text-expo-cobalt dark:text-blue-400 hover:underline"
+            className="group/btn inline-flex items-center gap-1 text-[13px] font-medium text-[var(--expo-cobalt)] dark:text-blue-400 hover:gap-1.5 transition-all"
           >
             {action.label}
+            <ChevronRight className="w-3.5 h-3.5 transition-transform duration-300 ease-luxe group-hover/btn:translate-x-0.5" />
           </button>
         )}
       </div>

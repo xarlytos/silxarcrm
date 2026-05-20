@@ -1,28 +1,48 @@
 'use client';
 
 import ChatIA from '@/components/dashboard/ChatIA';
-import { Sparkles, Lightbulb, BarChart3, Users, CreditCard } from 'lucide-react';
+import { Sparkles, BarChart3, Users, Mail, Phone, MessageSquare, CalendarDays, Zap } from 'lucide-react';
 
 const features = [
   {
-    icon: <BarChart3 className="w-5 h-5" />,
-    title: 'Análisis de métricas',
-    description: 'Pregunta sobre MRR, churn, crecimiento'
-  },
-  {
     icon: <Users className="w-5 h-5" />,
-    title: 'Datos de clientes',
-    description: 'Busca información específica de clientes'
+    title: 'Leads & Pipeline',
+    description: 'Estados, prioridades, asignaciones, conversiones',
   },
   {
-    icon: <CreditCard className="w-5 h-5" />,
-    title: 'Análisis de pagos',
-    description: 'Consulta ingresos y transacciones'
+    icon: <Mail className="w-5 h-5" />,
+    title: 'Email Outreach',
+    description: 'Campañas, aperturas, clicks, tasas de conversión',
   },
   {
-    icon: <Lightbulb className="w-5 h-5" />,
-    title: 'Recomendaciones',
-    description: 'Obtén insights basados en tus datos'
+    icon: <Phone className="w-5 h-5" />,
+    title: 'Centro de Llamadas',
+    description: 'Llamadas realizadas, duración, tasa de contacto',
+  },
+  {
+    icon: <MessageSquare className="w-5 h-5" />,
+    title: 'WhatsApp',
+    description: 'Envíos, plantillas, engagement',
+  },
+  {
+    icon: <BarChart3 className="w-5 h-5" />,
+    title: 'Métricas SaaS',
+    description: 'MRR, ARR, churn, ingresos, suscripciones',
+  },
+  {
+    icon: <CalendarDays className="w-5 h-5" />,
+    title: 'Calendario',
+    description: 'Eventos próximos, seguimientos, reuniones',
+  },
+  {
+    icon: <Zap className="w-5 h-5" />,
+    title: 'Insights Proactivos',
+    description: 'Alertas, recomendaciones, predicciones',
+  },
+  {
+    icon: <Sparkles className="w-5 h-5" />,
+    title: 'Consultas SQL',
+    description: 'Preguntas avanzadas con datos en bruto',
   },
 ];
 
@@ -40,7 +60,7 @@ export default function IAPage() {
               Asistente IA
             </h1>
             <p className="text-[15px] text-[var(--text-secondary)]">
-              Consulta tus datos con lenguaje natural
+              Analista inteligente con acceso a todo tu CRM
             </p>
           </div>
         </div>

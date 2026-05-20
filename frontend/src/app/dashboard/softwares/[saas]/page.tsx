@@ -8,7 +8,7 @@ import { Cliente, Pagination } from '@/types';
 import { formatCurrency } from '@/lib/utils';
 import ClientTable from '@/components/dashboard/ClientTable';
 import EventFeed from '@/components/dashboard/EventFeed';
-import { Layers, ArrowLeft, CreditCard, Users, Activity, TrendingUp, ArrowUpRight, ArrowDownRight, Minus, RefreshCw } from 'lucide-react';
+import { Layers, ArrowLeft, CreditCard, Users, Activity, TrendingUp, ArrowUpRight, ArrowDownRight, Minus, RefreshCw, Plus } from 'lucide-react';
 
 interface StatCardProps {
   title: string;
@@ -115,6 +115,13 @@ export default function SaasDetailPage() {
           </div>
         </div>
         <div className="flex items-center gap-3">
+          <Link
+            href={`/dashboard/softwares/${saas}/buscar-leads`}
+            className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-violet-500 to-purple-600 text-white rounded-xl text-[14px] font-medium hover:shadow-lg hover:shadow-violet-500/25 transition-all"
+          >
+            <Plus className="w-4 h-4" />
+            Obtener leads
+          </Link>
           <button
             onClick={() => fetchData(true)}
             disabled={refreshing}
