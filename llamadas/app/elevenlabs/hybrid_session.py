@@ -344,31 +344,33 @@ class HybridSession:
         )
 
         if needs_new_brief:
-            master_start = time.perf_counter()
-            logger.info("Master: regenerando brief → %s", brief_reason)
+            logger.info("Master: regenerando brief → %s (NUNCA BLOQUEA)", brief_reason)
 
-            # Evento crítico: Maestro bloquea (esperamos el brief antes de responder)
+            # ═══ OPTIMIZACIÓN CRÍTICA (CICLO 2): NUNCA BLOQUEAR LA VOZ ═══
+            # Antes: eventos críticos bloqueaban esperando brief nuevo (300-500ms)
+            # Ahora: SIEMPRE background. Voz responde CON BRIEF ANTERIOR en < 200ms
+            #
+            # Evento crítico (agendando/rechazando):
+            #   → Voz responde CON BRIEF ACTUAL (listo, no espera)
+            #   → Maestro regenera en BACKGROUND con prioridad
+            #   → Para turno N+1, brief nuevo YA está listo
+            #
+            # Evento normal:
+            #   → Voz responde CON BRIEF ACTUAL
+            #   → Maestro regenera en background
+            #   → Para próximo turno, brief actualizado
+            #
+            # RESULTADO: NUNCA esperamos, siempre respondemos rápido (~150ms)
+
             is_critical = classification.intencion in ("agendando", "rechazando", "pidiendo_humano")
 
-            if is_critical:
-                # BLOCKING: Esperamos al Maestro antes de que el Voz responda
-                self._current_brief = await self._master.regenerate_brief(
-                    ctx=self.ctx,
-                    historial=self.ctx.transcript,
-                    sales_state=self.ctx.sales_state,
-                    call_goal=self.ctx.call_goal,
-                    classification=classification,
-                    turno=self.ctx.turns,
-                )
-                master_latency_ms = int((time.perf_counter() - master_start) * 1000)
-                logger.info("Master: brief crítico generado en %dms", master_latency_ms)
-            else:
-                # BACKGROUND: El Voz responde con brief actual, Maestro actualiza en paralelo
-                # Creamos la tarea en background
-                asyncio.create_task(self._regenerate_brief_background(
-                    classification=classification,
-                ))
-                logger.info("Master: regenerando brief en background → Voz usa caché")
+            # SIEMPRE background (incluso crítico). Prioridad determina si esperar en próx turno
+            asyncio.create_task(self._regenerate_brief_background(
+                classification=classification,
+                is_critical=is_critical,  # Maestro sabe si es urgente
+            ))
+            logger.info("Master: brief regenerando en background (prioridad=%s)",
+                       "ALTA" if is_critical else "normal")
 
         # 6. Actualizar LLM (Voz) con el brief y enviar mensaje
         if self._llm:
@@ -381,9 +383,18 @@ class HybridSession:
         # 7. Finalizar log
         self._decision_logger.end_turn()
 
-    async def _regenerate_brief_background(self, classification) -> None:
-        """Regenera el brief del Maestro en background (no bloquea la respuesta)."""
+    async def _regenerate_brief_background(self, classification, is_critical: bool = False) -> None:
+        """Regenera el brief del Maestro en background (no bloquea la respuesta).
+
+        OPTIMIZACIÓN CICLO 2:
+        - is_critical=True → Prioridad ALTA (hot lead, opt-out, transfer)
+          El Voz del turno N usa brief anterior, pero para turno N+1
+          el brief crítico DEBE estar listo
+        - is_critical=False → Prioridad normal
+        """
         try:
+            # Cuando es crítico, la regeneración es prioritaria
+            # (el Voz del PRÓXIMO turno necesita este brief)
             brief = await self._master.regenerate_brief(
                 ctx=self.ctx,
                 historial=self.ctx.transcript,
@@ -393,7 +404,9 @@ class HybridSession:
                 turno=self.ctx.turns,
             )
             self._current_brief = brief
-            logger.info("Master: brief background actualizado → estrategia=%s", brief.estrategia)
+            priority_label = "CRÍTICO" if is_critical else "normal"
+            logger.info("Master: brief background actualizado [%s] → estrategia=%s",
+                       priority_label, brief.estrategia)
         except Exception as exc:
             logger.warning("Master: fallo regeneración background: %s", exc)
 

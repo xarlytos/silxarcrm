@@ -103,7 +103,8 @@
       "WebFetch(domain:themazegenerator.com)",
       "Bash(grep -E \"\\(package\\\\.json|tsconfig|\\\\.ts$|\\\\.js$\\)\")",
       "Bash(grep -E \"\\(package\\\\.json|tsconfig|\\\\.tsx$|\\\\.ts$\\)\")",
-      "Bash(grep -E \"\\\\.\\(tsx|ts\\)$\")"
+      "Bash(grep -E \"\\\\.\\(tsx|ts\\)$\")",
+      "Bash(grep *)"
     ]
   }
 }

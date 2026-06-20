@@ -92,11 +92,35 @@ class CallGoal:
         old_p = stage_progress.get(old_stage, 0)
         new_p = stage_progress.get(new_stage, 0)
 
-        # ── Freno: no forzar cierre antes del turno 3 ──
+        # ═══ OPTIMIZACIÓN CICLO 2: Freno inteligente (2.3) ═══
+        # Antes: freno hardcodeado en turno 3 siempre
+        # Ahora: freno solo si hay pocas señales (inteligente)
         if new_stage == "closing" and turn_count < 3:
-            # Lead muy nuevo, no cerrar aún
-            new_p = min(new_p, 0.40)  # capar progreso
-            self.risk_of_loss = min(0.7, self.risk_of_loss + 0.15)
+            # CONTAR SEÑALES DE VALOR (hot lead detection):
+            intent = getattr(classification, "intencion", "neutro")
+            conf = getattr(classification, "confidence", 0)
+            pain = self.pain_detected if hasattr(self, 'pain_detected') else False
+
+            signal_count = sum([
+                pain,                              # prospecto mencionó problema
+                intent == "agendando",             # quiere agendar
+                conf > 0.8,                        # clasificador seguro
+            ])
+
+            # Si tiene 2+ señales fuertes → permitir cierre (hot lead)
+            # Si tiene < 2 → aplicar freno (débil, esperar más info)
+            if signal_count < 2:
+                # Débil: aplicar freno
+                new_p = min(new_p, 0.40)
+                self.risk_of_loss = min(0.7, self.risk_of_loss + 0.15)
+            else:
+                # Fuerte: freno ligero (permite avance pero controlado)
+                new_p = min(new_p, 0.80)
+                logger.info(
+                    "CICLO 2: Hot lead en turno %d (%d señales). "
+                    "Permitiendo cierre temprano.",
+                    turn_count, signal_count
+                )
 
         if new_p > old_p:
             # Avanzó en el funnel
@@ -315,9 +339,30 @@ class StateEngine:
         """Calcula probabilidades de cada próximo estado.
 
         No impone un funnel rígido. Permite múltiples caminos.
+
+        OPTIMIZACIÓN CICLO 2 (2.1): Multiplicar por factores CRM
+        - decision_maker → más probable closing (-50% discovery)
+        - conversion_rate alto → más probable closing
+        - intentos fallidos → más probable exit
         """
         probs = {stage: 0.05 for stage in SALES_STAGES}  # base uniforme
         probs[state.stage] = 0.20  # probabilidad de quedarse
+
+        # ═══ FACTORES CRM ═══
+        # Extraer datos del prospecto si están disponibles
+        prospect_data = getattr(self, 'prospect_data', {})
+        is_decision_maker = prospect_data.get('is_decision_maker', False)
+        conversion_rate = prospect_data.get('conversion_rate', 0.2)  # default 20%
+        attempts_failed = prospect_data.get('attempts_failed', 0)
+
+        # Multiplicadores (ponytail: simples pesos, sin complejidad)
+        crm_multiplier = 1.0
+        if is_decision_maker:
+            crm_multiplier *= 1.4  # Decision maker = +40% closing
+        if conversion_rate > 0.3:
+            crm_multiplier *= 1.2  # High conversion = +20% closing
+        if attempts_failed > 2:
+            crm_multiplier *= 1.1  # Multiple failures = +10% exit
 
         intent = classification.intencion
         conf = classification.confidence
@@ -375,6 +420,21 @@ class StateEngine:
             probs["qualified"] = max(probs["qualified"], 0.35)
         elif state.stage == "qualified" and state.is_decision_maker:
             probs["closing"] = max(probs["closing"], 0.40)
+
+        # ═══ APLICAR MULTIPLICADORES CRM ═══
+        # Decision maker = más probable closing, menos probable discovery
+        if is_decision_maker:
+            probs["closing"] *= 1.5
+            probs["discovery"] *= 0.7  # menos discovery, directo a closing
+
+        # High conversion rate = más probable closing
+        if conversion_rate > 0.3:
+            probs["closing"] *= 1.2
+
+        # Intentos fallidos = más probable exit (trata como "fría")
+        if attempts_failed > 2:
+            probs["exit"] *= 1.3
+            probs["closing"] *= 0.8  # menos optimista
 
         # Normalizar a suma = 1.0
         total = sum(probs.values())

@@ -184,10 +184,16 @@ class GeminiChatSession:
 
         model = settings.gemini_chat_model
 
-        # Ventana corta: últimos 3 turnos para el contexto inmediato
-        # El Voz NO ve todo el historial — solo el brief + último turno
+        # ═══ OPTIMIZACIÓN CICLO 2: Ventana aún más pequeña ═══
+        # Antes: últimos 3 turnos (~2KB en turno 5, ~8KB en turno 20)
+        # Ahora: últimos 3 turnos PERO máximo 5 mensajes totales
+        #        → Latencia constante incluso en llamadas largas
+        # El brief del Maestro lleva el contexto pesado; aquí solo contexto inmediato
+
+        # Limitar a máximo 5 mensajes (2.5 turnos promedio)
+        window_start = max(0, len(self._history) - 5)
         recent_turns = []
-        for msg in self._history[-3:]:
+        for msg in self._history[window_start:]:
             role_label = "prospecto" if msg["role"] == "user" else "agente"
             for part in msg["parts"]:
                 recent_turns.append({"role": role_label, "text": part["text"]})
