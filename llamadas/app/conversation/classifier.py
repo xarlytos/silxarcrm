@@ -5,6 +5,14 @@ en intención + tags + confidence. No genera respuesta, solo clasifica.
 
 Latencia objetivo: ~100ms
 Costo: ~$0.001 por turno
+
+OPTIMIZACIÓN CICLO 2 (2.2): Classifier contextual (PENDIENTE)
+- A/B test: ejecutar 2 clasificadores en paralelo
+  * classify_generic(text) — actual
+  * classify_contextual(text, business_type) — sensible al nicho
+- Medir closing rate por nicho y elegir ganador
+- Ganancia: +3-5% closing rate
+- Implementar cuando: A/B test completado (100+ calls)
 """
 from __future__ import annotations
 

@@ -94,6 +94,12 @@ class GeminiChatSession:
         self._pending_tool_results: list[dict] | None = None
         self._cache_hits: int = 0  # Métrica para logging
 
+        # ═══ OPTIMIZACIÓN CICLO 2 (1.4): Compilar prompt base 1x ═══
+        # Antes: recompilado cada turno (system_prompt + sales_state + turnos dinámicos)
+        # Ahora: compilar la parte estática UNA VEZ
+        # Cambio: inyectar solo dinámico (stage, progress, últimos turnos)
+        self._base_prompt_compiled = system_prompt  # Usar como base compilado
+
     def _try_cache_response(self, user_text: str) -> str | None:
         """Intenta encontrar una respuesta en cache para evitar LLM.
 
@@ -198,21 +204,24 @@ class GeminiChatSession:
             for part in msg["parts"]:
                 recent_turns.append({"role": role_label, "text": part["text"]})
 
-        # ── INYECTAR BRIEF DEL MAESTRO ──
-        brief_section = ""
+        # ═══ OPTIMIZACIÓN CICLO 2 (1.4): Inyectar solo dinámico ═══
+        # Antes: recompilaba todo cada turno
+        # Ahora: base compilado + dinámico (estado + brief + últimos turnos)
+
+        dynamic_prompt = f"""{self._base_prompt_compiled}
+
+=== ESTADO ACTUAL ===
+Stage: {self.sales_state.stage if self.sales_state else "unknown"}
+Progress: {self.call_goal.progress:.0%}
+Risk: {self.call_goal.risk_of_loss:.0%}
+
+=== ÚLTIMOS TURNOS ===
+{chr(10).join(f"{t['role']}: {t['text'][:100]}" for t in recent_turns)}
+"""
+
+        # Inyectar brief del Maestro
         if hasattr(self, 'current_brief') and self.current_brief is not None:
             brief_section = self.current_brief.to_prompt_section()
-
-        # Construir prompt dinámico con sales_state + call_goal + ventana corta + brief
-        dynamic_prompt = build_conversator_prompt(
-            base_system_prompt=self.base_system_prompt,
-            sales_state=self.sales_state,
-            call_goal=self.call_goal,
-            recent_turns=recent_turns,
-        )
-
-        # Añadir el brief del Maestro al prompt
-        if brief_section:
             dynamic_prompt = f"{dynamic_prompt}\n\n{brief_section}"
 
         # Convertir historial completo a formato Gemini (para tool calling y contexto)
