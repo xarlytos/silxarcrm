@@ -151,9 +151,33 @@ class GeminiChatSession:
 
         Si hay un brief del Maestro disponible, lo inyecta en el prompt
         para que el Voz siga las instrucciones estratégicas.
+
+        CIRCUIT BREAKER: Si Gemini está lento/caído, usar fallback response.
         """
         from google import genai
         from google.genai import types
+        from app.observability import metrics
+
+        # ═══ CIRCUIT BREAKER ═══
+        if metrics.is_circuit_breaker_active("gemini_llm"):
+            logger.warning(
+                "CIRCUIT BREAKER ACTIVO: Gemini está lento/caído. "
+                "Usando fallback response."
+            )
+            fallback_response = (
+                "Perfecto, déjame comprender mejor tu situación. "
+                "¿Cuál es el principal dolor que tienes hoy?"
+            )
+            self._current_agent_text = fallback_response
+            if self.on_text_chunk:
+                await self.on_text_chunk(fallback_response)
+            if self.on_transcript:
+                await self.on_transcript("agente", fallback_response)
+            self._history.append({
+                "role": "model",
+                "parts": [{"text": fallback_response}],
+            })
+            return
 
         if self._client is None:
             self._client = genai.Client(api_key=settings.gemini_api_key)

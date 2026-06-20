@@ -419,14 +419,37 @@ class HybridSession:
             await self._tts.send_text(text, flush=False)
 
     async def _on_llm_tool_call(self, function_calls: list[dict]) -> None:
+        """Ejecuta tool calls en PARALELO para reducir latencia.
+
+        OPTIMIZACIÓN: Si hay N tools, ejecutarlas concurrentemente.
+        - Antes (secuencial): 200ms + 300ms + 150ms = 650ms
+        - Después (paralelo): max(200, 300, 150) = 300ms
+        - Ganancia: -350ms
+        """
         tool_names = [fc["name"] for fc in function_calls]
-        logger.info("Tool calls: %s", tool_names)
+        logger.info("Tool calls (parallelizado): %s", tool_names)
         if self._tts:
             await self._tts.flush()
-        results = []
-        for fc in function_calls:
+
+        # ═══ EJECUTAR TOOLS EN PARALELO ═══
+        async def execute_single_tool(fc):
             result = await tools_mod.execute_tool(fc["name"], fc["args"], self.ctx)
-            results.append({"name": fc["name"], "result": result, "id": fc.get("id")})
+            return {"name": fc["name"], "result": result, "id": fc.get("id")}
+
+        try:
+            # Ejecutar todos los tools concurrentemente
+            results = await asyncio.gather(
+                *[execute_single_tool(fc) for fc in function_calls],
+                return_exceptions=False,
+            )
+        except Exception as exc:
+            logger.exception("Error ejecutando tools en paralelo: %s", exc)
+            # Fallback: ejecutar secuencialmente si hay error
+            results = []
+            for fc in function_calls:
+                result = await tools_mod.execute_tool(fc["name"], fc["args"], self.ctx)
+                results.append({"name": fc["name"], "result": result, "id": fc.get("id")})
+
         # Loggear tools usadas
         self._decision_logger.log_agent_response("", tools_used=tool_names)
         if self._llm:
