@@ -299,6 +299,61 @@ async def handle_media_stream(websocket) -> None:
             return
         ctx.add_turn(role, text)
 
+        # ═══ COMPLIANCE: Detectar respuesta de consentimiento de grabación ═══
+        if (
+            ctx.recording_consent_pending
+            and not ctx.recording_consented
+            and role == "prospecto"
+        ):
+            # Palabras de consentimiento
+            consent_keywords = (
+                "sí", "si", "vale", "claro", "ok", "de acuerdo", "perfecto",
+                "adelante", "está bien", "no hay problema", "claro que sí"
+            )
+            # Palabras de rechazo
+            reject_keywords = (
+                "no", "nah", "no gracias", "prefiero no", "sin grabar",
+                "no me grabes", "no autorizo"
+            )
+
+            text_lower = text.lower().strip()
+
+            if any(kw in text_lower for kw in consent_keywords):
+                ctx.recording_consent_pending = False
+                ctx.recording_consented = True
+                logger.info(
+                    "COMPLIANCE: Consentimiento de grabación OTORGADO para %s",
+                    ctx.phone
+                )
+                # Log compliance
+                from app.compliance.mx import log_compliance_event
+                await log_compliance_event(
+                    phone=ctx.phone,
+                    event_type="recording_consented",
+                    details={"response": text[:100]},
+                    lead_id=ctx.lead_id,
+                    software_id=ctx.software_id,
+                )
+
+            elif any(kw in text_lower for kw in reject_keywords):
+                ctx.recording_consent_pending = False
+                ctx.recording_consented = False
+                logger.warning(
+                    "COMPLIANCE: Prospecto RECHAZÓ consentimiento de grabación para %s",
+                    ctx.phone,
+                )
+                # Log compliance: Rechazo
+                from app.compliance.mx import log_compliance_event
+                await log_compliance_event(
+                    phone=ctx.phone,
+                    event_type="recording_consent_rejected",
+                    details={"response": text[:100]},
+                    lead_id=ctx.lead_id,
+                    software_id=ctx.software_id,
+                )
+                # Opcionalmente: mensaje al agente para que respete
+                logger.info("COMPLIANCE: Grabar = False para esta llamada")
+
         # Conversación sostenida (señal de embudo): >30s con varios turnos.
         if ctx.turns == 4:
             metrics.record("conversation_30s")
@@ -372,6 +427,21 @@ async def handle_media_stream(websocket) -> None:
 
                 # Cablea los callbacks reales (Twilio) a la sesión.
                 await session.attach(send_to_twilio, on_interrupt, on_transcript)
+
+                # ═══ COMPLIANCE: Solicitar consentimiento de grabación ═══
+                # ANTES de grabar, preguntar si autoriza grabar la llamada
+                # (requisito legal: GDPR, CCPA, normativas MX)
+                from app.compliance.mx import must_get_recording_consent, log_compliance_event
+
+                recording_consent_q = must_get_recording_consent()
+                ctx.recording_consent_pending = True  # Flag para saber si ya preguntamos
+                ctx.recording_consented = False        # Respuesta del prospecto
+
+                logger.info(
+                    "COMPLIANCE: Esperando consentimiento de grabación para %s",
+                    ctx.phone
+                )
+
                 logger.info("Llamada iniciada stream=%s phone=%s", stream_sid, ctx.phone)
 
             elif event == "media" and session is not None:

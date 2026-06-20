@@ -77,6 +77,33 @@ def is_circuit_breaker_active(component: str) -> bool:
         return _circuit_breaker_active.get(component, False)
 
 
+# ═══ RATE LIMITING DETECTION ═══
+_rate_limit_window: deque[float] = deque(maxlen=100)  # Últimos 100 intentos
+_rate_limit_threshold: int = 5  # Alertar si >5 en 1 minuto
+
+
+def record_rate_limit_hit() -> None:
+    """Registra un error 429 (rate limit) de una API."""
+    import time
+    with _lock:
+        _rate_limit_window.append(time.time())
+        _counters["rate_limit_hit"] += 1
+
+
+def get_rate_limit_count_last_minute() -> int:
+    """Retorna cuántos rate limits en el último minuto."""
+    import time
+    now = time.time()
+    with _lock:
+        recent = sum(1 for t in _rate_limit_window if now - t < 60)
+    return recent
+
+
+def is_rate_limit_critical() -> bool:
+    """Retorna True si hay demasiados rate limits (> umbral)."""
+    return get_rate_limit_count_last_minute() >= _rate_limit_threshold
+
+
 def get_component_latency_stats(component: str) -> dict:
     """Retorna estadísticas de latencia de un componente."""
     with _lock:
@@ -111,8 +138,26 @@ def snapshot() -> dict:
     with _lock:
         lat = list(_latencies)
         counters = dict(_counters)
+
     avg = round(sum(lat) / len(lat), 3) if lat else None
     p95 = round(sorted(lat)[int(len(lat) * 0.95)], 3) if len(lat) >= 20 else None
+
+    # ═══ COMPLIANCE METRICS ═══
+    # Tasa de disclosure (cuántas veces se mencionó que es IA)
+    calls_started = counters.get("call_started", 1)
+    disclosure_events = counters.get("compliance_disclosure_mentioned", 0)
+    disclosure_rate = round(disclosure_events / calls_started, 2) if calls_started > 0 else 0
+
+    # Recording consent
+    recording_consents = counters.get("compliance_recording_consented", 0)
+    recording_rate = round(recording_consents / calls_started, 2) if calls_started > 0 else 0
+
+    # Opt-outs detectados
+    optouts = counters.get("outcome_optout", 0)
+
+    # Rate limits
+    rate_limit_hits = get_rate_limit_count_last_minute()
+
     return {
         "counters": counters,
         "rates": conversion_rates(counters),
@@ -122,6 +167,15 @@ def snapshot() -> dict:
         "component_stats": {
             comp: get_component_latency_stats(comp)
             for comp in _component_latencies
+        },
+        "compliance": {
+            "disclosure_rate": disclosure_rate,  # % de calls que mencionan IA
+            "recording_consent_rate": recording_rate,  # % de calls consentidos
+            "optout_detections": optouts,
+            "rate_limit_hits_last_minute": rate_limit_hits,
+        },
+        "cache": {
+            "hits": _counters.get("cache_hit", 0),  # Respuestas desde cache
         },
         "ts": time.time(),
     }

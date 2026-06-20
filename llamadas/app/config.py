@@ -87,6 +87,15 @@ class Settings(BaseSettings):
     # "high" = máximo razonamiento (más lento).
     gemini_thinking_level: str = "minimal"
 
+    # --- Timeouts (OPTIMIZADO para no aburrir al prospecto) ---
+    # Gemini Chat: máximo 10 segundos (prospecto se aburre después de 5-10s)
+    # Si Gemini tarda más, es mejor un fallback que silencio
+    gemini_chat_timeout_seconds: int = 10
+    # Gemini STT (ElevenLabs): máximo 5 segundos para procesar audio
+    elevenlabs_stt_timeout_seconds: int = 5
+    # ElevenLabs TTS: máximo 3 segundos para generar voz
+    elevenlabs_tts_timeout_seconds: int = 3
+
     # --- Comportamiento / señales ---
     # Frustración (0-10) a partir de la cual se alerta sentimiento negativo.
     frustration_alert_threshold: int = 5
