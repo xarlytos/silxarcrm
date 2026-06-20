@@ -28,6 +28,9 @@ model ClienteGlobal {
   pagos         Pago[]
   eventos       Evento[]
 
+  // Growth Engine
+  referralPrograms ReferralProgram[]
+
   @@index([origenSaas])
   @@index([estado])
   @@index([fechaRegistro])
@@ -206,9 +209,169 @@ model Software {
   createdAt         DateTime @default(now()) @map("created_at")
   updatedAt         DateTime @updatedAt @map("updated_at")
 
+  // Relaciones Growth Engine
+  growthConfig           GrowthConfig?
+  contentPieces          ContentPiece[]
+  referralPrograms       ReferralProgram[]
+  marketplaceOpportunities MarketplaceOpportunity[]
+  growthMetrics          GrowthMetric[]
+  socialAccounts         SocialAccount[]
+  voiceAgentConfig       VoiceAgentConfig?
+  brands                 Brand[]
+  campaigns              SocialCampaign[]
+  radarConfig            RadarConfig?
+  radarRuns              RadarRun[]
+  auditorias             Auditoria[]
+
   @@index([slug])
   @@index([activo])
   @@map("softwares")
+}
+
+// --- Sales Playbook: estrategia comercial independiente del software ---
+model SalesPlaybook {
+  id            String   @id @default(cuid())
+  playbookId    String   @unique @map("playbook_id")  // ej: "free_value_v1"
+  name          String
+  description   String?  @db.Text
+  version       String   @default("v1")
+
+  // Funnel de ventas: etapas ordenadas
+  stages        Json     // [{id, name, objective, duration_hint, key_points[], prohibitions[], transitions{}}]
+
+  // Scripts por etapa (anti-monotonia)
+  scripts       Json     // {pattern_interrupt: ["a", "b"], discovery: [...], ...}
+
+  // Manejadores de objeciones
+  objectionHandlers Json @map("objection_handlers")  // {precio: {framework, script}, ...}
+
+  // Gatekeeper
+  gatekeeper    Json     // {max_turns, script, fallback}
+
+  // Configuracion de quantificacion
+  quantification Json    // {enabled, ask_for_numbers, currency_in_message, focus_on_roi}
+
+  // Config de value offer
+  valueOffer    Json     @map("value_offer")  // {enabled, type, delivery}
+
+  // A/B test metadata
+  abTest        Json?    @map("ab_test")  // {experiment_id, variant, parent_playbook_id}
+
+  // Relaciones
+  voiceAgentConfigs VoiceAgentConfig[]
+
+  activo        Boolean  @default(true)
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  @@index([playbookId])
+  @@index([activo])
+  @@map("sales_playbooks")
+}
+
+// --- Case Studies: casos de exito por vertical/pais ---
+model CaseStudy {
+  id                 String   @id @default(cuid())
+
+  tipoNegocio        String   @map("tipo_negocio")  // "dentista", "peluqueria_canina"...
+  empresa            String
+  ciudad             String
+  pais               String   // "es", "mx"...
+  resultado          String   @db.Text
+  metricaDestacada   String?  @map("metrica_destacada")
+  testimonial        String?  @db.Text
+  tiempoAResultado   String?  @map("tiempo_a_resultado")
+  tags               String[] // ["no-shows", "whatsapp", "automatizacion"]
+
+  // Para filtrado por software
+  softwareId         String?  @map("software_id")
+
+  activo             Boolean  @default(true)
+  createdAt          DateTime @default(now()) @map("created_at")
+  updatedAt          DateTime @updatedAt @map("updated_at")
+
+  @@index([tipoNegocio])
+  @@index([pais])
+  @@index([ciudad])
+  @@index([softwareId])
+  @@index([activo])
+  @@map("case_studies")
+}
+
+// --- Configuracion del Agente de Voz AI por Software (modular LEGO v2) ---
+// Ya NO es un God Object. Delega en SalesPlaybook, CaseStudy, y sub-configs.
+model VoiceAgentConfig {
+  id                     String   @id @default(cuid())
+  softwareId             String   @unique @map("software_id")
+  software               Software @relation(fields: [softwareId], references: [id], onDelete: Cascade)
+
+  // -- Referencia al Playbook (separado de la config) --
+  playbookId             String   @map("playbook_id")
+  playbook               SalesPlaybook @relation(fields: [playbookId], references: [playbookId])
+
+  // -- Identity (quien es el agente) --
+  agentName              String   @map("agent_name")
+  agentGender            String   @default("masculino") @map("agent_gender")
+  agentAccent            String   @default("es-ES") @map("agent_accent")
+  agentTone              String   @default("profesional_cercano") @map("agent_tone")
+  agentExperienceYears   Int      @default(4) @map("agent_experience_years")
+  elevenlabsVoiceId      String?  @map("elevenlabs_voice_id")
+
+  // -- Product (que se vende) --
+  companyName            String   @map("company_name")
+  productName            String   @map("product_name")
+  productDescription     String   @db.Text @map("product_description")
+  targetVertical         String   @map("target_vertical")
+  targetAudience         String?  @map("target_audience")
+  currency               String   @default("EUR") @map("currency")
+  currencySymbol         String   @default("EUR") @map("currency_symbol")
+  marketCountry          String   @default("es") @map("market_country")
+  marketCityExamples     String?  @map("market_city_examples")
+  priceMonthly           Int      @map("price_monthly")
+
+  // -- Pain Points (JSON, ligero) --
+  painPoints             Json     @map("pain_points")  // {dolor_principal, ejemplos[], keywords[]}
+
+  // -- Competitors (JSON, ligero) --
+  competitorComparisons  Json     @map("competitor_comparisons")  // {calendly: {...}, excel: {...}}
+
+  // -- Free Value / Auditoria --
+  freeValueOffer         String   @db.Text @map("free_value_offer")
+  auditoriaBaseUrl       String?  @map("auditoria_base_url")
+  auditoriaEnabled       Boolean  @default(true) @map("auditoria_enabled")
+
+  // -- WhatsApp / Follow-up --
+  whatsappSenderName     String   @default("Mariana") @map("whatsapp_sender_name")
+  whatsappTemplates      Json     @map("whatsapp_templates")
+  followUpEmailSender    String?  @map("follow_up_email_sender")
+  followUpEmailSubject   String?  @map("follow_up_email_subject")
+
+  // -- Compliance --
+  disclosureText         String   @default("Soy un asistente virtual de {companyName}") @map("disclosure_text")
+  callHourStart          Int      @default(9) @map("call_hour_start")
+  callHourEnd            Int      @default(20) @map("call_hour_end")
+  callDaysAllowed        String   @default("1,2,3,4,5,6") @map("call_days_allowed")
+  timezone               String   @default("Europe/Madrid")
+  optoutEnabled          Boolean  @default(true) @map("optout_enabled")
+
+  // -- Voice / Telephony --
+  twilioCnamName         String?  @map("twilio_cnam_name")
+  twilioFromNumber       String?  @map("twilio_from_number")
+  callerIdStrategy       String   @default("static") @map("caller_id_strategy")
+
+  // -- A/B Test --
+  abTestVariant          String?  @map("ab_test_variant")  // "A" | "B" | null
+  abTestPlaybookId       String?  @map("ab_test_playbook_id")  // playbook alternativo
+
+  // -- Estado --
+  activo                 Boolean  @default(true)
+  createdAt              DateTime @default(now()) @map("created_at")
+  updatedAt              DateTime @updatedAt @map("updated_at")
+
+  @@index([softwareId])
+  @@index([playbookId])
+  @@index([activo])
+  @@map("voice_agent_configs")
 }
 
 // Sistema de Tracking de Eventos (tipo Segment/Mixpanel)
@@ -317,6 +480,11 @@ model Lead {
   llamadas       LlamadaReal[]
   whatsappEnvios WhatsappEnvio[]
   whatsappConversacion WhatsappConversacion?
+
+  // Growth Engine
+  contentPieces  ContentPiece[]
+  marketplaceOpportunities MarketplaceOpportunity[]
+  activationLogs ActivationLog[]
 
   @@unique([email, softwareId])
   @@index([estado])
@@ -671,6 +839,9 @@ model LlamadaReal {
   calificacion   Int?
   proximaAccion  String?   @map("proxima_accion")
   zadarmaCallId  String?   @map("zadarma_call_id")
+  modo           String    @default("HUMANO") @map("modo")
+  aiCallSid      String?   @map("ai_call_sid")
+  aiSessionId    String?   @map("ai_session_id")
   metadata       Json?
   iniciadaAt     DateTime? @map("iniciada_at")
   terminadaAt   DateTime? @map("terminada_at")
@@ -685,6 +856,7 @@ model LlamadaReal {
   @@index([leadId])
   @@index([agenteId])
   @@index([estado])
+  @@index([modo])
   @@index([createdAt])
   @@index([zadarmaCallId])
   @@map("llamadas_reales")
@@ -975,4 +1147,1217 @@ model Propuesta {
   @@index([urlToken])
   @@index([createdAt])
   @@map("propuestas")
+}
+
+// ============================================================
+// === GROWTH ENGINE — Motor de Adquisición Autónoma ===
+// ============================================================
+
+enum ContentType {
+  POST
+  ARTICLE
+  FAQ
+  CASE_STUDY
+  COMPARISON
+  VIDEO_SCRIPT
+  LANDING_PAGE
+}
+
+enum ContentStatus {
+  DRAFT
+  SCHEDULED
+  PUBLISHED
+  FAILED
+}
+
+enum SocialPlatform {
+  LINKEDIN
+  FACEBOOK
+  INSTAGRAM
+  X
+  TIKTOK
+  REDDIT
+  YOUTUBE
+  PINTEREST
+  THREADS
+}
+
+enum ReferralStatus {
+  PENDING
+  CONVERTED
+  EXPIRED
+}
+
+enum OpportunityStatus {
+  NEW
+  CONTACTED
+  CONVERTED
+  DISMISSED
+}
+
+// Configuración del Growth Engine por software/SaaS
+model GrowthConfig {
+  id          String   @id @default(cuid())
+  softwareId  String   @unique @map("software_id")
+  software    Software @relation(fields: [softwareId], references: [id], onDelete: Cascade)
+
+  // Social Media
+  socialEnabled     Boolean @default(false) @map("social_enabled")
+  linkedInToken     String? @map("linkedin_token")
+  facebookToken     String? @map("facebook_token")
+  instagramToken    String? @map("instagram_token")
+  xToken            String? @map("x_token")
+  tiktokToken       String? @map("tiktok_token")
+
+  // SEO
+  seoEnabled        Boolean @default(false) @map("seo_enabled")
+  blogDomain        String? @map("blog_domain")
+  searchConsoleJson String? @map("search_console_json")
+  targetKeywords    String[] @default([]) @map("target_keywords")
+
+  // Video
+  videoEnabled      Boolean @default(false) @map("video_enabled")
+  elevenLabsKey     String? @map("elevenlabs_key")
+
+  // Referrals
+  referralsEnabled  Boolean @default(false) @map("referrals_enabled")
+  referralReward    String? @map("referral_reward")
+  referralRewardType String @default("months_free") @map("referral_reward_type")
+  referralRewardValue Int @default(1) @map("referral_reward_value")
+  referralDoubleReward Boolean @default(false) @map("referral_double_reward")
+  referralMinSpend    Int @default(0) @map("referral_min_spend")
+
+  // Activation
+  autoActivate      Boolean @default(true) @map("auto_activate")
+  activationChannel String   @default("email") @map("activation_channel")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([softwareId])
+  @@map("growth_configs")
+}
+
+// Piezas de contenido generadas por IA (posts, artículos, videos, etc.)
+model ContentPiece {
+  id          String        @id @default(cuid())
+  softwareId  String        @map("software_id")
+  software    Software      @relation(fields: [softwareId], references: [id], onDelete: Cascade)
+
+  type        ContentType   @map("type")
+  status      ContentStatus @default(DRAFT) @map("status")
+
+  title       String        @map("title")
+  body        String        @db.Text @map("body")
+  excerpt     String?       @map("excerpt")
+  keywords    String[]      @default([]) @map("keywords")
+  coverImage  String?       @map("cover_image")
+
+  // Para social media
+  platform    SocialPlatform? @map("platform")
+  scheduledAt DateTime?     @map("scheduled_at")
+  publishedAt DateTime?     @map("published_at")
+  externalId  String?       @map("external_id")
+
+  // Métricas (actualizadas por cron)
+  impressions  Int          @default(0) @map("impressions")
+  clicks       Int          @default(0) @map("clicks")
+  likes        Int          @default(0) @map("likes")
+  shares       Int          @default(0) @map("shares")
+  comments     Int          @default(0) @map("comments")
+  leadsGenerated Int        @default(0) @map("leads_generated")
+
+  // Atribución: leads generados por este contenido
+  leads       Lead[]
+
+  // AI metadata
+  aiPrompt    String?       @db.Text @map("ai_prompt")
+  aiModel     String?       @map("ai_model")
+
+  createdAt   DateTime      @default(now()) @map("created_at")
+  updatedAt   DateTime      @updatedAt @map("updated_at")
+
+  @@index([softwareId])
+  @@index([type])
+  @@index([status])
+  @@index([platform])
+  @@index([scheduledAt])
+  @@index([publishedAt])
+  @@map("content_pieces")
+}
+
+// Programa de referidos
+model ReferralProgram {
+  id          String        @id @default(cuid())
+  softwareId  String        @map("software_id")
+  software    Software      @relation(fields: [softwareId], references: [id], onDelete: Cascade)
+
+  code        String        @unique @map("code")
+  referrerId  Int           @map("referrer_id")
+  referrer    ClienteGlobal @relation(fields: [referrerId], references: [id], onDelete: Cascade)
+
+  status      ReferralStatus @default(PENDING) @map("status")
+  clicks      Int            @default(0) @map("clicks")
+  signups     Int            @default(0) @map("signups")
+  convertedAt DateTime?      @map("converted_at")
+  rewardGiven Boolean        @default(false) @map("reward_given")
+  rewardType  String?        @map("reward_type")
+  rewardValue Int?           @map("reward_value")
+  rewardNotes String?        @map("reward_notes")
+
+  // Tracking
+  ipAddress   String?        @map("ip_address")
+  userAgent   String?        @map("user_agent")
+  utmSource   String?        @map("utm_source")
+  utmMedium   String?        @map("utm_medium")
+
+  // Relación con lead convertido
+  leadId      String?        @map("lead_id")
+
+  createdAt   DateTime       @default(now()) @map("created_at")
+
+  @@index([softwareId])
+  @@index([referrerId])
+  @@index([status])
+  @@index([code])
+  @@index([leadId])
+  @@map("referral_programs")
+}
+
+// Historial de recompensas de referidos
+model ReferralRewardHistory {
+  id          String   @id @default(cuid())
+  softwareId  String   @map("software_id")
+  referrerId  Int      @map("referrer_id")
+  referralId  String   @map("referral_id")
+  type        String   @map("type") // months_free, discount_percentage, credit_amount, feature
+  value       Int      @map("value")
+  description String   @map("description")
+  applied     Boolean  @default(false) @map("applied")
+  appliedAt   DateTime? @map("applied_at")
+  expiresAt   DateTime? @map("expires_at")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@index([softwareId])
+  @@index([referrerId])
+  @@index([referralId])
+  @@map("referral_reward_history")
+}
+
+// Oportunidades detectadas en marketplaces
+model MarketplaceOpportunity {
+  id          String            @id @default(cuid())
+  softwareId  String            @map("software_id")
+  software    Software          @relation(fields: [softwareId], references: [id], onDelete: Cascade)
+
+  marketplace String            @map("marketplace")
+  title       String            @map("title")
+  description String            @db.Text @map("description")
+  url         String            @map("url")
+  category    String?           @map("category")
+  rating      Float?            @map("rating")
+  reviews     Int?              @map("reviews")
+
+  status      OpportunityStatus @default(NEW) @map("status")
+  leadId      String?           @map("lead_id")
+  lead        Lead?             @relation(fields: [leadId], references: [id], onDelete: SetNull)
+
+  createdAt   DateTime          @default(now()) @map("created_at")
+  updatedAt   DateTime          @updatedAt @map("updated_at")
+
+  @@index([softwareId])
+  @@index([marketplace])
+  @@index([status])
+  @@index([leadId])
+  @@map("marketplace_opportunities")
+}
+
+// Métricas diarias del embudo de Growth
+model GrowthMetric {
+  id          String   @id @default(cuid())
+  softwareId  String   @map("software_id")
+  software    Software @relation(fields: [softwareId], references: [id], onDelete: Cascade)
+  date        DateTime @db.Date @map("date")
+
+  // Funnel
+  impressions Int      @default(0) @map("impressions")
+  clicks      Int      @default(0) @map("clicks")
+  leads       Int      @default(0) @map("leads")
+  demos       Int      @default(0) @map("demos")
+  customers   Int      @default(0) @map("customers")
+
+  // Por canal
+  socialLeads      Int @default(0) @map("social_leads")
+  seoLeads         Int @default(0) @map("seo_leads")
+  videoLeads       Int @default(0) @map("video_leads")
+  referralLeads    Int @default(0) @map("referral_leads")
+  marketplaceLeads Int @default(0) @map("marketplace_leads")
+
+  // Costos estimados
+  estimatedSpend   Float @default(0) @map("estimated_spend")
+
+  @@unique([softwareId, date])
+  @@index([softwareId])
+  @@index([date])
+  @@map("growth_metrics")
+}
+
+// Relaciones inversas en Software
+// (Agregadas inline arriba: growthConfig, contentPieces, referralPrograms, marketplaceOpportunities)
+
+// Relaciones inversas en Lead
+// (Agregadas inline arriba: contentPieces, marketplaceOpportunities)
+
+// ============================================================
+// === ACTIVATION ENGINE — Log de activaciones automáticas ===
+// ============================================================
+
+enum ActivationStatus {
+  PENDING
+  EXECUTED
+  FAILED
+  CANCELLED
+}
+
+// ============================================================
+// === AUDITORÍA — Lead magnet "¿Cómo está tu negocio?" ===
+// ============================================================
+
+model Auditoria {
+  id          String   @id @default(cuid())
+  softwareId  String   @map("software_id")
+  software    Software @relation(fields: [softwareId], references: [id], onDelete: Cascade)
+
+  // Lo que metió el visitante
+  negocio     String                          // nombre del negocio o URL
+  url         String?                         // web detectada/introducida
+  nombre      String?                         // nombre de la persona
+  email       String?
+  telefono    String?
+
+  // Resultado
+  status      String   @default("pending")    // pending | done | error
+  score       Int?                            // puntuación global 0-100
+  resultado   Json?                           // informe completo (señales + IA)
+  error       String?  @db.Text
+
+  // Conversión
+  leadId      String?  @map("lead_id")        // lead creado por la activación inbound
+
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@index([softwareId])
+  @@index([createdAt])
+  @@index([status])
+  @@map("auditorias")
+}
+
+// ============================================================
+// === RADAR — Cazador de leads automático (ICP) ===
+// ============================================================
+
+model RadarConfig {
+  id          String   @id @default(cuid())
+  softwareId  String   @unique @map("software_id")
+  software    Software @relation(fields: [softwareId], references: [id], onDelete: Cascade)
+
+  enabled     Boolean  @default(false)
+
+  // ICP (perfil de cliente ideal)
+  sector      String?                          // término principal, ej "peluquería canina"
+  keywords    String[] @default([])            // variantes/términos extra
+  ciudades    String[] @default([])            // zonas a rastrear; vacío = capitales por defecto
+  pais        String   @default("España")
+
+  // Señales de compra / filtros de calidad
+  soloSinWeb     Boolean @default(false) @map("solo_sin_web")
+  ratingMax      Float?  @map("rating_max")     // reseñas malas: rating <= X
+  ratingMin      Float?  @map("rating_min")
+  minResenas     Int?    @map("min_resenas")
+  maxResenas     Int?    @map("max_resenas")    // negocio nuevo: pocas reseñas
+  excluirCerrados Boolean @default(true) @map("excluir_cerrados")
+
+  // Ejecución
+  maxLeadsPorRun Int      @default(40) @map("max_leads_por_run")
+  autoSecuencia  Boolean  @default(false) @map("auto_secuencia") // lanza outreach al caer el lead
+  ultimoRun      DateTime? @map("ultimo_run")
+
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  runs        RadarRun[]
+
+  @@index([softwareId])
+  @@map("radar_configs")
+}
+
+model RadarRun {
+  id          String      @id @default(cuid())
+  configId    String      @map("config_id")
+  config      RadarConfig @relation(fields: [configId], references: [id], onDelete: Cascade)
+  softwareId  String      @map("software_id")
+  software    Software    @relation(fields: [softwareId], references: [id], onDelete: Cascade)
+
+  status      String      @default("running")   // running | done | error
+  trigger     String      @default("manual")    // manual | cron
+  scanned     Int         @default(0)            // negocios encontrados en la fuente
+  matched     Int         @default(0)            // pasan filtros ICP
+  created     Int         @default(0)            // leads nuevos creados
+  skipped     Int         @default(0)            // duplicados/descartados
+  error       String?     @db.Text
+
+  startedAt   DateTime    @default(now()) @map("started_at")
+  finishedAt  DateTime?   @map("finished_at")
+
+  @@index([softwareId])
+  @@index([configId])
+  @@index([startedAt])
+  @@map("radar_runs")
+}
+
+model ActivationLog {
+  id          String           @id @default(cuid())
+  leadId      String           @map("lead_id")
+  lead        Lead             @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  action      String           @map("action")
+  status      ActivationStatus @default(PENDING) @map("status")
+
+  scheduledAt DateTime?        @map("scheduled_at")
+  executedAt  DateTime?        @map("executed_at")
+  error       String?          @map("error")
+  metadata    Json?            @map("metadata")
+
+  createdAt   DateTime         @default(now()) @map("created_at")
+  updatedAt   DateTime         @updatedAt @map("updated_at")
+
+  @@index([leadId])
+  @@index([status])
+  @@index([scheduledAt])
+  @@index([createdAt])
+  @@map("activation_logs")
+}
+
+// ============================================================
+// === BRANDS — Clientes de la agencia ===
+// ============================================================
+
+model Brand {
+  id                String   @id @default(cuid())
+  softwareId        String   @map("software_id")
+  software          Software @relation(fields: [softwareId], references: [id], onDelete: Cascade)
+  nombre            String
+  slug              String
+  logoUrl           String?  @map("logo_url")
+  colorPrimario     String   @default("#6366F1") @map("color_primario")
+  descripcion       String?  @db.Text
+  industria         String?
+  website           String?
+  emailContacto     String?  @map("email_contacto")
+  brandVoice        String?  @map("brand_voice") @db.Text
+  targetAudience    Json?    @map("target_audience")
+  contentGuidelines String?  @map("content_guidelines") @db.Text
+  hashtagsOficiales String[] @default([]) @map("hashtags_oficiales")
+  competidores      Json?
+  approvalWorkflow  Json?    @map("approval_workflow")
+
+  // Portal del cliente ("Sala de cristal"): acceso público con token, sin login
+  portalEnabled     Boolean  @default(false) @map("portal_enabled")
+  portalToken       String?  @unique @map("portal_token")
+
+  activo            Boolean  @default(true)
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+
+  socialAccounts    SocialAccount[]
+  campaigns         SocialCampaign[]
+  mediaAssets       MediaAsset[]
+  copySnippets      CopySnippet[]
+
+  @@index([softwareId])
+  @@index([slug])
+  @@index([activo])
+  @@map("brands")
+}
+
+// ============================================================
+// === CONTENT HUB — Biblioteca de assets y copys ===
+// ============================================================
+
+enum AssetType {
+  IMAGE
+  VIDEO
+  GIF
+  CAROUSEL
+  DOCUMENT
+  AUDIO
+}
+
+model MediaAsset {
+  id                      String    @id @default(cuid())
+  softwareId              String    @map("software_id")
+  brandId                 String?   @map("brand_id")
+  brand                   Brand?    @relation(fields: [brandId], references: [id], onDelete: SetNull)
+  nombre                  String
+  descripcion             String?
+  tipo                    AssetType
+  url                     String
+  thumbnailUrl            String?   @map("thumbnail_url")
+  dimensiones             Json?
+  duracion                Int?
+  tamanoBytes             Int?      @map("tamano_bytes")
+  tags                    String[]  @default([])
+  plataformasRecomendadas String[]  @default([]) @map("plataformas_recomendadas")
+  formatosCompatibles     String[]  @default([]) @map("formatos_compatibles")
+  usoCount                Int       @default(0) @map("uso_count")
+  ultimoUsoAt             DateTime? @map("ultimo_uso_at")
+  metadata                Json?
+  createdAt               DateTime  @default(now()) @map("created_at")
+  updatedAt               DateTime  @updatedAt @map("updated_at")
+
+  @@index([softwareId])
+  @@index([brandId])
+  @@index([tipo])
+  @@index([tags])
+  @@map("media_assets")
+}
+
+enum SnippetType {
+  CAPTION
+  CTA
+  HASHTAG_SET
+  BIO
+  RESPONSE
+  HOOK
+}
+
+model CopySnippet {
+  id          String      @id @default(cuid())
+  softwareId  String      @map("software_id")
+  brandId     String?     @map("brand_id")
+  brand       Brand?      @relation(fields: [brandId], references: [id], onDelete: SetNull)
+  nombre      String
+  contenido   String      @db.Text
+  tipo        SnippetType
+  plataformas String[]    @default([])
+  tags        String[]    @default([])
+  usoCount    Int         @default(0) @map("uso_count")
+  createdAt   DateTime    @default(now()) @map("created_at")
+  updatedAt   DateTime    @updatedAt @map("updated_at")
+
+  @@index([softwareId])
+  @@index([brandId])
+  @@index([tipo])
+  @@map("copy_snippets")
+}
+
+// ============================================================
+// === SOCIAL ACCOUNTS — Gestión multi-cuenta social ===
+// ============================================================
+
+model SocialAccount {
+  id          String   @id @default(cuid())
+  softwareId  String   @map("software_id")
+  software    Software @relation(fields: [softwareId], references: [id], onDelete: Cascade)
+
+  // Relación con Brand (cliente de la agencia)
+  brandId     String?  @map("brand_id")
+  brand       Brand?   @relation(fields: [brandId], references: [id], onDelete: SetNull)
+
+  // Identidad
+  nombre      String
+  groupName   String?  @map("group_name") // nombre base para agrupar: "aa" → "aa Instagram", "aa LinkedIn"...
+  username    String   @map("username") // @handle
+  platform    SocialPlatform @map("platform")
+  avatarUrl   String?  @map("avatar_url")
+  profileUrl  String?  @map("profile_url")
+
+  // Nicho y categorización
+  nicho       String?
+  categorias  String[] @default([])
+  subnichos   String[] @default([])
+  audienciaTarget Json? @map("audiencia_target")
+  tonoExtendido String? @map("tono_extendido") @db.Text
+  contenidoProhibido String? @map("contenido_prohibido") @db.Text
+  contenidoFavorito  String? @map("contenido_favorito") @db.Text
+
+  // Configuración de contenido
+  tematica    String   @map("tematica") // ej: "tips de peluquería canina"
+  tono        String   @default("profesional") @map("tono") // profesional, casual, divertido, etc.
+  formato     String   @default("feed") @map("formato") // feed, reel, historia, carousel, thread, etc.
+  longitud    String   @default("medio") @map("longitud") // corto, medio, largo
+  idioma      String   @default("es") @map("idioma") // es, en, etc.
+  hashtagsDefault String[] @default([]) @map("hashtags_default")
+
+  // Calendario de publicación (JSON con horarios por día)
+  postingSchedule Json? @map("posting_schedule")
+  timezone    String   @default("Europe/Madrid") @map("timezone")
+
+  // Métricas
+  followersCount  Int @default(0) @map("followers_count")
+  followingCount  Int @default(0) @map("following_count")
+  postsCount      Int @default(0) @map("posts_count")
+
+  // Estado
+  isActive    Boolean  @default(true) @map("is_active")
+  isVerified  Boolean  @default(false) @map("is_verified")
+  lastSyncedAt DateTime? @map("last_synced_at")
+  notas       String?  @map("notas")
+
+  // Relaciones
+  posts       SocialAccountPost[]
+  contentThemes ContentTheme[]
+
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@index([softwareId])
+  @@index([brandId])
+  @@index([platform])
+  @@index([isActive])
+  @@index([tematica])
+  @@index([groupName])
+  @@map("social_accounts")
+}
+
+// Temas de contenido recurrentes por cuenta
+model ContentTheme {
+  id                String   @id @default(cuid())
+  accountId         String   @map("account_id")
+  account           SocialAccount @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  nombre            String
+  descripcion       String?
+  frecuencia        String   @default("semanal") // semanal, quincenal, mensual
+  diaPreferido      String?  @map("dia_preferido")
+  formatoPreferido  String?  @map("formato_preferido")
+  activo            Boolean  @default(true)
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+
+  @@index([accountId])
+  @@index([activo])
+  @@map("content_themes")
+}
+
+// ============================================================
+// === CAMPAIGNS — Campañas de social media ===
+// ============================================================
+
+enum CampaignObjective {
+  AWARENESS
+  ENGAGEMENT
+  CONVERSION
+  TRAFFIC
+  LEADS
+  SALES
+  UGC
+  LAUNCH
+}
+
+enum CampaignStatus {
+  PLANNING
+  ACTIVE
+  PAUSED
+  COMPLETED
+  ARCHIVED
+}
+
+model SocialCampaign {
+  id            String          @id @default(cuid())
+  softwareId    String          @map("software_id")
+  software      Software        @relation(fields: [softwareId], references: [id], onDelete: Cascade)
+  brandId       String          @map("brand_id")
+  brand         Brand           @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  nombre        String
+  slug          String
+  descripcion   String?         @db.Text
+  objetivo      CampaignObjective @default(AWARENESS)
+  fechaInicio   DateTime?       @map("fecha_inicio")
+  fechaFin      DateTime?       @map("fecha_fin")
+  presupuesto   Decimal?        @db.Decimal(10, 2)
+  moneda        String          @default("EUR")
+  status        CampaignStatus  @default(PLANNING)
+  briefCreativo String?         @map("brief_creativo") @db.Text
+  kpisObjetivo  Json?           @map("kpis_objetivo")
+  colorTag      String          @default("#6366F1") @map("color_tag")
+  createdBy     Int             @map("created_by")
+  createdAt     DateTime        @default(now()) @map("created_at")
+  updatedAt     DateTime        @updatedAt @map("updated_at")
+
+  posts         SocialAccountPost[]
+
+  @@index([softwareId])
+  @@index([brandId])
+  @@index([status])
+  @@index([fechaInicio])
+  @@map("social_campaigns")
+}
+
+enum SocialPostStatus {
+  // Pipeline de produccion (pre-publicacion)
+  IDEA           // Solo la idea/concepto, aun no hay contenido
+  PLANNED        // Planificado, se sabe que se va a publicar pero aun no creado
+  IN_PRODUCTION  // Se esta creando el contenido (foto, video, diseno)
+  IN_REVIEW      // Listo para revision/aprobacion
+  NEEDS_REVISION // Revisado, requiere cambios
+  DRAFT          // Borrador con contenido listo
+  SCHEDULED      // Programado para publicacion
+  PUBLISHED      // Ya publicado
+  FAILED         // Fallo la publicacion
+}
+
+model SocialAccountPost {
+  id          String   @id @default(cuid())
+  accountId   String   @map("account_id")
+  account     SocialAccount @relation(fields: [accountId], references: [id], onDelete: Cascade)
+
+  // Contenido
+  content     String   @db.Text @map("content")
+  hashtags    String[] @default([]) @map("hashtags")
+  mediaUrls   String[] @default([]) @map("media_urls")
+  cta         String?  @map("cta")
+
+  // Formato especifico del post (feed, reel, historia, carousel, thread, video, etc.)
+  formato     String?  @map("formato")
+
+  // Metadata
+  title       String?  @map("title")
+  excerpt     String?  @map("excerpt")
+  aiPrompt    String?  @db.Text @map("ai_prompt")
+  aiModel     String?  @map("ai_model")
+
+  // Datos especificos por plataforma (JSON flexible)
+  // Ej Instagram: { musicTrack, filters, locationTag, collaborators, aspectRatio }
+  // Ej TikTok:    { videoUrl, musicTrack, effects, duration, stitchEnabled }
+  // Ej LinkedIn:  { articleUrl, documentUrl, pollOptions, newsletterId }
+  // Ej X:         { threadPosts, replyTo, quoteTweet, mediaAltText }
+  // Ej YouTube:   { videoUrl, thumbnailUrl, tags, category, visibility, chapters }
+  // Ej Facebook:  { postType, eventDetails, groupId, feeling }
+  platformData Json?   @map("platform_data")
+
+  // Relación con campaña
+  campaignId    String?   @map("campaign_id")
+  campaign      SocialCampaign? @relation(fields: [campaignId], references: [id], onDelete: SetNull)
+
+  // Asignación y workflow
+  assignedTo    Int?      @map("assigned_to")
+
+  // Estado y programación
+  status      SocialPostStatus @default(DRAFT) @map("status")
+  scheduledAt DateTime? @map("scheduled_at")
+  publishedAt DateTime? @map("published_at")
+  approvedAt  DateTime? @map("approved_at")
+  approvedBy  Int?     @map("approved_by")
+
+  // Reciclaje / Evergreen
+  isEvergreen   Boolean   @default(false) @map("is_evergreen")
+  recycleCount  Int       @default(0) @map("recycle_count")
+  originalPostId String?  @map("original_post_id")
+
+  // Publicación externa
+  externalId  String?  @map("external_id")
+  externalUrl String?  @map("external_url")
+  publishError String? @map("publish_error")
+
+  // Métricas
+  impressions Int @default(0) @map("impressions")
+  clicks      Int @default(0) @map("clicks")
+  likes       Int @default(0) @map("likes")
+  shares      Int @default(0) @map("shares")
+  comments    Int @default(0) @map("comments")
+  reach       Int @default(0) @map("reach")
+  engagement  Float @default(0) @map("engagement")
+
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  // Workflow de colaboración
+  approvals    PostApproval[]
+  postComments PostComment[]
+  metrics      SocialPostMetric[]
+
+  @@index([accountId])
+  @@index([campaignId])
+  @@index([assignedTo])
+  @@index([isEvergreen])
+  @@index([status])
+  @@index([scheduledAt])
+  @@index([publishedAt])
+  @@map("social_account_posts")
+}
+
+// ============================================================
+// === ANALYTICS — Métricas históricas por post por día ===
+// ============================================================
+
+model SocialPostMetric {
+  id                  String            @id @default(cuid())
+  postId              String            @map("post_id")
+  post                SocialAccountPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  fecha               DateTime          @db.Date
+  impressions         Int               @default(0)
+  reach               Int               @default(0)
+  likes               Int               @default(0)
+  comments            Int               @default(0)
+  shares              Int               @default(0)
+  saves               Int               @default(0)
+  clicks              Int               @default(0)
+  profileVisits       Int               @default(0) @map("profile_visits")
+  follows             Int               @default(0)
+  engagementRate      Float             @default(0) @map("engagement_rate")
+  ctr                 Float             @default(0)
+  storyExits          Int               @default(0) @map("story_exits")
+  storyReplies        Int               @default(0) @map("story_replies")
+  videoViews          Int               @default(0) @map("video_views")
+  videoCompletionRate Float             @default(0) @map("video_completion_rate")
+  averageWatchTime    Float             @default(0) @map("average_watch_time")
+  fetchedAt           DateTime          @map("fetched_at")
+
+  @@unique([postId, fecha])
+  @@index([postId])
+  @@index([fecha])
+  @@map("social_post_metrics")
+}
+
+// ============================================================
+// === WORKFLOW & COLABORACIÓN — Aprobaciones y comentarios ===
+// ============================================================
+
+enum ApprovalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CHANGES_REQUESTED
+}
+
+model PostApproval {
+  id               String            @id @default(cuid())
+  postId           String            @map("post_id")
+  post             SocialAccountPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  reviewerId       Int               @map("reviewer_id")
+  status           ApprovalStatus    @default(PENDING)
+  comentario       String?           @db.Text
+  requestedChanges Json?             @map("requested_changes")
+  createdAt        DateTime          @default(now()) @map("created_at")
+  resolvedAt       DateTime?         @map("resolved_at")
+
+  @@index([postId])
+  @@index([reviewerId])
+  @@index([status])
+  @@map("post_approvals")
+}
+
+model PostComment {
+  id         String            @id @default(cuid())
+  postId     String            @map("post_id")
+  post       SocialAccountPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  usuarioId  Int               @map("usuario_id")
+  comentario String            @db.Text
+  resuelto   Boolean           @default(false)
+  createdAt  DateTime          @default(now()) @map("created_at")
+
+  @@index([postId])
+  @@index([createdAt])
+  @@map("post_comments")
+}
+
+// ============================================================
+// === ADSENSE ENGINE — Red multi-sitio de blogs monetizados ===
+// === El CRM es el gestor central; cada AdSite = 1 dominio ===
+// ============================================================
+
+// Un blog/sitio = un dominio con su propia config de AdSense
+model AdSite {
+  id            String   @id @default(cuid())
+  nombre        String
+  domain        String   @unique // ej: finanzas-hoy.com (sin protocolo)
+  descripcion   String?  @db.Text
+  tema          String?  // tema editorial general del sitio
+  idioma        String   @default("es")
+  logoUrl       String?  @map("logo_url")
+  colorPrimario String   @default("#4F46E5") @map("color_primario")
+
+  // Monetización (propia de cada sitio)
+  adsenseClient String?  @map("adsense_client") // ca-pub-XXXXXXXX
+  adsenseSlots  Json?    @map("adsense_slots")   // { "article": "123", "list": "456", "infeed": "789" }
+  gaMeasurementId String? @map("ga_measurement_id") // G-XXXX (analytics opcional)
+
+  activo        Boolean  @default(true)
+
+  niches        AdNiche[]
+  articles      AdArticle[]
+
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  @@index([domain])
+  @@index([activo])
+  @@map("ad_sites")
+}
+
+// Nicho/temática dentro de un sitio (define sobre qué se genera)
+model AdNiche {
+  id              String   @id @default(cuid())
+  siteId          String?  @map("site_id")
+  site            AdSite?  @relation(fields: [siteId], references: [id], onDelete: Cascade)
+
+  nombre          String
+  slug            String   @unique
+  descripcion     String?  @db.Text
+  keywordsSemilla String[] @default([]) @map("keywords_semilla")
+  cpcTier         String   @default("medium") @map("cpc_tier") // high | medium | low
+  idioma          String   @default("es")
+  activo          Boolean  @default(true)
+
+  articles        AdArticle[]
+
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  @@index([siteId])
+  @@index([slug])
+  @@index([activo])
+  @@map("ad_niches")
+}
+
+// Artículo SEO monetizado con AdSense (pertenece a un sitio/dominio)
+model AdArticle {
+  id          String        @id @default(cuid())
+  siteId      String        @map("site_id")
+  site        AdSite        @relation(fields: [siteId], references: [id], onDelete: Cascade)
+  nicheId     String?       @map("niche_id")
+  niche       AdNiche?      @relation(fields: [nicheId], references: [id], onDelete: SetNull)
+
+  title       String
+  slug        String        @unique
+  body        String        @db.Text
+  excerpt     String?
+  keywords    String[]      @default([])
+  coverImage  String?       @map("cover_image")
+
+  status      ContentStatus @default(DRAFT)
+  views       Int           @default(0)
+  publishedAt DateTime?     @map("published_at")
+
+  aiPrompt    String?       @db.Text @map("ai_prompt")
+  aiModel     String?       @map("ai_model")
+
+  createdAt   DateTime      @default(now()) @map("created_at")
+  updatedAt   DateTime      @updatedAt @map("updated_at")
+
+  @@index([siteId])
+  @@index([nicheId])
+  @@index([slug])
+  @@index([status])
+  @@index([publishedAt])
+  @@map("ad_articles")
+}
+
+// ============================================================
+// === CLOTHING ENGINE — Marcas de ropa POD automáticas ===
+// === Printify + tienda propia + Stripe ===
+// ============================================================
+
+enum ClothingStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum ClothingOrderStatus {
+  PENDING
+  PAID
+  FULFILLED
+  FAILED
+  CANCELLED
+}
+
+// Marca de ropa generada por IA
+model ClothingBrand {
+  id              String         @id @default(cuid())
+  nombre          String
+  slug            String         @unique
+  domain          String?        // dominio propio (multi-tenant); unicidad forzada en la app
+  nicho           String?
+  eslogan         String?
+  descripcion     String?        @db.Text
+  logoUrl         String?        @map("logo_url")
+  colorPrimario   String         @default("#111111") @map("color_primario")
+  colorSecundario String         @default("#FFFFFF") @map("color_secundario")
+  brandVoice      String?        @map("brand_voice") @db.Text
+  status          ClothingStatus @default(DRAFT)
+
+  designs         ClothingDesign[]
+  products        ClothingProduct[]
+
+  createdAt       DateTime       @default(now()) @map("created_at")
+  updatedAt       DateTime       @updatedAt @map("updated_at")
+
+  @@index([slug])
+  @@index([domain])
+  @@index([status])
+  @@map("clothing_brands")
+}
+
+// Diseño print-ready generado por IA
+model ClothingDesign {
+  id              String         @id @default(cuid())
+  brandId         String         @map("brand_id")
+  brand           ClothingBrand  @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  tema            String?
+  prompt          String         @db.Text
+  imageUrl        String?        @map("image_url")
+  printifyImageId String?        @map("printify_image_id")
+  status          ClothingStatus @default(DRAFT)
+
+  products        ClothingProduct[]
+
+  createdAt       DateTime       @default(now()) @map("created_at")
+  updatedAt       DateTime       @updatedAt @map("updated_at")
+
+  @@index([brandId])
+  @@index([status])
+  @@map("clothing_designs")
+}
+
+// Producto publicado en Printify y en la tienda
+model ClothingProduct {
+  id                String         @id @default(cuid())
+  brandId           String         @map("brand_id")
+  brand             ClothingBrand  @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  designId          String         @map("design_id")
+  design            ClothingDesign @relation(fields: [designId], references: [id], onDelete: Cascade)
+
+  title             String
+  slug              String         @unique
+  description       String?        @db.Text
+  productType       String         @default("camiseta") @map("product_type")
+  printifyProductId String?        @map("printify_product_id")
+  blueprintId       Int?           @map("blueprint_id")
+  printProviderId   Int?           @map("print_provider_id")
+  priceCents        Int            @default(2499) @map("price_cents")
+  currency          String         @default("EUR")
+  mockups           String[]       @default([])
+  variants          Json?
+  status            ClothingStatus @default(DRAFT)
+  published         Boolean        @default(false)
+
+  orders            ClothingOrder[]
+
+  createdAt         DateTime       @default(now()) @map("created_at")
+  updatedAt         DateTime       @updatedAt @map("updated_at")
+
+  @@index([brandId])
+  @@index([designId])
+  @@index([slug])
+  @@index([status])
+  @@map("clothing_products")
+}
+
+// Pedido de la tienda (Stripe → Printify fulfillment)
+model ClothingOrder {
+  id              String              @id @default(cuid())
+  productId       String              @map("product_id")
+  product         ClothingProduct     @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  stripeSessionId String?             @unique @map("stripe_session_id")
+  printifyOrderId String?             @map("printify_order_id")
+  email           String?
+  variantId       String?             @map("variant_id")
+  quantity        Int                 @default(1)
+  amountCents     Int                 @default(0) @map("amount_cents")
+  currency        String              @default("EUR")
+  status          ClothingOrderStatus @default(PENDING)
+  shippingJson    Json?               @map("shipping_json")
+
+  createdAt       DateTime            @default(now()) @map("created_at")
+  updatedAt       DateTime            @updatedAt @map("updated_at")
+
+  @@index([productId])
+  @@index([status])
+  @@index([stripeSessionId])
+  @@map("clothing_orders")
+}
+
+// ============================================================
+// === ASSET FACTORY — Productos digitales para Etsy/KDP ===
+// ============================================================
+
+enum AssetProductStatus {
+  DRAFT
+  GENERATING
+  READY
+  ERROR
+  ARCHIVED
+}
+
+enum AssetProductType {
+  PDF_PLANNER
+  PDF_JOURNAL
+  PDF_TRACKER
+  PDF_COLORING_BOOK
+  EXCEL_TRACKER
+  EXCEL_BUDGET
+  EXCEL_PLANNER
+  SVG_BUNDLE
+  STICKER_SHEET
+  NOTION_TEMPLATE
+  CANVA_TEMPLATE
+}
+
+enum AssetListingStatus {
+  DRAFT
+  READY
+  PUBLISHED
+  ERROR
+}
+
+enum AssetListingMarketplace {
+  ETSY
+  KDP
+  GUMROAD
+}
+
+model AssetProject {
+  id          String   @id @default(cuid())
+  nombre      String
+  slug        String   @unique
+  descripcion String?  @db.Text
+  nicho       String
+  keywords    String[] @default([])
+
+  aiPrompt    String?  @db.Text @map("ai_prompt")
+  aiModel     String?  @map("ai_model")
+
+  products    AssetProduct[]
+  listings    AssetListing[]
+  catalogItems AssetCatalogItem[]
+
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@index([nicho])
+  @@index([slug])
+  @@map("asset_projects")
+}
+
+model AssetProduct {
+  id           String             @id @default(cuid())
+  projectId    String             @map("project_id")
+  project      AssetProject       @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  nombre       String
+  slug         String             @unique
+  descripcion  String?            @db.Text
+  tipo         AssetProductType
+  status       AssetProductStatus @default(DRAFT)
+
+  files        Json?
+  previewUrl   String?            @map("preview_url")
+  thumbnailUrl String?            @map("thumbnail_url")
+
+  config       Json?
+
+  aiPrompt     String?            @db.Text @map("ai_prompt")
+  aiModel      String?            @map("ai_model")
+
+  listings     AssetListing[]
+
+  createdAt    DateTime           @default(now()) @map("created_at")
+  updatedAt    DateTime           @updatedAt @map("updated_at")
+
+  @@index([projectId])
+  @@index([tipo])
+  @@index([status])
+  @@map("asset_products")
+}
+
+model AssetListing {
+  id              String                  @id @default(cuid())
+  projectId       String                  @map("project_id")
+  project         AssetProject            @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  productId       String?                 @map("product_id")
+  product         AssetProduct?           @relation(fields: [productId], references: [id], onDelete: SetNull)
+
+  marketplace     AssetListingMarketplace
+  status          AssetListingStatus      @default(DRAFT)
+
+  title           String
+  description     String?                 @db.Text
+  tags            String[]                @default([])
+  priceCents      Int                     @default(499) @map("price_cents")
+
+  etsyCategory    String?                 @map("etsy_category")
+  etsySubcategory String?                 @map("etsy_subcategory")
+  etsyListingId   String?                 @map("etsy_listing_id")
+
+  kdpTrimSize     String?                 @map("kdp_trim_size")
+  kdpPageCount    Int?                    @map("kdp_page_count")
+  kdpBleed        Boolean?                @default(false) @map("kdp_bleed")
+  kdpPaperColor   String?                 @default("white") @map("kdp_paper_color")
+  kdpAsin         String?                 @map("kdp_asin")
+
+  gumroadProductId   String?              @map("gumroad_product_id")
+  gumroadUrl         String?              @map("gumroad_url")
+  gumroadIsPhysical  Boolean?             @default(false) @map("gumroad_is_physical")
+  gumroadIsTiered    Boolean?             @default(false) @map("gumroad_is_tiered")
+  gumroadIsRecurring Boolean?             @default(false) @map("gumroad_is_recurring")
+  gumroadLicenseKeys Boolean?             @default(false) @map("gumroad_license_keys")
+
+  externalId      String?                 @map("external_id")
+  externalUrl     String?                 @map("external_url")
+
+  createdAt       DateTime                @default(now()) @map("created_at")
+  updatedAt       DateTime                @updatedAt @map("updated_at")
+
+  @@index([projectId])
+  @@index([productId])
+  @@index([marketplace])
+  @@index([status])
+  @@map("asset_listings")
+}
+
+// Producto de catálogo para la tienda (preview AI + config para generación on-demand)
+model AssetCatalogItem {
+  id              String   @id @default(cuid())
+  projectId       String   @map("project_id")
+  project         AssetProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  title           String
+  slug            String   @unique
+  description     String?  @db.Text
+  nicho           String
+
+  // Preview generada por AI
+  previewImage    String   @map("preview_image")
+  mockupImages    String[] @default([]) @map("mockup_images")
+
+  // Config para generar el asset real on-demand
+  assetType       String   @map("asset_type")
+  config          Json?    // trimSize, pageCount, colors, etc.
+
+  // Precio y ventas
+  priceCents      Int      @default(499) @map("price_cents")
+  currency        String   @default("USD")
+  salesCount      Int      @default(0) @map("sales_count")
+
+  // Marketplace
+  gumroadProductId String? @map("gumroad_product_id")
+  gumroadUrl      String?  @map("gumroad_url")
+  isPublished     Boolean  @default(false) @map("is_published")
+
+  // AI metadata
+  aiPrompt        String?  @db.Text @map("ai_prompt")
+  aiModel         String?  @map("ai_model")
+
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  @@index([projectId])
+  @@index([slug])
+  @@index([isPublished])
+  @@index([assetType])
+  @@map("asset_catalog_items")
 }

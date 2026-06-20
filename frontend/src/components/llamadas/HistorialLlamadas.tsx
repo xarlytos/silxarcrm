@@ -21,10 +21,17 @@ const ESTADOS_FILTRO = [
   { value: 'cancelada', label: 'Canceladas' },
 ];
 
+const MODOS_FILTRO = [
+  { value: '', label: 'Todos los modos' },
+  { value: 'HUMANO', label: 'Humano' },
+  { value: 'AI', label: 'AI' },
+];
+
 export default function HistorialLlamadas({ softwareId, reloadKey }: HistorialLlamadasProps) {
   const [llamadas, setLlamadas] = useState<LlamadaReal[]>([]);
   const [pagination, setPagination] = useState({ page: 1, limit: 20, total: 0, pages: 0 });
   const [estado, setEstado] = useState('');
+  const [modo, setModo] = useState('');
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
@@ -37,6 +44,7 @@ export default function HistorialLlamadas({ softwareId, reloadKey }: HistorialLl
         limit: '20',
       };
       if (estado) params.estado = estado;
+      if (modo) params.modo = modo;
       if (search) params.search = search;
       if (softwareId) params.softwareId = softwareId;
       const res: any = await apiClient.getLlamadas(params);
@@ -52,7 +60,7 @@ export default function HistorialLlamadas({ softwareId, reloadKey }: HistorialLl
   useEffect(() => {
     fetch(1);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [estado, softwareId, reloadKey]);
+  }, [estado, modo, softwareId, reloadKey]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -81,6 +89,17 @@ export default function HistorialLlamadas({ softwareId, reloadKey }: HistorialLl
             {ESTADOS_FILTRO.map((e) => (
               <option key={e.value} value={e.value}>
                 {e.label}
+              </option>
+            ))}
+          </select>
+          <select
+            value={modo}
+            onChange={(e) => setModo(e.target.value)}
+            className="px-4 py-2 bg-[var(--bg-primary)] border border-[var(--border-primary)] rounded-xl text-[13px] text-[var(--text-primary)]"
+          >
+            {MODOS_FILTRO.map((m) => (
+              <option key={m.value} value={m.value}>
+                {m.label}
               </option>
             ))}
           </select>
@@ -143,6 +162,11 @@ export default function HistorialLlamadas({ softwareId, reloadKey }: HistorialLl
                                 <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
                               ))}
                             </div>
+                          )}
+                          {l.modo === 'AI' && (
+                            <span className="px-1.5 py-0.5 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 rounded text-[10px] font-medium uppercase">
+                              AI
+                            </span>
                           )}
                         </div>
                         <p className="text-[11px] text-[var(--text-tertiary)] flex items-center gap-1.5">

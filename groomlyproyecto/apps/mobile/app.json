@@ -1,0 +1,65 @@
+{
+  "expo": {
+    "name": "peluguau",
+    "slug": "peluguau",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "scheme": "peluguau",
+    "owner": "peluguau",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.peluguau.app",
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Usamos Face ID para un acceso rápido y seguro a tu cuenta."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#8636f4",
+        "foregroundImage": "./assets/android-icon-foreground.png"
+      },
+      "package": "com.peluguau.app",
+      "permissions": [
+        "android.permission.USE_BIOMETRIC",
+        "android.permission.USE_FINGERPRINT"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-secure-store",
+        {
+          "configureAndroidBackup": true,
+          "faceIDPermission": "Allow peluguau to access your Face ID biometric data."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#8636f4",
+          "sounds": ["./assets/notification-sound.wav"]
+        }
+      ],
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Permitir que peluguau use Face ID para un acceso rápido."
+        }
+      ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "PENDIENTE: ejecuta 'eas init' o usa tu projectId de expo.dev"
+      }
+    }
+  }
+}

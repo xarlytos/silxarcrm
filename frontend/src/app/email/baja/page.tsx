@@ -63,7 +63,7 @@ function BajaPageInner() {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center">
               <Mail className="w-5 h-5 text-white" />
             </div>
-            <span className="text-[15px] font-semibold text-[var(--text-primary)]">CRM Maestro</span>
+            <span className="text-[15px] font-semibold text-[var(--text-primary)]">La Máquina del Dinero</span>
           </div>
 
           {status === 'verifying' && (

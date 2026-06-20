@@ -293,6 +293,9 @@ export interface LlamadaReal {
   calificacion?: number | null;
   proximaAccion?: string | null;
   zadarmaCallId?: string | null;
+  modo?: 'HUMANO' | 'AI';
+  aiCallSid?: string | null;
+  aiSessionId?: string | null;
   iniciadaAt?: string | null;
   terminadaAt?: string | null;
   createdAt: string;
@@ -369,4 +372,100 @@ export interface FreeValueStats {
   usosTotales: number;
   leadsGenerados: number;
   porTipo: { tipo: string; _count: { tipo: number } }[];
+}
+
+// ============================================================
+// === ASSET FACTORY ===
+// ============================================================
+
+export interface AssetProject {
+  id: string;
+  nombre: string;
+  slug: string;
+  descripcion?: string | null;
+  nicho: string;
+  keywords: string[];
+  aiPrompt?: string | null;
+  aiModel?: string | null;
+  products?: AssetProduct[];
+  listings?: AssetListing[];
+  _count?: { products: number; listings: number };
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AssetProduct {
+  id: string;
+  projectId: string;
+  project?: { nombre: string; nicho: string };
+  nombre: string;
+  slug: string;
+  descripcion?: string | null;
+  tipo: string;
+  status: string;
+  files?: { url: string; filename: string; mimeType: string }[] | null;
+  previewUrl?: string | null;
+  thumbnailUrl?: string | null;
+  config?: any;
+  aiPrompt?: string | null;
+  aiModel?: string | null;
+  listings?: AssetListing[];
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AssetCatalogItem {
+  id: string;
+  projectId: string;
+  project?: { nombre: string; nicho: string };
+  title: string;
+  slug: string;
+  description?: string | null;
+  nicho: string;
+  previewImage: string;
+  mockupImages: string[];
+  assetType: string;
+  config?: any;
+  priceCents: number;
+  currency: string;
+  salesCount: number;
+  gumroadProductId?: string | null;
+  gumroadUrl?: string | null;
+  isPublished: boolean;
+  aiPrompt?: string | null;
+  aiModel?: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface AssetListing {
+  id: string;
+  projectId: string;
+  project?: { nombre: string; nicho: string };
+  productId?: string | null;
+  product?: { nombre: string; tipo: string; previewUrl?: string | null } | null;
+  marketplace: 'ETSY' | 'KDP' | 'GUMROAD';
+  status: string;
+  title: string;
+  description?: string | null;
+  tags: string[];
+  priceCents: number;
+  etsyCategory?: string | null;
+  etsySubcategory?: string | null;
+  etsyListingId?: string | null;
+  kdpTrimSize?: string | null;
+  kdpPageCount?: number | null;
+  kdpBleed?: boolean | null;
+  kdpPaperColor?: string | null;
+  kdpAsin?: string | null;
+  gumroadProductId?: string | null;
+  gumroadUrl?: string | null;
+  gumroadIsPhysical?: boolean | null;
+  gumroadIsTiered?: boolean | null;
+  gumroadIsRecurring?: boolean | null;
+  gumroadLicenseKeys?: boolean | null;
+  externalId?: string | null;
+  externalUrl?: string | null;
+  createdAt: string;
+  updatedAt: string;
 }

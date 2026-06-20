@@ -28,9 +28,49 @@ export interface SoftwareInput {
 }
 
 export async function listSoftwares() {
-  return prisma.software.findMany({
+  // Primero intentar obtener softwares de la tabla Software
+  const softwares = await prisma.software.findMany({
     orderBy: { nombre: 'asc' },
   });
+
+  if (softwares.length > 0) {
+    return softwares;
+  }
+
+  // Fallback: si no hay softwares, usar webhookConfig como softwares
+  const webhooks = await prisma.webhookConfig.findMany({
+    where: { activo: true },
+    orderBy: { saas: 'asc' },
+  });
+
+  return webhooks.map((w) => ({
+    id: w.saas,
+    nombre: w.descripcion || w.saas,
+    slug: w.saas,
+    tagline: '',
+    descripcion: w.descripcion || '',
+    urlWebsite: '',
+    logoUrl: '',
+    faviconUrl: '',
+    colorPrimario: '#6366f1',
+    colorSecundario: '#8b5cf6',
+    dominioLanding: '',
+    categoria: '',
+    nicho: '',
+    problemaPrincipal: '',
+    promesaValor: '',
+    diferenciador: '',
+    icpTitulo: '',
+    icpDescripcion: '',
+    icpIngresosAnuales: '',
+    icpTamanoEquipo: '',
+    icpUbicacion: '',
+    icpDolorTop1: '',
+    icpDolorTop2: '',
+    icpDolorTop3: '',
+    createdAt: w.createdAt,
+    updatedAt: w.updatedAt,
+  }));
 }
 
 export async function getSoftwareBySlug(slug: string) {

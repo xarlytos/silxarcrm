@@ -277,7 +277,7 @@ export default function PropuestaPublicaPage() {
         <div className="text-center py-8">
           <div className="flex items-center justify-center gap-2 text-[12px] text-gray-400">
             <ShieldCheck className="w-3.5 h-3.5" />
-            Propuesta generada con CRM Maestro
+            Propuesta generada con La Máquina del Dinero
           </div>
         </div>
       </div>

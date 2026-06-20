@@ -1,0 +1,14 @@
+# Entorno
+.env
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# Logs / grabaciones
+*.log
+recordings/

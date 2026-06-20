@@ -66,7 +66,7 @@ export default function Header({ onMobileMenuClick }: HeaderProps = {}) {
     if (pathname.startsWith('/dashboard/metricas')) return 'Métricas';
     if (pathname.startsWith('/dashboard/ia')) return 'Asistente IA';
     if (pathname.startsWith('/dashboard/clientes/')) return 'Detalle Cliente';
-    return 'CRM Maestro';
+    return 'La Máquina del Dinero';
   };
 
   // Páginas disponibles para búsqueda - memoizado para evitar re-renders
@@ -243,7 +243,7 @@ export default function Header({ onMobileMenuClick }: HeaderProps = {}) {
             </div>
             <div className="min-w-0">
               <h1 className="text-[15px] sm:text-lg font-semibold text-[var(--text-primary)] truncate">{getCurrentPageTitle()}</h1>
-              <p className="hidden sm:block text-xs text-[var(--text-tertiary)]">CRM Maestro</p>
+              <p className="hidden sm:block text-xs text-[var(--text-tertiary)]">La Máquina del Dinero</p>
             </div>
           </div>
         </div>

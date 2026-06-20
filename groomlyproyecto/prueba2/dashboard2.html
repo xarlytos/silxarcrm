@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Productivity Dashboard</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #161b22;
+      --text: #f0f2f5;
+      --accent: #8b5cf6;
+      --muted: #9ca3af;
+      --border: #2a2f38;
+      --shadow: rgba(0, 0, 0, 0.25);
+      --hover: rgba(255, 255, 255, 0.04);
+      --sidebar-width: 240px;
+    }
+
+    [data-theme="light"] {
+      --bg: #f4f6f8;
+      --surface: #ffffff;
+      --text: #111827;
+      --accent: #7c3aed;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --hover: rgba(0, 0, 0, 0.04);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    aside {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.25rem;
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-item:hover,
+    .nav-item.active {
+      background: var(--border);
+      color: var(--accent);
+    }
+
+    main {
+      margin-left: 0;
+      padding: 1.25rem;
+      min-height: 100vh;
+    }
+
+    @media (min-width: 1024px) {
+      aside {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: var(--sidebar-width);
+        border-bottom: none;
+        border-right: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+      }
+
+      nav {
+        flex-direction: column;
+        margin-top: 2rem;
+      }
+
+      main {
+        margin-left: var(--sidebar-width);
+        padding: 2rem;
+      }
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    h2 {
+      margin: 0 0 1rem 0;
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    .clock {
+      text-align: right;
+    }
+
+    #time {
+      font-size: 1.35rem;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    #date {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .theme-toggle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 1.25rem;
+      cursor: pointer;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .theme-toggle:hover {
+      transform: rotate(20deg);
+      border-color: var(--accent);
+    }
+
+    .stats {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .stats { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 14px var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px var(--shadow);
+    }
+
+    .stat-value {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+      font-variant-numeric: tabular-nums;
+      display: inline-block;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .bar-chart {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 0.75rem;
+      height: 200px;
+      padding-top: 1rem;
+    }
+
+    .bar-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .bar {
+      width: 100%;
+      background: var(--accent);
+      border-radius: 6px 6px 0 0;
+      height: 0;
+      opacity: 0.85;
+      animation: grow 0.7s ease-out forwards;
+      transition: opacity 0.2s, filter 0.2s;
+    }
+
+    .bar:hover {
+      opacity: 1;
+      filter: brightness(1.15);
+    }
+
+    @keyframes grow {
+      from { height: 0; opacity: 0.4; }
+      to { height: var(--h); opacity: 0.85; }
+    }
+
+    .bar-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .task {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 0.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+      position: relative;
+    }
+
+    .task:hover {
+      background: var(--hover);
+    }
+
+    .task input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .custom-check {
+      width: 22px;
+      height: 22px;
+      border: 2px solid var(--accent);
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      color: transparent;
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .task:hover .custom-check {
+      transform: scale(1.05);
+    }
+
+    .task input:checked + .custom-check {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .task input:focus-visible + .custom-check {
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.4);
+    }
+
+    .task-text {
+      flex: 1;
+      font-size: 0.95rem;
+      text-decoration: line-through;
+      text-decoration-color: transparent;
+      transition: color 0.25s, text-decoration-color 0.25s;
+    }
+
+    .task input:checked ~ .task-text {
+      color: var(--muted);
+      text-decoration-color: var(--muted);
+    }
+
+    @keyframes pop {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+
+    .pop {
+      animation: pop 0.25s ease;
+    }
+
+    .mode {
+      text-align: center;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .timer-display {
+      font-size: 3.5rem;
+      font-weight: 800;
+      text-align: center;
+      margin: 1.5rem 0;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .timer-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    button {
+      padding: 0.65rem 1.4rem;
+      border-radius: 10px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: transform 0.2s, filter 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.1);
+    }
+
+    button.secondary {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    @keyframes flash {
+      50% { transform: scale(1.08); filter: brightness(1.25); }
+    }
+
+    .flash {
+      animation: flash 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <aside>
+    <div class="logo">⚡ FocusDash</div>
+    <nav>
+      <a href="#" class="nav-item active">🏠 Dashboard</a>
+      <a href="#" class="nav-item">📋 Tasks</a>
+      <a href="#" class="nav-item">📊 Analytics</a>
+      <a href="#" class="nav-item">⚙️ Settings</a>
+    </nav>
+  </aside>
+
+  <main>
+    <header>
+      <h1>Productivity Dashboard</h1>
+      <div class="clock">
+        <div id="time">--:--:--</div>
+        <div id="date">...</div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+    </header>
+
+    <section class="stats" aria-label="Stats">
+      <article class="card stat-card">
+        <div class="stat-value" data-target="24">0</div>
+        <div class="stat-label">Tasks Completed</div>
+      </article>
+      <article class="card stat-card">
+        <div class="stat-value" data-target="7">0</div>
+        <div class="stat-label">Day Streak</div>
+      </article>
+      <article class="card stat-card">
+        <div class="stat-value" data-target="3.5">0</div>
+        <div class="stat-label">Focus Hours</div>
+      </article>
+      <article class="card stat-card">
+        <div class="stat-value" data-target="892">0</div>
+        <div class="stat-label">Score</div>
+      </article>
+    </section>
+
+    <div class="grid">
+      <section class="card" aria-label="Weekly activity">
+        <h2>Weekly Activity</h2>
+        <div class="bar-chart" id="barChart"></div>
+      </section>
+
+      <section class="card" aria-label="Tasks">
+        <h2>Today's Tasks</h2>
+        <div id="taskList"></div>
+      </section>
+
+      <section class="card" aria-label="Pomodoro timer">
+        <div class="mode" id="modeLabel">🎯 Focus</div>
+        <div class="timer-display" id="timerDisplay">25:00</div>
+        <div class="timer-controls">
+          <button id="timerBtn">Start</button>
+          <button class="secondary" id="resetBtn">Reset</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    (() => {
+      const qs = (sel, el = document) => el.querySelector(sel);
+      const qsa = (sel, el = document) => [...el.querySelectorAll(sel)];
+
+      // Live clock
+      const timeEl = qs('#time');
+      const dateEl = qs('#date');
+      const fmt = n => String(n).padStart(2, '0');
+
+      const updateClock = () => {
+        const now = new Date();
+        timeEl.textContent = `${fmt(now.getHours())}:${fmt(now.getMinutes())}:${fmt(now.getSeconds())}`;
+        dateEl.textContent = now.toLocaleDateString(undefined, {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+      };
+      setInterval(updateClock, 1000);
+      updateClock();
+
+      // Theme toggle
+      const themeToggle = qs('#themeToggle');
+      let isDark = true;
+
+      themeToggle.addEventListener('click', () => {
+        isDark = !isDark;
+        document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
+        themeToggle.textContent = isDark ? '🌙' : '☀️';
+      });
+
+      // Animated stats
+      const statEls = qsa('.stat-value');
+
+      const animateValue = (el, target, duration = 1200) => {
+        const start = performance.now();
+        const isFloat = target % 1 !== 0;
+
+        const step = now => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = target * eased;
+          el.textContent = isFloat ? current.toFixed(1) : Math.round(current);
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = isFloat ? target.toFixed(1) : target;
+        };
+
+        requestAnimationFrame(step);
+      };
+
+      statEls.forEach(el => animateValue(el, parseFloat(el.dataset.target)));
+
+      // CSS bar chart
+      const chartData = [
+        ['Mon', 65],
+        ['Tue', 80],
+        ['Wed', 45],
+        ['Thu', 90],
+        ['Fri', 70],
+        ['Sat', 30],
+        ['Sun', 55]
+      ];
+      const chart = qs('#barChart');
+
+      chartData.forEach(([day, value], i) => {
+        const wrap = document.createElement('div');
+        wrap.className = 'bar-wrap';
+
+        const bar = document.createElement('div');
+        bar.className = 'bar';
+        bar.style.setProperty('--h', `${value}%`);
+        bar.style.animationDelay = `${i * 80}ms`;
+
+        const label = document.createElement('div');
+        label.className = 'bar-label';
+        label.textContent = day;
+
+        wrap.append(bar, label);
+        chart.appendChild(wrap);
+      });
+
+      // Task list
+      const tasks = [
+        'Design landing page',
+        'Write unit tests',
+        'Code review PR #42',
+        'Update documentation',
+        'Deploy to staging'
+      ];
+
+      const taskList = qs('#taskList');
+      const tasksCompletedEl = statEls[0];
+      const baseCompleted = 24;
+
+      const updateCompleted = () => {
+        const checked = qsa('input[type="checkbox"]:checked', taskList).length;
+        tasksCompletedEl.textContent = baseCompleted + checked;
+        tasksCompletedEl.classList.remove('flash');
+        void tasksCompletedEl.offsetWidth;
+        tasksCompletedEl.classList.add('flash');
+      };
+
+      tasks.forEach((text, i) => {
+        const id = `task-${i}`;
+        const row = document.createElement('label');
+        row.className = 'task';
+
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.id = id;
+
+        const check = document.createElement('span');
+        check.className = 'custom-check';
+        check.textContent = '✓';
+
+        const span = document.createElement('span');
+        span.className = 'task-text';
+        span.textContent = text;
+
+        row.append(input, check, span);
+
+        input.addEventListener('change', () => {
+          row.classList.add('pop');
+          row.addEventListener('animationend', () => row.classList.remove('pop'), { once: true });
+          updateCompleted();
+        });
+
+        taskList.appendChild(row);
+      });
+
+      // Pomodoro timer
+      const durations = { focus: 25 * 60, break: 5 * 60 };
+      const labels = { focus: '🎯 Focus', break: '☕ Break' };
+
+      let mode = 'focus';
+      let remaining = durations[mode];
+      let running = false;
+      let interval = null;
+
+      const display = qs('#timerDisplay');
+      const modeLabel = qs('#modeLabel');
+      const timerBtn = qs('#timerBtn');
+      const resetBtn = qs('#resetBtn');
+
+      const fmtTime = seconds => {
+        const m = Math.floor(seconds / 60);
+        const s = seconds % 60;
+        return `${fmt(m)}:${fmt(s)}`;
+      };
+
+      const renderTimer = () => {
+        display.textContent = fmtTime(remaining);
+        modeLabel.textContent = labels[mode];
+      };
+
+      const tick = () => {
+        if (remaining > 0) {
+          remaining--;
+          renderTimer();
+          return;
+        }
+
+        clearInterval(interval);
+        running = false;
+        timerBtn.textContent = 'Start';
+        mode = mode === 'focus' ? 'break' : 'focus';
+        remaining = durations[mode];
+        renderTimer();
+      };
+
+      timerBtn.addEventListener('click', () => {
+        if (running) {
+          clearInterval(interval);
+          running = false;
+          timerBtn.textContent = 'Start';
+        } else {
+          interval = setInterval(tick, 1000);
+          running = true;
+          timerBtn.textContent = 'Pause';
+        }
+      });
+
+      resetBtn.addEventListener('click', () => {
+        clearInterval(interval);
+        running = false;
+        timerBtn.textContent = 'Start';
+        remaining = durations[mode];
+        renderTimer();
+      });
+
+      renderTimer();
+    })();
+  </script>
+</body>
+</html>

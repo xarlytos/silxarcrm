@@ -243,7 +243,7 @@ export default function LoginPage() {
               <div className="absolute inset-[2px] rounded-[10px] bg-[#070709] flex items-center justify-center">
                 <Image
                   src="/logo.png"
-                  alt="CRM Maestro"
+                  alt="La Máquina del Dinero"
                   width={26}
                   height={26}
                   className="object-contain"
@@ -251,7 +251,7 @@ export default function LoginPage() {
                 />
               </div>
             </div>
-            <span className="text-[17px] font-semibold tracking-tight">CRM Maestro</span>
+            <span className="text-[17px] font-semibold tracking-tight">La Máquina del Dinero</span>
           </div>
 
           {/* Headline + features */}
@@ -328,7 +328,7 @@ export default function LoginPage() {
               </span>
               Sistemas operativos
             </div>
-            <span>© {new Date().getFullYear()} CRM Maestro</span>
+            <span>© {new Date().getFullYear()} La Máquina del Dinero</span>
           </div>
         </div>
       </aside>
@@ -347,11 +347,11 @@ export default function LoginPage() {
             <div className="relative w-12 h-12">
               <div className="absolute inset-0 rounded-xl auth-logo-ring opacity-60" />
               <div className="absolute inset-[2px] rounded-[10px] bg-[var(--bg-secondary)] flex items-center justify-center">
-                <Image src="/logo.png" alt="CRM Maestro" width={28} height={28} className="object-contain" priority />
+                <Image src="/logo.png" alt="La Máquina del Dinero" width={28} height={28} className="object-contain" priority />
               </div>
             </div>
             <div>
-              <p className="text-[16px] font-semibold text-[var(--text-primary)] leading-tight">CRM Maestro</p>
+              <p className="text-[16px] font-semibold text-[var(--text-primary)] leading-tight">La Máquina del Dinero</p>
               <p className="text-[12px] text-[var(--text-tertiary)]">Panel de Control SaaS</p>
             </div>
           </div>
@@ -495,7 +495,7 @@ export default function LoginPage() {
 
           {/* Footer */}
           <p className="mt-10 text-center text-[12px] text-[var(--text-tertiary)] auth-rise auth-rise-delay-4">
-            CRM Maestro v1.0 — Panel Interno
+            La Máquina del Dinero v1.0 — Panel Interno
           </p>
         </div>
       </main>

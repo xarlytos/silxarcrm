@@ -39,4 +39,21 @@ export const env = {
 
   FCM_ENABLED: process.env.FCM_ENABLED === 'true',
   LOG_LEVEL: process.env.LOG_LEVEL || 'info',
+
+  AI_AGENT_URL: process.env.AI_AGENT_URL || 'http://localhost:8000',
+  AI_AGENT_SECRET: process.env.AI_AGENT_SECRET || '',
+
+  // Generación de imágenes (logos/diseños de ropa)
+  OPENAI_IMAGE_MODEL: process.env.OPENAI_IMAGE_MODEL || 'gpt-image-1',
+
+  // Print-on-demand (marcas de ropa automáticas)
+  PRINTIFY_API_KEY: process.env.PRINTIFY_API_KEY || '',
+  PRINTIFY_SHOP_ID: process.env.PRINTIFY_SHOP_ID || '',
+
+  // Stripe (cobro tienda de ropa)
+  STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY || '',
+  STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET || '',
+
+  // Dominio público del sitio AdSense / tienda
+  PUBLIC_SITE_URL: process.env.PUBLIC_SITE_URL || process.env.FRONTEND_URL || 'http://localhost:3000',
 } as const;

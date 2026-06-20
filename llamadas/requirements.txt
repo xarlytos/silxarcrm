@@ -1,0 +1,37 @@
+# --- Core ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+pydantic==2.10.4
+pydantic-settings==2.7.1
+python-dotenv==1.0.1
+
+# --- Gemini ---
+google-genai==0.8.0
+
+# --- Telephony ---
+twilio==9.4.1
+
+# --- State / storage ---
+redis==5.2.1
+supabase==2.11.0
+asyncpg==0.30.0
+
+# --- Audio DSP ---
+numpy==2.2.1
+# audioop-lts backports the stdlib `audioop` module removed in Python 3.13.
+# On Python 3.12 the builtin audioop is still present; this is a no-op safety net.
+audioop-lts==0.2.1 ; python_version >= "3.13"
+
+# --- HTTP ---
+httpx==0.28.1
+aiohttp==3.11.11
+# httpx ya está, se reusa para notificaciones al backend
+
+# --- WebSocket (ElevenLabs STT/TTS) ---
+# uvicorn[standard] ya incluye websockets, pero lo explicitamos por claridad.
+websockets==14.2
+
+# --- Tests ---
+pytest==8.3.4
+pytest-asyncio==0.25.2

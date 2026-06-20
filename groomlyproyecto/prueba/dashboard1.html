@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dashboard</title>
+<style>
+:root {
+  --bg: #0f1117;
+  --surface: #1a1d27;
+  --text: #e4e6ef;
+  --accent: #7c5cfc;
+  --accent-dim: #5a3fd4;
+  --muted: #6b6f82;
+  --border: #2a2d3a;
+  --radius: 14px;
+  --shadow: 0 4px 20px rgba(0,0,0,.3);
+  --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --chart-bar: var(--accent);
+}
+[data-theme="light"] {
+  --bg: #f4f5f9;
+  --surface: #fff;
+  --text: #1a1d2e;
+  --muted: #6b7080;
+  --border: #e0e2ea;
+  --shadow: 0 4px 20px rgba(0,0,0,.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--text);transition:background .3s,color .3s;min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+
+/* layout */
+.app{display:grid;grid-template-columns:220px 1fr;grid-template-rows:auto 1fr;min-height:100vh}
+nav{grid-row:1/-1;background:var(--surface);border-right:1px solid var(--border);padding:1.5rem 1rem;display:flex;flex-direction:column;gap:.25rem}
+nav .logo{font-size:1.25rem;font-weight:700;margin-bottom:1.5rem;color:var(--accent)}
+nav a{display:flex;align-items:center;gap:.75rem;padding:.7rem 1rem;border-radius:10px;color:var(--muted);transition:all .2s;font-size:.9rem}
+nav a:hover{background:var(--border);color:var(--text)}
+nav a.active{background:color-mix(in srgb,var(--accent) 15%,transparent);color:var(--accent)}
+header{grid-column:2;display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;background:var(--surface);border-bottom:1px solid var(--border)}
+.clock{font-size:1rem;font-weight:600}
+.clock .date{font-size:.8rem;color:var(--muted);font-weight:400;margin-left:.75rem}
+.toggle-wrap{display:flex;align-items:center;gap:.6rem;cursor:pointer;font-size:.85rem;color:var(--muted);user-select:none}
+.toggle-track{width:44px;height:24px;border-radius:12px;background:var(--border);position:relative;transition:background .3s;flex-shrink:0}
+.toggle-track::after{content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:var(--accent);transition:transform .3s}
+[data-theme="light"] .toggle-track{background:var(--accent-dim)}
+[data-theme="light"] .toggle-track::after{transform:translateX(20px);background:#fff}
+main{grid-column:2;padding:2rem;overflow-y:auto}
+
+/* stat cards */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin-bottom:2rem}
+.stat-card{background:var(--surface);border-radius:var(--radius);padding:1.25rem;border:1px solid var(--border);box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.stat-card:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.stat-card .label{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.25rem}
+.stat-card .value{font-size:2rem;font-weight:700;color:var(--text)}
+.stat-card .icon{font-size:1.5rem;margin-bottom:.5rem}
+
+/* chart */
+.chart-section{background:var(--surface);border-radius:var(--radius);padding:1.5rem;border:1px solid var(--border);box-shadow:var(--shadow);margin-bottom:2rem}
+.chart-section h3{margin-bottom:1.25rem;font-size:1rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.chart{display:flex;align-items:flex-end;gap:.5rem;height:180px;padding:0 .25rem}
+.bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end}
+.bar{width:100%;max-width:40px;border-radius:6px 6px 2px 2px;background:var(--chart-bar);min-height:4px;transition:background .3s;animation:barGrow .6s ease-out forwards;transform-origin:bottom;transform:scaleY(0)}
+.bar-label{font-size:.7rem;color:var(--muted);margin-top:.4rem}
+@keyframes barGrow{to{transform:scaleY(1)}}
+
+/* tasks */
+.task-section{background:var(--surface);border-radius:var(--radius);padding:1.5rem;border:1px solid var(--border);box-shadow:var(--shadow);margin-bottom:2rem}
+.task-section h3{margin-bottom:1rem;font-size:1rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.task-list{display:flex;flex-direction:column;gap:.25rem}
+.task{display:flex;align-items:center;gap:.75rem;padding:.65rem .75rem;border-radius:10px;transition:background .2s;cursor:pointer}
+.task:hover{background:color-mix(in srgb,var(--border) 50%,transparent)}
+.task input[type="checkbox"]{appearance:none;width:20px;height:20px;border:2px solid var(--border);border-radius:5px;cursor:pointer;transition:all .2s;flex-shrink:0;position:relative}
+.task input[type="checkbox"]:checked{background:var(--accent);border-color:var(--accent)}
+.task input[type="checkbox"]:checked::after{content:'✓';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.task .text{flex:1;transition:all .3s}
+.task.done .text{text-decoration:line-through;color:var(--muted);opacity:.6}
+
+/* pomodoro */
+.pomodoro{background:var(--surface);border-radius:var(--radius);padding:1.5rem;border:1px solid var(--border);box-shadow:var(--shadow);text-align:center}
+.pomodoro .mode{font-size:1rem;margin-bottom:.5rem}
+.pomodoro .timer{font-size:3.5rem;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:2px}
+.pomodoro .controls{display:flex;gap:.5rem;justify-content:center;margin-top:1rem}
+.btn{background:var(--accent);color:#fff;border:none;padding:.6rem 1.5rem;border-radius:10px;font-size:.9rem;cursor:pointer;transition:all .2s;font-weight:600}
+.btn:hover{filter:brightness(1.15);transform:scale(1.03)}
+.btn-secondary{background:transparent;border:1px solid var(--border);color:var(--text)}
+.btn-secondary:hover{background:var(--border);filter:none}
+.btn-danger{background:#e74c5e}
+
+/* content grid */
+.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media(max-width:1000px){.content-grid{grid-template-columns:1fr}}
+@media(max-width:768px){
+  .app{grid-template-columns:1fr}
+  nav{display:none}
+  header{grid-column:1}
+  main{grid-column:1;padding:1rem}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <nav>
+    <div class="logo">⬡ dash</div>
+    <a class="active"><span>📊</span> Overview</a>
+    <a><span>📋</span> Tasks</a>
+    <a><span>⏱</span> Timer</a>
+    <a><span>📈</span> Reports</a>
+    <a><span>⚙️</span> Settings</a>
+  </nav>
+
+  <header>
+    <div class="clock" id="clock">--:--<span class="date"></span></div>
+    <div class="toggle-wrap" id="themeToggle">
+      <span>🌙</span>
+      <div class="toggle-track"></div>
+      <span>☀️</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="stats" id="statsGrid"></section>
+
+    <div class="content-grid">
+      <section class="chart-section">
+        <h3>📊 Weekly Focus</h3>
+        <div class="chart" id="chart"></div>
+      </section>
+
+      <section class="pomodoro" id="pomodoro">
+        <div class="mode" id="pomodoroMode">🎯 Focus</div>
+        <div class="timer" id="pomodoroTimer">25:00</div>
+        <div class="controls">
+          <button class="btn" id="pomodoroStart">▶ Start</button>
+          <button class="btn btn-secondary" id="pomodoroReset">↺ Reset</button>
+        </div>
+      </section>
+    </div>
+
+    <section class="task-section" style="margin-top:2rem">
+      <h3>✅ Today's Tasks</h3>
+      <div class="task-list" id="taskList"></div>
+    </section>
+  </main>
+</div>
+
+<script>
+(() => {
+  'use strict';
+
+  /* clock */
+  const clockEl = document.getElementById('clock');
+  const tick = () => {
+    const d = new Date();
+    clockEl.childNodes[0].textContent = d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+    clockEl.querySelector('.date').textContent = d.toLocaleDateString([],{weekday:'short',month:'short',day:'numeric',year:'numeric'});
+  };
+  tick();
+  setInterval(tick, 1000);
+
+  /* theme */
+  const toggle = document.getElementById('themeToggle');
+  toggle.addEventListener('click', () => {
+    const html = document.documentElement;
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+  });
+
+  /* stats count-up */
+  const statsData = [
+    {icon:'✅',label:'Tasks Done',value:24},
+    {icon:'🔥',label:'Day Streak',value:7},
+    {icon:'🎯',label:'Focus Hours',value:3.5},
+    {icon:'🏆',label:'Score',value:892},
+  ];
+  const statsGrid = document.getElementById('statsGrid');
+  const statCards = statsData.map((s,i) => {
+    const card = document.createElement('div');
+    card.className = 'stat-card';
+    card.innerHTML = `<div class="icon">${s.icon}</div><div class="label">${s.label}</div><div class="value" data-target="${s.value}" data-index="${i}">0</div>`;
+    statsGrid.appendChild(card);
+    return card;
+  });
+
+  let countedStats = 0;
+  const countUp = (el, target, duration) => {
+    const start = performance.now();
+    const isFloat = target % 1 !== 0;
+    const step = now => {
+      const t = Math.min((now - start) / duration, 1);
+      el.textContent = isFloat ? (t * target).toFixed(1) : Math.floor(t * target);
+      if (t < 1) requestAnimationFrame(step);
+      else { el.textContent = isFloat ? target.toFixed(1) : target; countedStats++; }
+    };
+    requestAnimationFrame(step);
+  };
+  setTimeout(() => statCards.forEach(c => countUp(c.querySelector('.value'), +c.querySelector('.value').dataset.target, 800 + Math.random()*400)), 200);
+
+  /* chart */
+  const chartData = [
+    {day:'Mon',val:65},{day:'Tue',val:80},{day:'Wed',val:45},{day:'Thu',val:90},{day:'Fri',val:70},{day:'Sat',val:30},{day:'Sun',val:55}
+  ];
+  const chart = document.getElementById('chart');
+  const maxVal = Math.max(...chartData.map(d => d.val));
+  chartData.forEach((d,i) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'bar-wrap';
+    const bar = document.createElement('div');
+    bar.className = 'bar';
+    bar.style.height = `${(d.val/maxVal)*100}%`;
+    bar.style.animationDelay = `${i*80}ms`;
+    wrap.appendChild(bar);
+    const lbl = document.createElement('div');
+    lbl.className = 'bar-label';
+    lbl.textContent = d.day;
+    wrap.appendChild(lbl);
+    chart.appendChild(wrap);
+  });
+
+  /* tasks */
+  const tasks = [
+    'Design landing page','Write unit tests','Code review PR #42','Update documentation','Deploy to staging'
+  ];
+  const taskList = document.getElementById('taskList');
+  let completedCount = 0;
+  const statValue0 = statCards[0].querySelector('.value');
+  tasks.forEach(t => {
+    const label = document.createElement('label');
+    label.className = 'task';
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
+    const span = document.createElement('span');
+    span.className = 'text';
+    span.textContent = t;
+    label.appendChild(cb);
+    label.appendChild(span);
+    cb.addEventListener('change', () => {
+      label.classList.toggle('done', cb.checked);
+      completedCount += cb.checked ? 1 : -1;
+      statValue0.textContent = completedCount;
+    });
+    taskList.appendChild(label);
+  });
+
+  /* pomodoro */
+  const timerEl = document.getElementById('pomodoroTimer');
+  const modeEl = document.getElementById('pomodoroMode');
+  const startBtn = document.getElementById('pomodoroStart');
+  const resetBtn = document.getElementById('pomodoroReset');
+  let totalSec = 25 * 60;
+  let remaining = totalSec;
+  let intervalId = null;
+  let isFocus = true;
+
+  const fmt = s => {
+    const m = Math.floor(s / 60);
+    const sec = s % 60;
+    return `${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+  };
+  const updateDisplay = () => { timerEl.textContent = fmt(remaining); };
+  const switchMode = () => {
+    isFocus = !isFocus;
+    totalSec = isFocus ? 25 * 60 : 5 * 60;
+    remaining = totalSec;
+    modeEl.textContent = isFocus ? '🎯 Focus' : '☕ Break';
+    updateDisplay();
+  };
+  startBtn.addEventListener('click', () => {
+    if (intervalId) {
+      clearInterval(intervalId);
+      intervalId = null;
+      startBtn.textContent = '▶ Start';
+      return;
+    }
+    startBtn.textContent = '⏸ Pause';
+    intervalId = setInterval(() => {
+      remaining--;
+      updateDisplay();
+      if (remaining <= 0) {
+        clearInterval(intervalId);
+        intervalId = null;
+        startBtn.textContent = '▶ Start';
+        switchMode();
+      }
+    }, 1000);
+  });
+  resetBtn.addEventListener('click', () => {
+    if (intervalId) { clearInterval(intervalId); intervalId = null; }
+    if (!isFocus) switchMode();
+    remaining = totalSec;
+    startBtn.textContent = '▶ Start';
+    updateDisplay();
+  });
+})();
+</script>
+</body>
+</html>

@@ -32,6 +32,16 @@ import freeValuesRoutes from './routes/freeValues';
 import propuestasRoutes from './routes/propuestas';
 import tareasRoutes from './routes/tareas';
 import softwareRoutes from './routes/software';
+import voiceAgentRoutes from './routes/voiceAgent';
+import growthRoutes from './routes/growth';
+import adsenseRoutes from './routes/adsense';
+import clothingRoutes from './routes/clothing';
+import assetsRoutes from './routes/assets';
+import sitesRoutes from './routes/sites';
+import { startGrowthJobs, stopGrowthJobs } from './jobs/growthJobs';
+import { startAdsenseJobs, stopAdsenseJobs } from './jobs/adsenseJobs';
+import { startClothingJobs, stopClothingJobs } from './jobs/clothingJobs';
+import { startAssetJobs, stopAssetJobs } from './jobs/assetJobs';
 
 console.log('[BOOT] CRM Maestro API process started');
 
@@ -76,6 +86,7 @@ app.use(express.json({
   },
 }));
 app.use('/api', apiLimiter);
+app.use('/uploads', express.static('uploads'));
 
 // Health check
 app.get('/health', (_req, res) => {
@@ -102,6 +113,12 @@ app.use('/api/free-values', freeValuesRoutes);
 app.use('/api/propuestas', propuestasRoutes);
 app.use('/api/tareas', tareasRoutes);
 app.use('/api/softwares', softwareRoutes);
+app.use('/api/voice-agent', voiceAgentRoutes);
+app.use('/api/growth', growthRoutes);
+app.use('/api/adsense', adsenseRoutes);
+app.use('/api/clothing', clothingRoutes);
+app.use('/api/assets', assetsRoutes);
+app.use('/api/sites', sitesRoutes);
 app.use('/events', eventsRoutes);
 
 // Error handler
@@ -120,6 +137,10 @@ async function start() {
     initFirebase();
     initSocket(httpServer);
     initCronJobs();
+    startGrowthJobs();
+    startAdsenseJobs();
+    startClothingJobs();
+    startAssetJobs();
 
     httpServer.listen(env.PORT, '0.0.0.0', () => {
       logger.info(`CRM Maestro API running on port ${env.PORT}`);
@@ -136,6 +157,10 @@ start();
 // Graceful shutdown
 process.on('SIGTERM', async () => {
   logger.info('SIGTERM received, shutting down...');
+  stopGrowthJobs();
+  stopAdsenseJobs();
+  stopClothingJobs();
+  stopAssetJobs();
   await prisma.$disconnect();
   httpServer.close();
   process.exit(0);

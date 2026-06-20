@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-brand-50: #f5f0ff;
+    --color-brand-100: #ede0ff;
+    --color-brand-500: #8636f4;
+    --color-brand-600: #7c22e6;
+    --color-brand-700: #6a12ca;
+    --color-ink-50: #f7f7f9;
+    --color-ink-100: #ececf0;
+    --color-ink-200: #d5d5de;
+    --color-ink-300: #b0b0c0;
+    --color-ink-400: #85859c;
+    --color-ink-500: #66667e;
+    --color-ink-600: #525268;
+    --color-ink-700: #434456;
+    --color-ink-800: #3a3a49;
+    --color-ink-900: #1f1f2c;
+    --color-ink-950: #12121a;
+  }
+}

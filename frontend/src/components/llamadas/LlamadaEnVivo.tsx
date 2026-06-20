@@ -28,7 +28,7 @@ const ESTADOS_LEAD: LeadEstado[] = [
   'CONVERTIDO',
 ];
 
-const ESTADOS_TERMINAL = ['completada', 'fallida', 'no_contesta', 'cancelada'];
+const ESTADOS_TERMINAL = ['completada', 'fallida', 'no_contesta', 'cancelada', 'rechazado', 'optout', 'transferido'];
 
 export default function LlamadaEnVivo({ llamada: initial, spech, lead, onUpdated, onClose }: LlamadaEnVivoProps) {
   const [llamada, setLlamada] = useState<LlamadaReal>(initial);
@@ -151,9 +151,16 @@ export default function LlamadaEnVivo({ llamada: initial, spech, lead, onUpdated
               <Phone className="w-6 h-6" />
             </div>
             <div>
-              <span className={`inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-semibold uppercase tracking-wider ${estadoColor}`}>
-                {estadoLabel}
-              </span>
+              <div className="flex items-center gap-2">
+                <span className={`inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-semibold uppercase tracking-wider ${estadoColor}`}>
+                  {estadoLabel}
+                </span>
+                {llamada.modo === 'AI' && (
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold uppercase tracking-wider bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300">
+                    AI
+                  </span>
+                )}
+              </div>
               <p className="text-[14px] text-[var(--text-secondary)] mt-1">
                 {llamada.lead?.nombre || llamada.telefonoLead}
               </p>
@@ -236,24 +243,57 @@ export default function LlamadaEnVivo({ llamada: initial, spech, lead, onUpdated
         </div>
       )}
 
-      {/* Notas */}
-      <div className="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-2xl p-5">
-        <div className="flex items-center justify-between mb-3">
-          <h4 className="text-[13px] font-semibold uppercase tracking-wider text-[var(--text-tertiary)]">
-            Notas durante la llamada
-          </h4>
-          <span className="text-[11px] text-[var(--text-tertiary)]">
-            {saving ? 'Guardando...' : 'Auto-guardado'}
-          </span>
+      {/* Notas (solo modo humano) */}
+      {llamada.modo !== 'AI' && (
+        <div className="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-2xl p-5">
+          <div className="flex items-center justify-between mb-3">
+            <h4 className="text-[13px] font-semibold uppercase tracking-wider text-[var(--text-tertiary)]">
+              Notas durante la llamada
+            </h4>
+            <span className="text-[11px] text-[var(--text-tertiary)]">
+              {saving ? 'Guardando...' : 'Auto-guardado'}
+            </span>
+          </div>
+          <textarea
+            value={notas}
+            onChange={(e) => setNotas(e.target.value)}
+            rows={6}
+            placeholder="Escribe lo que el lead dice, objeciones, datos importantes..."
+            className="w-full px-4 py-3 bg-[var(--bg-primary)] border border-[var(--border-primary)] rounded-xl text-[14px] text-[var(--text-primary)] resize-y"
+          />
         </div>
-        <textarea
-          value={notas}
-          onChange={(e) => setNotas(e.target.value)}
-          rows={6}
-          placeholder="Escribe lo que el lead dice, objeciones, datos importantes..."
-          className="w-full px-4 py-3 bg-[var(--bg-primary)] border border-[var(--border-primary)] rounded-xl text-[14px] text-[var(--text-primary)] resize-y"
-        />
-      </div>
+      )}
+
+      {/* Transcript (modo AI) */}
+      {llamada.modo === 'AI' && llamada.transcript && (
+        <div className="bg-[var(--bg-secondary)] border border-[var(--border-primary)] rounded-2xl p-5">
+          <h4 className="text-[13px] font-semibold uppercase tracking-wider text-[var(--text-tertiary)] mb-3">
+            Transcripcion AI
+          </h4>
+          <div className="max-h-[300px] overflow-y-auto pr-2 space-y-2">
+            {(() => {
+              try {
+                const txs = typeof llamada.transcript === 'string'
+                  ? JSON.parse(llamada.transcript)
+                  : llamada.transcript;
+                if (!Array.isArray(txs)) return null;
+                return txs.map((t: any, i: number) => (
+                  <div key={i} className={`text-[13px] ${t.role === 'agente' ? 'text-violet-700 dark:text-violet-300' : 'text-[var(--text-secondary)]'}`}>
+                    <span className="font-semibold text-[11px] uppercase">{t.role}:</span>{' '}
+                    {t.text}
+                  </div>
+                ));
+              } catch {
+                return (
+                  <p className="text-[13px] text-[var(--text-secondary)] whitespace-pre-wrap">
+                    {llamada.transcript}
+                  </p>
+                );
+              }
+            })()}
+          </div>
+        </div>
+      )}
 
       {/* Post-llamada */}
       {isTerminal && (

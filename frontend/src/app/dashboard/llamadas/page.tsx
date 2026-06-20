@@ -33,6 +33,7 @@ import LlamadaIniciarModal from '@/components/llamadas/LlamadaIniciarModal';
 import LlamadaEnVivo from '@/components/llamadas/LlamadaEnVivo';
 import HistorialLlamadas from '@/components/llamadas/HistorialLlamadas';
 import LlamadaStats from '@/components/llamadas/LlamadaStats';
+import AIMetricsDashboard from '@/components/llamadas/AIMetricsDashboard';
 
 type TabId = 'llamar' | 'practicar' | 'spechs' | 'historial';
 
@@ -65,6 +66,7 @@ export default function LlamadasPage() {
   // Llamada real
   const [llamadaActiva, setLlamadaActiva] = useState<LlamadaReal | null>(null);
   const [showIniciarModal, setShowIniciarModal] = useState(false);
+  const [modoLlamada, setModoLlamada] = useState<'HUMANO' | 'AI'>('HUMANO');
   const [stats, setStats] = useState<LlamadasStats | null>(null);
   const [reloadHistorial, setReloadHistorial] = useState(0);
 
@@ -195,12 +197,20 @@ export default function LlamadasPage() {
   const handleIniciarLlamada = async (data: { spechId: string | null; telefonoAgente?: string }) => {
     if (!selectedLead) return;
     try {
-      const res: any = await apiClient.iniciarLlamada({
-        leadId: selectedLead.id,
-        spechId: data.spechId || undefined,
-        telefonoAgente: data.telefonoAgente,
-      });
-      setLlamadaActiva(res.data);
+      if (modoLlamada === 'AI') {
+        const res: any = await apiClient.iniciarLlamadaAI({
+          leadId: selectedLead.id,
+          spechId: data.spechId || undefined,
+        });
+        setLlamadaActiva(res.data);
+      } else {
+        const res: any = await apiClient.iniciarLlamada({
+          leadId: selectedLead.id,
+          spechId: data.spechId || undefined,
+          telefonoAgente: data.telefonoAgente,
+        });
+        setLlamadaActiva(res.data);
+      }
       setShowIniciarModal(false);
     } catch (e: any) {
       alert(e.message || 'Error iniciando llamada');
@@ -302,6 +312,9 @@ export default function LlamadasPage() {
       {/* Stats */}
       <LlamadaStats stats={stats} loading={!stats} />
 
+      {/* AI Metrics Dashboard */}
+      {softwareId && <AIMetricsDashboard softwareId={softwareId} />}
+
       {/* Tabs */}
       <div className="border-b border-[var(--border-primary)] -mx-2 px-2 sm:mx-0 sm:px-0 overflow-x-auto scrollbar-hide">
         <div className="flex gap-1 min-w-max">
@@ -367,14 +380,43 @@ export default function LlamadasPage() {
                       {selectedLead.email && ` · ${selectedLead.email}`}
                     </p>
                   </div>
-                  <button
-                    disabled={!selectedLead.telefono}
-                    onClick={() => setShowIniciarModal(true)}
-                    className="flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-xl text-[13px] sm:text-[14px] font-medium hover:shadow-lg hover:shadow-emerald-500/25 transition-all disabled:opacity-40 shrink-0 w-full sm:w-auto justify-center"
-                  >
-                    <Phone className="w-4 h-4" />
-                    {selectedLead.telefono ? 'Llamar ahora' : 'Sin telefono'}
-                  </button>
+                  <div className="flex flex-col gap-2 shrink-0 w-full sm:w-auto">
+                    {/* Selector de modo */}
+                    <div className="flex bg-[var(--bg-primary)] border border-[var(--border-primary)] rounded-lg p-0.5">
+                      <button
+                        onClick={() => setModoLlamada('HUMANO')}
+                        className={`flex-1 px-3 py-1.5 rounded-md text-[11px] font-medium transition-colors ${
+                          modoLlamada === 'HUMANO'
+                            ? 'bg-violet-600 text-white'
+                            : 'text-[var(--text-tertiary)] hover:text-[var(--text-secondary)]'
+                        }`}
+                      >
+                        Humano
+                      </button>
+                      <button
+                        onClick={() => setModoLlamada('AI')}
+                        className={`flex-1 px-3 py-1.5 rounded-md text-[11px] font-medium transition-colors ${
+                          modoLlamada === 'AI'
+                            ? 'bg-violet-600 text-white'
+                            : 'text-[var(--text-tertiary)] hover:text-[var(--text-secondary)]'
+                        }`}
+                      >
+                        AI
+                      </button>
+                    </div>
+                    <button
+                      disabled={!selectedLead.telefono}
+                      onClick={() => setShowIniciarModal(true)}
+                      className="flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-xl text-[13px] sm:text-[14px] font-medium hover:shadow-lg hover:shadow-emerald-500/25 transition-all disabled:opacity-40 justify-center"
+                    >
+                      <Phone className="w-4 h-4" />
+                      {selectedLead.telefono
+                        ? modoLlamada === 'AI'
+                          ? 'Llamar con AI'
+                          : 'Llamar ahora'
+                        : 'Sin telefono'}
+                    </button>
+                  </div>
                 </div>
 
                 {!selectedLead.telefono && (

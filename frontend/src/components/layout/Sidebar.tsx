@@ -25,6 +25,19 @@ import {
   Lightbulb,
   FileText,
   Swords,
+  Bot,
+  TrendingUp,
+  Megaphone,
+  Skull,
+  Building2,
+  Target,
+  Library,
+  Newspaper,
+  Shirt,
+  Radar as RadarIcon,
+  ClipboardCheck,
+  Trophy,
+  Package,
 } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { useCommandPalette } from './CommandPalette';
@@ -54,6 +67,7 @@ const navGroups: NavGroup[] = [
     items: [
       { href: '/dashboard/leads', label: 'Leads', icon: Users },
       { href: '/dashboard/llamadas', label: 'Llamadas', icon: Phone },
+      { href: '/dashboard/llamadas/probar-ai', label: 'Probar AI', icon: Bot, tag: 'new' },
       { href: '/dashboard/email', label: 'Email', icon: Mail },
       { href: '/dashboard/whatsapp', label: 'WhatsApp', icon: MessageCircle, tag: 'new' },
       { href: '/dashboard/calendario', label: 'Calendario', icon: Calendar },
@@ -64,6 +78,19 @@ const navGroups: NavGroup[] = [
   {
     title: 'Marketing',
     items: [
+      { href: '/dashboard/growth', label: 'Growth Engine', icon: TrendingUp, tag: 'new' },
+      { href: '/dashboard/growth/social-posts', label: 'Social Posts', icon: Megaphone, tag: 'new' },
+      { href: '/dashboard/growth/brands', label: 'Brands', icon: Building2, tag: 'new' },
+      { href: '/dashboard/growth/campanas', label: 'Campañas', icon: Target, tag: 'new' },
+      { href: '/dashboard/growth/biblioteca', label: 'Biblioteca', icon: Library, tag: 'new' },
+      { href: '/dashboard/growth/analytics/social', label: 'Analytics Social', icon: BarChart3, tag: 'new' },
+      { href: '/dashboard/growth/radar', label: 'Radar de leads', icon: RadarIcon, tag: 'new' },
+      { href: '/dashboard/growth/auditorias', label: 'Auditoría gratis', icon: ClipboardCheck, tag: 'new' },
+      { href: '/dashboard/growth/casos-exito', label: 'Casos de éxito', icon: Trophy, tag: 'new' },
+      { href: '/dashboard/growth/resurreccion', label: 'Resurrección', icon: Skull, tag: 'new' },
+      { href: '/dashboard/growth/adsense', label: 'AdSense', icon: Newspaper, tag: 'new' },
+      { href: '/dashboard/growth/clothing', label: 'Marcas Ropa', icon: Shirt, tag: 'new' },
+      { href: '/dashboard/assets', label: 'Asset Factory', icon: Package, tag: 'new' },
       { href: '/dashboard/landings', label: 'Landings', icon: Globe, tag: 'new' },
       { href: '/dashboard/free-values', label: 'Free Values', icon: Gift, tag: 'new' },
     ],
@@ -251,7 +278,7 @@ export default function Sidebar({
                 <div className="ease-luxe relative w-10 h-10 rounded-xl bg-[var(--bg-tertiary)] border border-[var(--border-primary)] flex items-center justify-center overflow-hidden group-hover:border-blue-500/40 transition-all duration-500 group-hover:scale-105 group-hover:rotate-[-3deg] group-active:scale-95">
                   <Image
                     src="/logo.png"
-                    alt="CRM Maestro"
+                    alt="La Máquina del Dinero"
                     width={28}
                     height={28}
                     className="ease-luxe object-contain transition-transform duration-500 group-hover:scale-110"
@@ -261,7 +288,7 @@ export default function Sidebar({
               </div>
               <div className="overflow-hidden min-w-0 flex-1">
                 <h1 className="text-[15px] font-semibold text-[var(--text-primary)] leading-none whitespace-nowrap tracking-tight">
-                  CRM Maestro
+                  La Máquina del Dinero
                 </h1>
                 <div className="flex items-center gap-1.5 mt-1.5">
                   <span className="text-[10px] font-medium uppercase tracking-wider text-[var(--text-tertiary)]">

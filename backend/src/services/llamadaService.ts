@@ -110,17 +110,19 @@ export async function listLlamadas(filtros: {
   leadId?: string;
   agenteId?: number;
   estado?: string;
+  modo?: string;
   desde?: string;
   hasta?: string;
   page?: number;
   limit?: number;
 }) {
-  const { softwareId, leadId, agenteId, estado, desde, hasta, page = 1, limit = 25 } = filtros;
+  const { softwareId, leadId, agenteId, estado, modo, desde, hasta, page = 1, limit = 25 } = filtros;
   const where: any = {};
   if (softwareId) where.softwareId = softwareId;
   if (leadId) where.leadId = leadId;
   if (agenteId !== undefined) where.agenteId = agenteId;
   if (estado) where.estado = estado;
+  if (modo) where.modo = modo;
   if (desde || hasta) {
     where.createdAt = {};
     if (desde) where.createdAt.gte = new Date(desde);

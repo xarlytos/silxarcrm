@@ -53,7 +53,7 @@ export default function LoginScreen({ onLogin }: LoginScreenProps) {
           <View style={styles.logoIcon}>
             <Text style={styles.logoEmoji}>📊</Text>
           </View>
-          <Text style={styles.title}>CRM Maestro</Text>
+          <Text style={styles.title}>La Máquina del Dinero</Text>
           <Text style={styles.subtitle}>Panel de Control SaaS</Text>
         </View>
 
@@ -95,7 +95,7 @@ export default function LoginScreen({ onLogin }: LoginScreenProps) {
           </TouchableOpacity>
         </View>
 
-        <Text style={styles.version}>CRM Maestro v1.0 - Panel Interno</Text>
+        <Text style={styles.version}>La Máquina del Dinero v1.0 - Panel Interno</Text>
       </View>
     </KeyboardAvoidingView>
   );
