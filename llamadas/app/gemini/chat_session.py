@@ -16,6 +16,10 @@ from typing import Awaitable, Callable
 
 from app.config import settings
 from app.conversation.prompts import build_conversator_prompt
+from app.conversation.humanization import get_pacing, get_fillers, get_edge_cases
+from app.conversation.emotional_response import EmotionalToneAdjuster
+from app.conversation.memory_consistency import ConversationConsistency
+from app.conversation.irreconocible import apply_irreconocible_processing
 from app.gemini import tools as tools_mod
 
 logger = logging.getLogger(__name__)
@@ -94,6 +98,12 @@ class GeminiChatSession:
         self._pending_tool_results: list[dict] | None = None
         self._cache_hits: int = 0  # Métrica para logging
 
+        # ═══ FIX 1: Humanización ═══
+        self._consistency = ConversationConsistency()
+        self._pacing = get_pacing()
+        self._fillers = get_fillers()
+        self._edge_cases = get_edge_cases()
+
         # ═══ OPTIMIZACIÓN CICLO 2 (1.4): Compilar prompt base 1x ═══
         # Antes: recompilado cada turno (system_prompt + sales_state + turnos dinámicos)
         # Ahora: compilar la parte estática UNA VEZ
@@ -126,21 +136,61 @@ class GeminiChatSession:
         if self.on_transcript:
             await self.on_transcript("prospecto", text)
 
+        # ═══ FIX 3: Edge Case Handler (Tier 1: -95%) ═══
+        # Detectar si el usuario está haciendo un test/trap
+        edge_case_response = self._edge_cases.handle(text)
+        if edge_case_response:
+            logger.info("Edge case detectado: respondiendo con handler")
+            self._current_agent_text = edge_case_response
+            if self.on_text_chunk:
+                await self.on_text_chunk(edge_case_response)
+            if self.on_transcript:
+                await self.on_transcript("agente", edge_case_response)
+            self._history.append({
+                "role": "model",
+                "parts": [{"text": edge_case_response}],
+            })
+            return
+
+        # ═══ FIX 5: Memory Consistency - Actualizar contexto ═══
+        self._consistency.update(text, len(self._history) // 2)
+
         # ═══ INTENTAR CACHE ANTES DE LLM ═══
         cached_response = self._try_cache_response(text)
         if cached_response:
-            # Respuesta desde cache (0ms latencia)
+            # ═══ FIX 1: Smart Pausing (Tier 1: -95%) ═══
+            # Introducir pausa realista ANTES de responder
+            pause_ms = self._pacing.calculate_pause_ms(
+                turn_number=len(self._history) // 2,
+                intent=getattr(self, '_last_intent', 'neutro'),
+                is_cached=True,
+                complexity=0.3,
+            )
+            logger.debug("Smart Pausing: esperar %.0fms (cached response)", pause_ms)
+            await asyncio.sleep(pause_ms / 1000.0)
+
+            # Respuesta desde cache (con humanización)
             self._current_agent_text = cached_response
             if self.on_text_chunk:
-                await self.on_text_chunk(cached_response)
+                await self.on_text_chunk(self._current_agent_text)
             if self.on_transcript:
-                await self.on_transcript("agente", cached_response)
+                await self.on_transcript("agente", self._current_agent_text)
             # Guardar en historial
             self._history.append({
                 "role": "model",
-                "parts": [{"text": cached_response}],
+                "parts": [{"text": self._current_agent_text}],
             })
             return
+
+        # ═══ FIX 1: Smart Pausing para respuesta LLM ═══
+        pause_ms = self._pacing.calculate_pause_ms(
+            turn_number=len(self._history) // 2,
+            intent=getattr(self, '_last_intent', 'neutro'),
+            is_cached=False,
+            complexity=0.7,
+        )
+        logger.debug("Smart Pausing: esperar %.0fms (LLM response)", pause_ms)
+        await asyncio.sleep(pause_ms / 1000.0)
 
         # Si no hay cache, usar Gemini
         await self._generate()
@@ -285,15 +335,28 @@ Risk: {self.call_goal.risk_of_loss:.0%}
             if function_calls and self.on_tool_call:
                 await self.on_tool_call(function_calls)
 
-            # Notificar transcripción del agente (texto completo)
-            if self._current_agent_text and self.on_transcript:
-                await self.on_transcript("agente", self._current_agent_text)
+            # ═══ FIX MASTER: IRRECONOCIBLE (Todos los fixes coordinados) ═══
+            # Aplicar TODOS los fixes avanzados en coordinación
+            # Esto reemplaza fixes individuales (FIX 2, etc) con un sistema integrado
+            emocion = getattr(self, '_last_emotion', 'neutro') or 'neutro'
+            humanized_text = apply_irreconocible_processing(
+                self._current_agent_text,
+                turn_number=len(self._history) // 2,
+                classification=getattr(self, '_last_classification', None),
+                previous_turns=self._history[-5:] if self._history else None,
+                emocion=emocion,
+            )
 
-            # Guardar respuesta en historial
-            if self._current_agent_text:
+            # Notificar transcripción del agente (texto completo)
+            if humanized_text and self.on_transcript:
+                await self.on_transcript("agente", humanized_text)
+
+            # Guardar respuesta en historial (con humanización master)
+            if humanized_text:
+                self._current_agent_text = humanized_text
                 self._history.append({
                     "role": "model",
-                    "parts": [{"text": self._current_agent_text}],
+                    "parts": [{"text": humanized_text}],
                 })
 
         except Exception as exc:

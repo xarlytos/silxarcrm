@@ -22,6 +22,8 @@ from app.conversation.classifier import MiniClassifier, IntentClassification
 from app.conversation.state_engine import CallGoal, StateEngine, SalesState
 from app.conversation.strategist import Strategist
 from app.conversation.master_llm import MasterLLM
+from app.conversation.emotional_response import EmotionalToneAdjuster
+from app.conversation.memory_consistency import ConversationConsistency
 from app.elevenlabs.stt_session import ElevenLabsScribe
 from app.elevenlabs.tts_session import ElevenLabsTTS
 from app.gemini.chat_session import GeminiChatSession
@@ -79,6 +81,10 @@ class HybridSession:
         self._last_classification: IntentClassification | None = None
         # Brief del Maestro (guía estratégica para el Voz)
         self._current_brief = None
+
+        # ═══ FIX 4 + 5: Emotional Mirroring + Memory Consistency ═══
+        self._emotional_adjuster = EmotionalToneAdjuster()
+        self._conversation_consistency = ConversationConsistency()
 
     # ── Interfaz pública ──
     async def attach(
@@ -258,6 +264,10 @@ class HybridSession:
         # 1. Actualizar CallContext
         self.ctx.add_turn("prospecto", text)
 
+        # ═══ FIX 5: Memory Consistency (Tier 3: -50%) ═══
+        # Extraer hechos de lo que el prospecto acaba de decir
+        self._conversation_consistency.update(text, self.ctx.turns)
+
         # 2. ¿Invocar classifier?
         classifier_start = time.perf_counter()
         classifier_invoked = self._should_classify(text)
@@ -396,6 +406,9 @@ class HybridSession:
           El Voz del turno N usa brief anterior, pero para turno N+1
           el brief crítico DEBE estar listo
         - is_critical=False → Prioridad normal
+
+        FIX 4: Emotional Mirroring
+        - Después de generar el brief, ajustarlo según emoción del prospecto
         """
         try:
             # Cuando es crítico, la regeneración es prioritaria
@@ -408,6 +421,19 @@ class HybridSession:
                 classification=classification,
                 turno=self.ctx.turns,
             )
+
+            # ═══ FIX 4: Emotional Mirroring (Tier 2: +5-10%) ═══
+            # Ajustar el brief según la emoción detectada
+            if classification:
+                turns_since_emotion_changed = 0  # TODO: calcular desde last_emotion
+                brief = self._emotional_adjuster.adjust_brief(
+                    brief,
+                    classification,
+                    turns_since_emotion_changed,
+                )
+                logger.info("Brief ajustado por emoción: %s → tono=%s",
+                           classification.emocion, brief.tono)
+
             self._current_brief = brief
             priority_label = "CRÍTICO" if is_critical else "normal"
             logger.info("Master: brief background actualizado [%s] → estrategia=%s",

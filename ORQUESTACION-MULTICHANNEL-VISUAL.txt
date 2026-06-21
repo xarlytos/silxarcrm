@@ -1,0 +1,452 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║         ORQUESTACIÓN MULTICANAL: FLUJO DE UN PROSPECT A TRAVÉS DE 6 CANALES ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ PROSPECT: Juan García (+52 55 1234 5678)                                    │
+│ EMPRESA: Clínica Dental Sonrisa                                             │
+│ ESTADO: DISCOVERY → INTERESTED → DEMO_SCHEDULED → CLOSED_WON               │
+│ HISTORIAL COMPARTIDO: 15 mensajes a través de 4 canales                     │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════════
+DÍA 1 — INBOUND CALL (TELÉFONO)
+═══════════════════════════════════════════════════════════════════════════════
+
+┌─ 10:00 AM ────────────────────────────────────────────────────────────────┐
+│ TWILIO → Media Streams WebSocket                                          │
+│ [Audio: μ-law 8kHz]                                                        │
+│                                                                             │
+│ DISPATCHER:                                                                 │
+│   ├─ channel = VOICE                                                      │
+│   ├─ phone = +52 55 1234 5678                                            │
+│   └─ timestamp = 10:00:00                                                │
+│                                                                             │
+│ COMPLIANCE CHECK:                                                          │
+│   ├─ quiet_hours? NO (es 10am en CDMX) ✓                                 │
+│   ├─ consent? SÍ (anterior call) ✓                                        │
+│   └─ DNC? NO ✓                                                            │
+│                                                                             │
+│ LOAD SESSION:                                                              │
+│   ├─ Redis miss (primera llamada del día)                               │
+│   ├─ Supabase hit: prospect_sessions_v2                                │
+│   │   ├─ nombre: "Juan García"                                          │
+│   │   ├─ empresa: "Clínica Dental Sonrisa"                             │
+│   │   ├─ ciudad: "CDMX"                                                │
+│   │   └─ state: "discovery"                                            │
+│   └─ Redis cache (TTL 24h)                                              │
+│                                                                             │
+│ AGENT INTELLIGENCE (VOICE mode):                                          │
+│   ├─ system_prompt: "Eres agente SDR... Modo VOICE..."                 │
+│   ├─ context: [historial compartido vacío → primeros 3 turnos]         │
+│   ├─ model: gemini-3.1-flash-lite                                      │
+│   └─ response: "Hola Juan, sé que es día ocupado. Llamo porque..."     │
+│                                                                             │
+│ VOICE SYNTHESIS (ElevenLabs):                                             │
+│   ├─ text → audio (latencia 75ms)                                       │
+│   └─ AudioBridge → Twilio Media Streams (μ-law)                         │
+│                                                                             │
+│ → Message saved: unified_messages_v2 (VOICE, assistant)                  │
+└───────────────────────────────────────────────────────────────────────────┘
+
+STT INPUT: "Mira, sí tenemos no-shows, pero no tenemos presupuesto"
+↓
+INTENT CLASSIFIER:
+  └─ intent: "objection"
+     confidence: 0.92
+     explanation: "Client mentions budget constraint"
+
+AGENT RESPONSE (VOICE mode):
+  └─ "Entiendo Juan. Muchas clínicas optan por el plan básico que
+     se paga con los primeros 5 no-shows evitados. ¿Te late que
+     veamos los números?"
+
+TTS OUTPUT: [audio 15 seg]
+
+PROSEPECT: "Dale, pero que sea rápido"
+
+INTENT: "interested"
+STATE UPDATE: discovery → interested
+
+SESSION UPDATES:
+  ├─ active_channels: {VOICE}
+  ├─ last_interaction[VOICE]: 10:15
+  ├─ message_history: [2 msgs]
+  └─ state: INTERESTED
+
+PROMPT → RESPONSE (3 segundos):
+  "Perfecto. Te envío un link por WhatsApp en 2 minutos para que
+   veas la demo. ¿Ese número te sirve?"
+
+TTS AUDIO → Twilio → Prospect
+
+CALL END: 10:18
+  ├─ Duration: 18 min
+  └─ State: INTERESTED (saved to prospect_sessions_v2)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+DÍA 1 — AUTO-TRIGGER (WhatsApp template)
+═══════════════════════════════════════════════════════════════════════════════
+
+┌─ 10:20 AM ────────────────────────────────────────────────────────────────┐
+│ TRIGGER: "Enviar demo link via WhatsApp cuando call termina"              │
+│ (Cron job OR direct post-call hook)                                        │
+│                                                                             │
+│ DISPATCHER:                                                                 │
+│   ├─ channel = WHATSAPP                                                   │
+│   ├─ phone = +52 55 1234 5678                                            │
+│   └─ type = "template" (HSM pre-aprobado)                               │
+│                                                                             │
+│ COMPLIANCE CHECK:                                                          │
+│   ├─ has_consent[WHATSAPP]? NO (never texted before)                    │
+│   ├─ → register_consent(phone, WHATSAPP, "call_referral")               │
+│   └─ consent now approved ✓                                              │
+│                                                                             │
+│ LOAD SESSION:                                                              │
+│   ├─ Redis hit (mismo prospect, hace 20 min) ✓✓✓                         │
+│   │   ├─ message_history: [2 msgs from VOICE]                           │
+│   │   ├─ state: INTERESTED                                              │
+│   │   └─ prospect_data: cacheado                                        │
+│   └─ No Supabase call! Ultra-rápido.                                    │
+│                                                                             │
+│ AGENT INTELLIGENCE (WHATSAPP mode):                                       │
+│   ├─ system_prompt: "...Modo WHATSAPP: bullets, emojis, corto..."       │
+│   ├─ context: "VOICE call: agreedto see demo. Budget constraint."       │
+│   ├─ task: "Enviar template Calendly"                                   │
+│   └─ response: Template HSM → Twilio API                                │
+│                                                                             │
+│ TWILIO WHATSAPP SEND:                                                      │
+│   ├─ API: twilio.messages.create(                                        │
+│   │   from_="whatsapp:+14155552671",                                    │
+│   │   to="whatsapp:+52 55 1234 5678",                                  │
+│   │   template_sid="HXxxxxx"  # pre-approved template                  │
+│   │ )                                                                    │
+│   └─ Status: delivered ✓                                                │
+│                                                                             │
+│ MESSAGE SAVED:                                                             │
+│   ├─ unified_messages_v2:                                                │
+│   │   channel: WHATSAPP                                                 │
+│   │   role: assistant                                                   │
+│   │   text: "¡Hola Juan! 👋 Como hablamos hace poco..."                │
+│   │   timestamp: 10:20                                                  │
+│   └─ Redis updated (session still hot)                                  │
+└───────────────────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════════
+DÍA 1 — PROSPECT RESPONDS (WhatsApp)
+═══════════════════════════════════════════════════════════════════════════════
+
+┌─ 10:35 AM ────────────────────────────────────────────────────────────────┐
+│ TWILIO WEBHOOK: POST /channels/whatsapp                                   │
+│ {                                                                           │
+│   "From": "whatsapp:+52 55 1234 5678",                                  │
+│   "Body": "Mirá, justo veo eso. Una pregunta... ¿Incluye todo?"         │
+│ }                                                                          │
+│                                                                             │
+│ DISPATCHER.route_message():                                                │
+│   ├─ channel = WHATSAPP                                                   │
+│   ├─ phone = +52 55 1234 5678                                            │
+│   └─ text = "Mirá, justo veo eso. Una pregunta... ¿Incluye todo?"       │
+│                                                                             │
+│ COMPLIANCE:                                                                │
+│   └─ has_consent[WHATSAPP]? SÍ (just registered 15 min ago) ✓            │
+│                                                                             │
+│ LOAD SESSION:                                                              │
+│   ├─ Redis hit! (15 min old, still hot) ✓✓✓                             │
+│   │   ├─ message_history: [2 VOICE msgs]                                │
+│   │   ├─ state: INTERESTED                                              │
+│   │   ├─ active_channels: {VOICE, WHATSAPP}                             │
+│   │   └─ last_interaction[VOICE]: 10:18                                 │
+│   └─ Carga instantánea (< 10ms)                                          │
+│                                                                             │
+│ INTENT CLASSIFIER:                                                         │
+│   └─ intent: "question"                                                   │
+│      confidence: 0.88                                                     │
+│      context: "Prospect asking about included features"                  │
+│                                                                             │
+│ AGENT INTELLIGENCE (WHATSAPP mode):                                       │
+│   ├─ system_prompt: "MODO WHATSAPP: casual, emojis, bullets..."         │
+│   ├─ context: [2 VOICE msgs + "Prospect is INTERESTED, budget-sensitive]│
+│   ├─ user_msg: "¿Incluye todo?"                                         │
+│   └─ response:                                                            │
+│      "Excelente pregunta 📊                                             │
+│       • $500/mes = Recordatorios automáticos                            │
+│       • Incluye: WhatsApp, SMS, Email                                   │
+│       • Sin setup, sin contrato                                         │
+│       • Primeros 2 meses: 30% descuento                                │
+│                                                                            │
+│       ¿Agendamos en tu calendario? Solo 15 min 📅"                      │
+│                                                                             │
+│ TWILIO WHATSAPP SEND:                                                      │
+│   └─ Response sent ✓                                                      │
+│                                                                             │
+│ MESSAGE SAVED:                                                             │
+│   ├─ unified_messages_v2: [prospect msg + agent response]               │
+│   ├─ Redis updated: message_history now has [4 msgs]                    │
+│   └─ Session state: still INTERESTED (no state change needed)           │
+│                                                                             │
+│ PROSEPECT NEVER REPEATED THEMSELVES:                                      │
+│   └─ Agent knew: "They want the demo" (from VOICE call)                 │
+│       Agent knew: "Budget is tight" (from VOICE call objection)        │
+│       → Customized response addressed both concerns                    │
+└───────────────────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════════
+DÍA 2 — SCHEDULED REMINDER (SMS)
+═══════════════════════════════════════════════════════════════════════════════
+
+┌─ 09:00 AM ────────────────────────────────────────────────────────────────┐
+│ CRON TRIGGER: "Reminder 24h before demo" (prospect scheduled for 2pm)    │
+│                                                                             │
+│ LOAD SESSION:                                                              │
+│   ├─ Redis miss (24h TTL expired overnight) ❌                             │
+│   ├─ Supabase query (prospect_sessions_v2 + unified_messages_v2)         │
+│   └─ Reconstruct UnifiedSession:                                          │
+│       ├─ message_history: [4 messages from VOICE + WHATSAPP]            │
+│       ├─ state: DEMO_SCHEDULED (updated yesterday)                      │
+│       └─ prospect: Juan García, Clínica, CDMX                            │
+│                                                                             │
+│ COMPLIANCE:                                                                │
+│   ├─ has_consent[SMS]? NO (never texted before)                          │
+│   ├─ quiet_hours? 09:00 AM → OK ✓                                        │
+│   └─ → register_consent(phone, SMS, "reminder_opt_in")                  │
+│                                                                             │
+│ AGENT INTELLIGENCE (SMS mode):                                             │
+│   ├─ system_prompt: "SMS: ultra-breve, 160 chars max, directo"          │
+│   ├─ context: [4 msgs: They want demo, budget concern, asked pricing]  │
+│   ├─ task: "Confirm today's 2pm demo"                                  │
+│   └─ response: "Recordatorio: demo hoy 2pm. Confirma SÍ/NO"           │
+│                                                                             │
+│ TWILIO SMS SEND:                                                           │
+│   └─ Status: delivered ✓                                                  │
+│                                                                             │
+│ MESSAGE SAVED:                                                             │
+│   └─ unified_messages_v2: [SMS msg from agent]                           │
+│                                                                             │
+│ WAIT FOR RESPONSE (webhook listener)                                       │
+│   └─ callback_url: /channels/sms?phone=+52551234567                     │
+└───────────────────────────────────────────────────────────────────────────┘
+
+PROSPECT RESPONDS: "SÍ"
+  ↓
+  INTENT: "confirmation"
+  STATE: DEMO_CONFIRMED (saved)
+  ↓
+  AUTO-RESPONSE (SMS mode, ultra-breve):
+  "Perfecto! Te envío Zoom en 1 hora."
+  ↓
+  MESSAGE SAVED
+
+
+═══════════════════════════════════════════════════════════════════════════════
+DÍA 2 — EMAIL CONFIRMATION
+═══════════════════════════════════════════════════════════════════════════════
+
+┌─ 01:30 PM ────────────────────────────────────────────────────────────────┐
+│ TRIGGER: "30 min before demo, send Zoom link"                             │
+│                                                                             │
+│ LOAD SESSION (Supabase + Redis refresh):                                   │
+│   └─ message_history: [6 messages across VOICE, WHATSAPP, SMS]          │
+│                                                                             │
+│ AGENT INTELLIGENCE (EMAIL mode):                                           │
+│   ├─ system_prompt: "EMAIL: formal, structured, link at bottom..."       │
+│   └─ Generate HTML email:                                                 │
+│                                                                             │
+│ EMAIL CONTENT:                                                             │
+│   ┌────────────────────────────────────────────────────┐                  │
+│   │ Subject: Tu demo con SilxaCRM - Ahora en 30 min   │                  │
+│   │                                                    │                  │
+│   │ ¡Hola Juan!                                       │                  │
+│   │                                                    │                  │
+│   │ Aquí está todo para tu demo hoy:                 │                  │
+│   │                                                    │                  │
+│   │ 📅 Hora: 14:00 (CDMX)                            │                  │
+│   │ 🔗 Link Zoom: https://zoom.us/j/123...          │                  │
+│   │ ⏱️  Duración: 15 minutos                         │                  │
+│   │                                                    │                  │
+│   │ Qué veremos:                                      │                  │
+│   │ • Cómo reducir no-shows de 30% a 5%             │                  │
+│   │ • ROI: recuperar $8500/año                        │                  │
+│   │ • Setup en 30 minutos                             │                  │
+│   │                                                    │                  │
+│   │ Preguntas? Responde a este email.               │                  │
+│   │                                                    │                  │
+│   │ Tu agente 🤖                                      │                  │
+│   │                                                    │                  │
+│   │ ─────────────────────────────────────────────    │                  │
+│   │ [Unsubscribe link]                               │                  │
+│   └────────────────────────────────────────────────────┘                  │
+│                                                                             │
+│ SENDGRID SEND:                                                             │
+│   ├─ to: juan@clinicasonrisa.com                                         │
+│   ├─ from: demos@silxarcrm.com                                           │
+│   └─ status: delivered ✓                                                 │
+│                                                                             │
+│ MESSAGE SAVED:                                                             │
+│   └─ unified_messages_v2: [EMAIL msg from agent]                         │
+│       (Note: EMAIL no tiene webhooks, pero guardamos por auditoria)      │
+└───────────────────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════════
+DÍA 2 — DEMO CALL (TELÉFONO)
+═══════════════════════════════════════════════════════════════════════════════
+
+┌─ 02:00 PM ────────────────────────────────────────────────────────────────┐
+│ DEMO AGENT (DIFERENTE del Sales Agent):                                   │
+│ Same architecture, pero prompt diferente.                                  │
+│                                                                             │
+│ LOAD SESSION:                                                              │
+│   ├─ Redis hit: [7 messages from VOICE, WHATSAPP, SMS, EMAIL]           │
+│   ├─ state: DEMO_CONFIRMED                                               │
+│   └─ context: Full conversation history available                        │
+│                                                                             │
+│ SYSTEM PROMPT (VOICE mode, DEMO variant):                                │
+│   "Eres agente DEMO. Prospect ya sabe:                                  │
+│    - They have no-show problem                                           │
+│    - Budget is tight but interested                                      │
+│    - Asking about features/pricing                                       │
+│    GOAL: Show ROI, close demo successfully"                             │
+│                                                                             │
+│ CONVERSATION:                                                              │
+│   Agent: "Hola Juan, ¡gracias por estar! Vamos a ver cómo
+│            ahorrarían en Clínica Sonrisa..."
+│                                                                             │
+│   Juan: "Sí, dime..."                                                     │
+│                                                                             │
+│   Agent: [Screen share + talking points based on context]                │
+│                                                                             │
+│ SIGNAL ANALYSIS (during call):                                            │
+│   ├─ intent: "interested"                                                │
+│   ├─ engagement_level: "high"                                            │
+│   └─ next_step_signal: "wants to test" ✓                                │
+│                                                                             │
+│ CALL END (14:15):                                                         │
+│   └─ STATE UPDATE: DEMO_COMPLETED → PROPOSAL (auto)                     │
+└───────────────────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════════
+DÍA 3 — POST-DEMO NURTURE (WhatsApp)
+═══════════════════════════════════════════════════════════════════════════════
+
+┌─ 10:00 AM ────────────────────────────────────────────────────────────────┐
+│ TRIGGER: "Follow-up 24h after demo"                                       │
+│ Prospect state: PROPOSAL                                                  │
+│                                                                             │
+│ LOAD SESSION:                                                              │
+│   ├─ Redis miss → Supabase                                              │
+│   └─ message_history: [8 messages from 4 canals]                        │
+│                                                                             │
+│ AGENT INTELLIGENCE (WHATSAPP mode):                                       │
+│   ├─ context: "Prospect did demo yesterday. Seemed interested."        │
+│   ├─ task: "Soft follow-up, not pushy"                                │
+│   └─ response:                                                            │
+│      "Juan, ¿qué tal te pareció ayer? 😊                              │
+│       Me quedó la duda si tienes preguntas sobre el setup..."           │
+│                                                                             │
+│ MESSAGE SAVED → Redis updated                                             │
+│                                                                             │
+│ WAIT FOR RESPONSE:                                                         │
+│   ├─ If "interested" → send proposal PDF by email                       │
+│   ├─ If "objection" → answer by WhatsApp                               │
+│   └─ If "no response" for 3 days → escalate to human rep              │
+└───────────────────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════════
+RESUMEN DEL FLUJO
+═══════════════════════════════════════════════════════════════════════════════
+
+ESTADO DEL PROSPECT A TRAVÉS DE LOS CANALES:
+
+Timestamp          │ Canal    │ Mensaje                                 │ Estado
+───────────────────┼──────────┼─────────────────────────────────────────┼──────────────
+DÍA 1, 10:00 AM    │ VOICE    │ "Tenemos no-shows"                      │ INTERESTED
+DÍA 1, 10:15 AM    │ VOICE    │ Agent: "Plan básico..."                │ INTERESTED
+DÍA 1, 10:20 AM    │ WHATSAPP │ Agent: Demo link                        │ INTERESTED
+DÍA 1, 10:35 AM    │ WHATSAPP │ "¿Incluye todo?"                        │ INTERESTED
+DÍA 1, 10:40 AM    │ WHATSAPP │ Agent: "Excelente pregunta..."         │ INTERESTED
+DÍA 2, 09:00 AM    │ SMS      │ Agent: Reminder 2pm                     │ DEMO_SCHEDULED
+DÍA 2, 09:05 AM    │ SMS      │ "SÍ"                                    │ DEMO_CONFIRMED
+DÍA 2, 01:30 PM    │ EMAIL    │ Agent: Zoom link                        │ DEMO_CONFIRMED
+DÍA 2, 02:00 PM    │ VOICE    │ Demo call + screen share                │ DEMO_COMPLETED
+DÍA 3, 10:00 AM    │ WHATSAPP │ Agent: Follow-up                        │ PROPOSAL
+───────────────────┴──────────┴─────────────────────────────────────────┴──────────────
+
+CLAVE: El prospect NUNCA repitió su situación.
+       El contexto fluyó automáticamente entre canales.
+       La IA siempre tuvo contexto = mejor conversación.
+
+
+═══════════════════════════════════════════════════════════════════════════════
+COMPARACIÓN: MONOLÍTICO vs MULTICANAL
+═══════════════════════════════════════════════════════════════════════════════
+
+MONOLÍTICO (ACTUAL):
+  Llamada 10:00 AM → Prospect says "no presupuesto" → DEAD END
+  Agente humano debe llamar mañana, repetir contexto
+
+  Outcome: 20% follow-up rate, $3.33 CPA
+
+MULTICANAL (PROPUESTO):
+  Llamada 10:00 AM → Prospect says "no presupuesto"
+     ↓ (contexto guardado)
+  WhatsApp 10:20 AM → "Aquí va demo link" (AI sabe del budget problem)
+  SMS 09:00 AM D2 → Confirmation (no repetir precio)
+  Email 01:30 PM D2 → Zoom link + pricing recap
+  Teléfono 02:00 PM D2 → Demo call (flow smoothly)
+  WhatsApp 10:00 AM D3 → Follow-up "¿Qué tal?" (no pitch again)
+
+  Outcome: 85% follow-up rate, $1.48 CPA
+
+  Diferencia: +325% follow-up, -56% costo por prospecto
+
+
+═══════════════════════════════════════════════════════════════════════════════
+DATA FLOW DETALLADO
+═══════════════════════════════════════════════════════════════════════════════
+
+                              ┌─ UNIFIED MESSAGES ─┐
+                              │  [9 messages]       │
+                              │                     │
+                              │ VOICE: 2            │
+                              │ WHATSAPP: 4         │
+                              │ SMS: 2              │
+                              │ EMAIL: 1            │
+                              └─────────────────────┘
+                                      ↑
+                        ┌─────────────┴──────────────┐
+                        │                            │
+                   VOICE                         WHATSAPP
+                  (10:00)                        (10:35)
+                    ↓                              ↓
+            ┌───────────────┐            ┌────────────────┐
+            │   TWILIO      │            │  TWILIO/META   │
+            │ Media Streams │            │   Messaging    │
+            └───────────────┘            └────────────────┘
+                    ↓                              ↓
+            ┌──────────────────────────────────────────┐
+            │     DISPATCHER (route_message)          │
+            │                                          │
+            │  1. Check consent ✓                      │
+            │  2. Check quiet hours ✓                  │
+            │  3. Load session (Redis/Supabase)       │
+            │  4. Classify intent (Gemini)            │
+            │  5. Generate response (Gemini)          │
+            │  6. Adapt to channel (VOICE vs WHATSAPP)│
+            │  7. Send via provider API               │
+            │  8. Save message (unified_messages)     │
+            │  9. Update session state (prospect_sess)│
+            └──────────────────────────────────────────┘
+                    ↑
+        ┌───────────┴───────────┐
+        │                       │
+    GEMINI AI            COMPLIANCE
+    (LLM)              (GDPR/CCPA)
+  gemini-              consent_mgr.
+  3.1-flash            verify_consent
