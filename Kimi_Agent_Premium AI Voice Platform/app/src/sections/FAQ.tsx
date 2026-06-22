@@ -73,23 +73,35 @@ function AccordionItem({ item, index }: { item: FAQItem; index: number }) {
         delay: index * 0.06,
         ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
       }}
-      className="border-b border-[rgba(255,255,255,0.06)]"
+      className="border-b border-[rgba(255,255,255,0.06)] transition-all duration-300"
     >
-      <button
+      <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between py-6 text-left group"
+        className="w-full flex items-center justify-between py-5 lg:py-6 text-left group"
+        whileHover={{ paddingLeft: 4, paddingRight: 4 }}
+        transition={{ duration: 0.2 }}
       >
-        <span className="text-[18px] font-medium text-white pr-8 group-hover:text-[#4F6EF7] transition-colors">
+        <motion.span
+          className="text-[16px] sm:text-[18px] font-medium text-white pr-4 lg:pr-8 flex-1 group-hover:text-[#4F6EF7] transition-colors duration-300"
+          animate={{ x: isOpen ? 4 : 0 }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+        >
           {item.question}
-        </span>
+        </motion.span>
         <motion.div
           animate={{ rotate: isOpen ? 45 : 0 }}
-          transition={{ duration: 0.3 }}
-          className="shrink-0"
+          transition={{
+            duration: 0.4,
+            ease: [0.34, 1.56, 0.64, 1] as [number, number, number, number],
+            type: 'spring',
+            stiffness: 120,
+            damping: 14,
+          }}
+          className="shrink-0 flex items-center justify-center w-6 h-6"
         >
-          <Plus className="w-5 h-5 text-[#4F6EF7]" />
+          <Plus className="w-5 h-5 text-[#4F6EF7] transition-colors duration-300 group-hover:text-[#6B7FFF]" />
         </motion.div>
-      </button>
+      </motion.button>
 
       <AnimatePresence initial={false}>
         {isOpen && (
@@ -97,12 +109,27 @@ function AccordionItem({ item, index }: { item: FAQItem; index: number }) {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+            transition={{
+              height: { duration: 0.4, ease: [0.4, 0, 0.2, 1] },
+              opacity: { duration: 0.3, ease: 'easeOut' },
+            }}
             className="overflow-hidden"
           >
-            <p className="text-[16px] text-[#8A8A9A] leading-relaxed pb-6">
-              {item.answer}
-            </p>
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{
+                delay: 0.15,
+                duration: 0.3,
+                ease: [0.23, 1, 0.320, 1] as [number, number, number, number],
+              }}
+              className="pb-6 lg:pb-8"
+            >
+              <p className="text-[15px] sm:text-[16px] text-[#8A8A9A] leading-relaxed lg:leading-[1.8]">
+                {item.answer}
+              </p>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -112,16 +139,16 @@ function AccordionItem({ item, index }: { item: FAQItem; index: number }) {
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-[100px] lg:py-[140px] bg-[#06060A]">
+    <section id="faq" className="py-[80px] lg:py-[120px] bg-[#06060A]">
       <div className="max-w-[800px] mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-16 lg:mb-20">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="section-label mb-4"
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            className="section-label mb-4 tracking-widest"
           >
             PREGUNTAS FRECUENTES
           </motion.p>
@@ -129,7 +156,11 @@ export default function FAQ() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
+            transition={{
+              duration: 0.7,
+              delay: 0.1,
+              ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+            }}
             className="text-[28px] sm:text-[36px] lg:text-[48px] font-semibold text-white leading-[1.1] tracking-[-0.02em]"
           >
             Todo lo que necesitas saber
@@ -137,7 +168,7 @@ export default function FAQ() {
         </div>
 
         {/* Accordion */}
-        <div>
+        <div className="space-y-px">
           {faqs.map((faq, index) => (
             <AccordionItem key={index} item={faq} index={index} />
           ))}

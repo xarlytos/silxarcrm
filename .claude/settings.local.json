@@ -118,7 +118,17 @@
       "Bash(pip install *)",
       "mcp__shadcn__search_items_in_registries",
       "WebFetch(domain:reactbits.dev)",
-      "mcp__shadcn__list_items_in_registries"
+      "mcp__shadcn__list_items_in_registries",
+      "PowerShell(npm *)",
+      "Bash(pip list *)",
+      "PowerShell(Get-ChildItem -Path \"E:\\\\exclusion\\\\silxarcrm\\\\Kimi_Agent_Premium AI Voice Platform\\\\app\\\\src\" -Recurse | Where-Object { $_.Name -match 'landing|hero|index|home' } | Select-Object FullName)",
+      "Bash(awk '{print $9, \"\\(\"$5\"\\)\"}')",
+      "Bash(sed -i 's/\\\\\\\\€/€/g' src/sections/ROI.tsx)",
+      "Bash(sed -i \"s/INVERSI\\\\\\\\\\\\\\\\u00d3N/INVERSIÓN/g\" src/sections/ROI.tsx)",
+      "Bash(sed -i \"s/d\\\\\\\\\\\\\\\\u00edas/días/g\" src/sections/ROI.tsx)",
+      "Bash(sed -i \"s/Reducci\\\\\\\\\\\\\\\\u00f3n/Reducción/g\" src/sections/ROI.tsx)",
+      "Bash(sed -i \"s/\\\\\\\\\\\\\\\\u00e9xito/éxito/g\" src/sections/ROI.tsx)",
+      "WebFetch(domain:zonamundial.app)"
     ]
   },
   "enabledMcpjsonServers": [

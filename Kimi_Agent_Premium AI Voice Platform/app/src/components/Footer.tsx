@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { Twitter, Linkedin, Github, Youtube } from 'lucide-react'
+import { ROUTES } from '@/lib/routes'
 
 const productLinks = [
-  { name: 'Caracteristicas', href: '#features' },
-  { name: 'Precios', href: '#pricing' },
-  { name: 'Agentes', href: '#marketplace' },
-  { name: 'Integraciones', href: '#' },
+  { name: 'Caracteristicas', href: ROUTES.FEATURES },
+  { name: 'Precios', href: ROUTES.ROI },
+  { name: 'Agentes', href: ROUTES.MARKETPLACE },
+  { name: 'Integraciones', href: ROUTES.DOCUMENTATION },
 ]
 
 const solutionLinks = [
@@ -75,16 +76,36 @@ export default function Footer() {
               El Sistema Operativo de los Agentes de Voz IA. Contrata empleados IA que trabajan 24/7.
             </p>
             <div className="flex items-center gap-3">
-              <a href="#" className="text-[#5A5A6A] hover:text-white transition-colors">
+              <a
+                href={ROUTES.TWITTER}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#5A5A6A] hover:text-white transition-colors"
+              >
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-[#5A5A6A] hover:text-white transition-colors">
+              <a
+                href={ROUTES.LINKEDIN}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#5A5A6A] hover:text-white transition-colors"
+              >
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-[#5A5A6A] hover:text-white transition-colors">
+              <a
+                href={ROUTES.GITHUB}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#5A5A6A] hover:text-white transition-colors"
+              >
                 <Github className="w-5 h-5" />
               </a>
-              <a href="#" className="text-[#5A5A6A] hover:text-white transition-colors">
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#5A5A6A] hover:text-white transition-colors"
+              >
                 <Youtube className="w-5 h-5" />
               </a>
             </div>

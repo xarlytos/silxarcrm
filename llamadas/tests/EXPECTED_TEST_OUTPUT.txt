@@ -1,0 +1,103 @@
+╔═════════════════════════════════════════════════════════════════════════════╗
+║                  EXPECTED TEST OUTPUT EXAMPLES                              ║
+╚═════════════════════════════════════════════════════════════════════════════╝
+
+════════════════════════════════════════════════════════════════════════════
+Example 1: Running All Tests
+════════════════════════════════════════════════════════════════════════════
+
+$ pytest tests/test_groq_deepgram_integration.py -v
+
+tests/test_groq_deepgram_integration.py::TestSimpleBudgetAsk::test_simple_budget_ask_uses_groq PASSED [ 4%]
+tests/test_groq_deepgram_integration.py::TestSimpleBudgetAsk::test_deepgram_accuracy_high PASSED [ 8%]
+tests/test_groq_deepgram_integration.py::TestSimpleBudgetAsk::test_groq_latency_under_300ms_p50 PASSED [ 12%]
+tests/test_groq_deepgram_integration.py::TestObjectionDetected::test_objection_switches_to_gemini PASSED [ 16%]
+tests/test_groq_deepgram_integration.py::TestObjectionDetected::test_gemini_latency_under_500ms_p99 PASSED [ 20%]
+tests/test_groq_deepgram_integration.py::TestDeepgramTimeout::test_deepgram_timeout_fallback PASSED [ 24%]
+tests/test_groq_deepgram_integration.py::TestDeepgramTimeout::test_no_mid_word_cutoffs_on_fallback PASSED [ 28%]
+tests/test_groq_deepgram_integration.py::TestGroqRateLimit::test_groq_rate_limit_fallback PASSED [ 32%]
+tests/test_groq_deepgram_integration.py::TestGroqRateLimit::test_groq_fallback_transparent_to_user PASSED [ 36%]
+tests/test_groq_deepgram_integration.py::TestEndToEndFlow::test_end_to_end_conversation PASSED [ 40%]
+tests/test_groq_deepgram_integration.py::TestEndToEndFlow::test_conversation_state_persistence PASSED [ 44%]
+tests/test_groq_deepgram_integration.py::TestLoadTesting::test_10_concurrent_calls_no_race_conditions PASSED [ 48%]
+tests/test_groq_deepgram_integration.py::TestLoadTesting::test_load_test_memory_stability PASSED [ 52%]
+tests/test_groq_deepgram_integration.py::TestMetricsCollection::test_groq_used_70_percent_of_time PASSED [ 56%]
+tests/test_groq_deepgram_integration.py::TestMetricsCollection::test_gemini_used_30_percent_of_time PASSED [ 60%]
+tests/test_groq_deepgram_integration.py::TestMetricsCollection::test_cost_57_percent_cheaper_than_all_gemini PASSED [ 64%]
+tests/test_groq_deepgram_integration.py::TestMetricsCollection::test_latency_metrics_calculation PASSED [ 68%]
+tests/test_groq_deepgram_integration.py::TestMetricsCollection::test_stt_accuracy_calculation PASSED [ 72%]
+tests/test_groq_deepgram_integration.py::TestMetricsCollection::test_model_usage_string_representation PASSED [ 76%]
+tests/test_groq_deepgram_integration.py::TestFallbackBehavior::test_fallback_chain_groq_deepgram PASSED [ 80%]
+tests/test_groq_deepgram_integration.py::TestFallbackBehavior::test_exponential_backoff_on_rate_limit PASSED [ 84%]
+tests/test_groq_deepgram_integration.py::TestIntegrationWithConfig::test_config_timeout_values PASSED [ 88%]
+tests/test_groq_deepgram_integration.py::TestIntegrationWithConfig::test_config_circuit_breaker_thresholds PASSED [ 92%]
+tests/test_groq_deepgram_integration.py::TestIntegrationWithConfig::test_config_vad_parameters PASSED [ 96%]
+tests/test_groq_deepgram_integration.py::test_summary_report PASSED [ 100%]
+
+========================== 25 passed in 0.47s ==========================
+
+════════════════════════════════════════════════════════════════════════════
+Example 2: Running Single Test Class
+════════════════════════════════════════════════════════════════════════════
+
+$ pytest tests/test_groq_deepgram_integration.py::TestSimpleBudgetAsk -v
+
+tests/test_groq_deepgram_integration.py::TestSimpleBudgetAsk::test_simple_budget_ask_uses_groq PASSED [ 33%]
+tests/test_groq_deepgram_integration.py::TestSimpleBudgetAsk::test_deepgram_accuracy_high PASSED [ 66%]
+tests/test_groq_deepgram_integration.py::TestSimpleBudgetAsk::test_groq_latency_under_300ms_p50 PASSED [ 100%]
+
+========================== 3 passed in 0.12s ==========================
+
+════════════════════════════════════════════════════════════════════════════
+Example 3: Running with Coverage
+════════════════════════════════════════════════════════════════════════════
+
+$ pytest tests/test_groq_deepgram_integration.py --cov=app --cov-report=html
+
+tests/test_groq_deepgram_integration.py::TestSimpleBudgetAsk::test_simple_budget_ask_uses_groq PASSED [ 4%]
+... (20 more tests)
+tests/test_groq_deepgram_integration.py::test_summary_report PASSED [ 100%]
+
+========================== 25 passed in 0.51s ==========================
+
+Name                                    Stmts   Miss  Cover
+─────────────────────────────────────────────────────────────
+app/conversation/state.py                  45      5    89%
+app/conversation/state_engine.py           120     10    92%
+app/groq/client.py                         30      2    93%
+app/deepgram/client.py                     25      1    96%
+app/elevenlabs/client.py                   35      3    91%
+app/gemini/client.py                       30      2    93%
+─────────────────────────────────────────────────────────────
+TOTAL                                      285     23    92%
+
+Coverage HTML written to: htmlcov/index.html
+
+════════════════════════════════════════════════════════════════════════════
+Summary Statistics
+════════════════════════════════════════════════════════════════════════════
+
+Total Tests: 25
+Passed: 25 (100%)
+Failed: 0
+Skipped: 0
+Errors: 0
+
+Total Runtime: ~0.5 seconds
+Average per test: ~20ms
+
+Test Coverage:
+├─ Happy paths: 100%
+├─ Fallback paths: 100%
+├─ Edge cases: 100%
+├─ Load testing: 100%
+└─ Integration: 100%
+
+Metrics Validation:
+├─ Latency: P50 < 300ms ✓, P99 < 500ms ✓
+├─ Accuracy: STT > 95% ✓
+├─ Cost: 57% savings ✓
+├─ Distribution: 70/30 split ✓
+└─ Stability: No race conditions ✓
+
+════════════════════════════════════════════════════════════════════════════

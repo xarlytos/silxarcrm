@@ -1,0 +1,189 @@
+{
+  "dashboard": {
+    "title": "SilxaCRM Monitoring Dashboard",
+    "tags": ["production", "silxacrm", "monitoring"],
+    "timezone": "browser",
+    "panels": [
+      {
+        "id": 1,
+        "title": "API Health Overview",
+        "type": "graph",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.99, rate(api_latency_milliseconds_bucket[5m]))",
+            "legendFormat": "P99 Latency - {{ endpoint }}"
+          },
+          {
+            "expr": "rate(api_requests_total[5m])",
+            "legendFormat": "Request Rate - {{ endpoint }}"
+          },
+          {
+            "expr": "rate(api_errors_total[5m])",
+            "legendFormat": "Error Rate - {{ endpoint }}"
+          }
+        ],
+        "options": {
+          "legend": {
+            "calcs": ["mean", "max", "min"],
+            "placement": "bottom"
+          },
+          "tooltip": {
+            "mode": "multi"
+          }
+        },
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "lineWidth": 2
+            },
+            "unit": "ms"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "title": "ML Model Metrics",
+        "type": "graph",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "targets": [
+          {
+            "expr": "deal_probability_accuracy",
+            "legendFormat": "Accuracy - {{ model_version }}"
+          },
+          {
+            "expr": "histogram_quantile(0.95, rate(model_inference_latency_milliseconds_bucket[5m]))",
+            "legendFormat": "P95 Inference Latency - {{ model_name }}"
+          },
+          {
+            "expr": "forecast_rmse",
+            "legendFormat": "Forecast RMSE - {{ forecast_type }}"
+          }
+        ],
+        "options": {
+          "legend": {
+            "calcs": ["mean", "max", "min"],
+            "placement": "bottom"
+          },
+          "tooltip": {
+            "mode": "multi"
+          }
+        }
+      },
+      {
+        "id": 3,
+        "title": "Deal Pipeline Status",
+        "type": "stat",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 8
+        },
+        "targets": [
+          {
+            "expr": "sum(active_deals_total) by (stage)"
+          },
+          {
+            "expr": "deal_win_rate"
+          },
+          {
+            "expr": "histogram_quantile(0.50, rate(deal_cycle_time_days_bucket[7d]))"
+          }
+        ],
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "center"
+        }
+      },
+      {
+        "id": 4,
+        "title": "Revenue Trend & Forecast",
+        "type": "graph",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 8
+        },
+        "targets": [
+          {
+            "expr": "mrr_usd",
+            "legendFormat": "MRR - {{ subscription_tier }}"
+          },
+          {
+            "expr": "revenue_forecast_variance_percent",
+            "legendFormat": "Forecast Variance - {{ forecast_horizon }}"
+          },
+          {
+            "expr": "customer_lifetime_value_usd",
+            "legendFormat": "CLV - {{ segment }}"
+          }
+        ],
+        "options": {
+          "legend": {
+            "calcs": ["mean", "max", "min"],
+            "placement": "bottom"
+          },
+          "tooltip": {
+            "mode": "multi"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "title": "Kafka Consumer Lag",
+        "type": "heatmap",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 16
+        },
+        "targets": [
+          {
+            "expr": "kafka_consumer_lag_records{consumer_group=~\"silxa.*\"}"
+          }
+        ],
+        "options": {
+          "yAxis": {
+            "format": "records"
+          }
+        }
+      },
+      {
+        "id": 6,
+        "title": "System Health",
+        "type": "stat",
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 16
+        },
+        "targets": [
+          {
+            "expr": "database_connections_active"
+          },
+          {
+            "expr": "cache_hit_rate_percent"
+          },
+          {
+            "expr": "up{job=\"api-service\"}"
+          }
+        ]
+      }
+    ]
+  }
+}

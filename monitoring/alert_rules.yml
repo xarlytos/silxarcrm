@@ -1,0 +1,141 @@
+groups:
+  - name: silxacrm_alerts
+    interval: 15s
+    rules:
+      # ==================== API HEALTH ALERTS ====================
+      - alert: HighAPILatency
+        expr: histogram_quantile(0.99, rate(api_latency_milliseconds_bucket[5m])) > 500
+        for: 5m
+        labels:
+          severity: warning
+          service: api
+        annotations:
+          summary: "High API latency detected (p99 > 500ms)"
+          description: "{{ $labels.endpoint }} is experiencing high latency: {{ $value | humanizeDuration }}"
+          runbook_url: "https://wiki.internal/runbooks/high-latency"
+
+      - alert: APIErrorRateHigh
+        expr: (rate(api_errors_total[5m]) / rate(api_requests_total[5m])) > 0.05
+        for: 5m
+        labels:
+          severity: critical
+          service: api
+        annotations:
+          summary: "High API error rate"
+          description: "Error rate for {{ $labels.endpoint }}: {{ $value | humanizePercentage }}"
+
+      - alert: APIServiceDown
+        expr: up{job="api-service"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: api
+        annotations:
+          summary: "API service is down"
+          description: "API service at {{ $labels.instance }} is not responding"
+
+      # ==================== ML MODEL ALERTS ====================
+      - alert: LowDealProbabilityAccuracy
+        expr: deal_probability_accuracy < 0.80
+        for: 15m
+        labels:
+          severity: warning
+          service: ml_models
+        annotations:
+          summary: "Deal probability model accuracy below threshold"
+          description: "Model {{ $labels.model_version }} accuracy: {{ $value | humanizePercentage }}"
+          runbook_url: "https://wiki.internal/runbooks/low-model-accuracy"
+
+      - alert: HighModelInferenceLatency
+        expr: histogram_quantile(0.95, rate(model_inference_latency_milliseconds_bucket[5m])) > 500
+        for: 5m
+        labels:
+          severity: warning
+          service: ml_models
+        annotations:
+          summary: "Model inference latency exceeds threshold"
+          description: "{{ $labels.model_name }} p95 latency: {{ $value | humanizeDuration }}"
+
+      - alert: HighForecastError
+        expr: forecast_rmse > 15
+        for: 10m
+        labels:
+          severity: warning
+          service: revenue_forecast
+        annotations:
+          summary: "Forecast RMSE exceeds acceptable range"
+          description: "{{ $labels.forecast_type }} RMSE: {{ $value }}"
+
+      # ==================== KAFKA/QUEUE ALERTS ====================
+      - alert: KafkaConsumerLagHigh
+        expr: kafka_consumer_lag_records{consumer_group=~"silxa.*"} > 10000
+        for: 5m
+        labels:
+          severity: critical
+          service: kafka
+        annotations:
+          summary: "High Kafka consumer lag detected"
+          description: "Consumer group {{ $labels.consumer_group }} topic {{ $labels.topic }} lag: {{ $value }} records"
+          runbook_url: "https://wiki.internal/runbooks/kafka-lag"
+
+      - alert: ProcessingQueueBacklog
+        expr: processing_queue_depth > 5000
+        for: 10m
+        labels:
+          severity: warning
+          service: queue
+        annotations:
+          summary: "Processing queue has significant backlog"
+          description: "Queue {{ $labels.queue_name }} depth: {{ $value }} jobs"
+
+      - alert: QueueProcessingSlowdown
+        expr: histogram_quantile(0.95, rate(message_processing_duration_milliseconds_bucket[5m])) > 30000
+        for: 10m
+        labels:
+          severity: warning
+          service: queue
+        annotations:
+          summary: "Message processing is taking too long"
+          description: "Queue {{ $labels.queue_name }} p95 duration: {{ $value | humanizeDuration }}"
+
+      # ==================== DEAL PIPELINE ALERTS ====================
+      - alert: UnusualDealWinRateChange
+        expr: abs(deal_win_rate - avg_over_time(deal_win_rate[30d])) > 0.10
+        for: 1h
+        labels:
+          severity: warning
+          service: sales
+        annotations:
+          summary: "Unusual change in deal win rate"
+          description: "{{ $labels.segment }} win rate: {{ $value | humanizePercentage }}"
+
+      - alert: DealCycleTimeIncreasing
+        expr: histogram_quantile(0.50, rate(deal_cycle_time_days_bucket[7d])) > 60
+        for: 1h
+        labels:
+          severity: info
+          service: sales
+        annotations:
+          summary: "Deal cycle time is increasing"
+          description: "{{ $labels.segment }} median cycle time: {{ $value | humanize }} days"
+
+      # ==================== SYSTEM HEALTH ALERTS ====================
+      - alert: DatabaseConnectionPoolExhausted
+        expr: (database_connections_active / 10) > 0.9
+        for: 5m
+        labels:
+          severity: critical
+          service: database
+        annotations:
+          summary: "Database connection pool near capacity"
+          description: "Active connections: {{ $value | humanize }}/10"
+
+      - alert: CacheMissRateLow
+        expr: cache_hit_rate_percent < 70
+        for: 10m
+        labels:
+          severity: warning
+          service: cache
+        annotations:
+          summary: "Cache hit rate below target"
+          description: "{{ $labels.cache_type }} hit rate: {{ $value | humanizePercentage }}"

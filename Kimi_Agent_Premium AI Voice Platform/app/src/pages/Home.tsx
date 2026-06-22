@@ -1,4 +1,5 @@
 import Hero from '../sections/Hero'
+import SocialProofBar from '../sections/SocialProofBar'
 import Problem from '../sections/Problem'
 import Solution from '../sections/Solution'
 import Marketplace from '../sections/Marketplace'
@@ -14,14 +15,15 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <SocialProofBar />
       <Problem />
       <Solution />
+      <Testimonials />
       <Marketplace />
       <Benefits />
       <ROI />
       <FeaturesDeepDive />
       <Comparison />
-      <Testimonials />
       <FAQ />
       <FinalCTA />
     </>

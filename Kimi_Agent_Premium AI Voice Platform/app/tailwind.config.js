@@ -116,6 +116,14 @@ module.exports = {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-8px)" },
         },
+        "pulse-ring": {
+          "0%": { boxShadow: "0 0 0 0px rgba(255,255,255,0.7)" },
+          "100%": { boxShadow: "0 0 0 40px rgba(255,255,255,0)" },
+        },
+        "ripple": {
+          "0%": { boxShadow: "0 0 0 0px rgba(79, 110, 247, 0.7)" },
+          "100%": { boxShadow: "0 0 0 20px rgba(79, 110, 247, 0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -124,6 +132,8 @@ module.exports = {
         "aurora-shift": "aurora-shift 8s ease-in-out infinite alternate",
         "glow-pulse": "glow-pulse 3s ease-in-out infinite",
         "float": "float 6s ease-in-out infinite",
+        "pulse-ring": "pulse-ring 2.5s ease-out infinite",
+        "ripple": "ripple 0.6s ease-out",
       },
     },
   },

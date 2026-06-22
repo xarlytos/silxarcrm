@@ -103,6 +103,55 @@
     background-clip: text;
   }
 
+  /* Shimmer gradient text */
+  .gradient-text-shimmer {
+    background: linear-gradient(
+      90deg,
+      #4F6EF7 0%,
+      #7B61FF 25%,
+      #4F6EF7 50%,
+      #7B61FF 75%,
+      #4F6EF7 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: text-shimmer 4s ease-in-out infinite;
+  }
+
+  /* White text with subtle shimmer */
+  .text-white-shimmer {
+    position: relative;
+    color: #FFFFFF;
+    animation: white-shimmer 3s ease-in-out infinite;
+  }
+
+  .text-white-shimmer::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.8) 50%,
+      transparent 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer-wave 2s ease-in-out infinite;
+  }
+
+  /* Subheadline glow effect */
+  .subheadline-glow {
+    text-shadow:
+      0 0 20px rgba(79, 110, 247, 0.1),
+      0 0 40px rgba(123, 97, 255, 0.05);
+    animation: subheadline-pulse 3.5s ease-in-out infinite;
+  }
+
   /* Glassmorphism card */
   .glass-card {
     background: var(--va-bg-card);
@@ -285,6 +334,47 @@
   }
   50% {
     transform: translateY(-8px);
+  }
+}
+
+/* Text shimmer animations */
+@keyframes text-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes white-shimmer {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes shimmer-wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes subheadline-pulse {
+  0%, 100% {
+    text-shadow:
+      0 0 20px rgba(79, 110, 247, 0.1),
+      0 0 40px rgba(123, 97, 255, 0.05);
+  }
+  50% {
+    text-shadow:
+      0 0 30px rgba(79, 110, 247, 0.2),
+      0 0 60px rgba(123, 97, 255, 0.12);
   }
 }
 
