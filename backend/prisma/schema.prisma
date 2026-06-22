@@ -24,6 +24,13 @@ model ClienteGlobal {
   metadata            Json?
   notasInternas       String?   @map("notas_internas")
 
+  // Encrypted PII fields (AES-256-GCM)
+  encrypted_nombre    String?   @map("encrypted_nombre")
+  encrypted_email     String?   @map("encrypted_email")
+  encrypted_telefono  String?   @map("encrypted_telefono")
+  encryption_key_id   String?   @map("encryption_key_id") // versioning support for key rotation
+  encrypted_at        DateTime? @map("encrypted_at")
+
   suscripciones Suscripcion[]
   pagos         Pago[]
   eventos       Evento[]
@@ -474,6 +481,13 @@ model Lead {
   createdAt      DateTime    @default(now()) @map("created_at")
   updatedAt      DateTime    @updatedAt @map("updated_at")
 
+  // Encrypted PII fields (AES-256-GCM)
+  encrypted_nombre    String?   @map("encrypted_nombre")
+  encrypted_email     String?   @map("encrypted_email")
+  encrypted_telefono  String?   @map("encrypted_telefono")
+  encryption_key_id   String?   @map("encryption_key_id") // versioning support for key rotation
+  encrypted_at        DateTime? @map("encrypted_at")
+
   historial      LeadHistorial[]
   etiquetas      LeadEtiqueta[]
   gestor         UsuarioCrm?     @relation(fields: [asignadoA], references: [id])
@@ -493,6 +507,38 @@ model Lead {
   @@index([asignadoA])
   @@index([createdAt])
   @@map("leads")
+}
+
+model ContactoProspecto {
+  id              String      @id @default(cuid())
+  nombre          String
+  email           String?
+  telefono        String?
+  empresa         String?
+  cargo           String?
+  ciudad          String?
+  pais            String?
+  softwareId      String      @map("software_id")
+  fuente          String      @default("radar")         // radar | manual | importacion
+  estado          String      @default("nuevo")          // nuevo | contactado | interesado | descartado
+  leadId          String?     @map("lead_id")            // vincular a Lead cuando se convierte
+  notas           String?
+  createdAt       DateTime    @default(now()) @map("created_at")
+  updatedAt       DateTime    @updatedAt @map("updated_at")
+
+  // Encrypted PII fields (AES-256-GCM)
+  encrypted_nombre    String?   @map("encrypted_nombre")
+  encrypted_email     String?   @map("encrypted_email")
+  encrypted_telefono  String?   @map("encrypted_telefono")
+  encryption_key_id   String?   @map("encryption_key_id") // versioning support for key rotation
+  encrypted_at        DateTime? @map("encrypted_at")
+
+  @@unique([email, softwareId])
+  @@index([estado])
+  @@index([softwareId])
+  @@index([fuente])
+  @@index([createdAt])
+  @@map("contactos_prospecto")
 }
 
 model LeadHistorial {
@@ -1994,6 +2040,323 @@ model AdSite {
   @@index([domain])
   @@index([activo])
   @@map("ad_sites")
+}
+
+// ============================================================
+// === REVENUE INTELLIGENCE — Deal Management & Forecasting ===
+// ============================================================
+
+// Core deal model
+model Deal {
+  id                     String   @id @default(cuid())
+  leadId                 String   @unique @map("lead_id")
+  softwareId             String   @map("software_id")
+
+  nombre                 String   @map("nombre")
+  descripcion            String?  @db.Text @map("descripcion")
+  monto                  Decimal  @db.Decimal(12, 2) @map("monto")
+  moneda                 String   @default("EUR") @map("moneda")
+
+  // Deal progression
+  stage                  String   @default("PROSPECT") @map("stage") // PROSPECT|DEMO_SCHEDULED|DEMO_COMPLETED|NEGOTIATION|CLOSING|WON|LOST
+  probabilidadCierre     Int      @default(25) @map("probabilidad_cierre") // 0-100
+  healthScore            Int      @default(50) @map("health_score") // 0-100
+
+  // Timeline
+  fechaCierreEstimada    DateTime? @map("fecha_cierre_estimada")
+  fechaCierreFinal       DateTime? @map("fecha_cierre_final")
+  ultimaActividadAt      DateTime? @map("ultima_actividad_at")
+
+  // Closing info
+  motivoCierre           String?  @map("motivo_cierre")
+
+  // Tracking
+  createdAt              DateTime @default(now()) @map("created_at")
+  updatedAt              DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  lead                   Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  activities             DealActivity[]
+  analysis               DealAnalysis?
+
+  @@index([softwareId])
+  @@index([stage])
+  @@index([probabilidadCierre])
+  @@index([healthScore])
+  @@index([fechaCierreEstimada])
+  @@map("deals")
+}
+
+// Deal activity tracking
+model DealActivity {
+  id                     String   @id @default(cuid())
+  dealId                 String   @map("deal_id")
+
+  tipo                   String   @map("tipo") // CALL|EMAIL|WHATSAPP|DEMO|MEETING|PROPOSAL
+  canal                  String?  @map("canal")
+
+  fechaHora              DateTime @default(now()) @map("fecha_hora")
+  duracionSeg            Int?     @map("duracion_seg")
+  resultado              String?  @map("resultado") // CONNECTED|VOICEMAIL|OPENED|CLICKED|BOUNCE
+
+  resumen                String?  @db.Text @map("resumen")
+  transcript             String?  @db.Text @map("transcript")
+
+  externalId             String?  @map("external_id") // Zadarma, etc.
+
+  createdAt              DateTime @default(now()) @map("created_at")
+
+  deal                   Deal     @relation(fields: [dealId], references: [id], onDelete: Cascade)
+
+  @@index([dealId])
+  @@index([fechaHora])
+  @@index([dealId, fechaHora])
+  @@map("deal_activities")
+}
+
+// Deal analysis (win/loss)
+model DealAnalysis {
+  id                     String   @id @default(cuid())
+  dealId                 String   @unique @map("deal_id")
+
+  estado                 String   @map("estado") // OPEN|WON|LOST
+
+  // If lost
+  motivoPrimario         String?  @map("motivo_primario") // PRECIO|PRODUCTO|TIMING|COMPETENCIA|OTRO
+  motivoSecundario       String?  @map("motivo_secundario")
+  lecciones              String?  @db.Text @map("lecciones")
+
+  // If won
+  factoresClaveGanada    String[]  @default([]) @map("factores_clave")
+
+  // Metrics
+  callsCount             Int      @default(0) @map("calls_count")
+  emailsCount            Int      @default(0) @map("emails_count")
+  demosCount             Int      @default(0) @map("demos_count")
+
+  velocidadCierre        Int?     @map("velocidad_cierre") // days from PROSPECT to WON/LOST
+
+  createdAt              DateTime @default(now()) @map("created_at")
+  updatedAt              DateTime @updatedAt @map("updated_at")
+
+  deal                   Deal     @relation(fields: [dealId], references: [id], onDelete: Cascade)
+
+  @@index([dealId])
+  @@index([estado])
+  @@map("deal_analyses")
+}
+
+// Revenue forecast snapshots
+model RevenueSnapshot {
+  id                     String   @id @default(cuid())
+  softwareId             String   @map("software_id")
+  fechaSnapshot          DateTime @map("fecha_snapshot")
+
+  // Pipeline breakdown
+  prospectValue          Decimal  @default(0) @db.Decimal(12, 2) @map("prospect_value")
+  demoScheduledValue     Decimal  @default(0) @db.Decimal(12, 2) @map("demo_scheduled_value")
+  demoCompletedValue     Decimal  @default(0) @db.Decimal(12, 2) @map("demo_completed_value")
+  negotiationValue       Decimal  @default(0) @db.Decimal(12, 2) @map("negotiation_value")
+  closingValue           Decimal  @default(0) @db.Decimal(12, 2) @map("closing_value")
+
+  // Weighted by probability
+  expectedRevenue        Decimal  @db.Decimal(12, 2) @map("expected_revenue")
+  bestCaseRevenue        Decimal  @db.Decimal(12, 2) @map("best_case_revenue")
+  worstCaseRevenue       Decimal  @db.Decimal(12, 2) @map("worst_case_revenue")
+
+  createdAt              DateTime @default(now()) @map("created_at")
+
+  @@unique([softwareId, fechaSnapshot])
+  @@index([softwareId])
+  @@index([fechaSnapshot])
+  @@map("revenue_snapshots")
+}
+
+// ============================================================
+// === MACHINE LEARNING — Model Training & Inference ===
+// ============================================================
+
+// ML model registry
+model MLModel {
+  id                     String   @id @default(cuid())
+  softwareId             String   @map("software_id")
+
+  nombre                 String   @map("nombre") // propensity_to_close|churn_risk|revenue_forecast|call_quality|argument_effectiveness
+  version                String   @map("version")
+  tipo                   String   @map("tipo") // classification|regression|ranking
+
+  // Performance
+  accuracy               Float?   @map("accuracy")
+  auc                    Float?   @map("auc")
+  rmse                   Float?   @map("rmse")
+
+  // Model metadata
+  inputFeatures          String[] @map("input_features")
+  trainingDataSize       Int      @map("training_data_size")
+  trainingDate           DateTime @map("training_date")
+
+  // Deployment
+  estoyEnProduccion      Boolean  @default(false) @map("es_produccion")
+  ultimaPrediccion       DateTime? @map("ultima_prediccion")
+
+  createdAt              DateTime @default(now()) @map("created_at")
+  updatedAt              DateTime @updatedAt @map("updated_at")
+
+  metricas               MLModelMetric[]
+
+  @@index([softwareId])
+  @@index([nombre])
+  @@index([estoyEnProduccion])
+  @@map("ml_models")
+}
+
+// Daily metrics for model monitoring
+model MLModelMetric {
+  id                     String   @id @default(cuid())
+  modelId                String   @map("model_id")
+
+  fecha                  DateTime @db.Date @map("fecha")
+  accuracy               Float    @map("accuracy")
+  precision              Float?   @map("precision")
+  recall                 Float?   @map("recall")
+  auc                    Float?   @map("auc")
+
+  prediccionesTotales    Int      @default(0) @map("predicciones_totales")
+  prediccionesExactas    Int      @default(0) @map("predicciones_exactas")
+
+  // Drift detection
+  featureDrift           Float?   @map("feature_drift")
+  targetDrift            Float?   @map("target_drift")
+
+  createdAt              DateTime @default(now()) @map("created_at")
+
+  model                  MLModel  @relation(fields: [modelId], references: [id], onDelete: Cascade)
+
+  @@unique([modelId, fecha])
+  @@index([modelId])
+  @@index([fecha])
+  @@map("ml_model_metrics")
+}
+
+// ============================================================
+// === EXPERIMENTATION — A/B Testing & Thompson Sampling ===
+// ============================================================
+
+enum ExperimentStatus {
+  PLANNING
+  RUNNING
+  COMPLETED
+  PAUSED
+}
+
+model ExperimentRun {
+  id                     String   @id @default(cuid())
+  softwareId             String   @map("software_id")
+
+  nombre                 String   @map("nombre")
+  tipo                   String   @map("tipo") // ab_test|mab|multi_armed_bandit
+
+  // Variants
+  variantA               String   @map("variant_a")
+  variantB               String   @map("variant_b")
+  variantC               String?  @map("variant_c")
+
+  // Metrics
+  variantAWins           Int      @default(0) @map("variant_a_wins")
+  variantBWins           Int      @default(0) @map("variant_b_wins")
+  variantCWins           Int?     @map("variant_c_wins")
+
+  variantATrials         Int      @default(0) @map("variant_a_trials")
+  variantBTrials         Int      @default(0) @map("variant_b_trials")
+  variantCTrials         Int?     @map("variant_c_trials")
+
+  // Thompson Sampling
+  thompsonPosteriorA     Float    @default(0.5) @map("thompson_posterior_a")
+  thompsonPosteriorB     Float    @default(0.5) @map("thompson_posterior_b")
+  thompsonPosteriorC     Float?   @map("thompson_posterior_c")
+
+  // Configuration
+  trafficAllocationA     Float    @default(0.33) @map("traffic_allocation_a")
+  trafficAllocationB     Float    @default(0.33) @map("traffic_allocation_b")
+  trafficAllocationC     Float    @default(0.34) @map("traffic_allocation_c")
+
+  // Timeline
+  startedAt              DateTime @map("started_at")
+  endedAt                DateTime? @map("ended_at")
+
+  status                 ExperimentStatus @default(RUNNING) @map("status")
+
+  createdAt              DateTime @default(now()) @map("created_at")
+  updatedAt              DateTime @updatedAt @map("updated_at")
+
+  @@index([softwareId])
+  @@index([status])
+  @@map("experiment_runs")
+}
+
+// ============================================================
+// === OBSERVABILITY — OpenTelemetry & Event Streaming ===
+// ============================================================
+
+// Agent decision logging
+model AgentDecision {
+  id                     String   @id @default(cuid())
+  softwareId             String   @map("software_id")
+
+  agentType              String   @map("agent_type") // SDR|Closer|Recovery|FollowUp|Expansion
+
+  // Input
+  prospect               Json     @map("prospect") // prospect context
+
+  // Decision
+  decision               String   @map("decision")
+  confidence             Float    @default(0) @map("confidence") // 0-1
+  reasoning              String?  @db.Text @map("reasoning")
+
+  // Outcome (filled later)
+  outcome                String?  @map("outcome") // POSITIVE|NEGATIVE|NEUTRAL
+  outcomeAt              DateTime? @map("outcome_at")
+
+  // Performance
+  latencyMs              Int      @map("latency_ms")
+  tokensUsed             Int?     @map("tokens_used")
+
+  createdAt              DateTime @default(now()) @map("created_at")
+
+  @@index([softwareId])
+  @@index([agentType])
+  @@index([createdAt])
+  @@map("agent_decisions")
+}
+
+// Model inference logging
+model ModelInference {
+  id                     String   @id @default(cuid())
+  softwareId             String   @map("software_id")
+  modelId                String?  @map("model_id")
+
+  modelName              String   @map("model_name")
+
+  // Input
+  input                  Json     @map("input") // features
+
+  // Prediction
+  prediction             Json     @map("prediction") // output
+  confidence             Float    @map("confidence") // 0-1
+
+  // Feedback (for retraining)
+  actualOutcome          Json?    @map("actual_outcome")
+  feedbackAt             DateTime? @map("feedback_at")
+
+  // Performance
+  latencyMs              Int      @map("latency_ms")
+
+  createdAt              DateTime @default(now()) @map("created_at")
+
+  @@index([softwareId])
+  @@index([modelName])
+  @@index([createdAt])
+  @@map("model_inferences")
 }
 
 // Nicho/temática dentro de un sitio (define sobre qué se genera)

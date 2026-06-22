@@ -1,15 +1,71 @@
-"""Configuración central del agente de voz, cargada desde el entorno (.env)."""
+"""Configuración central del agente de voz, cargada desde el entorno (.env) o AWS Secrets Manager."""
 from __future__ import annotations
 
+import os
 from functools import lru_cache
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+from .secrets_client import get_secrets_client
 
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=".env", env_file_encoding="utf-8", extra="ignore"
     )
+
+    # Initialize secrets client once
+    _secrets_client = None
+
+    def __init__(self, **data):
+        """Initialize settings with AWS Secrets Manager support."""
+        super().__init__(**data)
+        self._secrets_client = get_secrets_client(
+            region=os.getenv("AWS_REGION", "us-east-1"),
+            environment=os.getenv("ENVIRONMENT", "development"),
+        )
+        # Inject secrets from Secrets Manager
+        self._inject_aws_secrets()
+
+    def _inject_aws_secrets(self):
+        """Inject secrets from AWS Secrets Manager into settings."""
+        # Gemini
+        if not self.gemini_api_key and self._secrets_client:
+            key = self._secrets_client.get_gemini_key()
+            if key:
+                self.gemini_api_key = key
+
+        # ElevenLabs
+        if not self.elevenlabs_api_key and self._secrets_client:
+            key = self._secrets_client.get_elevenlabs_key()
+            if key:
+                self.elevenlabs_api_key = key
+
+        # Twilio
+        if self._secrets_client:
+            twilio_creds = self._secrets_client.get_twilio_credentials()
+            if twilio_creds.get("account_sid") and not self.twilio_account_sid:
+                self.twilio_account_sid = twilio_creds["account_sid"]
+            if twilio_creds.get("auth_token") and not self.twilio_auth_token:
+                self.twilio_auth_token = twilio_creds["auth_token"]
+            if twilio_creds.get("from_number") and not self.twilio_from_number:
+                self.twilio_from_number = twilio_creds["from_number"]
+
+        # Webhook
+        if self._secrets_client:
+            webhook_creds = self._secrets_client.get_webhook_credentials()
+            if webhook_creds.get("webhook_url") and not self.backend_webhook_url:
+                self.backend_webhook_url = webhook_creds["webhook_url"]
+            if webhook_creds.get("webhook_secret") and not self.backend_webhook_secret:
+                self.backend_webhook_secret = webhook_creds["webhook_secret"]
+
+        # Cal.com
+        if self._secrets_client:
+            calcom_creds = self._secrets_client.get_calcom_credentials()
+            if calcom_creds.get("api_key") and not self.calcom_api_key:
+                self.calcom_api_key = calcom_creds["api_key"]
+            if calcom_creds.get("event_type_id") and not self.calcom_event_type_id:
+                self.calcom_event_type_id = calcom_creds["event_type_id"]
 
     # --- Gemini ---
     gemini_api_key: str = ""
@@ -160,6 +216,26 @@ class Settings(BaseSettings):
     disclose_ai: bool = True
     call_hour_start: int = 9
     call_hour_end: int = 20
+
+    # --- Observability (Tracing, Metrics, Alerting) ---
+    # Backend de trazas: "gcp" (Cloud Trace), "jaeger" (local), "none" (desactivado)
+    tracing_backend: str = "gcp"
+    # Jaeger configuration (si tracing_backend="jaeger")
+    jaeger_host: str = "localhost"
+    jaeger_port: int = 6831
+    # PagerDuty integration key (P0 alerts)
+    pagerduty_integration_key: str = ""
+    # Logging level
+    app_version: str = "3.0.0"
+    environment: str = "development"  # development | staging | production
+    region: str = "us-central1"
+    # Event bus max history (eventos en memoria)
+    event_bus_max_history: int = 10000
+    # Sampling rates
+    trace_sample_rate: float = 1.0  # 100% de traces
+    detailed_log_sample_rate: float = 0.1  # 10% de detailed logs
+    # Prometheus metrics endpoint
+    prometheus_export_interval_s: int = 15
 
     @property
     def media_ws_url(self) -> str:
