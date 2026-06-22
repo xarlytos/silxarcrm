@@ -102,7 +102,103 @@ export class ForecastEngine {
   }
 
   /**
-   * Calculate pipeline health metrics
+   * Get pipeline health for a specific software instance
+   */
+  async getPipelineHealth(softwareId: string): Promise<PipelineHealth> {
+    try {
+      // Get all active deals for this software
+      const deals = await prisma.deal.findMany({
+        where: {
+          softwareId,
+          stage: { notIn: ['WON', 'LOST'] },
+        },
+        include: {
+          activities: {
+            orderBy: { fechaHora: 'desc' },
+            take: 5,
+          },
+        },
+      });
+
+      // Calculate totals and distribution
+      let totalPipeline = 0;
+      const stageDistribution: Record<string, { amount: number; count: number; percentage: number }> = {};
+
+      for (const deal of deals) {
+        const amount = Number(deal.monto);
+        totalPipeline += amount;
+
+        if (!stageDistribution[deal.stage]) {
+          stageDistribution[deal.stage] = { amount: 0, count: 0, percentage: 0 };
+        }
+        stageDistribution[deal.stage].amount += amount;
+        stageDistribution[deal.stage].count += 1;
+      }
+
+      // Calculate percentages
+      for (const stage in stageDistribution) {
+        stageDistribution[stage].percentage =
+          totalPipeline > 0 ? (stageDistribution[stage].amount / totalPipeline) * 100 : 0;
+      }
+
+      // Average deal size
+      const averageDealSize = deals.length > 0 ? totalPipeline / deals.length : 0;
+
+      // Pipeline velocity: deals closed per day (last 30 days)
+      const thirtyDaysAgo = new Date();
+      thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+      const recentClosedDeals = await prisma.deal.findMany({
+        where: {
+          softwareId,
+          stage: 'WON',
+          updatedAt: { gte: thirtyDaysAgo },
+        },
+      });
+      const pipelineVelocity = recentClosedDeals.length / 30;
+
+      // Identify risks (low engagement, long in stage)
+      const topRisks: Array<{ dealId: string; dealName: string; risk: string; probability: number }> = [];
+      for (const deal of deals) {
+        const probability = await this.probabilityCalculator.calculateDealProbability(deal.id);
+
+        if (probability.adjustedProbability < 0.3 && deal.activities.length < 3) {
+          topRisks.push({
+            dealId: deal.id,
+            dealName: deal.nombre,
+            risk: 'Low engagement and probability',
+            probability: probability.adjustedProbability,
+          });
+        }
+      }
+
+      topRisks.sort((a, b) => a.probability - b.probability);
+
+      // Determine health
+      let health: 'healthy' | 'at-risk' | 'critical' = 'healthy';
+      if (deals.length === 0) {
+        health = 'critical';
+      } else if (topRisks.length > deals.length * 0.3) {
+        health = 'at-risk';
+      } else if (topRisks.length > deals.length * 0.5) {
+        health = 'critical';
+      }
+
+      return {
+        totalPipeline: Math.round(totalPipeline),
+        stageDistribution,
+        averageDealSize: Math.round(averageDealSize),
+        pipelineVelocity: Number(pipelineVelocity.toFixed(2)),
+        topRisks: topRisks.slice(0, 5),
+        health,
+      };
+    } catch (error) {
+      logger.error('Error calculating pipeline health for software:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Calculate pipeline health metrics (all deals)
    */
   async calculatePipelineHealth(): Promise<PipelineHealth> {
     try {
