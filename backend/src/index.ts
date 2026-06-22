@@ -46,6 +46,7 @@ import assetsRoutes from './routes/assets';
 import sitesRoutes from './routes/sites';
 import offerOptimizerRoutes from './routes/offerOptimizer';
 import revenueIntelligenceRoutes from './routes/revenueIntelligence';
+import leadScoringRoutes from './routes/leadScoring';
 import { startGrowthJobs, stopGrowthJobs } from './jobs/growthJobs';
 import { startAdsenseJobs, stopAdsenseJobs } from './jobs/adsenseJobs';
 import { startClothingJobs, stopClothingJobs } from './jobs/clothingJobs';
@@ -141,6 +142,7 @@ app.use('/api/assets', assetsRoutes);
 app.use('/api/sites', sitesRoutes);
 app.use('/api/offers', offerOptimizerRoutes);
 app.use('/api/revenue', revenueIntelligenceRoutes);
+app.use('/api/lead-scoring', leadScoringRoutes);
 app.use('/events', eventsRoutes);
 
 // Error handler
