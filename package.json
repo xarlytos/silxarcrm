@@ -20,6 +20,7 @@
     "db:studio": "cd backend && npx prisma studio"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "shadcn": "^4.11.0"
   }
 }

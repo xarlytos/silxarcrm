@@ -38,7 +38,7 @@ class PropensityFeaturesInput(BaseModel):
     authority_identified: bool = Field(..., description="Decision maker identified")
     objections_count: int = Field(..., ge=0, description="Number of objections raised")
     days_in_stage: int = Field(..., ge=0, description="Days in current sales stage")
-    company_size: str = Field(..., regex="^(small|medium|large)$", description="Company size")
+    company_size: str = Field(..., pattern="^(small|medium|large)$", description="Company size")
     industry: str = Field(..., min_length=1, description="Industry classification")
 
     class Config:
