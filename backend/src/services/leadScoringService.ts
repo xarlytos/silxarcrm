@@ -548,11 +548,20 @@ export async function scoreLeadsForSoftware(
  * Save scored lead to database (store in metadata)
  */
 export async function saveLeadScore(leadId: string, score: LeadScoreBreakdown): Promise<void> {
+  const lead = await prisma.lead.findUnique({ where: { id: leadId } });
+  if (!lead) {
+    throw new Error(`Lead not found: ${leadId}`);
+  }
+
+  const existingMetadata = (lead.metadata && typeof lead.metadata === 'object')
+    ? lead.metadata as Record<string, any>
+    : {};
+
   await prisma.lead.update({
     where: { id: leadId },
     data: {
       metadata: {
-        ...(await prisma.lead.findUnique({ where: { id: leadId } }))?.metadata,
+        ...existingMetadata,
         leadScore: {
           totalScore: score.totalScore,
           engagementScore: score.engagementScore,
