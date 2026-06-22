@@ -229,6 +229,8 @@ model Software {
   radarConfig            RadarConfig?
   radarRuns              RadarRun[]
   auditorias             Auditoria[]
+  offerLogs              OfferLog[]
+  abTestExperiments      ABTestExperiment[]
 
   @@index([slug])
   @@index([activo])
@@ -499,6 +501,12 @@ model Lead {
   contentPieces  ContentPiece[]
   marketplaceOpportunities MarketplaceOpportunity[]
   activationLogs ActivationLog[]
+
+  // Offer Optimizer
+  offerLogs      OfferLog[]
+
+  // Revenue Intelligence / Deal Management
+  deal           Deal?
 
   @@unique([email, softwareId])
   @@index([estado])
@@ -2723,4 +2731,114 @@ model AssetCatalogItem {
   @@index([isPublished])
   @@index([assetType])
   @@map("asset_catalog_items")
+}
+
+// ============================================================
+// === OFFER OPTIMIZER (Deal Engine) — Dynamic Pricing ===
+// ============================================================
+
+enum OfferStrategy {
+  FIXED
+  DYNAMIC
+  PSYCHOLOGICAL
+}
+
+enum TestStatus {
+  RUNNING
+  COMPLETED
+  PAUSED
+}
+
+model OfferLog {
+  id                String         @id @default(cuid())
+  leadId            String         @map("lead_id")
+  lead              Lead           @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  softwareId        String         @map("software_id")
+  software          Software       @relation(fields: [softwareId], references: [id], onDelete: Cascade)
+
+  // Prospect signals used for pricing
+  prospectSignals   Json           @map("prospect_signals")
+
+  // Recommendation generated
+  recommendation    Json           // {strategy, basePrice, recommendedPrice, variants, abTestVariant, etc}
+
+  // Outcome tracking
+  accepted          Boolean        @default(false)
+  dealValue         Decimal?       @db.Decimal(12, 2) @map("deal_value")
+  closedAt          DateTime?      @map("closed_at")
+  feedback          String?
+
+  createdAt         DateTime       @default(now()) @map("created_at")
+  updatedAt         DateTime       @updatedAt @map("updated_at")
+
+  @@index([softwareId])
+  @@index([leadId])
+  @@index([accepted])
+  @@index([closedAt])
+  @@map("offer_logs")
+}
+
+model ABTestExperiment {
+  id                String         @id @default(cuid())
+  softwareId        String         @map("software_id")
+  software          Software       @relation(fields: [softwareId], references: [id], onDelete: Cascade)
+
+  // Three strategies being tested
+  strategyA         OfferStrategy  @map("strategy_a")
+  strategyB         OfferStrategy  @map("strategy_b")
+  strategyC         OfferStrategy  @map("strategy_c")
+
+  // Test metadata
+  status            TestStatus     @default(RUNNING)
+  startedAt         DateTime       @default(now()) @map("started_at")
+  endedAt           DateTime?      @map("ended_at")
+  winner            String?        // A | B | C
+
+  // Results per variant (JSON for flexibility)
+  variantAResults   Json           @map("variant_a_results") // {impressions, conversions, conversionRate, totalRevenue, avgDealValue}
+  variantBResults   Json           @map("variant_b_results")
+  variantCResults   Json           @map("variant_c_results")
+
+  createdAt         DateTime       @default(now()) @map("created_at")
+  updatedAt         DateTime       @updatedAt @map("updated_at")
+
+  @@index([softwareId])
+  @@index([status])
+  @@map("ab_test_experiments")
+}
+
+// ============================================================
+// === DEAL ACTIVITY INGESTION & PROBABILITY RECALCULATION ===
+// ============================================================
+
+model DealActivity {
+  id          String   @id @default(cuid())
+  dealId      String   @map("deal_id")
+
+  // Activity type: CALL, EMAIL, DEMO
+  tipo        String   // "CALL" | "EMAIL" | "DEMO"
+
+  // Activity outcome: SUCCESS, FAILED, PENDING, POSTPONED
+  resultado   String   // "SUCCESS" | "FAILED" | "PENDING" | "POSTPONED"
+
+  // Activity summary (required)
+  resumen     String   @db.Text
+
+  // Optional: transcript of the activity
+  transcript  String?  @db.Text
+
+  // Flexible metadata for extensibility
+  metadata    Json?
+
+  // Timestamps
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  // Indexing for common queries
+  @@index([dealId])
+  @@index([tipo])
+  @@index([createdAt])
+  @@index([dealId, createdAt])
+  @@map("deal_activities")
 }

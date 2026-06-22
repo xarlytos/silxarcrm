@@ -1,0 +1,299 @@
+═══════════════════════════════════════════════════════════════════════════════
+  PROMETHEUS EXPORTER - RESUMEN FINAL
+═══════════════════════════════════════════════════════════════════════════════
+
+ARCHIVOS CREADOS:
+─────────────────
+
+1. prometheus_exporter.py (324 líneas)
+   - Módulo principal con todas las métricas
+   - Histogramas: agent_classification_latency_ms, deal_probability_distribution
+   - Gauges: model_inference_accuracy, error_rate
+   - Contador: api_call_count
+   - Labels: agent_type, model_name, endpoint
+   - Funciones: record_*, set_*, get_metrics_content(), decorador @measure_latency()
+
+2. prometheus_integration.py (95 líneas)
+   - Integración con FastAPI
+   - Middleware para medir latencias automáticamente
+   - Endpoint /metrics para Prometheus scraping
+   - setup_prometheus_endpoint() y add_prometheus_middleware()
+
+3. prometheus_examples.py (327 líneas)
+   - 12 ejemplos completos de uso
+   - Patrones de integración
+   - Configuración de Prometheus
+   - Reglas de alerta
+   - Queries útiles
+
+4. PROMETHEUS_README.md
+   - Documentación completa
+   - Instalación y configuración
+   - Uso rápido
+   - Queries y alertas
+
+5. INTEGRATION_GUIDE.md
+   - Guía paso a paso de integración
+   - Quick start (5 minutos)
+   - Ejemplos por componente
+   - Monitoreo periódico
+   - Checklist
+
+6. PROMETHEUS_SUMMARY.txt (este archivo)
+   - Resumen ejecutivo
+
+═══════════════════════════════════════════════════════════════════════════════
+
+MÉTRICAS EXPORTADAS:
+────────────────────
+
+┌─ HISTOGRAMAS (distribuciones)
+│
+├─ agent_classification_latency_ms
+│  ├─ Latencia de clasificación en milisegundos
+│  ├─ Buckets: 10, 25, 50, 100, 250, 500, 1000, 2500, 5000
+│  └─ Labels: agent_type, model_name, endpoint
+│
+└─ deal_probability_distribution
+   ├─ Distribución de probabilidades de cierre (0-1)
+   ├─ Buckets: 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95
+   └─ Labels: agent_type, model_name, endpoint
+
+┌─ GAUGES (valores actuales)
+│
+├─ model_inference_accuracy
+│  ├─ Exactitud del modelo (0-1)
+│  └─ Labels: agent_type, model_name, endpoint
+│
+└─ error_rate
+   ├─ Tasa de error actual (0-1)
+   └─ Labels: agent_type, model_name, endpoint
+
+┌─ CONTADORES (incrementables)
+│
+└─ api_call_count
+   ├─ Número total de llamadas API
+   └─ Labels: agent_type, model_name, endpoint
+
+═══════════════════════════════════════════════════════════════════════════════
+
+QUICK START (5 MINUTOS):
+───────────────────────
+
+1. Instalar:
+   pip install prometheus_client
+
+2. En main.py:
+   from app.observability.prometheus_integration import (
+       setup_prometheus_endpoint,
+       add_prometheus_middleware,
+   )
+
+   app = FastAPI()
+   add_prometheus_middleware(app, agent_type="sales", model_name="gemini-2.0")
+   setup_prometheus_endpoint(app)
+
+3. Verificar:
+   curl http://localhost:8000/metrics
+
+4. Integración automática:
+   ✓ Todos los endpoints miden latencias automáticamente
+   ✓ Llamadas API se cuentan automáticamente
+   ✓ Registra métricas en formato Prometheus
+
+═══════════════════════════════════════════════════════════════════════════════
+
+USO:
+────
+
+# Opción 1: Middleware automático (recomendado)
+# Mide todos los endpoints automáticamente
+add_prometheus_middleware(app, agent_type="sales", model_name="gemini-2.0")
+
+# Opción 2: Registro manual
+from app.observability import (
+    record_classification_latency,
+    record_deal_probability,
+    set_model_accuracy,
+    set_error_rate,
+    record_api_call,
+)
+
+record_classification_latency(145.5, agent_type="sales", model_name="gemini-2.0")
+record_deal_probability(0.78, agent_type="sales", model_name="gemini-2.0")
+set_model_accuracy(0.92, agent_type="sales", model_name="gemini-2.0")
+set_error_rate(0.05, agent_type="sales", model_name="gemini-2.0")
+record_api_call(agent_type="sales", model_name="gemini-2.0")
+
+# Opción 3: Decorador
+@measure_latency(agent_type="sales", model_name="gemini-2.0", endpoint="/classify")
+def classify_lead(lead):
+    return process(lead)
+
+# Opción 4: Batch
+from app.observability import record_batch
+record_batch([
+    {"type": "latency", "value": 145.5, "agent_type": "sales", ...},
+    {"type": "deal_probability", "value": 0.78, "agent_type": "sales", ...},
+])
+
+═══════════════════════════════════════════════════════════════════════════════
+
+ENDPOINT PROMETHEUS:
+────────────────────
+
+GET /metrics
+
+Retorna métricas en formato Prometheus text-based (OpenMetrics):
+
+```
+# HELP agent_classification_latency_ms Latencia de clasificación...
+# TYPE agent_classification_latency_ms histogram
+agent_classification_latency_ms_bucket{agent_type="sales",...,le="10"} 0.0
+agent_classification_latency_ms_bucket{agent_type="sales",...,le="25"} 1.0
+agent_classification_latency_ms_bucket{agent_type="sales",...,le="+Inf"} 1.0
+agent_classification_latency_ms_count{agent_type="sales",...} 1.0
+agent_classification_latency_ms_sum{agent_type="sales",...} 145.5
+
+# HELP model_inference_accuracy Exactitud del modelo...
+# TYPE model_inference_accuracy gauge
+model_inference_accuracy{agent_type="sales",...} 0.92
+
+# HELP error_rate Tasa de error actual...
+# TYPE error_rate gauge
+error_rate{agent_type="sales",...} 0.05
+
+# HELP api_call_count Número total de llamadas API
+# TYPE api_call_count counter
+api_call_count_total{agent_type="sales",...} 5.0
+
+# HELP deal_probability_distribution Distribución de probabilidades...
+# TYPE deal_probability_distribution histogram
+deal_probability_distribution_bucket{...,le="0.3"} 2.0
+deal_probability_distribution_bucket{...,le="0.5"} 5.0
+deal_probability_distribution_bucket{...,le="0.8"} 8.0
+deal_probability_distribution_bucket{...,le="+Inf"} 10.0
+deal_probability_distribution_count{...} 10.0
+deal_probability_distribution_sum{...} 6.8
+```
+
+═══════════════════════════════════════════════════════════════════════════════
+
+QUERIES PROMETHEUS:
+───────────────────
+
+# P95 latencia
+histogram_quantile(0.95, agent_classification_latency_ms)
+
+# Promedio latencia
+histogram_quantile(0.5, agent_classification_latency_ms)
+
+# Error rate actual
+error_rate
+
+# Accuracy modelo
+model_inference_accuracy
+
+# Deal probability mediana
+histogram_quantile(0.5, deal_probability_distribution)
+
+# Llamadas por segundo
+rate(api_call_count[1m])
+
+# Por modelo
+histogram_quantile(0.95, agent_classification_latency_ms) by (model_name)
+
+# Por agent_type
+histogram_quantile(0.95, agent_classification_latency_ms) by (agent_type)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+ALERTAS RECOMENDADAS:
+─────────────────────
+
+# Latencia alta (>500ms en P95)
+histogram_quantile(0.95, agent_classification_latency_ms) > 500
+
+# Error rate alto (>10%)
+error_rate > 0.1
+
+# Accuracy baja (<80%)
+model_inference_accuracy < 0.8
+
+# Deal probability baja (<30%)
+histogram_quantile(0.5, deal_probability_distribution) < 0.3
+
+═══════════════════════════════════════════════════════════════════════════════
+
+CARACTERÍSTICAS:
+────────────────
+
+✓ Thread-safe (usa locks)
+✓ Sin dependencias pesadas (solo prometheus_client)
+✓ Middleware automático (mide todos los endpoints)
+✓ Labels flexibles (agent_type, model_name, endpoint)
+✓ Decorador para funciones (@measure_latency)
+✓ Batch de registros (eficiente)
+✓ Type-safe (valida rangos)
+✓ Production-ready (error handling, logging)
+✓ Histogramas con buckets predefinidos
+✓ Gauges actualizables
+✓ Contadores incrementables
+✓ Compatible con Prometheus, Grafana, Datadog, New Relic
+
+═══════════════════════════════════════════════════════════════════════════════
+
+PRÓXIMOS PASOS:
+───────────────
+
+1. Instalar prometheus_client: pip install prometheus_client
+2. Integrar en main.py (INTEGRATION_GUIDE.md)
+3. Verificar endpoint: curl http://localhost:8000/metrics
+4. Configurar Prometheus (scrape /metrics)
+5. Crear dashboard Grafana
+6. Definir alertas
+7. Documentar en README
+
+═══════════════════════════════════════════════════════════════════════════════
+
+RUTAS DE ARCHIVOS:
+──────────────────
+
+Módulo principal:
+  /e/exclusion/silxarcrm/llamadas/app/observability/prometheus_exporter.py
+
+Integración FastAPI:
+  /e/exclusion/silxarcrm/llamadas/app/observability/prometheus_integration.py
+
+Ejemplos:
+  /e/exclusion/silxarcrm/llamadas/app/observability/prometheus_examples.py
+
+Documentación:
+  /e/exclusion/silxarcrm/llamadas/app/observability/PROMETHEUS_README.md
+  /e/exclusion/silxarcrm/llamadas/app/observability/INTEGRATION_GUIDE.md
+  /e/exclusion/silxarcrm/llamadas/app/observability/__init__.py (actualizado)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+TESTING:
+────────
+
+from app.observability import reset_metrics
+
+def test_metrics():
+    reset_metrics()
+    # Tu test aquí
+    reset_metrics()
+
+═══════════════════════════════════════════════════════════════════════════════
+
+CONTACTO / SOPORTE:
+───────────────────
+
+Para más detalles:
+- Ver prometheus_examples.py para 12 ejemplos completos
+- Ver PROMETHEUS_README.md para documentación completa
+- Ver INTEGRATION_GUIDE.md para guía de integración paso a paso
+- Ver docstrings en prometheus_exporter.py
+
+═══════════════════════════════════════════════════════════════════════════════

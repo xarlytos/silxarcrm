@@ -22,11 +22,19 @@ from app.simulation import text_session
 from app.simulation.live_audio import handle_browser_websocket
 from app.telephony.media_stream import handle_media_stream, prewarm_session
 from app.telephony.twilio_client import build_stream_twiml, start_outbound_call
+from app.ml.router import router as ml_router
+from app.webhooks.routes import router as webhooks_router, initialize_webhooks, shutdown_webhooks
 
 logging.basicConfig(level=settings.log_level)
 logger = logging.getLogger(__name__)
 
 app = FastAPI(title="Agente de Ventas por Voz (Gemini Live + Twilio)")
+
+# Mount ML endpoints router
+app.include_router(ml_router)
+
+# Mount webhooks router
+app.include_router(webhooks_router)
 
 # ═══ POOL PERMANENTE DE SESIONES (prewarm optimization) ═══
 # Mantiene N sesiones Gemini/ElevenLabs "calientes" en memoria
@@ -64,16 +72,23 @@ async def _maintain_warm_pool():
 
 @app.on_event("startup")
 async def startup_event():
-    """Inicia el pool de sesiones calientes."""
+    """Inicia el pool de sesiones calientes y servicios de webhook."""
     logger.info("Iniciando warm session pool (size=%d)", WARM_POOL_SIZE)
     asyncio.create_task(_maintain_warm_pool())
+
+    # Initialize webhook services
+    # TODO: Pass actual database client when available
+    # await initialize_webhooks(db_client)
 
 
 @app.on_event("shutdown")
 async def shutdown_event():
-    """Limpia el pool de sesiones."""
+    """Limpia el pool de sesiones y servicios de webhook."""
     logger.info("Limpiando warm session pool (%d sesiones)", len(_warm_session_pool))
     _warm_session_pool.clear()
+
+    # Shutdown webhook services
+    await shutdown_webhooks()
 
 
 @app.api_route("/voice", methods=["GET", "POST"])

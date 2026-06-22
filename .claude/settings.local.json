@@ -112,7 +112,8 @@
       "Bash(cd /d \"E:\\\\exclusion\\\\silxarcrm\\\\llamadas\")",
       "Bash(dir app\\\\observability\\\\*.py)",
       "Bash(dir app\\\\*.*)",
-      "Bash(awk '{print $9 \" \\(\" $5 \"\\)\"}')"
+      "Bash(awk '{print $9 \" \\(\" $5 \"\\)\"}')",
+      "Bash(python *)"
     ]
   }
 }

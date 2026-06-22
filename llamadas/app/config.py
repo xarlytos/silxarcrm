@@ -199,6 +199,16 @@ class Settings(BaseSettings):
     backend_webhook_url: str = ""
     backend_webhook_secret: str = ""
 
+    # --- Incoming webhooks (deal activity ingestion) ---
+    # Secret key for validating incoming webhook signatures (HMAC-SHA256)
+    webhook_secret: str = ""
+
+    # --- Kafka integration ---
+    # Bootstrap servers for Kafka cluster (comma-separated)
+    kafka_bootstrap_servers: str = "localhost:9092"
+    # Kafka topic for deal activity events
+    kafka_deal_activities_topic: str = "deal-activities"
+
     # --- Configuracion modular (sistema LEGO) ---
     # URL base del backend para cargar config de agente por software_id
     backend_voice_config_url: str = ""

@@ -10,6 +10,11 @@ import { initSocket } from './websocket/socket';
 import { initCronJobs } from './jobs/cronJobs';
 import { apiLimiter } from './middleware/rateLimiter';
 import { logger } from './utils/logger';
+import {
+  tlsHardeningStack,
+  createAdvancedRateLimiter,
+  createAuthRateLimiter,
+} from './middleware/tlsHardening';
 
 // Routes
 import authRoutes from './routes/auth';
@@ -33,11 +38,14 @@ import propuestasRoutes from './routes/propuestas';
 import tareasRoutes from './routes/tareas';
 import softwareRoutes from './routes/software';
 import voiceAgentRoutes from './routes/voiceAgent';
+import memoryGuardianRoutes from './routes/memoryGuardian';
 import growthRoutes from './routes/growth';
 import adsenseRoutes from './routes/adsense';
 import clothingRoutes from './routes/clothing';
 import assetsRoutes from './routes/assets';
 import sitesRoutes from './routes/sites';
+import offerOptimizerRoutes from './routes/offerOptimizer';
+import revenueIntelligenceRoutes from './routes/revenueIntelligence';
 import { startGrowthJobs, stopGrowthJobs } from './jobs/growthJobs';
 import { startAdsenseJobs, stopAdsenseJobs } from './jobs/adsenseJobs';
 import { startClothingJobs, stopClothingJobs } from './jobs/clothingJobs';
@@ -48,8 +56,15 @@ console.log('[BOOT] CRM Maestro API process started');
 const app = express();
 const httpServer = createServer(app);
 
-// Middleware
-app.use(helmet());
+// Middleware - TLS/HTTPS Hardening Stack
+app.use(helmet({
+  contentSecurityPolicy: false, // Using custom CSP in tlsHardening
+  hsts: false, // Using custom HSTS in tlsHardening
+}));
+
+// Apply TLS hardening middleware stack (HSTS, Security Headers, CSP)
+app.use(...tlsHardeningStack);
+
 const allowedOrigins = [
   ...env.FRONTEND_URL.split(',').map((o) => o.trim()).filter(Boolean),
   'https://crmpropio.vercel.app',
@@ -85,7 +100,11 @@ app.use(express.json({
     req.rawBody = buf.toString('utf8');
   },
 }));
-app.use('/api', apiLimiter);
+
+// Apply rate limiting
+// Use createAdvancedRateLimiter if Redis is available, otherwise use express-rate-limit
+app.use('/api', createAdvancedRateLimiter());
+
 app.use('/uploads', express.static('uploads'));
 
 // Health check
@@ -114,11 +133,14 @@ app.use('/api/propuestas', propuestasRoutes);
 app.use('/api/tareas', tareasRoutes);
 app.use('/api/softwares', softwareRoutes);
 app.use('/api/voice-agent', voiceAgentRoutes);
+app.use('/api/memory-guardian', memoryGuardianRoutes);
 app.use('/api/growth', growthRoutes);
 app.use('/api/adsense', adsenseRoutes);
 app.use('/api/clothing', clothingRoutes);
 app.use('/api/assets', assetsRoutes);
 app.use('/api/sites', sitesRoutes);
+app.use('/api/offers', offerOptimizerRoutes);
+app.use('/api/revenue', revenueIntelligenceRoutes);
 app.use('/events', eventsRoutes);
 
 // Error handler

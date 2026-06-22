@@ -104,7 +104,7 @@ function calculateDynamicPrice(
   basePrice: number,
   signals: ProspectSignals,
   config: { currency: string; marketCountry: string }
-): number {
+): { price: number; multiplier: number; rationale: string } {
   let multiplier = 1.0;
   let rationale = '';
 
@@ -169,14 +169,14 @@ function calculateDynamicPrice(
     price: finalPrice,
     multiplier: parseFloat(multiplier.toFixed(2)),
     rationale: rationale.trim(),
-  } as any;
+  };
 }
 
 function calculatePsychologicalPrice(
   basePrice: number,
   signals: ProspectSignals,
   config: { currency: string; marketCountry: string }
-): any {
+): { price: number; anchorPrice: number; multiplier: string; rationale: string } {
   // Psychological pricing: charm pricing, anchoring, scarcity
 
   const dynamicResult = calculateDynamicPrice(basePrice, signals, config);
